@@ -1,0 +1,53 @@
+import { useNavigate } from 'react-router-dom';
+import ProductGrid from '../components/ProductGrid.jsx';
+import { useCart } from '../contexts/CartContext.jsx';
+import { Heart, ShoppingBag, ArrowLeft } from 'lucide-react';
+
+export default function WishlistPage() {
+  const navigate = useNavigate();
+  const { wishlist } = useCart();
+
+  return (
+    <div className="animate-fade-in space-y-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="p-3 bg-white border border-gray-100 rounded-2xl text-gray-500 hover:text-pink-500 hover:border-pink-100 transition-all shadow-sm"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
+          <div>
+            <h1 className="text-3xl font-black text-gray-900 tracking-tight">My Wishlist</h1>
+            <p className="text-sm font-medium text-gray-500">{wishlist.length} items saved</p>
+          </div>
+        </div>
+        
+        <button 
+          onClick={() => navigate('/discovery')}
+          className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-2xl font-bold hover:bg-pink-600 transition-all text-sm"
+        >
+          <ShoppingBag className="w-4 h-4" /> Continue Shopping
+        </button>
+      </div>
+
+      {wishlist.length === 0 ? (
+        <div className="card-premium p-16 text-center flex flex-col items-center">
+          <div className="w-24 h-24 bg-pink-50 rounded-full flex items-center justify-center mb-6">
+            <Heart className="w-10 h-10 text-pink-200" />
+          </div>
+          <h2 className="text-2xl font-black text-gray-900">Your wishlist is empty</h2>
+          <p className="text-gray-500 mt-2 max-w-sm">Save your favorite handcrafted items to find them easily later.</p>
+          <button 
+            onClick={() => navigate('/discovery')}
+            className="mt-8 btn-primary px-8"
+          >
+            Explore Marketplace
+          </button>
+        </div>
+      ) : (
+        <ProductGrid products={wishlist} />
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,5 @@
+{
+  "ignore": [
+    "local_db.json"
+  ]
+}

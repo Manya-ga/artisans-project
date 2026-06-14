@@ -1,0 +1,1029 @@
+{
+  "users": [
+    {
+      "id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "email": "demo@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "Demo Buyer"
+      },
+      "created_at": "2026-06-01T05:02:18.224Z"
+    },
+    {
+      "id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "email": "artisan1@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "Maria Rodriguez"
+      },
+      "created_at": "2026-06-01T05:02:56.342Z"
+    },
+    {
+      "id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "email": "artisan2@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "James Chen"
+      },
+      "created_at": "2026-06-01T05:02:56.345Z"
+    },
+    {
+      "id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
+      "email": "artisan3@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "Sarah Johnson"
+      },
+      "created_at": "2026-06-01T05:02:56.348Z"
+    },
+    {
+      "id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "email": "artisan4@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "Marcus Thompson"
+      },
+      "created_at": "2026-06-01T05:02:56.350Z"
+    },
+    {
+      "id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "email": "artisan5@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "Elena Petrov"
+      },
+      "created_at": "2026-06-01T05:02:56.351Z"
+    },
+    {
+      "id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
+      "email": "artisan6@artisan.com",
+      "password": "demo1234",
+      "user_metadata": {
+        "display_name": "David Kim"
+      },
+      "created_at": "2026-06-01T05:02:56.352Z"
+    },
+    {
+      "id": "f3e5c34c-924d-4992-92b5-732afebb936a",
+      "email": "testcustomer-1780290266941@test.com",
+      "password": "password123",
+      "user_metadata": {
+        "display_name": "Test Customer"
+      },
+      "created_at": "2026-06-01T05:04:26.981Z"
+    },
+    {
+      "id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
+      "email": "testcustomer-1780290286859@test.com",
+      "password": "password123",
+      "user_metadata": {
+        "display_name": "Test Customer"
+      },
+      "created_at": "2026-06-01T05:04:46.903Z"
+    },
+    {
+      "id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
+      "email": "testcustomer-1780290303514@test.com",
+      "password": "password123",
+      "user_metadata": {
+        "display_name": "Test Customer"
+      },
+      "created_at": "2026-06-01T05:05:03.555Z"
+    },
+    {
+      "id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
+      "email": "testcustomer-1780290352092@test.com",
+      "password": "password123",
+      "user_metadata": {
+        "display_name": "Test Customer"
+      },
+      "created_at": "2026-06-01T05:05:52.133Z"
+    },
+    {
+      "id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "email": "manyagajjaiah@gmail.com",
+      "password": "123456",
+      "user_metadata": {
+        "display_name": "Manya"
+      },
+      "created_at": "2026-06-01T05:08:43.382Z"
+    },
+    {
+      "id": "61ef487a-9999-4134-8be4-54d23bfed442",
+      "email": "testcustomer-1780291103657@test.com",
+      "password": "password123",
+      "user_metadata": {
+        "display_name": "Test Customer"
+      },
+      "created_at": "2026-06-01T05:18:23.696Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "created_at": "2026-06-01T05:02:56.340Z",
+      "updated_at": "2026-06-14T04:25:32.596Z",
+      "email": "demo@artisan.com",
+      "display_name": "Demo Buyer",
+      "role": "buyer",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "created_at": "2026-06-01T05:02:56.344Z",
+      "updated_at": "2026-06-14T04:25:32.598Z",
+      "email": "artisan1@artisan.com",
+      "display_name": "Maria Rodriguez",
+      "role": "artisan",
+      "bio": "With over 15 years of experience, I create unique pottery pieces inspired by traditional techniques and modern design.",
+      "photo_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "location": "Santa Fe, NM",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "created_at": "2026-06-01T05:02:56.348Z",
+      "updated_at": "2026-06-14T04:28:37.860Z",
+      "email": "artisan2@artisan.com",
+      "display_name": "James Chen",
+      "role": "artisan",
+      "bio": "I specialize in custom furniture using locally sourced, sustainable hardwoods. Each piece tells a story.",
+      "photo_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "location": "Portland, OR",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
+      "created_at": "2026-06-01T05:02:56.349Z",
+      "updated_at": "2026-06-14T04:25:32.599Z",
+      "email": "artisan3@artisan.com",
+      "display_name": "Sarah Johnson",
+      "role": "artisan",
+      "bio": "Creating wearable art that combines traditional silversmithing with contemporary aesthetics.",
+      "photo_url": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
+      "location": "Asheville, NC",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "created_at": "2026-06-01T05:02:56.350Z",
+      "updated_at": "2026-06-14T04:25:32.600Z",
+      "email": "artisan4@artisan.com",
+      "display_name": "Marcus Thompson",
+      "role": "artisan",
+      "bio": "From wallets to belts, I craft durable, beautiful leather items using time-honored techniques.",
+      "photo_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "location": "Austin, TX",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "created_at": "2026-06-01T05:02:56.352Z",
+      "updated_at": "2026-06-14T04:25:32.601Z",
+      "email": "artisan5@artisan.com",
+      "display_name": "Elena Petrov",
+      "role": "artisan",
+      "bio": "Weaving traditional patterns with a modern twist, creating unique textile art and home goods.",
+      "photo_url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "location": "Providence, RI",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
+      "created_at": "2026-06-01T05:02:56.353Z",
+      "updated_at": "2026-06-14T04:25:32.601Z",
+      "email": "artisan6@artisan.com",
+      "display_name": "David Kim",
+      "role": "artisan",
+      "bio": "Master glassblower creating both decorative and functional glassware with vibrant colors and unique shapes.",
+      "photo_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "location": "Seattle, WA",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "f3e5c34c-924d-4992-92b5-732afebb936a",
+      "created_at": "2026-06-01T05:04:26.983Z",
+      "updated_at": "2026-06-01T05:04:27.009Z",
+      "email": "testcustomer-1780290266941@test.com",
+      "display_name": "Updated Customer Name",
+      "role": "buyer",
+      "wishlist": [
+        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
+      ],
+      "followers": [],
+      "following": [],
+      "bio": "Just a buyer looking for handmade crafts."
+    },
+    {
+      "id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
+      "created_at": "2026-06-01T05:04:46.905Z",
+      "updated_at": "2026-06-01T05:04:46.935Z",
+      "email": "testcustomer-1780290286859@test.com",
+      "display_name": "Updated Customer Name",
+      "role": "buyer",
+      "wishlist": [
+        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
+      ],
+      "followers": [],
+      "following": [],
+      "bio": "Just a buyer looking for handmade crafts."
+    },
+    {
+      "id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
+      "created_at": "2026-06-01T05:05:03.557Z",
+      "updated_at": "2026-06-01T05:05:03.621Z",
+      "email": "testcustomer-1780290303514@test.com",
+      "display_name": "Updated Customer Name",
+      "role": "artisan",
+      "wishlist": [
+        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
+      ],
+      "followers": [],
+      "following": [],
+      "bio": "Just a buyer looking for handmade crafts."
+    },
+    {
+      "id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
+      "created_at": "2026-06-01T05:05:52.134Z",
+      "updated_at": "2026-06-01T05:05:52.220Z",
+      "email": "testcustomer-1780290352092@test.com",
+      "display_name": "Updated Customer Name",
+      "role": "artisan",
+      "wishlist": [
+        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
+      ],
+      "followers": [],
+      "following": [],
+      "bio": "Just a buyer looking for handmade crafts."
+    },
+    {
+      "id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "created_at": "2026-06-01T05:08:43.385Z",
+      "updated_at": "2026-06-14T04:28:37.861Z",
+      "email": "manyagajjaiah@gmail.com",
+      "display_name": "Manya",
+      "role": "artisan",
+      "wishlist": [],
+      "followers": [],
+      "following": []
+    },
+    {
+      "id": "61ef487a-9999-4134-8be4-54d23bfed442",
+      "created_at": "2026-06-01T05:18:23.698Z",
+      "updated_at": "2026-06-01T05:18:23.826Z",
+      "email": "testcustomer-1780291103657@test.com",
+      "display_name": "Updated Customer Name",
+      "role": "artisan",
+      "wishlist": [
+        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
+      ],
+      "followers": [],
+      "following": [],
+      "bio": "Just a buyer looking for handmade crafts."
+    }
+  ],
+  "products": [
+    {
+      "id": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 1,
+      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "title": "Ceramic Bowl",
+      "price": 85,
+      "image": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
+      "category": "Pottery",
+      "artisan_name": "Maria Rodriguez",
+      "artisan_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "artisan_location": "Santa Fe"
+    },
+    {
+      "id": "34cbdead-cba7-49cb-8727-ba61200fed76",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 2,
+      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "title": "Clay Vase",
+      "price": 120,
+      "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500",
+      "category": "Pottery",
+      "artisan_name": "Maria Rodriguez",
+      "artisan_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "artisan_location": "Santa Fe"
+    },
+    {
+      "id": "366813d3-8d0c-4048-9014-390e237afc75",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 3,
+      "user_id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "title": "Oak Dining Table",
+      "price": 2500,
+      "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500",
+      "category": "Woodworking",
+      "artisan_name": "James Chen",
+      "artisan_image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "artisan_location": "Portland"
+    },
+    {
+      "id": "c03fc8b5-64cb-40f0-8bff-2afddcc1e11b",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 4,
+      "user_id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "title": "Walnut Bookshelf",
+      "price": 1800,
+      "image": "https://images.unsplash.com/photo-1594620859311-370eb333858c?w=500",
+      "category": "Woodworking",
+      "artisan_name": "James Chen",
+      "artisan_image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "artisan_location": "Portland"
+    },
+    {
+      "id": "cb26fec3-1da5-4537-9a61-fb44ed065db4",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 5,
+      "user_id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
+      "title": "Silver Necklace",
+      "price": 195,
+      "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500",
+      "category": "Jewelry",
+      "artisan_name": "Sarah Johnson",
+      "artisan_image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
+      "artisan_location": "Asheville"
+    },
+    {
+      "id": "d945a0cc-8949-432c-a329-36f8da42266d",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 6,
+      "user_id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
+      "title": "Turquoise Earrings",
+      "price": 145,
+      "image": "https://images.unsplash.com/photo-1535633302704-c02fbcac852a?w=500",
+      "category": "Jewelry",
+      "artisan_name": "Sarah Johnson",
+      "artisan_image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
+      "artisan_location": "Asheville"
+    },
+    {
+      "id": "38cea5cd-63b4-402a-80ad-cce3056b4f5b",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 7,
+      "user_id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "title": "Leather Wallet",
+      "price": 75,
+      "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",
+      "category": "Handicrafts",
+      "artisan_name": "Marcus Thompson",
+      "artisan_image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "artisan_location": "Austin"
+    },
+    {
+      "id": "b1225fcc-0ada-4bb1-baf0-b5151a787400",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 8,
+      "user_id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "title": "Leather Belt",
+      "price": 110,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+      "category": "Handicrafts",
+      "artisan_name": "Marcus Thompson",
+      "artisan_image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "artisan_location": "Austin"
+    },
+    {
+      "id": "8ae42490-b0f4-4746-935e-5d5927945f8a",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 9,
+      "user_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "title": "Woven Blanket",
+      "price": 320,
+      "image": "https://images.unsplash.com/photo-1580302200322-224432540afb?w=500",
+      "category": "Paintings",
+      "artisan_name": "Elena Petrov",
+      "artisan_image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "artisan_location": "Seattle"
+    },
+    {
+      "id": "811be288-e6d1-40b7-b3d4-a80d58284beb",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 10,
+      "user_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "title": "Table Runner",
+      "price": 95,
+      "image": "https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?w=500",
+      "category": "Paintings",
+      "artisan_name": "Elena Petrov",
+      "artisan_image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "artisan_location": "Seattle"
+    },
+    {
+      "id": "4a5dfc21-117a-4f3a-a4f1-e14023e3ff2a",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 11,
+      "user_id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
+      "title": "Glass Pitcher",
+      "price": 165,
+      "image": "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=500",
+      "category": "Paintings",
+      "artisan_name": "David Kim",
+      "artisan_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "artisan_location": "Seattle"
+    },
+    {
+      "id": "6945c6a1-99ec-44e4-bf9a-daa3739e8e0f",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 12,
+      "user_id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
+      "title": "Decorative Orb",
+      "price": 85,
+      "image": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500",
+      "category": "Paintings",
+      "artisan_name": "David Kim",
+      "artisan_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "artisan_location": "Seattle"
+    },
+    {
+      "id": "2a595b44-c10d-4586-b644-af8cd487dca0",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 13,
+      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "title": "Ceramic Mug Set",
+      "price": 140,
+      "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500",
+      "category": "Pottery",
+      "artisan_name": "Maria Rodriguez",
+      "artisan_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "artisan_location": "Santa Fe"
+    },
+    {
+      "id": "51221ed2-e596-44f4-8f19-254ac7789418",
+      "created_at": "2026-06-01T05:02:56.354Z",
+      "updated_at": "2026-06-01T05:02:56.354Z",
+      "legacy_id": 14,
+      "user_id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "title": "Wooden Cutting Board",
+      "price": 95,
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500",
+      "category": "Woodworking",
+      "artisan_name": "James Chen",
+      "artisan_image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "artisan_location": "Portland"
+    },
+    {
+      "id": "d6620c1c-d7ca-4054-afe1-49b467daa7fa",
+      "created_at": "2026-06-01T05:09:43.567Z",
+      "updated_at": "2026-06-01T05:09:43.567Z",
+      "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "title": "hand-printed ceramic",
+      "price": 1000,
+      "image": "http://localhost:5000/uploads/1780290583549-palace.jpg",
+      "images": [
+        "http://localhost:5000/uploads/1780290583549-palace.jpg"
+      ],
+      "description": "",
+      "category": "General",
+      "artisan_name": "Manya",
+      "artisan_location": ""
+    },
+    {
+      "id": "61ba9f3e-019b-4020-8246-bbf71fa4fd96",
+      "created_at": "2026-06-01T05:49:21.143Z",
+      "updated_at": "2026-06-01T05:49:21.143Z",
+      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "title": "palace",
+      "price": 1000,
+      "image": "http://localhost:5000/uploads/1780292961073-palace.jpg",
+      "images": [
+        "http://localhost:5000/uploads/1780292961073-palace.jpg"
+      ],
+      "description": "",
+      "category": "General",
+      "artisan_name": "Demo Buyer",
+      "artisan_location": ""
+    },
+    {
+      "id": "fe90a2d9-12ae-441c-8c61-30606d379956",
+      "created_at": "2026-06-01T05:49:40.615Z",
+      "updated_at": "2026-06-01T05:49:40.615Z",
+      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "title": "garden",
+      "price": 1000,
+      "image": "http://localhost:5000/uploads/1780292980550-palace1.jpg",
+      "images": [
+        "http://localhost:5000/uploads/1780292980550-palace1.jpg"
+      ],
+      "description": "",
+      "category": "General",
+      "artisan_name": "Demo Buyer",
+      "artisan_location": ""
+    }
+  ],
+  "stories": [
+    {
+      "id": "1d858968-a0fc-42be-ba02-a813f4a0a9dc",
+      "created_at": "2026-06-01T05:02:56.355Z",
+      "updated_at": "2026-06-01T05:02:56.355Z",
+      "title": "A Day in the Studio",
+      "bio": "...",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+          "type": "image"
+        }
+      ],
+      "user_name": "Maria Rodriguez",
+      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f"
+    },
+    {
+      "id": "0062f8b9-e85a-4ea8-9ff3-819ee7ecf7cb",
+      "created_at": "2026-06-01T04:02:56.355Z",
+      "updated_at": "2026-06-01T05:02:56.355Z",
+      "title": "Sourcing Sustainable Wood",
+      "bio": "...",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+          "type": "image"
+        }
+      ],
+      "user_name": "James Chen",
+      "user_id": "add36a21-6475-4032-9240-a08af89b99c3"
+    },
+    {
+      "id": "13053d58-9c91-4a62-800c-61b4d301e74d",
+      "created_at": "2026-06-01T03:02:56.355Z",
+      "updated_at": "2026-06-01T05:02:56.355Z",
+      "title": "Gemstone Journey",
+      "bio": "...",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
+          "type": "image"
+        }
+      ],
+      "user_name": "Sarah Johnson",
+      "user_id": "866ebee2-206d-4d8e-a9f6-ea33164574bb"
+    },
+    {
+      "id": "98ec367e-d970-4de2-aa95-9846b04d9ca9",
+      "created_at": "2026-06-01T02:02:56.355Z",
+      "updated_at": "2026-06-01T05:02:56.355Z",
+      "title": "Leather Tanning Process",
+      "bio": "...",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+          "type": "image"
+        }
+      ],
+      "user_name": "Marcus Thompson",
+      "user_id": "4923b60e-518d-407e-8f26-9727e6edabff"
+    },
+    {
+      "id": "7e4b626b-9120-49d1-b3d7-0b8a0e7abe36",
+      "created_at": "2026-06-01T01:02:56.355Z",
+      "updated_at": "2026-06-01T05:02:56.355Z",
+      "title": "Textile Traditions",
+      "bio": "...",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+          "type": "image"
+        }
+      ],
+      "user_name": "Elena Petrov",
+      "user_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d"
+    },
+    {
+      "id": "4a588708-b0db-45a7-b208-11e18b803ac8",
+      "created_at": "2026-06-01T00:02:56.355Z",
+      "updated_at": "2026-06-01T05:02:56.355Z",
+      "title": "Hot Glass Magic",
+      "bio": "...",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+          "type": "image"
+        }
+      ],
+      "user_name": "David Kim",
+      "user_id": "ee30c380-7fca-4687-8e4f-053414cf93fb"
+    },
+    {
+      "id": "826b850e-ae69-4260-ad68-08fd7c360bd4",
+      "created_at": "2026-06-01T05:04:46.965Z",
+      "updated_at": "2026-06-01T05:04:46.965Z",
+      "user_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
+      "user_name": "Updated Customer Name",
+      "user_profile_image": "",
+      "title": "Crafting in progress",
+      "bio": "Behind the scenes at my pottery wheel.",
+      "media": [
+        {
+          "url": "https://via.placeholder.com/400",
+          "type": "image",
+          "createdAt": "2026-06-01T05:04:46.965Z"
+        }
+      ]
+    },
+    {
+      "id": "34574dba-95a0-4d79-b680-04f78ee596cd",
+      "created_at": "2026-06-02T03:16:24.318Z",
+      "updated_at": "2026-06-02T03:16:52.925Z",
+      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "user_name": "Demo Buyer",
+      "user_profile_image": "",
+      "title": "temple",
+      "bio": "Place where kings live",
+      "media": [
+        {
+          "url": "http://localhost:5000/uploads/1780370184257-palace1.jpg",
+          "type": "image",
+          "createdAt": "2026-06-02T03:16:24.316Z"
+        },
+        {
+          "url": "http://localhost:5000/uploads/1780370212918-chamundi-betta.jpg",
+          "type": "image",
+          "createdAt": "2026-06-02T03:16:52.923Z"
+        }
+      ]
+    },
+    {
+      "id": "1107d65d-7101-45fb-963d-ef0f0d20e2ab",
+      "created_at": "2026-06-14T04:26:52.079Z",
+      "updated_at": "2026-06-14T04:26:52.079Z",
+      "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "user_name": "Manya",
+      "user_profile_image": "",
+      "title": "A day in studio",
+      "bio": "",
+      "media": [
+        {
+          "url": "http://localhost:5000/uploads/1781411212040-palace.jpg",
+          "type": "image",
+          "createdAt": "2026-06-14T04:26:52.070Z"
+        }
+      ]
+    }
+  ],
+  "carts": [
+    {
+      "id": "480788de-e659-41b5-938a-eef8a3e72dcf",
+      "created_at": "2026-06-01T05:04:27.016Z",
+      "updated_at": "2026-06-01T05:04:27.026Z",
+      "user_id": "f3e5c34c-924d-4992-92b5-732afebb936a",
+      "items": []
+    },
+    {
+      "id": "81fd0a2d-d82d-4cb0-9477-73855a3fa1b9",
+      "created_at": "2026-06-01T05:04:46.940Z",
+      "updated_at": "2026-06-01T05:04:46.952Z",
+      "user_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
+      "items": []
+    },
+    {
+      "id": "f38270d6-7716-4921-a846-01f764225a42",
+      "created_at": "2026-06-01T05:05:03.587Z",
+      "updated_at": "2026-06-01T05:05:03.598Z",
+      "user_id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
+      "items": []
+    },
+    {
+      "id": "3d5bf9e6-f86a-4890-9089-e62e9ec6c11c",
+      "created_at": "2026-06-01T05:05:52.169Z",
+      "updated_at": "2026-06-01T05:05:52.181Z",
+      "user_id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
+      "items": []
+    },
+    {
+      "id": "723851a2-8a16-4d5a-9e39-f28dac71f072",
+      "created_at": "2026-06-01T05:07:12.040Z",
+      "updated_at": "2026-06-02T03:30:37.843Z",
+      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "items": [
+        {
+          "productId": "366813d3-8d0c-4048-9014-390e237afc75",
+          "title": "Oak Dining Table",
+          "price": 2500,
+          "imageUrl": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500",
+          "artisanName": "James Chen",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "2140ba50-acc4-4115-807b-ffe398915996",
+      "created_at": "2026-06-01T05:08:43.443Z",
+      "updated_at": "2026-06-14T04:48:54.030Z",
+      "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "items": [
+        {
+          "productId": "366813d3-8d0c-4048-9014-390e237afc75",
+          "title": "Oak Dining Table",
+          "price": 2500,
+          "imageUrl": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500",
+          "artisanName": "James Chen",
+          "qty": 3
+        },
+        {
+          "productId": "6945c6a1-99ec-44e4-bf9a-daa3739e8e0f",
+          "title": "Decorative Orb",
+          "price": 85,
+          "imageUrl": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500",
+          "artisanName": "David Kim",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "320ba803-3663-4070-ac42-0fe2ba627b53",
+      "created_at": "2026-06-01T05:18:23.731Z",
+      "updated_at": "2026-06-01T05:18:23.745Z",
+      "user_id": "61ef487a-9999-4134-8be4-54d23bfed442",
+      "items": []
+    }
+  ],
+  "orders": [
+    {
+      "id": "8cd62e32-78b3-469b-b143-2fbf98ea88f1",
+      "created_at": "2026-06-01T05:04:27.025Z",
+      "updated_at": "2026-06-01T05:04:27.025Z",
+      "user_id": "f3e5c34c-924d-4992-92b5-732afebb936a",
+      "items": [
+        {
+          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
+          "title": "Ceramic Bowl",
+          "price": 85,
+          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
+          "artisanName": "Maria Rodriguez",
+          "qty": 1
+        }
+      ],
+      "total_amount": 85,
+      "payment_status": "Paid",
+      "order_status": "Placed",
+      "address": {}
+    },
+    {
+      "id": "88c3a58e-d1cf-46f1-9571-574953cd1c09",
+      "created_at": "2026-06-01T05:04:46.951Z",
+      "updated_at": "2026-06-01T05:04:46.951Z",
+      "user_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
+      "items": [
+        {
+          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
+          "title": "Ceramic Bowl",
+          "price": 85,
+          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
+          "artisanName": "Maria Rodriguez",
+          "qty": 1
+        }
+      ],
+      "total_amount": 85,
+      "payment_status": "Paid",
+      "order_status": "Placed",
+      "address": {}
+    },
+    {
+      "id": "471c47af-c45f-4791-8876-a28c7e8ca5ef",
+      "created_at": "2026-06-01T05:05:03.596Z",
+      "updated_at": "2026-06-01T05:05:03.596Z",
+      "user_id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
+      "items": [
+        {
+          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
+          "title": "Ceramic Bowl",
+          "price": 85,
+          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
+          "artisanName": "Maria Rodriguez",
+          "qty": 1
+        }
+      ],
+      "total_amount": 85,
+      "payment_status": "Paid",
+      "order_status": "Placed",
+      "address": {}
+    },
+    {
+      "id": "091beaae-f1f7-41fb-94df-6a458f87d42d",
+      "created_at": "2026-06-01T05:05:52.179Z",
+      "updated_at": "2026-06-01T05:05:52.179Z",
+      "user_id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
+      "items": [
+        {
+          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
+          "title": "Ceramic Bowl",
+          "price": 85,
+          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
+          "artisanName": "Maria Rodriguez",
+          "qty": 1
+        }
+      ],
+      "total_amount": 85,
+      "payment_status": "Paid",
+      "order_status": "Placed",
+      "address": {}
+    },
+    {
+      "id": "be9b1f81-ff62-41d7-9244-b087318bf0a5",
+      "created_at": "2026-06-01T05:18:23.744Z",
+      "updated_at": "2026-06-01T05:18:23.744Z",
+      "user_id": "61ef487a-9999-4134-8be4-54d23bfed442",
+      "items": [
+        {
+          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
+          "title": "Ceramic Bowl",
+          "price": 85,
+          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
+          "artisanName": "Maria Rodriguez",
+          "qty": 1
+        }
+      ],
+      "total_amount": 85,
+      "payment_status": "Paid",
+      "order_status": "Placed",
+      "address": {}
+    }
+  ],
+  "messages": [
+    {
+      "id": "22abd0f5-289d-467b-baaa-4d75227e79d7",
+      "created_at": "2026-06-01T05:04:27.032Z",
+      "updated_at": "2026-06-01T05:04:27.032Z",
+      "sender_id": "f3e5c34c-924d-4992-92b5-732afebb936a",
+      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "text": "Hello, I want to inquire about custom pottery pieces.",
+      "seen": false
+    },
+    {
+      "id": "a9abc55f-e0de-4057-ab3b-32d97dcf529d",
+      "created_at": "2026-06-01T05:04:46.956Z",
+      "updated_at": "2026-06-01T05:04:46.956Z",
+      "sender_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
+      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "text": "Hello, I want to inquire about custom pottery pieces.",
+      "seen": false
+    },
+    {
+      "id": "a86c1192-0a2e-495e-8746-bcce41369057",
+      "created_at": "2026-06-01T05:05:03.603Z",
+      "updated_at": "2026-06-01T05:05:03.603Z",
+      "sender_id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
+      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "text": "Hello, I want to inquire about custom pottery pieces.",
+      "seen": false
+    },
+    {
+      "id": "84168904-738f-474c-b096-1b69bc4a9fb8",
+      "created_at": "2026-06-01T05:05:52.186Z",
+      "updated_at": "2026-06-01T05:05:52.186Z",
+      "sender_id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
+      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "text": "Hello, I want to inquire about custom pottery pieces.",
+      "seen": false
+    },
+    {
+      "id": "9bfdd6dc-8f04-4f7c-bf45-9bff7c3518d2",
+      "created_at": "2026-06-01T05:07:50.536Z",
+      "updated_at": "2026-06-01T05:07:50.536Z",
+      "sender_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "receiver_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "text": "hii",
+      "seen": false
+    },
+    {
+      "id": "0b87698a-d4dd-4494-980b-5895fe6e1e76",
+      "created_at": "2026-06-01T05:10:12.970Z",
+      "updated_at": "2026-06-01T05:10:12.970Z",
+      "sender_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "receiver_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "text": "hey manya",
+      "seen": false
+    },
+    {
+      "id": "e082c7d1-3e44-4d4e-9659-00ef446ac220",
+      "created_at": "2026-06-01T05:10:42.452Z",
+      "updated_at": "2026-06-01T05:10:42.452Z",
+      "sender_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "receiver_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "text": "hii what you want",
+      "seen": false
+    },
+    {
+      "id": "5958b026-d808-494c-a232-8b9dd6153292",
+      "created_at": "2026-06-01T05:18:23.750Z",
+      "updated_at": "2026-06-01T05:18:23.750Z",
+      "sender_id": "61ef487a-9999-4134-8be4-54d23bfed442",
+      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "text": "Hello, I want to inquire about custom pottery pieces.",
+      "seen": false
+    }
+  ],
+  "ads": [],
+  "coupons": [],
+  "offers": [],
+  "artisans": [
+    {
+      "id": "024316ca-fa4e-454d-ac05-abf9c78930ad",
+      "created_at": "2026-06-01T05:02:18.220Z",
+      "updated_at": "2026-06-01T05:02:18.221Z",
+      "legacy_id": 1,
+      "name": "Maria Rodriguez",
+      "category": "Pottery",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "rating": 4.8,
+      "tagline": "Handcrafted ceramics with soul",
+      "bio": "With over 15 years of experience, I create unique pottery pieces inspired by traditional techniques and modern design.",
+      "location": "Santa Fe, NM"
+    },
+    {
+      "id": "600dc12a-bd81-49cc-ad03-aa290b36444a",
+      "created_at": "2026-06-01T05:02:18.221Z",
+      "updated_at": "2026-06-01T05:02:18.221Z",
+      "legacy_id": 2,
+      "name": "James Chen",
+      "category": "Woodworking",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+      "rating": 4.9,
+      "tagline": "Fine furniture from sustainable woods",
+      "bio": "I specialize in custom furniture using locally sourced, sustainable hardwoods. Each piece tells a story.",
+      "location": "Portland, OR"
+    },
+    {
+      "id": "55c61159-65c3-4794-84b6-f2dbbc98070d",
+      "created_at": "2026-06-01T05:02:18.221Z",
+      "updated_at": "2026-06-01T05:02:18.221Z",
+      "legacy_id": 3,
+      "name": "Sarah Johnson",
+      "category": "Jewelry",
+      "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
+      "rating": 4.7,
+      "tagline": "Contemporary silver & gemstone designs",
+      "bio": "Creating wearable art that combines traditional silversmithing with contemporary aesthetics.",
+      "location": "Asheville, NC"
+    },
+    {
+      "id": "9b99161b-f729-4d4c-9cda-469ab5424607",
+      "created_at": "2026-06-01T05:02:18.221Z",
+      "updated_at": "2026-06-01T05:02:18.221Z",
+      "legacy_id": 4,
+      "name": "Marcus Thompson",
+      "category": "Leatherwork",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "rating": 4.6,
+      "tagline": "Handcrafted leather goods",
+      "bio": "From wallets to belts, I craft durable, beautiful leather items using time-honored techniques.",
+      "location": "Austin, TX"
+    },
+    {
+      "id": "e646875a-5e4d-48e2-a37b-fe1c9f726e66",
+      "created_at": "2026-06-01T05:02:18.221Z",
+      "updated_at": "2026-06-01T05:02:18.221Z",
+      "legacy_id": 5,
+      "name": "Elena Petrov",
+      "category": "Textiles",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "rating": 4.8,
+      "tagline": "Woven stories in fabric",
+      "bio": "Weaving traditional patterns with a modern twist, creating unique textile art and home goods.",
+      "location": "Providence, RI"
+    },
+    {
+      "id": "e6e2e7c9-2c26-4ed5-a30c-297e5c6a9f97",
+      "created_at": "2026-06-01T05:02:18.221Z",
+      "updated_at": "2026-06-01T05:02:18.221Z",
+      "legacy_id": 6,
+      "name": "David Kim",
+      "category": "Glasswork",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "rating": 4.9,
+      "tagline": "Blown glass art & functional pieces",
+      "bio": "Master glassblower creating both decorative and functional glassware with vibrant colors and unique shapes.",
+      "location": "Seattle, WA"
+    }
+  ]
+}

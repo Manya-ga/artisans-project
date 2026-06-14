@@ -14,8 +14,17 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.CORS_ORIGIN,
+  process.env.RENDER_EXTERNAL_URL,
+  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
+  'https://artisan-connect-frontend.vercel.app',
+  'https://artisan-connect-backend-db2z.onrender.com',
+].filter(Boolean);
+
 app.use(cors({
-  origin: [process.env.FRONTEND_URL || "http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173", "http://127.0.0.1:5174"],
+  origin: allowedOrigins,
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
 }));

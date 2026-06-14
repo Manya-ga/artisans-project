@@ -2,6 +2,7 @@ const path = require('path');
 const supabase = require('../config/supabase');
 
 const uploadMiddleware = require('../middleware/upload');
+const { getPublicBaseUrl } = require('../utils/publicUrl');
 
 async function getUploadedFileUrl(req, file) {
   if (!file) return null;
@@ -13,9 +14,9 @@ async function getUploadedFileUrl(req, file) {
     const url = await uploadMiddleware.uploadToSupabase(file, 'artisan-connect');
     if (url) return url;
   }
-  // Fallback to local
+  // Fallback to the configured public backend URL
   const fileName = path.basename(file.path || file.filename || '');
-  return `${req.protocol}://${req.get('host')}/uploads/${fileName}`;
+  return `${getPublicBaseUrl(req)}/uploads/${fileName}`;
 }
 
 function normalizeProduct(product) {

@@ -1,6 +1,6 @@
 const http = require('http');
 
-const req = http.request('http://localhost:5000/api/auth/demo', { method: 'POST' }, (res) => {
+const req = http.request(`${baseUrl}/api/auth/demo`, { method: 'POST' }, (res) => {
   let data = '';
   res.on('data', chunk => data += chunk);
   res.on('end', () => {
@@ -8,7 +8,7 @@ const req = http.request('http://localhost:5000/api/auth/demo', { method: 'POST'
     const json = JSON.parse(data);
     
     if (json.token) {
-      const req2 = http.request('http://localhost:5000/api/messages/conversations', {
+      const req2 = http.request(`${baseUrl}/api/messages/conversations`, {
         headers: { 'Authorization': `Bearer ${json.token}` }
       }, (res2) => {
         let data2 = '';

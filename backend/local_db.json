@@ -500,9 +500,9 @@
       "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
       "title": "hand-printed ceramic",
       "price": 1000,
-      "image": "http://localhost:5000/uploads/1780290583549-palace.jpg",
+      "image": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780290583549-palace.jpg",
       "images": [
-        "http://localhost:5000/uploads/1780290583549-palace.jpg"
+        "https://artisan-connect-backend-db2z.onrender.com/uploads/1780290583549-palace.jpg"
       ],
       "description": "",
       "category": "General",
@@ -516,9 +516,9 @@
       "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
       "title": "palace",
       "price": 1000,
-      "image": "http://localhost:5000/uploads/1780292961073-palace.jpg",
+      "image": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292961073-palace.jpg",
       "images": [
-        "http://localhost:5000/uploads/1780292961073-palace.jpg"
+        "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292961073-palace.jpg"
       ],
       "description": "",
       "category": "General",
@@ -532,9 +532,9 @@
       "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
       "title": "garden",
       "price": 1000,
-      "image": "http://localhost:5000/uploads/1780292980550-palace1.jpg",
+      "image": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292980550-palace1.jpg",
       "images": [
-        "http://localhost:5000/uploads/1780292980550-palace1.jpg"
+        "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292980550-palace1.jpg"
       ],
       "description": "",
       "category": "General",
@@ -661,12 +661,12 @@
       "bio": "Place where kings live",
       "media": [
         {
-          "url": "http://localhost:5000/uploads/1780370184257-palace1.jpg",
+          "url": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780370184257-palace1.jpg",
           "type": "image",
           "createdAt": "2026-06-02T03:16:24.316Z"
         },
         {
-          "url": "http://localhost:5000/uploads/1780370212918-chamundi-betta.jpg",
+          "url": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780370212918-chamundi-betta.jpg",
           "type": "image",
           "createdAt": "2026-06-02T03:16:52.923Z"
         }
@@ -683,7 +683,7 @@
       "bio": "",
       "media": [
         {
-          "url": "http://localhost:5000/uploads/1781411212040-palace.jpg",
+          "url": "https://artisan-connect-backend-db2z.onrender.com/uploads/1781411212040-palace.jpg",
           "type": "image",
           "createdAt": "2026-06-14T04:26:52.070Z"
         }

@@ -1,6 +1,6 @@
 const http = require('http');
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = process.env.API_URL || process.env.BACKEND_URL || 'https://artisan-connect-backend-db2z.onrender.com';
 
 function makeRequest(url, options = {}) {
   return new Promise((resolve, reject) => {

@@ -1,4 +1,5 @@
 const supabase = require('../config/supabase');
+const { getPublicBaseUrl } = require('../utils/publicUrl');
 
 function sendTokenCookie(res, token) {
   res.cookie('token', token, {
@@ -218,7 +219,7 @@ exports.updateProfile = async (req, res) => {
       if (!url) {
         const path = require('path');
         const fileName = path.basename(req.file.path || req.file.filename || '');
-        url = `${req.protocol}://${req.get('host')}/uploads/${fileName}`;
+        url = `${getPublicBaseUrl(req)}/uploads/${fileName}`;
       }
       updates.photo_url = url;
     }

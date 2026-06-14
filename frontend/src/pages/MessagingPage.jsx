@@ -9,7 +9,7 @@ import {
   Smile, Paperclip, CheckCheck, Loader2, MessageSquare
 } from 'lucide-react';
 
-const SOCKET_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const SOCKET_URL = import.meta.env.VITE_API_URL || 'https://artisan-connect-backend-db2z.onrender.com';
 
 export default function MessagingPage() {
   const { userId } = useParams(); // target user id

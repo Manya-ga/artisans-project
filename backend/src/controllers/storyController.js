@@ -1,5 +1,6 @@
 const supabase = require('../config/supabase');
 const uploadMiddleware = require('../middleware/upload');
+const { getPublicBaseUrl } = require('../utils/publicUrl');
 
 // GET ALL STORIES (Unique per user)
 exports.getStories = async (req, res) => {
@@ -78,7 +79,7 @@ exports.createStory = async (req, res) => {
           url = await uploadMiddleware.uploadToSupabase(file, 'artisan-connect');
         }
         if (!url) {
-          url = `${req.protocol}://${req.get('host')}/uploads/${file.filename}`;
+          url = `${getPublicBaseUrl(req)}/uploads/${file.filename}`;
         }
         uploadedMedia.push({
           url,

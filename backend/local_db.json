@@ -122,7 +122,7 @@
     {
       "id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
       "created_at": "2026-06-01T05:02:56.340Z",
-      "updated_at": "2026-06-14T04:25:32.596Z",
+      "updated_at": "2026-06-14T07:24:03.165Z",
       "email": "demo@artisan.com",
       "display_name": "Demo Buyer",
       "role": "buyer",
@@ -133,7 +133,7 @@
     {
       "id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
       "created_at": "2026-06-01T05:02:56.344Z",
-      "updated_at": "2026-06-14T04:25:32.598Z",
+      "updated_at": "2026-06-14T07:24:03.167Z",
       "email": "artisan1@artisan.com",
       "display_name": "Maria Rodriguez",
       "role": "artisan",
@@ -147,7 +147,7 @@
     {
       "id": "add36a21-6475-4032-9240-a08af89b99c3",
       "created_at": "2026-06-01T05:02:56.348Z",
-      "updated_at": "2026-06-14T04:28:37.860Z",
+      "updated_at": "2026-06-14T07:24:03.168Z",
       "email": "artisan2@artisan.com",
       "display_name": "James Chen",
       "role": "artisan",
@@ -161,7 +161,7 @@
     {
       "id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
       "created_at": "2026-06-01T05:02:56.349Z",
-      "updated_at": "2026-06-14T04:25:32.599Z",
+      "updated_at": "2026-06-14T07:24:03.170Z",
       "email": "artisan3@artisan.com",
       "display_name": "Sarah Johnson",
       "role": "artisan",
@@ -175,7 +175,7 @@
     {
       "id": "4923b60e-518d-407e-8f26-9727e6edabff",
       "created_at": "2026-06-01T05:02:56.350Z",
-      "updated_at": "2026-06-14T04:25:32.600Z",
+      "updated_at": "2026-06-14T07:24:03.171Z",
       "email": "artisan4@artisan.com",
       "display_name": "Marcus Thompson",
       "role": "artisan",
@@ -189,7 +189,7 @@
     {
       "id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
       "created_at": "2026-06-01T05:02:56.352Z",
-      "updated_at": "2026-06-14T04:25:32.601Z",
+      "updated_at": "2026-06-14T07:24:03.171Z",
       "email": "artisan5@artisan.com",
       "display_name": "Elena Petrov",
       "role": "artisan",
@@ -203,7 +203,7 @@
     {
       "id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
       "created_at": "2026-06-01T05:02:56.353Z",
-      "updated_at": "2026-06-14T04:25:32.601Z",
+      "updated_at": "2026-06-14T07:24:03.172Z",
       "email": "artisan6@artisan.com",
       "display_name": "David Kim",
       "role": "artisan",
@@ -940,6 +940,15 @@
       "sender_id": "61ef487a-9999-4134-8be4-54d23bfed442",
       "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
       "text": "Hello, I want to inquire about custom pottery pieces.",
+      "seen": false
+    },
+    {
+      "id": "6303f1b6-ba74-4cf7-b329-933fb1dac6f7",
+      "created_at": "2026-06-14T08:44:13.182Z",
+      "updated_at": "2026-06-14T08:44:13.182Z",
+      "sender_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
+      "receiver_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "text": "hey",
       "seen": false
     }
   ],

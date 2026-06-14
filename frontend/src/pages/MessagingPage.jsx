@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { io } from 'socket.io-client';
 import api from '../api'; // Use centralized axios instance
 import { 
@@ -35,7 +35,7 @@ export default function MessagingPage() {
   const [unreadCount, setUnreadCount] = useState(0);
 
   // Determine who we are chatting with
-  const activeUser = targetUser || conversations.find(c => (c.user._id === userId || c.user.id === userId))?.user || null;
+  const activeUser = targetUser || conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId))?.user || null;
 
   // Initialize Socket.io
   useEffect(() => {
@@ -80,10 +80,10 @@ export default function MessagingPage() {
       // Update conversations list with the latest message
       setConversations(prev => {
         const otherId = message.senderId === currentUserId ? message.receiverId : message.senderId;
-        const existing = prev.find(c => c.user._id === otherId);
+        const existing = prev.find(c => c && c.user && (c.user._id === otherId || c.user.id === otherId));
         
         if (existing) {
-          const updated = prev.filter(c => c.user._id !== otherId);
+          const updated = prev.filter(c => c && c.user && (c.user._id !== otherId && c.user.id !== otherId));
           return [{
             ...existing,
             lastMessage: message,
@@ -125,7 +125,7 @@ export default function MessagingPage() {
   useEffect(() => {
     const fetchTargetUser = async () => {
       if (!userId) return;
-      const inList = conversations.find(c => (c.user._id === userId || c.user.id === userId));
+      const inList = conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId));
       if (inList) {
         setTargetUser(null);
         return;
@@ -156,7 +156,7 @@ export default function MessagingPage() {
         setMessages(res || []);
         
         // Trigger a conversation fetch if we get messages for a new user
-        const inList = conversations.find(c => (c.user._id === userId || c.user.id === userId));
+        const inList = conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId));
         if (!inList && res.length > 0) {
           console.log("[fetchMessages] New conversation detected, refetching list...");
           fetchConversations();
@@ -296,7 +296,7 @@ export default function MessagingPage() {
   const updateConversationsWithNewMessage = (message) => {
     setConversations(prev => {
       const otherId = message.senderId === currentUserId ? message.receiverId : message.senderId;
-      const existingIdx = prev.findIndex(c => (c.user._id === otherId || c.user.id === otherId));
+      const existingIdx = prev.findIndex(c => c && c.user && (c.user._id === otherId || c.user.id === otherId));
       
       if (existingIdx !== -1) {
         const updated = [...prev];
@@ -326,12 +326,15 @@ export default function MessagingPage() {
   const activeChats = conversations.filter(c => c.lastMessage);
   const otherUsers = conversations.filter(c => !c.lastMessage);
 
-  const renderUserCard = (c) => (
+  const renderUserCard = (c) => {
+    if (!c || !c.user) return null;
+    const cid = c.user._id || c.user.id;
+    return (
     <div 
-      key={c.user._id || c.user.id}
-      onClick={() => navigate(`/messages/${c.user._id || c.user.id}`)}
+      key={cid}
+      onClick={() => navigate(`/messages/${cid}`)}
       className={`flex items-center gap-4 p-4 rounded-2xl cursor-pointer transition-all ${
-        userId === (c.user._id || c.user.id) ? 'bg-gray-900 text-white shadow-xl shadow-gray-900/10' : 'hover:bg-gray-50 text-gray-900'
+        userId === cid ? 'bg-gray-900 text-white shadow-xl shadow-gray-900/10' : 'hover:bg-gray-50 text-gray-900'
       }`}
     >
       <div className="relative">
@@ -339,7 +342,7 @@ export default function MessagingPage() {
           {c.user.photoURL ? (
             <img src={c.user.photoURL} alt="" className="w-full h-full object-cover" />
           ) : (
-            <UserIcon className={`w-6 h-6 ${userId === (c.user._id || c.user.id) ? 'text-white/50' : 'text-gray-400'}`} />
+            <UserIcon className={`w-6 h-6 ${userId === cid ? 'text-white/50' : 'text-gray-400'}`} />
           )}
         </div>
         {/* Optional Online Badge */}
@@ -348,19 +351,20 @@ export default function MessagingPage() {
       
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-center mb-1">
-          <h3 className={`font-bold truncate ${userId === (c.user._id || c.user.id) ? 'text-white' : 'text-gray-900'}`}>
-            {c.user.displayName}
+          <h3 className={`font-bold truncate ${userId === cid ? 'text-white' : 'text-gray-900'}`}>
+            {c.user.displayName || 'Unknown Artisan'}
           </h3>
-          <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === (c.user._id || c.user.id) ? 'text-white/60' : 'text-gray-400'}`}>
+          <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === cid ? 'text-white/60' : 'text-gray-400'}`}>
             {formatTime(c.lastMessage?.createdAt)}
           </span>
         </div>
-        <p className={`text-sm truncate pr-2 ${userId === (c.user._id || c.user.id) ? 'text-white/70' : 'text-gray-500 font-medium'}`}>
+        <p className={`text-sm truncate pr-2 ${userId === cid ? 'text-white/70' : 'text-gray-500 font-medium'}`}>
           {c.lastMessage?.text || 'Start a conversation'}
         </p>
       </div>
     </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen bg-[#fafafa] pt-8 pb-12 px-4 md:px-8 flex justify-center">

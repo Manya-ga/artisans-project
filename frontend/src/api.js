@@ -21,7 +21,8 @@ api.interceptors.request.use((config) => {
     '/api/auth/me',
     '/api/cart',
     '/api/orders',
-    '/api/offers'
+    '/api/offers',
+    '/api/messages'
   ];
 
   const isProtected = protectedRoutes.some(route => config.url.startsWith(route));

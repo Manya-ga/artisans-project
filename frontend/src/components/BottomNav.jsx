@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { Home, Compass, ShoppingBag, User, Heart } from 'lucide-react';
+import { Home, LayoutGrid, ShoppingBag, User } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
 
@@ -31,40 +31,40 @@ export default function BottomNav({ onOpenCart }) {
   }, [cartCount]);
 
   return (
-    <div className="md:hidden fixed bottom-6 left-4 right-4 z-[60]">
-      <div className="bg-white/80 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.1)] rounded-[32px] p-2 flex items-center justify-around">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-100 pb-safe">
+      <div className="flex items-center justify-around px-2 py-2">
         <NavButton 
-          icon={<Home className="w-5 h-5" />} 
+          icon={<Home className="w-6 h-6" />} 
+          label="Home"
           active={isActive('/')} 
           onClick={() => navigate('/')} 
         />
         <NavButton 
-          icon={<Compass className="w-5 h-5" />} 
+          icon={<LayoutGrid className="w-6 h-6" />} 
+          label="Categories"
           active={isActive('/explore-artisans')} 
           onClick={() => navigate('/explore-artisans')} 
         />
         
-        {/* Central Cart Button */}
         <button 
           onClick={onOpenCart}
           data-cart-icon
-          className={`relative -mt-12 w-14 h-14 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-2xl border-4 border-[#fafafa] active:scale-90 transition-transform ${animateCart ? 'cart-bounce' : ''}`}
+          className={`relative flex flex-col items-center justify-center w-16 h-12 gap-1 transition-all ${animateCart ? 'cart-bounce text-pink-500' : 'text-gray-400 hover:text-gray-900'}`}
         >
-          <ShoppingBag className="w-6 h-6" />
-          {cartCount > 0 && (
-            <span data-cart-badge className={`absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white ${pulseBadge ? 'badge-pulse' : ''}`}>
-              {cartCount}
-            </span>
-          )}
+          <div className="relative">
+            <ShoppingBag className="w-6 h-6" />
+            {cartCount > 0 && (
+              <span data-cart-badge className={`absolute -top-1.5 -right-1.5 bg-pink-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center border border-white ${pulseBadge ? 'badge-pulse' : ''}`}>
+                {cartCount}
+              </span>
+            )}
+          </div>
+          <span className="text-[10px] font-bold">Cart</span>
         </button>
 
         <NavButton 
-          icon={<Heart className="w-5 h-5" />} 
-          active={isActive('/wishlist')} 
-          onClick={() => navigate(user ? '/wishlist' : '/')} 
-        />
-        <NavButton 
-          icon={<User className="w-5 h-5" />} 
+          icon={<User className="w-6 h-6" />} 
+          label="Profile"
           active={isActive('/profile')} 
           onClick={() => navigate(user ? '/profile' : '/')} 
         />
@@ -73,13 +73,14 @@ export default function BottomNav({ onOpenCart }) {
   );
 }
 
-const NavButton = ({ icon, active, onClick }) => (
+const NavButton = ({ icon, label, active, onClick }) => (
   <button 
     onClick={onClick}
-    className={`p-4 rounded-2xl transition-all duration-300 ${
-      active ? 'bg-pink-50 text-pink-500 scale-110 shadow-inner shadow-pink-500/10' : 'text-gray-400'
+    className={`flex flex-col items-center justify-center w-16 h-12 gap-1 transition-all ${
+      active ? 'text-pink-500' : 'text-gray-400 hover:text-gray-900'
     }`}
   >
     {icon}
+    <span className="text-[10px] font-bold">{label}</span>
   </button>
 );

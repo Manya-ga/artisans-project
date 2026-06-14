@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
@@ -11,11 +11,18 @@ export default function CartPanel({ open, onClose }) {
   const { addToast } = useToast();
   const [couponInput, setCouponInput] = useState('');
   const [removeCandidate, setRemoveCandidate] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex justify-end overflow-hidden">
+    <div className="fixed inset-0 z-[100] flex items-end md:items-stretch md:justify-end overflow-hidden">
       {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -27,11 +34,11 @@ export default function CartPanel({ open, onClose }) {
 
       {/* Panel */}
       <motion.div
-        initial={{ x: '100%' }}
-        animate={{ x: 0 }}
-        exit={{ x: '100%' }}
+        initial={isMobile ? { y: '100%' } : { x: '100%' }}
+        animate={isMobile ? { y: 0 } : { x: 0 }}
+        exit={isMobile ? { y: '100%' } : { x: '100%' }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className="relative w-full max-w-md bg-white h-full shadow-2xl flex flex-col"
+        className="relative w-full max-w-md bg-white h-[90vh] md:h-full rounded-t-3xl md:rounded-none shadow-2xl flex flex-col"
       >
         {/* Header */}
         <div className="p-6 border-b border-gray-100 flex items-center justify-between">
@@ -75,7 +82,7 @@ export default function CartPanel({ open, onClose }) {
                   className="flex gap-4 group"
                 >
                   <div className="w-20 h-24 bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm shrink-0">
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    <img src={item.image} alt={item.title} loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0 flex flex-col justify-between">
                     <div>
@@ -83,7 +90,7 @@ export default function CartPanel({ open, onClose }) {
                         <h3 className="text-sm font-bold text-gray-900 line-clamp-1">{item.title}</h3>
                         <button 
                           onClick={() => setRemoveCandidate(item)}
-                          className="flex items-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-xs font-black"
+                          className="flex items-center gap-2 text-gray-400 hover:text-red-500 transition-colors text-xs font-black p-2 -mr-2"
                         >
                           <Trash2 className="w-4 h-4" />
                           Remove
@@ -96,9 +103,9 @@ export default function CartPanel({ open, onClose }) {
                       <div className="flex items-center gap-1 bg-gray-50 rounded-xl p-1 border border-gray-100">
                         <button 
                           onClick={() => item.qty > 1 ? updateCartItemQty(item.productId, item.qty - 1) : setRemoveCandidate(item)}
-                          className="p-1 hover:bg-white rounded-lg transition-all"
+                          className="p-2 hover:bg-white rounded-lg transition-all"
                         >
-                          <Minus className="w-3.5 h-3.5 text-gray-500" />
+                          <Minus className="w-4 h-4 text-gray-500" />
                         </button>
                         <motion.span
                           key={item.qty}
@@ -111,9 +118,9 @@ export default function CartPanel({ open, onClose }) {
                         </motion.span>
                         <button 
                           onClick={() => updateCartItemQty(item.productId, item.qty + 1)}
-                          className="p-1 hover:bg-white rounded-lg transition-all"
+                          className="p-2 hover:bg-white rounded-lg transition-all"
                         >
-                          <Plus className="w-3.5 h-3.5 text-gray-500" />
+                          <Plus className="w-4 h-4 text-gray-500" />
                         </button>
                       </div>
                     </div>

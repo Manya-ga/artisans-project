@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
@@ -6,7 +6,7 @@ import { io } from 'socket.io-client';
 import api from '../api'; // Use centralized axios instance
 import { 
   Send, User as UserIcon, ArrowLeft, MoreVertical, 
-  Smile, Paperclip, CheckCheck, Loader2, MessageSquare
+  Smile, Paperclip, CheckCheck, Loader2, MessageSquare, ChevronDown
 } from 'lucide-react';
 
 const SOCKET_URL = import.meta.env.VITE_API_URL || 'https://artisan-connect-backend-db2z.onrender.com';
@@ -27,6 +27,12 @@ export default function MessagingPage() {
   const [targetUser, setTargetUser] = useState(null);
   
   const scrollRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+  const prevMessagesLength = useRef(0);
+  const wasNearBottom = useRef(true);
+  
+  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
 
   // Determine who we are chatting with
   const activeUser = targetUser || conversations.find(c => (c.user._id === userId || c.user.id === userId))?.user || null;
@@ -165,12 +171,57 @@ export default function MessagingPage() {
     fetchMessages();
   }, [userId]);
 
-  // Scroll to bottom
-  useEffect(() => {
+  // WhatsApp-like Auto Scroll Logic
+  const scrollToBottom = (behavior = 'smooth') => {
     if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+      scrollRef.current.scrollIntoView({ behavior });
     }
-  }, [messages, userId]);
+  };
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
+    // User is near bottom if within 150px
+    const nearBottom = scrollHeight - scrollTop - clientHeight < 150;
+    wasNearBottom.current = nearBottom;
+    
+    if (nearBottom && showScrollButton) {
+      setShowScrollButton(false);
+      setUnreadCount(0);
+    }
+  };
+
+  useLayoutEffect(() => {
+    if (!scrollContainerRef.current) return;
+    
+    const isNewMessage = messages.length > prevMessagesLength.current;
+    
+    if (prevMessagesLength.current === 0 && messages.length > 0) {
+      // First load or pagination load
+      scrollToBottom('auto');
+    } 
+    else if (isNewMessage) {
+      const lastMsg = messages[messages.length - 1];
+      const isMine = lastMsg?.senderId === currentUserId;
+      
+      if (wasNearBottom.current || isMine) {
+         scrollToBottom('smooth');
+      } else {
+         setShowScrollButton(true);
+         setUnreadCount(prev => prev + (messages.length - prevMessagesLength.current));
+      }
+    }
+    
+    prevMessagesLength.current = messages.length;
+  }, [messages, currentUserId]);
+
+  // Reset scroll states when changing chat
+  useEffect(() => {
+    prevMessagesLength.current = 0;
+    wasNearBottom.current = true;
+    setShowScrollButton(false);
+    setUnreadCount(0);
+  }, [userId]);
 
   // Auto-fill context and handle routing
   useEffect(() => {
@@ -395,7 +446,12 @@ export default function MessagingPage() {
               </div>
 
               {/* Chat Messages */}
-              <div className="flex-1 overflow-y-auto px-6 md:px-8 pt-32 pb-8 space-y-6 no-scrollbar">
+              <div 
+                ref={scrollContainerRef}
+                onScroll={handleScroll}
+                className="flex-1 overflow-y-auto px-6 md:px-8 pt-32 pb-8 space-y-6 no-scrollbar relative"
+                style={{ overscrollBehaviorY: 'contain' }}
+              >
                 
                 {/* Context Banner */}
                 {location.state?.productName && (
@@ -449,8 +505,31 @@ export default function MessagingPage() {
                 <div ref={scrollRef} className="h-1" />
               </div>
 
+              {/* New Message Floating Indicator */}
+              <AnimatePresence>
+                {showScrollButton && (
+                  <motion.button
+                    initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 20, scale: 0.9 }}
+                    onClick={() => scrollToBottom('smooth')}
+                    className="absolute bottom-28 right-6 md:right-10 z-20 bg-white border border-gray-200 text-gray-900 shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-full px-4 py-2.5 text-sm font-black flex items-center gap-3 hover:bg-gray-50 active:scale-95 transition-all"
+                  >
+                    <div className="flex items-center gap-2">
+                      <ChevronDown className="w-5 h-5 text-gray-400" />
+                      <span>New Messages</span>
+                    </div>
+                    {unreadCount > 0 && (
+                      <span className="bg-pink-500 text-white rounded-full min-w-[20px] h-5 flex items-center justify-center px-1.5 text-[10px]">
+                        {unreadCount}
+                      </span>
+                    )}
+                  </motion.button>
+                )}
+              </AnimatePresence>
+
               {/* Chat Input */}
-              <div className="p-6 bg-white border-t border-gray-100">
+              <div className="p-4 md:p-6 bg-white border-t border-gray-100 relative z-30">
                 <form onSubmit={handleSendMessage} className="flex items-center gap-3">
                   <button type="button" className="w-12 h-12 flex items-center justify-center shrink-0 bg-gray-50 rounded-2xl text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-all">
                     <Paperclip className="w-5 h-5" />

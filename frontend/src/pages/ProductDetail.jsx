@@ -66,7 +66,7 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="animate-fade-in max-w-7xl mx-auto py-8 px-4">
+    <div className="animate-fade-in max-w-7xl mx-auto py-8 px-4 pb-48 sm:pb-8">
       <button 
         onClick={() => navigate(-1)}
         className="mb-8 flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-pink-600 transition-colors group"
@@ -150,36 +150,37 @@ export default function ProductDetailPage() {
             </p>
           </div>
 
-          <div className="space-y-6 mt-auto">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center bg-gray-50 rounded-2xl p-1 border border-gray-200">
+          {/* Action Buttons (Sticky on Mobile) */}
+          <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-t border-gray-100 p-4 pb-safe sm:static sm:bg-transparent sm:border-none sm:p-0 sm:pb-0 space-y-3 sm:space-y-6 mt-auto">
+            <div className="flex items-center gap-3 sm:gap-6">
+              <div className="flex items-center bg-gray-50 rounded-xl sm:rounded-2xl p-1 border border-gray-200">
                 <button 
                   onClick={() => setQty(Math.max(1, qty - 1))} 
-                  className="w-14 h-14 flex items-center justify-center font-bold text-gray-400 hover:text-pink-500 transition-colors"
+                  className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center font-bold text-gray-400 hover:text-pink-500 transition-colors"
                 >
-                  <Minus className="w-5 h-5" />
+                  <Minus className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
-                <span className="w-12 text-center font-black text-xl text-gray-900">{qty}</span>
+                <span className="w-8 sm:w-12 text-center font-black text-lg sm:text-xl text-gray-900">{qty}</span>
                 <button 
                   onClick={() => setQty(qty + 1)} 
-                  className="w-14 h-14 flex items-center justify-center font-bold text-gray-400 hover:text-pink-500 transition-colors"
+                  className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center font-bold text-gray-400 hover:text-pink-500 transition-colors"
                 >
-                  <Plus className="w-5 h-5" />
+                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
               
               <button 
                 onClick={handleAddToCart}
-                className="flex-1 btn-primary py-5 rounded-2xl flex items-center justify-center gap-3 shadow-elevated"
+                className="flex-1 btn-primary py-3 sm:py-5 rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 sm:gap-3 shadow-elevated text-sm sm:text-base font-black"
               >
-                <ShoppingBag className="w-6 h-6" />
+                <ShoppingBag className="w-4 h-4 sm:w-6 sm:h-6 hidden sm:block" />
                 Add to Cart
               </button>
             </div>
 
             <button 
               onClick={handleBuyNow}
-              className="w-full bg-gray-900 text-white py-5 rounded-2xl text-xl font-black hover:bg-black transition-all shadow-xl active:scale-95"
+              className="w-full bg-gray-900 text-white py-3 sm:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-xl font-black hover:bg-black transition-all shadow-xl active:scale-95"
             >
               Buy it Now
             </button>
@@ -187,10 +188,10 @@ export default function ProductDetailPage() {
             {product.userId && (
               <button 
                 onClick={() => navigate(`/messages/${product.userId}`, { state: { productName: product.title || product.name, productId: product._id || product.id, productImage: product.image || product.images?.[0] } })}
-                className="w-full bg-white text-gray-900 py-5 rounded-2xl text-lg font-black border-2 border-gray-200 hover:border-gray-900 transition-all active:scale-95 flex items-center justify-center gap-3 mt-4 shadow-sm"
+                className="w-full bg-white text-gray-900 py-3 sm:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-lg font-black border-2 border-gray-200 hover:border-gray-900 transition-all active:scale-95 flex items-center justify-center gap-2 sm:gap-3 shadow-sm"
               >
-                <MessageSquare className="w-6 h-6" />
-                Message Artisan regarding this product
+                <MessageSquare className="w-4 h-4 sm:w-6 sm:h-6 hidden sm:block" />
+                Message Artisan
               </button>
             )}
           </div>

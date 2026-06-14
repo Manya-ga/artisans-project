@@ -13,7 +13,6 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
   const { user } = useAuth();
   const { addToast } = useToast();
   const { addToCart, toggleWishlist, isInWishlist } = useCart();
-  const [isHovered, setIsHovered] = useState(false);
   const [deleting, setDeleting] = useState(false);
   
   const id = product?._id || product?.id;
@@ -60,8 +59,6 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
       layout
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={() => id && navigate(`/product/${id}`)}
       className={`group relative cursor-pointer ${deleting ? 'opacity-50 grayscale' : ''}`}
     >
@@ -72,6 +69,7 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
             <img
               src={product?.image || product?.images?.[0]}
               alt={product?.title || 'Product'}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               onError={(e) => {
                 e.target.style.display = 'none';
@@ -129,7 +127,7 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
 
           {/* Quick Add Overlay */}
           {!isOwner && (
-            <div className={`absolute inset-x-4 bottom-4 transition-all duration-300 transform ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+            <div className="absolute inset-x-4 bottom-4 transition-all duration-300 transform lg:translate-y-4 lg:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 translate-y-0 opacity-100">
               <button 
                 onClick={handleAddToCart}
                 className="w-full bg-white text-gray-900 font-black py-3.5 rounded-2xl shadow-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-sm active:scale-95"
@@ -142,9 +140,9 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
         </div>
 
         {/* Info */}
-        <div className="p-5 flex-1 flex flex-col">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] font-black uppercase tracking-widest text-pink-500 bg-pink-50 px-2 py-1 rounded-md">
+        <div className="p-4 flex-1 flex flex-col">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-pink-500 bg-pink-50 px-2 py-0.5 sm:py-1 rounded-md">
               {product?.category || 'Handcrafted'}
             </span>
             <div className="flex items-center gap-1 text-[10px] font-bold text-gray-400">
@@ -157,31 +155,40 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
             {product?.title || product?.name}
           </h3>
           
-          <p className="text-xs text-gray-500 font-medium mb-4">by {product?.artisanName}</p>
+          <p className="text-[10px] sm:text-xs text-gray-500 font-medium mb-3 line-clamp-1">by {product?.artisanName}</p>
 
-          <div className="mt-auto flex items-center justify-between">
+          <div className="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-baseline gap-2">
-              <span className="text-lg font-black text-gray-900">{formattedPrice}</span>
+              <span className="text-xl font-black text-gray-900">{formattedPrice}</span>
               {product?.oldPrice && (
                 <span className="text-xs text-gray-400 line-through">₹{product.oldPrice}</span>
               )}
             </div>
             
             {!isOwner && (
-              <button 
-                onClick={async (e) => {
-                  e.stopPropagation();
-                  const imageNode = e.currentTarget.closest('button')?.closest('.card-premium')?.querySelector('img');
-                  await addToCart(product, 1);
-                  if (imageNode) animateAddToCart(imageNode);
-                  addToast('Product Added to Cart Successfully');
-                  navigate('/checkout');
-                }}
-                className="p-2.5 bg-gray-900 text-white rounded-xl hover:bg-pink-600 transition-colors shadow-sm active:scale-90 flex items-center gap-2"
-              >
-                <ShoppingBag className="w-4 h-4" />
-                <span className="text-xs font-black uppercase">Buy Now</span>
-              </button>
+              <div className="flex items-center gap-2">
+                <button 
+                  onClick={handleAddToCart}
+                  className="p-3 bg-pink-50 text-pink-600 rounded-xl hover:bg-pink-100 transition-colors shadow-sm active:scale-95 flex items-center justify-center shrink-0"
+                  aria-label="Add to cart"
+                >
+                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+                <button 
+                  onClick={async (e) => {
+                    e.stopPropagation();
+                    const imageNode = e.currentTarget.closest('.card-premium')?.querySelector('img');
+                    await addToCart(product, 1);
+                    if (imageNode) animateAddToCart(imageNode);
+                    addToast('Product Added to Cart Successfully');
+                    navigate('/checkout');
+                  }}
+                  className="flex-1 sm:flex-none p-3 bg-gray-900 text-white rounded-xl hover:bg-pink-600 transition-colors shadow-sm active:scale-95 flex items-center justify-center gap-2"
+                >
+                  <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 hidden sm:block" />
+                  <span className="text-xs sm:text-sm font-black uppercase">Buy</span>
+                </button>
+              </div>
             )}
           </div>
         </div>

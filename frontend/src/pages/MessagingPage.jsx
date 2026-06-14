@@ -328,10 +328,10 @@ export default function MessagingPage() {
 
   const renderUserCard = (c) => (
     <div 
-      key={c.user._id}
-      onClick={() => navigate(`/messages/${c.user._id}`)}
+      key={c.user._id || c.user.id}
+      onClick={() => navigate(`/messages/${c.user._id || c.user.id}`)}
       className={`flex items-center gap-4 p-4 rounded-2xl cursor-pointer transition-all ${
-        userId === c.user._id ? 'bg-gray-900 text-white shadow-xl shadow-gray-900/10' : 'hover:bg-gray-50 text-gray-900'
+        userId === (c.user._id || c.user.id) ? 'bg-gray-900 text-white shadow-xl shadow-gray-900/10' : 'hover:bg-gray-50 text-gray-900'
       }`}
     >
       <div className="relative">
@@ -339,7 +339,7 @@ export default function MessagingPage() {
           {c.user.photoURL ? (
             <img src={c.user.photoURL} alt="" className="w-full h-full object-cover" />
           ) : (
-            <UserIcon className={`w-6 h-6 ${userId === c.user._id ? 'text-white/50' : 'text-gray-400'}`} />
+            <UserIcon className={`w-6 h-6 ${userId === (c.user._id || c.user.id) ? 'text-white/50' : 'text-gray-400'}`} />
           )}
         </div>
         {/* Optional Online Badge */}
@@ -348,14 +348,14 @@ export default function MessagingPage() {
       
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-center mb-1">
-          <h3 className={`font-bold truncate ${userId === c.user._id ? 'text-white' : 'text-gray-900'}`}>
+          <h3 className={`font-bold truncate ${userId === (c.user._id || c.user.id) ? 'text-white' : 'text-gray-900'}`}>
             {c.user.displayName}
           </h3>
-          <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === c.user._id ? 'text-white/60' : 'text-gray-400'}`}>
+          <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === (c.user._id || c.user.id) ? 'text-white/60' : 'text-gray-400'}`}>
             {formatTime(c.lastMessage?.createdAt)}
           </span>
         </div>
-        <p className={`text-sm truncate pr-2 ${userId === c.user._id ? 'text-white/70' : 'text-gray-500 font-medium'}`}>
+        <p className={`text-sm truncate pr-2 ${userId === (c.user._id || c.user.id) ? 'text-white/70' : 'text-gray-500 font-medium'}`}>
           {c.lastMessage?.text || 'Start a conversation'}
         </p>
       </div>

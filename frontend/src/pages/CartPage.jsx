@@ -57,23 +57,26 @@ export default function CartPage() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto pb-20 animate-fade-in">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 pb-24 md:pb-12 pt-4 md:pt-8 animate-fade-in">
       {/* 1. Header */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-4 mb-8">
         <button
           onClick={() => navigate(-1)}
-          className="p-3 bg-white border border-gray-100 rounded-2xl text-gray-500 hover:text-pink-500 transition-all shadow-sm"
+          className="p-3 bg-white border border-gray-100 rounded-2xl text-gray-500 hover:text-pink-500 transition-all shadow-sm shrink-0"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
-          <h1 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">Shopping Cart</h1>
-          <p className="text-sm font-medium text-gray-500">{cartCount} items selected</p>
+          <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">Shopping Cart</h1>
+          <p className="text-sm md:text-base font-medium text-gray-500 mt-1">{cartCount} items selected</p>
         </div>
       </div>
 
-      <div className="space-y-8">
-        {/* 2. Cart Items */}
+      <div className="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
+        
+        {/* LEFT COLUMN: Cart Items & Recommended */}
+        <div className="lg:col-span-8 space-y-8">
+          {/* 2. Cart Items */}
         <div className="bg-white rounded-[32px] p-4 sm:p-6 shadow-sm border border-gray-100 space-y-6">
           <AnimatePresence initial={false}>
             {cartItems.map((item, idx) => (
@@ -136,6 +139,21 @@ export default function CartPage() {
           </AnimatePresence>
         </div>
 
+        {/* 5. Recommended Products (Moved to left column) */}
+        {!loadingRecommended && recommended.length > 0 && (
+          <div className="pt-8 space-y-6 border-t border-gray-100">
+            <h3 className="text-xl font-black text-gray-900 px-2">You might also like</h3>
+            <div className="grid grid-cols-2 gap-3 sm:gap-6">
+              {recommended.slice(0, 4).map((product) => (
+                <ProductCard key={product._id} product={product} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* RIGHT COLUMN: Coupon, Summary, Checkout */}
+      <div className="lg:col-span-4 space-y-6 mt-12 lg:mt-0 sticky top-28">
         {/* 3. Coupon Section */}
         <div className="bg-white p-5 sm:p-6 rounded-[24px] sm:rounded-[32px] border border-gray-100 shadow-sm space-y-4">
           <div className="flex items-center gap-2 text-gray-900 font-black">
@@ -210,18 +228,7 @@ export default function CartPage() {
             Continue Shopping
           </button>
         </div>
-
-        {/* 5. Recommended Products */}
-        {!loadingRecommended && recommended.length > 0 && (
-          <div className="pt-10 space-y-6">
-            <h3 className="text-xl font-black text-gray-900 px-2">You might also like</h3>
-            <div className="grid grid-cols-2 gap-3 sm:gap-6">
-              {recommended.slice(0, 4).map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );

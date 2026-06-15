@@ -367,7 +367,7 @@ export default function MessagingPage() {
   };
 
   return (
-    <div className="flex justify-center bg-[#fafafa] md:pt-8 md:pb-12 md:px-8 h-full">
+    <div className="flex justify-center bg-[#fafafa] md:pt-8 md:pb-12 md:px-8 h-[100dvh] md:h-full w-full">
       <div className="w-full h-full max-w-6xl bg-white md:rounded-[32px] md:shadow-2xl md:shadow-gray-200/50 flex overflow-hidden md:border md:border-gray-100 md:self-center md:max-h-full">
         
         {/* Left Panel - Conversations List */}
@@ -407,7 +407,7 @@ export default function MessagingPage() {
         </div>
 
         {/* Right Panel - Active Chat */}
-        <div className={`flex-1 flex flex-col bg-[#fdfdfd] relative overflow-hidden ${!userId ? 'hidden md:flex' : 'flex'}`}>
+        <div className={`chat-page flex-1 flex flex-col bg-[#fdfdfd] relative ${!userId ? 'hidden md:flex' : 'flex'} w-full h-full overflow-hidden`}>
           {!userId ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center p-8">
               <div className="w-24 h-24 bg-pink-50 rounded-[40px] flex items-center justify-center mb-6 shadow-sm border border-pink-100">
@@ -419,7 +419,7 @@ export default function MessagingPage() {
           ) : (
             <>
               {/* Chat Header */}
-              <div className="h-[72px] md:h-[88px] px-4 md:px-8 flex items-center justify-between border-b border-gray-100 bg-white z-10 shrink-0">
+              <div className="chat-header sticky top-0 z-[100] h-[72px] md:h-[88px] px-4 md:px-8 flex items-center justify-between border-b border-gray-100 bg-white/95 backdrop-blur-sm shrink-0">
                 <div className="flex items-center gap-5">
                   <button onClick={() => navigate('/messages')} className="md:hidden p-3 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all">
                     <ArrowLeft className="w-5 h-5 text-gray-900" />
@@ -453,7 +453,7 @@ export default function MessagingPage() {
               <div 
                 ref={scrollContainerRef}
                 onScroll={handleScroll}
-                className="flex-1 overflow-y-auto px-4 md:px-8 pt-4 md:pt-6 pb-4 space-y-4 md:space-y-6 no-scrollbar relative bg-[#fdfdfd]"
+                className="messages flex-1 overflow-y-auto px-4 md:px-8 pt-4 md:pt-6 pb-4 space-y-4 md:space-y-6 bg-[#fdfdfd] relative w-full"
                 style={{ overscrollBehaviorY: 'contain', WebkitOverflowScrolling: 'touch' }}
               >
                 
@@ -533,7 +533,7 @@ export default function MessagingPage() {
               </AnimatePresence>
 
               {/* Chat Input */}
-              <div className="p-3 md:p-6 bg-white border-t border-gray-100 relative z-30 shrink-0 pb-safe">
+              <div className="input-bar sticky bottom-0 z-[100] p-3 md:p-6 bg-white border-t border-gray-100 shrink-0 pb-safe">
                 <form onSubmit={handleSendMessage} className="flex items-center gap-3">
                   <input 
                     type="text" 

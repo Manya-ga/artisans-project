@@ -7,7 +7,6 @@ import Footer from './components/Footer.jsx';
 import BottomNav from './components/BottomNav.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
 import AuthModal from './components/AuthModal.jsx';
-import CartPanel from './components/CartPanel.jsx';
 import LocationModal from './components/LocationModal.jsx';
 
 // Pages
@@ -55,7 +54,6 @@ function AppInner() {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const [query, setQuery] = useState('');
-  const [cartOpen, setCartOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState('login');
   const [locationOpen, setLocationOpen] = useState(false);
@@ -80,23 +78,19 @@ function AppInner() {
   return (
     <div className={`main-container bg-[#fafafa] font-sans selection:bg-pink-100 selection:text-pink-900 ${isFullScreen ? 'flex flex-col h-[100dvh] overflow-hidden' : ''}`}>
       <ScrollToTop />
-      <TopNav
-        query={query}
-        onQueryChange={setQuery}
-        onOpenCart={() => {
-          if (window.innerWidth < 768) {
-            navigate('/cart');
-          } else {
-            setCartOpen(true);
-          }
-        }}
-        location={location}
-        onLocationClick={() => setLocationOpen(true)}
-        onProfileClick={() => {
-          setAuthMode('login');
-          setAuthOpen(true);
-        }}
-      />
+      <div className={isFullScreen ? 'hidden md:block' : ''}>
+        <TopNav
+          query={query}
+          onQueryChange={setQuery}
+          onOpenCart={() => navigate('/cart')}
+          location={location}
+          onLocationClick={() => setLocationOpen(true)}
+          onProfileClick={() => {
+            setAuthMode('login');
+            setAuthOpen(true);
+          }}
+        />
+      </div>
 
       <main className={`content w-full flex-1 ${
         isFullScreen
@@ -128,7 +122,7 @@ function AppInner() {
 
       {!isFullScreen && <Footer />}
 
-      <CartPanel open={cartOpen} onClose={() => setCartOpen(false)} />
+      
       
       <AuthModal
         open={authOpen}
@@ -147,13 +141,7 @@ function AppInner() {
         }}
       />
 
-      <BottomNav onOpenCart={() => {
-        if (window.innerWidth < 768) {
-          navigate('/cart');
-        } else {
-          setCartOpen(true);
-        }
-      }} />
+      <BottomNav onOpenCart={() => navigate('/cart')} />
     </div>
   );
 }

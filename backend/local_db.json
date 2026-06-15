@@ -1,164 +1,110 @@
 {
   "users": [
     {
-      "id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
+      "id": "3ff1776c-310a-4745-a8ef-4c02d72d6050",
       "email": "demo@artisan.com",
       "password": "demo1234",
       "user_metadata": {
         "display_name": "Demo Buyer"
       },
-      "created_at": "2026-06-01T05:02:18.224Z"
+      "created_at": "2026-06-15T17:10:17.905Z"
     },
     {
-      "id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "id": "59ca3500-e3d4-4f66-b0d4-0b8b12d4120e",
       "email": "artisan1@artisan.com",
       "password": "demo1234",
       "user_metadata": {
-        "display_name": "Maria Rodriguez"
+        "display_name": "Ramesh Kumar"
       },
-      "created_at": "2026-06-01T05:02:56.342Z"
+      "created_at": "2026-06-15T17:10:17.917Z"
     },
     {
-      "id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "id": "fbec82f7-382f-40ae-81e9-30095d03ae6c",
       "email": "artisan2@artisan.com",
       "password": "demo1234",
       "user_metadata": {
-        "display_name": "James Chen"
+        "display_name": "Lakshmi Devi"
       },
-      "created_at": "2026-06-01T05:02:56.345Z"
+      "created_at": "2026-06-15T17:10:17.920Z"
     },
     {
-      "id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
+      "id": "0d0cf62f-d5fa-4c1f-b02d-db30cab881a5",
       "email": "artisan3@artisan.com",
       "password": "demo1234",
       "user_metadata": {
-        "display_name": "Sarah Johnson"
+        "display_name": "Anjali Verma"
       },
-      "created_at": "2026-06-01T05:02:56.348Z"
+      "created_at": "2026-06-15T17:10:17.922Z"
     },
     {
-      "id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "id": "5779eb87-d6c1-4637-b6f5-5114fd0b1e74",
       "email": "artisan4@artisan.com",
       "password": "demo1234",
       "user_metadata": {
-        "display_name": "Marcus Thompson"
+        "display_name": "Shankar Rao"
       },
-      "created_at": "2026-06-01T05:02:56.350Z"
+      "created_at": "2026-06-15T17:10:17.925Z"
     },
     {
-      "id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "id": "acb03b4c-5955-4e1c-b3c1-d45ede4f48ad",
       "email": "artisan5@artisan.com",
       "password": "demo1234",
       "user_metadata": {
-        "display_name": "Elena Petrov"
+        "display_name": "Meera Patel"
       },
-      "created_at": "2026-06-01T05:02:56.351Z"
+      "created_at": "2026-06-15T17:10:17.942Z"
     },
     {
-      "id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
+      "id": "11718c28-b7de-4318-b56f-f3a40e05b52e",
       "email": "artisan6@artisan.com",
       "password": "demo1234",
       "user_metadata": {
-        "display_name": "David Kim"
+        "display_name": "Ravi Choudhary"
       },
-      "created_at": "2026-06-01T05:02:56.352Z"
+      "created_at": "2026-06-15T17:10:17.943Z"
     },
     {
-      "id": "f3e5c34c-924d-4992-92b5-732afebb936a",
-      "email": "testcustomer-1780290266941@test.com",
-      "password": "password123",
-      "user_metadata": {
-        "display_name": "Test Customer"
-      },
-      "created_at": "2026-06-01T05:04:26.981Z"
-    },
-    {
-      "id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
-      "email": "testcustomer-1780290286859@test.com",
-      "password": "password123",
-      "user_metadata": {
-        "display_name": "Test Customer"
-      },
-      "created_at": "2026-06-01T05:04:46.903Z"
-    },
-    {
-      "id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
-      "email": "testcustomer-1780290303514@test.com",
-      "password": "password123",
-      "user_metadata": {
-        "display_name": "Test Customer"
-      },
-      "created_at": "2026-06-01T05:05:03.555Z"
-    },
-    {
-      "id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
-      "email": "testcustomer-1780290352092@test.com",
-      "password": "password123",
-      "user_metadata": {
-        "display_name": "Test Customer"
-      },
-      "created_at": "2026-06-01T05:05:52.133Z"
-    },
-    {
-      "id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "email": "manyagajjaiah@gmail.com",
-      "password": "123456",
-      "user_metadata": {
-        "display_name": "Manya"
-      },
-      "created_at": "2026-06-01T05:08:43.382Z"
-    },
-    {
-      "id": "61ef487a-9999-4134-8be4-54d23bfed442",
-      "email": "testcustomer-1780291103657@test.com",
-      "password": "password123",
-      "user_metadata": {
-        "display_name": "Test Customer"
-      },
-      "created_at": "2026-06-01T05:18:23.696Z"
-    },
-    {
-      "id": "83bfc86f-fbd4-4553-a40d-e7141b7631f3",
+      "id": "6ed82b0f-30dd-4c98-a1f3-6439b99b5450",
       "email": "artisan7@artisan.com",
       "password": "demo1234",
       "user_metadata": {
         "display_name": "Kavitha Nair"
       },
-      "created_at": "2026-06-15T17:00:08.391Z"
+      "created_at": "2026-06-15T17:10:17.945Z"
     },
     {
-      "id": "525df5e4-6be8-4b97-9abd-b528b09b4856",
+      "id": "694a93db-8824-434f-a753-1f5b32a1b64e",
       "email": "artisan8@artisan.com",
       "password": "demo1234",
       "user_metadata": {
         "display_name": "Harish Joshi"
       },
-      "created_at": "2026-06-15T17:00:08.394Z"
+      "created_at": "2026-06-15T17:10:17.948Z"
     },
     {
-      "id": "3ee80dec-fb3e-4b35-8deb-b0eafec396b2",
+      "id": "e1443880-de2f-45b2-b6af-cf511c2e8a78",
       "email": "artisan9@artisan.com",
       "password": "demo1234",
       "user_metadata": {
         "display_name": "Sunita Kumari"
       },
-      "created_at": "2026-06-15T17:00:08.396Z"
+      "created_at": "2026-06-15T17:10:17.951Z"
     },
     {
-      "id": "9a4f7290-8b0c-4e1b-91f2-63de82d7de9a",
+      "id": "dc8eaad4-1f95-42af-9248-99c411c91400",
       "email": "artisan10@artisan.com",
       "password": "demo1234",
       "user_metadata": {
         "display_name": "Abdul Rahman"
       },
-      "created_at": "2026-06-15T17:00:08.397Z"
+      "created_at": "2026-06-15T17:10:17.952Z"
     }
   ],
   "profiles": [
     {
-      "id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "created_at": "2026-06-01T05:02:56.340Z",
-      "updated_at": "2026-06-15T17:00:48.597Z",
+      "id": "3ff1776c-310a-4745-a8ef-4c02d72d6050",
+      "created_at": "2026-06-15T17:10:17.916Z",
+      "updated_at": "2026-06-15T17:10:17.916Z",
       "email": "demo@artisan.com",
       "display_name": "Demo Buyer",
       "role": "buyer",
@@ -167,9 +113,9 @@
       "following": []
     },
     {
-      "id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
-      "created_at": "2026-06-01T05:02:56.344Z",
-      "updated_at": "2026-06-15T17:00:58.913Z",
+      "id": "59ca3500-e3d4-4f66-b0d4-0b8b12d4120e",
+      "created_at": "2026-06-15T17:10:17.918Z",
+      "updated_at": "2026-06-15T17:10:17.918Z",
       "email": "artisan1@artisan.com",
       "display_name": "Ramesh Kumar",
       "role": "artisan",
@@ -181,9 +127,9 @@
       "following": []
     },
     {
-      "id": "add36a21-6475-4032-9240-a08af89b99c3",
-      "created_at": "2026-06-01T05:02:56.348Z",
-      "updated_at": "2026-06-15T17:00:58.913Z",
+      "id": "fbec82f7-382f-40ae-81e9-30095d03ae6c",
+      "created_at": "2026-06-15T17:10:17.921Z",
+      "updated_at": "2026-06-15T17:10:17.921Z",
       "email": "artisan2@artisan.com",
       "display_name": "Lakshmi Devi",
       "role": "artisan",
@@ -195,9 +141,9 @@
       "following": []
     },
     {
-      "id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
-      "created_at": "2026-06-01T05:02:56.349Z",
-      "updated_at": "2026-06-15T17:00:58.914Z",
+      "id": "0d0cf62f-d5fa-4c1f-b02d-db30cab881a5",
+      "created_at": "2026-06-15T17:10:17.924Z",
+      "updated_at": "2026-06-15T17:10:17.924Z",
       "email": "artisan3@artisan.com",
       "display_name": "Anjali Verma",
       "role": "artisan",
@@ -209,9 +155,9 @@
       "following": []
     },
     {
-      "id": "4923b60e-518d-407e-8f26-9727e6edabff",
-      "created_at": "2026-06-01T05:02:56.350Z",
-      "updated_at": "2026-06-15T17:00:58.915Z",
+      "id": "5779eb87-d6c1-4637-b6f5-5114fd0b1e74",
+      "created_at": "2026-06-15T17:10:17.926Z",
+      "updated_at": "2026-06-15T17:10:17.926Z",
       "email": "artisan4@artisan.com",
       "display_name": "Shankar Rao",
       "role": "artisan",
@@ -223,9 +169,9 @@
       "following": []
     },
     {
-      "id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
-      "created_at": "2026-06-01T05:02:56.352Z",
-      "updated_at": "2026-06-15T17:00:58.915Z",
+      "id": "acb03b4c-5955-4e1c-b3c1-d45ede4f48ad",
+      "created_at": "2026-06-15T17:10:17.942Z",
+      "updated_at": "2026-06-15T17:10:17.942Z",
       "email": "artisan5@artisan.com",
       "display_name": "Meera Patel",
       "role": "artisan",
@@ -237,9 +183,9 @@
       "following": []
     },
     {
-      "id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
-      "created_at": "2026-06-01T05:02:56.353Z",
-      "updated_at": "2026-06-15T17:00:58.916Z",
+      "id": "11718c28-b7de-4318-b56f-f3a40e05b52e",
+      "created_at": "2026-06-15T17:10:17.943Z",
+      "updated_at": "2026-06-15T17:10:17.943Z",
       "email": "artisan6@artisan.com",
       "display_name": "Ravi Choudhary",
       "role": "artisan",
@@ -251,90 +197,9 @@
       "following": []
     },
     {
-      "id": "f3e5c34c-924d-4992-92b5-732afebb936a",
-      "created_at": "2026-06-01T05:04:26.983Z",
-      "updated_at": "2026-06-01T05:04:27.009Z",
-      "email": "testcustomer-1780290266941@test.com",
-      "display_name": "Updated Customer Name",
-      "role": "buyer",
-      "wishlist": [
-        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
-      ],
-      "followers": [],
-      "following": [],
-      "bio": "Just a buyer looking for handmade crafts."
-    },
-    {
-      "id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
-      "created_at": "2026-06-01T05:04:46.905Z",
-      "updated_at": "2026-06-01T05:04:46.935Z",
-      "email": "testcustomer-1780290286859@test.com",
-      "display_name": "Updated Customer Name",
-      "role": "buyer",
-      "wishlist": [
-        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
-      ],
-      "followers": [],
-      "following": [],
-      "bio": "Just a buyer looking for handmade crafts."
-    },
-    {
-      "id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
-      "created_at": "2026-06-01T05:05:03.557Z",
-      "updated_at": "2026-06-01T05:05:03.621Z",
-      "email": "testcustomer-1780290303514@test.com",
-      "display_name": "Updated Customer Name",
-      "role": "artisan",
-      "wishlist": [
-        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
-      ],
-      "followers": [],
-      "following": [],
-      "bio": "Just a buyer looking for handmade crafts."
-    },
-    {
-      "id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
-      "created_at": "2026-06-01T05:05:52.134Z",
-      "updated_at": "2026-06-01T05:05:52.220Z",
-      "email": "testcustomer-1780290352092@test.com",
-      "display_name": "Updated Customer Name",
-      "role": "artisan",
-      "wishlist": [
-        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
-      ],
-      "followers": [],
-      "following": [],
-      "bio": "Just a buyer looking for handmade crafts."
-    },
-    {
-      "id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "created_at": "2026-06-01T05:08:43.385Z",
-      "updated_at": "2026-06-14T04:28:37.861Z",
-      "email": "manyagajjaiah@gmail.com",
-      "display_name": "Manya",
-      "role": "artisan",
-      "wishlist": [],
-      "followers": [],
-      "following": []
-    },
-    {
-      "id": "61ef487a-9999-4134-8be4-54d23bfed442",
-      "created_at": "2026-06-01T05:18:23.698Z",
-      "updated_at": "2026-06-01T05:18:23.826Z",
-      "email": "testcustomer-1780291103657@test.com",
-      "display_name": "Updated Customer Name",
-      "role": "artisan",
-      "wishlist": [
-        "18412acf-ed8b-40f2-9694-ac409f84f8eb"
-      ],
-      "followers": [],
-      "following": [],
-      "bio": "Just a buyer looking for handmade crafts."
-    },
-    {
-      "id": "83bfc86f-fbd4-4553-a40d-e7141b7631f3",
-      "created_at": "2026-06-15T17:00:08.392Z",
-      "updated_at": "2026-06-15T17:00:58.917Z",
+      "id": "6ed82b0f-30dd-4c98-a1f3-6439b99b5450",
+      "created_at": "2026-06-15T17:10:17.947Z",
+      "updated_at": "2026-06-15T17:10:17.947Z",
       "email": "artisan7@artisan.com",
       "display_name": "Kavitha Nair",
       "role": "artisan",
@@ -346,9 +211,9 @@
       "following": []
     },
     {
-      "id": "525df5e4-6be8-4b97-9abd-b528b09b4856",
-      "created_at": "2026-06-15T17:00:08.395Z",
-      "updated_at": "2026-06-15T17:00:58.918Z",
+      "id": "694a93db-8824-434f-a753-1f5b32a1b64e",
+      "created_at": "2026-06-15T17:10:17.950Z",
+      "updated_at": "2026-06-15T17:10:17.950Z",
       "email": "artisan8@artisan.com",
       "display_name": "Harish Joshi",
       "role": "artisan",
@@ -360,9 +225,9 @@
       "following": []
     },
     {
-      "id": "3ee80dec-fb3e-4b35-8deb-b0eafec396b2",
-      "created_at": "2026-06-15T17:00:08.397Z",
-      "updated_at": "2026-06-15T17:00:58.919Z",
+      "id": "e1443880-de2f-45b2-b6af-cf511c2e8a78",
+      "created_at": "2026-06-15T17:10:17.951Z",
+      "updated_at": "2026-06-15T17:10:17.951Z",
       "email": "artisan9@artisan.com",
       "display_name": "Sunita Kumari",
       "role": "artisan",
@@ -374,9 +239,9 @@
       "following": []
     },
     {
-      "id": "9a4f7290-8b0c-4e1b-91f2-63de82d7de9a",
-      "created_at": "2026-06-15T17:00:08.398Z",
-      "updated_at": "2026-06-15T17:00:58.919Z",
+      "id": "dc8eaad4-1f95-42af-9248-99c411c91400",
+      "created_at": "2026-06-15T17:10:17.952Z",
+      "updated_at": "2026-06-15T17:10:17.952Z",
       "email": "artisan10@artisan.com",
       "display_name": "Abdul Rahman",
       "role": "artisan",
@@ -390,11 +255,11 @@
   ],
   "products": [
     {
-      "id": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.921Z",
+      "id": "8c33edde-e51c-4a88-b608-56b0a6900563",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 1,
-      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "user_id": "59ca3500-e3d4-4f66-b0d4-0b8b12d4120e",
       "title": "Wooden Temple Decor",
       "price": 3500,
       "image": "https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=500",
@@ -404,11 +269,11 @@
       "artisan_location": "Saharanpur"
     },
     {
-      "id": "34cbdead-cba7-49cb-8727-ba61200fed76",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.922Z",
+      "id": "c04420b3-afe2-4e20-9f3d-1ecac9955be9",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 2,
-      "user_id": "add36a21-6475-4032-9240-a08af89b99c3",
+      "user_id": "fbec82f7-382f-40ae-81e9-30095d03ae6c",
       "title": "Madhubani Wall Painting",
       "price": 2100,
       "image": "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=500",
@@ -418,11 +283,11 @@
       "artisan_location": "Madhubani"
     },
     {
-      "id": "366813d3-8d0c-4048-9014-390e237afc75",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.923Z",
+      "id": "294fbe8d-623a-41cf-a2d6-8829fe5dbb56",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 3,
-      "user_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "user_id": "acb03b4c-5955-4e1c-b3c1-d45ede4f48ad",
       "title": "Handwoven Cotton Saree",
       "price": 4200,
       "image": "https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?w=500",
@@ -432,11 +297,11 @@
       "artisan_location": "Gujarat"
     },
     {
-      "id": "c03fc8b5-64cb-40f0-8bff-2afddcc1e11b",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.924Z",
+      "id": "c535be8a-ecba-4e56-a2b9-94ade712e667",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 4,
-      "user_id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
+      "user_id": "11718c28-b7de-4318-b56f-f3a40e05b52e",
       "title": "Blue Pottery Vase",
       "price": 1450,
       "image": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500",
@@ -446,11 +311,11 @@
       "artisan_location": "Jaipur"
     },
     {
-      "id": "cb26fec3-1da5-4537-9a61-fb44ed065db4",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.925Z",
+      "id": "5ad29fcf-4066-4b23-b882-2554bb94a1be",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 5,
-      "user_id": "525df5e4-6be8-4b97-9abd-b528b09b4856",
+      "user_id": "694a93db-8824-434f-a753-1f5b32a1b64e",
       "title": "Brass Oil Lamp",
       "price": 2800,
       "image": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500",
@@ -460,11 +325,11 @@
       "artisan_location": "Moradabad"
     },
     {
-      "id": "d945a0cc-8949-432c-a329-36f8da42266d",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.926Z",
+      "id": "92108748-31b7-4116-8cb2-f8dcad0552d0",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 6,
-      "user_id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "user_id": "5779eb87-d6c1-4637-b6f5-5114fd0b1e74",
       "title": "Terracotta Planter",
       "price": 650,
       "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500",
@@ -474,11 +339,11 @@
       "artisan_location": "Karnataka"
     },
     {
-      "id": "38cea5cd-63b4-402a-80ad-cce3056b4f5b",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.927Z",
+      "id": "9caa5f57-ee8a-4bb6-84eb-db738bf10621",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 7,
-      "user_id": "3ee80dec-fb3e-4b35-8deb-b0eafec396b2",
+      "user_id": "e1443880-de2f-45b2-b6af-cf511c2e8a78",
       "title": "Handcrafted Jute Basket",
       "price": 850,
       "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500",
@@ -488,11 +353,11 @@
       "artisan_location": "West Bengal"
     },
     {
-      "id": "b1225fcc-0ada-4bb1-baf0-b5151a787400",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.928Z",
+      "id": "7934f4da-b330-4a1a-a40d-cf22b13c449c",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 8,
-      "user_id": "866ebee2-206d-4d8e-a9f6-ea33164574bb",
+      "user_id": "0d0cf62f-d5fa-4c1f-b02d-db30cab881a5",
       "title": "Block Printed Cushion Cover",
       "price": 450,
       "image": "https://images.unsplash.com/photo-1584285423851-40e118c7a6e1?w=500",
@@ -502,11 +367,11 @@
       "artisan_location": "Lucknow"
     },
     {
-      "id": "8ae42490-b0f4-4746-935e-5d5927945f8a",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.929Z",
+      "id": "234f8319-1140-461f-82aa-bb07811f7d8d",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 9,
-      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
+      "user_id": "59ca3500-e3d4-4f66-b0d4-0b8b12d4120e",
       "title": "Wooden Spice Box",
       "price": 1200,
       "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500",
@@ -516,11 +381,11 @@
       "artisan_location": "Saharanpur"
     },
     {
-      "id": "811be288-e6d1-40b7-b3d4-a80d58284beb",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.930Z",
+      "id": "9d260144-b906-4525-be5a-fb010e36faf0",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 10,
-      "user_id": "9a4f7290-8b0c-4e1b-91f2-63de82d7de9a",
+      "user_id": "dc8eaad4-1f95-42af-9248-99c411c91400",
       "title": "Handmade Leather Journal",
       "price": 950,
       "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500",
@@ -530,11 +395,11 @@
       "artisan_location": "Rajasthan"
     },
     {
-      "id": "4a5dfc21-117a-4f3a-a4f1-e14023e3ff2a",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.932Z",
+      "id": "d747c605-a005-43b3-832e-9e7b8a07157d",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 11,
-      "user_id": "83bfc86f-fbd4-4553-a40d-e7141b7631f3",
+      "user_id": "6ed82b0f-30dd-4c98-a1f3-6439b99b5450",
       "title": "Coconut Shell Bowl",
       "price": 350,
       "image": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
@@ -544,11 +409,11 @@
       "artisan_location": "Kerala"
     },
     {
-      "id": "6945c6a1-99ec-44e4-bf9a-daa3739e8e0f",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.933Z",
+      "id": "28cdd925-06d4-46dc-874b-29e821eeae97",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 12,
-      "user_id": "3ee80dec-fb3e-4b35-8deb-b0eafec396b2",
+      "user_id": "e1443880-de2f-45b2-b6af-cf511c2e8a78",
       "title": "Bamboo Storage Basket",
       "price": 750,
       "image": "https://images.unsplash.com/photo-1559981403-1a0e0f805219?w=500",
@@ -558,11 +423,11 @@
       "artisan_location": "West Bengal"
     },
     {
-      "id": "2a595b44-c10d-4586-b644-af8cd487dca0",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.935Z",
+      "id": "fe288085-62a7-4e7f-a234-3949fca68b04",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 13,
-      "user_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
+      "user_id": "acb03b4c-5955-4e1c-b3c1-d45ede4f48ad",
       "title": "Handwoven Table Runner",
       "price": 850,
       "image": "https://images.unsplash.com/photo-1601000844782-b364de064438?w=500",
@@ -572,11 +437,11 @@
       "artisan_location": "Gujarat"
     },
     {
-      "id": "51221ed2-e596-44f4-8f19-254ac7789418",
-      "created_at": "2026-06-01T05:02:56.354Z",
-      "updated_at": "2026-06-15T17:00:58.936Z",
+      "id": "4f65c80b-fc46-4c48-a26e-3ac4d2b95cef",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
       "legacy_id": 14,
-      "user_id": "4923b60e-518d-407e-8f26-9727e6edabff",
+      "user_id": "5779eb87-d6c1-4637-b6f5-5114fd0b1e74",
       "title": "Traditional Diyas",
       "price": 250,
       "image": "https://images.unsplash.com/photo-1510007886266-9121650b4d45?w=500",
@@ -586,486 +451,123 @@
       "artisan_location": "Karnataka"
     },
     {
-      "id": "d6620c1c-d7ca-4054-afe1-49b467daa7fa",
-      "created_at": "2026-06-01T05:09:43.567Z",
-      "updated_at": "2026-06-01T05:09:43.567Z",
-      "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "title": "hand-printed ceramic",
-      "price": 1000,
-      "image": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780290583549-palace.jpg",
-      "images": [
-        "https://artisan-connect-backend-db2z.onrender.com/uploads/1780290583549-palace.jpg"
-      ],
-      "description": "",
-      "category": "General",
-      "artisan_name": "Manya",
-      "artisan_location": ""
-    },
-    {
-      "id": "61ba9f3e-019b-4020-8246-bbf71fa4fd96",
-      "created_at": "2026-06-01T05:49:21.143Z",
-      "updated_at": "2026-06-01T05:49:21.143Z",
-      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "title": "palace",
-      "price": 1000,
-      "image": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292961073-palace.jpg",
-      "images": [
-        "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292961073-palace.jpg"
-      ],
-      "description": "",
-      "category": "General",
-      "artisan_name": "Demo Buyer",
-      "artisan_location": ""
-    },
-    {
-      "id": "fe90a2d9-12ae-441c-8c61-30606d379956",
-      "created_at": "2026-06-01T05:49:40.615Z",
-      "updated_at": "2026-06-01T05:49:40.615Z",
-      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "title": "garden",
-      "price": 1000,
-      "image": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292980550-palace1.jpg",
-      "images": [
-        "https://artisan-connect-backend-db2z.onrender.com/uploads/1780292980550-palace1.jpg"
-      ],
-      "description": "",
-      "category": "General",
-      "artisan_name": "Demo Buyer",
-      "artisan_location": ""
-    },
-    {
-      "id": "9ef39920-3b04-4793-975e-8399d3aeb8f2",
-      "created_at": "2026-06-15T17:00:58.937Z",
-      "updated_at": "2026-06-15T17:00:58.937Z",
+      "id": "9c213daa-e435-43b1-a2a2-c07850d621e5",
+      "created_at": "2026-06-15T17:10:17.953Z",
+      "updated_at": "2026-06-15T17:10:17.953Z",
+      "legacy_id": 15,
+      "user_id": "11718c28-b7de-4318-b56f-f3a40e05b52e",
       "title": "Handmade Ceramic Mug",
       "price": 550,
       "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500",
       "category": "Blue Pottery",
       "artisan_name": "Ravi Choudhary",
       "artisan_image": "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400",
-      "artisan_location": "Jaipur",
-      "user_id": "ee30c380-7fca-4687-8e4f-053414cf93fb",
-      "legacy_id": 15
+      "artisan_location": "Jaipur"
     }
   ],
   "stories": [
     {
-      "id": "1d858968-a0fc-42be-ba02-a813f4a0a9dc",
-      "created_at": "2026-06-01T05:02:56.355Z",
-      "updated_at": "2026-06-01T05:02:56.355Z",
-      "title": "A Day in the Studio",
+      "id": "bb17e858-640c-48a7-a6e4-29c4e0a9e660",
+      "created_at": "2026-06-15T17:10:17.955Z",
+      "updated_at": "2026-06-15T17:10:17.956Z",
+      "title": "Carving History",
       "bio": "...",
       "media": [
         {
-          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+          "url": "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400",
           "type": "image"
         }
       ],
-      "user_name": "Maria Rodriguez",
-      "user_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f"
+      "user_name": "Ramesh Kumar",
+      "user_id": "59ca3500-e3d4-4f66-b0d4-0b8b12d4120e"
     },
     {
-      "id": "0062f8b9-e85a-4ea8-9ff3-819ee7ecf7cb",
-      "created_at": "2026-06-01T04:02:56.355Z",
-      "updated_at": "2026-06-01T05:02:56.355Z",
-      "title": "Sourcing Sustainable Wood",
+      "id": "71534353-fccc-4fc9-80f0-41d6e1d74d68",
+      "created_at": "2026-06-15T16:10:17.955Z",
+      "updated_at": "2026-06-15T17:10:17.956Z",
+      "title": "Colors of Mithila",
       "bio": "...",
       "media": [
         {
-          "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
+          "url": "https://images.unsplash.com/photo-1595085610896-bc316fb01b8e?w=400",
           "type": "image"
         }
       ],
-      "user_name": "James Chen",
-      "user_id": "add36a21-6475-4032-9240-a08af89b99c3"
+      "user_name": "Lakshmi Devi",
+      "user_id": "fbec82f7-382f-40ae-81e9-30095d03ae6c"
     },
     {
-      "id": "13053d58-9c91-4a62-800c-61b4d301e74d",
-      "created_at": "2026-06-01T03:02:56.355Z",
-      "updated_at": "2026-06-01T05:02:56.355Z",
-      "title": "Gemstone Journey",
+      "id": "ae7978ff-a081-4cb4-9908-4872a26a0ece",
+      "created_at": "2026-06-15T15:10:17.955Z",
+      "updated_at": "2026-06-15T17:10:17.956Z",
+      "title": "Threads of Gujarat",
       "bio": "...",
       "media": [
         {
-          "url": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
+          "url": "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400",
           "type": "image"
         }
       ],
-      "user_name": "Sarah Johnson",
-      "user_id": "866ebee2-206d-4d8e-a9f6-ea33164574bb"
+      "user_name": "Meera Patel",
+      "user_id": "acb03b4c-5955-4e1c-b3c1-d45ede4f48ad"
     },
     {
-      "id": "98ec367e-d970-4de2-aa95-9846b04d9ca9",
-      "created_at": "2026-06-01T02:02:56.355Z",
-      "updated_at": "2026-06-01T05:02:56.355Z",
-      "title": "Leather Tanning Process",
+      "id": "8ea634d7-dfae-48f1-9720-355d1a52d611",
+      "created_at": "2026-06-15T14:10:17.955Z",
+      "updated_at": "2026-06-15T17:10:17.956Z",
+      "title": "The Blue Quartz",
       "bio": "...",
       "media": [
         {
-          "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+          "url": "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400",
           "type": "image"
         }
       ],
-      "user_name": "Marcus Thompson",
-      "user_id": "4923b60e-518d-407e-8f26-9727e6edabff"
+      "user_name": "Ravi Choudhary",
+      "user_id": "11718c28-b7de-4318-b56f-f3a40e05b52e"
     },
     {
-      "id": "7e4b626b-9120-49d1-b3d7-0b8a0e7abe36",
-      "created_at": "2026-06-01T01:02:56.355Z",
-      "updated_at": "2026-06-01T05:02:56.355Z",
-      "title": "Textile Traditions",
+      "id": "f6243e63-753f-4a2b-9678-d3eb513ab8e7",
+      "created_at": "2026-06-15T13:10:17.955Z",
+      "updated_at": "2026-06-15T17:10:17.956Z",
+      "title": "Casting Moradabad Brass",
       "bio": "...",
       "media": [
         {
-          "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+          "url": "https://images.unsplash.com/photo-1546961342-9957252cb7ec?w=400",
           "type": "image"
         }
       ],
-      "user_name": "Elena Petrov",
-      "user_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d"
+      "user_name": "Harish Joshi",
+      "user_id": "694a93db-8824-434f-a753-1f5b32a1b64e"
     },
     {
-      "id": "4a588708-b0db-45a7-b208-11e18b803ac8",
-      "created_at": "2026-06-01T00:02:56.355Z",
-      "updated_at": "2026-06-01T05:02:56.355Z",
-      "title": "Hot Glass Magic",
+      "id": "ec9c3c2d-7359-4dc9-84e8-8bb37f4767cf",
+      "created_at": "2026-06-15T12:10:17.955Z",
+      "updated_at": "2026-06-15T17:10:17.956Z",
+      "title": "Leather Tanning Traditions",
       "bio": "...",
       "media": [
         {
-          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+          "url": "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=400",
           "type": "image"
         }
       ],
-      "user_name": "David Kim",
-      "user_id": "ee30c380-7fca-4687-8e4f-053414cf93fb"
-    },
-    {
-      "id": "826b850e-ae69-4260-ad68-08fd7c360bd4",
-      "created_at": "2026-06-01T05:04:46.965Z",
-      "updated_at": "2026-06-01T05:04:46.965Z",
-      "user_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
-      "user_name": "Updated Customer Name",
-      "user_profile_image": "",
-      "title": "Crafting in progress",
-      "bio": "Behind the scenes at my pottery wheel.",
-      "media": [
-        {
-          "url": "https://via.placeholder.com/400",
-          "type": "image",
-          "createdAt": "2026-06-01T05:04:46.965Z"
-        }
-      ]
-    },
-    {
-      "id": "34574dba-95a0-4d79-b680-04f78ee596cd",
-      "created_at": "2026-06-02T03:16:24.318Z",
-      "updated_at": "2026-06-02T03:16:52.925Z",
-      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "user_name": "Demo Buyer",
-      "user_profile_image": "",
-      "title": "temple",
-      "bio": "Place where kings live",
-      "media": [
-        {
-          "url": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780370184257-palace1.jpg",
-          "type": "image",
-          "createdAt": "2026-06-02T03:16:24.316Z"
-        },
-        {
-          "url": "https://artisan-connect-backend-db2z.onrender.com/uploads/1780370212918-chamundi-betta.jpg",
-          "type": "image",
-          "createdAt": "2026-06-02T03:16:52.923Z"
-        }
-      ]
-    },
-    {
-      "id": "1107d65d-7101-45fb-963d-ef0f0d20e2ab",
-      "created_at": "2026-06-14T04:26:52.079Z",
-      "updated_at": "2026-06-14T04:26:52.079Z",
-      "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "user_name": "Manya",
-      "user_profile_image": "",
-      "title": "A day in studio",
-      "bio": "",
-      "media": [
-        {
-          "url": "https://artisan-connect-backend-db2z.onrender.com/uploads/1781411212040-palace.jpg",
-          "type": "image",
-          "createdAt": "2026-06-14T04:26:52.070Z"
-        }
-      ]
+      "user_name": "Abdul Rahman",
+      "user_id": "dc8eaad4-1f95-42af-9248-99c411c91400"
     }
   ],
-  "carts": [
-    {
-      "id": "480788de-e659-41b5-938a-eef8a3e72dcf",
-      "created_at": "2026-06-01T05:04:27.016Z",
-      "updated_at": "2026-06-01T05:04:27.026Z",
-      "user_id": "f3e5c34c-924d-4992-92b5-732afebb936a",
-      "items": []
-    },
-    {
-      "id": "81fd0a2d-d82d-4cb0-9477-73855a3fa1b9",
-      "created_at": "2026-06-01T05:04:46.940Z",
-      "updated_at": "2026-06-01T05:04:46.952Z",
-      "user_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
-      "items": []
-    },
-    {
-      "id": "f38270d6-7716-4921-a846-01f764225a42",
-      "created_at": "2026-06-01T05:05:03.587Z",
-      "updated_at": "2026-06-01T05:05:03.598Z",
-      "user_id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
-      "items": []
-    },
-    {
-      "id": "3d5bf9e6-f86a-4890-9089-e62e9ec6c11c",
-      "created_at": "2026-06-01T05:05:52.169Z",
-      "updated_at": "2026-06-01T05:05:52.181Z",
-      "user_id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
-      "items": []
-    },
-    {
-      "id": "723851a2-8a16-4d5a-9e39-f28dac71f072",
-      "created_at": "2026-06-01T05:07:12.040Z",
-      "updated_at": "2026-06-02T03:30:37.843Z",
-      "user_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "items": [
-        {
-          "productId": "366813d3-8d0c-4048-9014-390e237afc75",
-          "title": "Oak Dining Table",
-          "price": 2500,
-          "imageUrl": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500",
-          "artisanName": "James Chen",
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "id": "2140ba50-acc4-4115-807b-ffe398915996",
-      "created_at": "2026-06-01T05:08:43.443Z",
-      "updated_at": "2026-06-14T04:48:54.030Z",
-      "user_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "items": [
-        {
-          "productId": "366813d3-8d0c-4048-9014-390e237afc75",
-          "title": "Oak Dining Table",
-          "price": 2500,
-          "imageUrl": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500",
-          "artisanName": "James Chen",
-          "qty": 3
-        },
-        {
-          "productId": "6945c6a1-99ec-44e4-bf9a-daa3739e8e0f",
-          "title": "Decorative Orb",
-          "price": 85,
-          "imageUrl": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500",
-          "artisanName": "David Kim",
-          "qty": 1
-        }
-      ]
-    },
-    {
-      "id": "320ba803-3663-4070-ac42-0fe2ba627b53",
-      "created_at": "2026-06-01T05:18:23.731Z",
-      "updated_at": "2026-06-01T05:18:23.745Z",
-      "user_id": "61ef487a-9999-4134-8be4-54d23bfed442",
-      "items": []
-    }
-  ],
-  "orders": [
-    {
-      "id": "8cd62e32-78b3-469b-b143-2fbf98ea88f1",
-      "created_at": "2026-06-01T05:04:27.025Z",
-      "updated_at": "2026-06-01T05:04:27.025Z",
-      "user_id": "f3e5c34c-924d-4992-92b5-732afebb936a",
-      "items": [
-        {
-          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
-          "title": "Ceramic Bowl",
-          "price": 85,
-          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
-          "artisanName": "Maria Rodriguez",
-          "qty": 1
-        }
-      ],
-      "total_amount": 85,
-      "payment_status": "Paid",
-      "order_status": "Placed",
-      "address": {}
-    },
-    {
-      "id": "88c3a58e-d1cf-46f1-9571-574953cd1c09",
-      "created_at": "2026-06-01T05:04:46.951Z",
-      "updated_at": "2026-06-01T05:04:46.951Z",
-      "user_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
-      "items": [
-        {
-          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
-          "title": "Ceramic Bowl",
-          "price": 85,
-          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
-          "artisanName": "Maria Rodriguez",
-          "qty": 1
-        }
-      ],
-      "total_amount": 85,
-      "payment_status": "Paid",
-      "order_status": "Placed",
-      "address": {}
-    },
-    {
-      "id": "471c47af-c45f-4791-8876-a28c7e8ca5ef",
-      "created_at": "2026-06-01T05:05:03.596Z",
-      "updated_at": "2026-06-01T05:05:03.596Z",
-      "user_id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
-      "items": [
-        {
-          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
-          "title": "Ceramic Bowl",
-          "price": 85,
-          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
-          "artisanName": "Maria Rodriguez",
-          "qty": 1
-        }
-      ],
-      "total_amount": 85,
-      "payment_status": "Paid",
-      "order_status": "Placed",
-      "address": {}
-    },
-    {
-      "id": "091beaae-f1f7-41fb-94df-6a458f87d42d",
-      "created_at": "2026-06-01T05:05:52.179Z",
-      "updated_at": "2026-06-01T05:05:52.179Z",
-      "user_id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
-      "items": [
-        {
-          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
-          "title": "Ceramic Bowl",
-          "price": 85,
-          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
-          "artisanName": "Maria Rodriguez",
-          "qty": 1
-        }
-      ],
-      "total_amount": 85,
-      "payment_status": "Paid",
-      "order_status": "Placed",
-      "address": {}
-    },
-    {
-      "id": "be9b1f81-ff62-41d7-9244-b087318bf0a5",
-      "created_at": "2026-06-01T05:18:23.744Z",
-      "updated_at": "2026-06-01T05:18:23.744Z",
-      "user_id": "61ef487a-9999-4134-8be4-54d23bfed442",
-      "items": [
-        {
-          "productId": "18412acf-ed8b-40f2-9694-ac409f84f8eb",
-          "title": "Ceramic Bowl",
-          "price": 85,
-          "imageUrl": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500",
-          "artisanName": "Maria Rodriguez",
-          "qty": 1
-        }
-      ],
-      "total_amount": 85,
-      "payment_status": "Paid",
-      "order_status": "Placed",
-      "address": {}
-    }
-  ],
-  "messages": [
-    {
-      "id": "22abd0f5-289d-467b-baaa-4d75227e79d7",
-      "created_at": "2026-06-01T05:04:27.032Z",
-      "updated_at": "2026-06-01T05:04:27.032Z",
-      "sender_id": "f3e5c34c-924d-4992-92b5-732afebb936a",
-      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
-      "text": "Hello, I want to inquire about custom pottery pieces.",
-      "seen": false
-    },
-    {
-      "id": "a9abc55f-e0de-4057-ab3b-32d97dcf529d",
-      "created_at": "2026-06-01T05:04:46.956Z",
-      "updated_at": "2026-06-01T05:04:46.956Z",
-      "sender_id": "d5d1446d-a360-4ab4-8aab-ed5f92438ad9",
-      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
-      "text": "Hello, I want to inquire about custom pottery pieces.",
-      "seen": false
-    },
-    {
-      "id": "a86c1192-0a2e-495e-8746-bcce41369057",
-      "created_at": "2026-06-01T05:05:03.603Z",
-      "updated_at": "2026-06-01T05:05:03.603Z",
-      "sender_id": "1a7db338-dfac-4ac2-8783-ba13aa1f7b4a",
-      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
-      "text": "Hello, I want to inquire about custom pottery pieces.",
-      "seen": false
-    },
-    {
-      "id": "84168904-738f-474c-b096-1b69bc4a9fb8",
-      "created_at": "2026-06-01T05:05:52.186Z",
-      "updated_at": "2026-06-01T05:05:52.186Z",
-      "sender_id": "3506a20b-23db-4f4a-b501-b1c0e721ff9e",
-      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
-      "text": "Hello, I want to inquire about custom pottery pieces.",
-      "seen": false
-    },
-    {
-      "id": "9bfdd6dc-8f04-4f7c-bf45-9bff7c3518d2",
-      "created_at": "2026-06-01T05:07:50.536Z",
-      "updated_at": "2026-06-01T05:07:50.536Z",
-      "sender_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "receiver_id": "e01e69ac-3457-43af-8298-b131bf7e4e7d",
-      "text": "hii",
-      "seen": false
-    },
-    {
-      "id": "0b87698a-d4dd-4494-980b-5895fe6e1e76",
-      "created_at": "2026-06-01T05:10:12.970Z",
-      "updated_at": "2026-06-01T05:10:12.970Z",
-      "sender_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "receiver_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "text": "hey manya",
-      "seen": false
-    },
-    {
-      "id": "e082c7d1-3e44-4d4e-9659-00ef446ac220",
-      "created_at": "2026-06-01T05:10:42.452Z",
-      "updated_at": "2026-06-01T05:10:42.452Z",
-      "sender_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "receiver_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "text": "hii what you want",
-      "seen": false
-    },
-    {
-      "id": "5958b026-d808-494c-a232-8b9dd6153292",
-      "created_at": "2026-06-01T05:18:23.750Z",
-      "updated_at": "2026-06-01T05:18:23.750Z",
-      "sender_id": "61ef487a-9999-4134-8be4-54d23bfed442",
-      "receiver_id": "1a518baa-6bd9-4318-b30b-40a7335dd98f",
-      "text": "Hello, I want to inquire about custom pottery pieces.",
-      "seen": false
-    },
-    {
-      "id": "6303f1b6-ba74-4cf7-b329-933fb1dac6f7",
-      "created_at": "2026-06-14T08:44:13.182Z",
-      "updated_at": "2026-06-14T08:44:13.182Z",
-      "sender_id": "60c4bd2f-46b1-461d-9558-aecb1cbe48e9",
-      "receiver_id": "e82e23c7-a000-4b81-8ad2-0c8db38517d9",
-      "text": "hey",
-      "seen": false
-    }
-  ],
+  "carts": [],
+  "orders": [],
+  "messages": [],
   "ads": [],
   "coupons": [],
   "offers": [],
   "artisans": [
     {
-      "id": "024316ca-fa4e-454d-ac05-abf9c78930ad",
-      "created_at": "2026-06-01T05:02:18.220Z",
-      "updated_at": "2026-06-15T17:00:58.904Z",
+      "id": "dc1dc666-d7f3-42b5-ab25-35912f281e5e",
+      "created_at": "2026-06-15T17:10:17.902Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
       "legacy_id": 1,
       "name": "Ramesh Kumar",
       "category": "Wood Carving",
@@ -1076,9 +578,9 @@
       "location": "Saharanpur"
     },
     {
-      "id": "600dc12a-bd81-49cc-ad03-aa290b36444a",
-      "created_at": "2026-06-01T05:02:18.221Z",
-      "updated_at": "2026-06-15T17:00:58.906Z",
+      "id": "4a3c7238-e2c1-492f-aa6b-e377a9170b64",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
       "legacy_id": 2,
       "name": "Lakshmi Devi",
       "category": "Madhubani Painting",
@@ -1089,9 +591,9 @@
       "location": "Madhubani"
     },
     {
-      "id": "55c61159-65c3-4794-84b6-f2dbbc98070d",
-      "created_at": "2026-06-01T05:02:18.221Z",
-      "updated_at": "2026-06-15T17:00:58.907Z",
+      "id": "013d219b-0319-458a-bf72-68f986ad5f50",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
       "legacy_id": 3,
       "name": "Anjali Verma",
       "category": "Hand Embroidery",
@@ -1102,9 +604,9 @@
       "location": "Lucknow"
     },
     {
-      "id": "9b99161b-f729-4d4c-9cda-469ab5424607",
-      "created_at": "2026-06-01T05:02:18.221Z",
-      "updated_at": "2026-06-15T17:00:58.908Z",
+      "id": "4926b0b8-b9ba-444a-8c96-49b65a8a46f6",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
       "legacy_id": 4,
       "name": "Shankar Rao",
       "category": "Terracotta Art",
@@ -1115,9 +617,9 @@
       "location": "Karnataka"
     },
     {
-      "id": "e646875a-5e4d-48e2-a37b-fe1c9f726e66",
-      "created_at": "2026-06-01T05:02:18.221Z",
-      "updated_at": "2026-06-15T17:00:58.909Z",
+      "id": "1a582a1f-aa57-4f08-a2ea-d022430fef33",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
       "legacy_id": 5,
       "name": "Meera Patel",
       "category": "Handwoven Textiles",
@@ -1128,9 +630,9 @@
       "location": "Gujarat"
     },
     {
-      "id": "e6e2e7c9-2c26-4ed5-a30c-297e5c6a9f97",
-      "created_at": "2026-06-01T05:02:18.221Z",
-      "updated_at": "2026-06-15T17:00:58.909Z",
+      "id": "6c9b3c31-d387-46d6-85e5-6e12e0849010",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
       "legacy_id": 6,
       "name": "Ravi Choudhary",
       "category": "Blue Pottery",
@@ -1139,6 +641,58 @@
       "tagline": "The royal blue hues of Jaipur",
       "bio": "Unlike standard ceramics, my pottery uses quartz stone powder instead of clay. It's a challenging, painstaking process that yields brilliant, unfading blue art.",
       "location": "Jaipur"
+    },
+    {
+      "id": "a5ac67a4-3c0b-409c-9f64-c08a1807e223",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
+      "legacy_id": 7,
+      "name": "Kavitha Nair",
+      "category": "Coconut Shell Craft",
+      "image": "https://images.unsplash.com/photo-1506869640319-fea1a2ab8e9c?w=400",
+      "rating": 4.6,
+      "tagline": "Upcycling nature's strongest shells",
+      "bio": "I transform discarded coconut shells into polished, eco-friendly bowls and cutlery, honoring the abundant coconut groves of my home state.",
+      "location": "Kerala"
+    },
+    {
+      "id": "6b0a4667-bfc0-4227-8210-545a918c353e",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
+      "legacy_id": 8,
+      "name": "Harish Joshi",
+      "category": "Brass Handicrafts",
+      "image": "https://images.unsplash.com/photo-1546961342-9957252cb7ec?w=400",
+      "rating": 4.8,
+      "tagline": "Casting light and legacy",
+      "bio": "From traditional oil lamps to ornate idols, I practice sand casting and hand-engraving brass, techniques native to the 'Brass City' of India.",
+      "location": "Moradabad"
+    },
+    {
+      "id": "c213f586-3d07-48f9-a53b-f5734617d546",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
+      "legacy_id": 9,
+      "name": "Sunita Kumari",
+      "category": "Jute Craft",
+      "image": "https://images.unsplash.com/photo-1571210986790-2c7cc1e9dbdc?w=400",
+      "rating": 4.7,
+      "tagline": "The golden fiber of Bengal",
+      "bio": "I weave natural fibers into durable, beautiful baskets, mats, and bags. My craft supports local women's cooperatives in rural Bengal.",
+      "location": "West Bengal"
+    },
+    {
+      "id": "9fc3ccd5-4491-4894-ab07-b8553433c47c",
+      "created_at": "2026-06-15T17:10:17.903Z",
+      "updated_at": "2026-06-15T17:10:17.903Z",
+      "legacy_id": 10,
+      "name": "Abdul Rahman",
+      "category": "Leather Craft",
+      "image": "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=400",
+      "rating": 4.9,
+      "tagline": "Stitching durability and heritage",
+      "bio": "I use cruelty-free, vegetable-tanned leather to hand-stitch journals, bags, and accessories, preserving the iconic Rajasthani leatherworking tradition.",
+      "location": "Rajasthan"
     }
   ]
 }

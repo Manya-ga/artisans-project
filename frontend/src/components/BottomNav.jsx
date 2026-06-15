@@ -8,11 +8,6 @@ export default function BottomNav({ onOpenCart }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Hide BottomNav on product details, checkout, messages, and cart
-  const hideOnPaths = ['/product/', '/messages', '/checkout', '/cart'];
-  const shouldHide = hideOnPaths.some(p => location.pathname.startsWith(p));
-  if (shouldHide) return null;
-
   const { user } = useAuth();
   const { cartCount } = useCart();
   const [animateCart, setAnimateCart] = useState(false);
@@ -35,6 +30,11 @@ export default function BottomNav({ onOpenCart }) {
     }
     previousCartCount.current = cartCount;
   }, [cartCount]);
+
+  const hideOnPaths = ['/product/', '/messages', '/checkout', '/cart'];
+  const shouldHide = hideOnPaths.some(p => location.pathname.startsWith(p));
+  
+  if (shouldHide) return null;
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-100 pb-safe">

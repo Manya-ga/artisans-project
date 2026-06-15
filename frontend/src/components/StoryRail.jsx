@@ -95,20 +95,20 @@ export default function StoryRail() {
 
   return (
     <div className="relative">
-      <div className="flex gap-8 overflow-x-auto no-scrollbar py-6 px-6 items-start">
+      <div className="flex gap-4 md:gap-8 overflow-x-auto no-scrollbar py-2 md:py-6 px-2 md:px-6 items-start">
         {/* ADD STORY */}
-        <div className="flex flex-col items-center gap-4 shrink-0">
+        <div className="flex flex-col items-center gap-2 md:gap-4 shrink-0">
           <button 
             onClick={() => user ? setShowUploadModal(true) : addToast('Login to share', 'info')}
-            className="w-20 h-20 rounded-[28px] border-2 border-dashed border-gray-200 bg-white flex items-center justify-center hover:border-pink-500 transition-all relative group"
+            className="w-14 h-14 md:w-20 md:h-20 rounded-[20px] md:rounded-[28px] border-2 border-dashed border-gray-200 bg-white flex items-center justify-center hover:border-pink-500 transition-all relative group shrink-0"
           >
             {user?.photoURL ? (
               <img src={user.photoURL} className="w-full h-full object-cover rounded-[26px] p-1" alt="" />
             ) : (
               <UserIcon className="w-8 h-8 text-gray-200 group-hover:text-pink-500" />
             )}
-            <div className="absolute -bottom-1 -right-1 bg-pink-500 text-white p-1.5 rounded-xl border-2 border-white">
-              <Plus className="w-3 h-3" />
+            <div className="absolute -bottom-1 -right-1 bg-pink-500 text-white p-1 md:p-1.5 rounded-lg md:rounded-xl border-2 border-white">
+              <Plus className="w-2 h-2 md:w-3 md:h-3" />
             </div>
           </button>
           <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Share Story</span>
@@ -118,12 +118,12 @@ export default function StoryRail() {
         {stories.map((story, index) => {
           const isMine = user && story.userId?.toString() === (user._id || user.id)?.toString();
           return (
-            <div key={story.id} className="flex flex-col items-center gap-4 shrink-0 group relative">
+            <div key={story.id} className="flex flex-col items-center gap-2 md:gap-4 shrink-0 group relative">
               <button 
                 onClick={() => { setActiveIndex(index); setActiveMediaIndex(0); }}
-                className={`w-20 h-20 rounded-[28px] p-1 ${isMine ? 'bg-gray-200' : 'bg-gradient-to-tr from-pink-500 to-indigo-500'} hover:scale-105 transition-transform`}
+                className={`w-14 h-14 md:w-20 md:h-20 rounded-[20px] md:rounded-[28px] p-0.5 md:p-1 ${isMine ? 'bg-gray-200' : 'bg-gradient-to-tr from-pink-500 to-indigo-500'} hover:scale-105 transition-transform shrink-0`}
               >
-                <div className="w-full h-full rounded-[24px] border-2 border-white overflow-hidden bg-gray-50">
+                <div className="w-full h-full rounded-[16px] md:rounded-[24px] border-2 border-white overflow-hidden bg-gray-50">
                   <img src={story.media[0]?.url} className="w-full h-full object-cover" alt="" />
                 </div>
               </button>

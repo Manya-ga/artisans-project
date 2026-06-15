@@ -93,10 +93,10 @@ export default function HomePage({ query }) {
   return (
     <div className="space-y-6 md:space-y-12 pb-20">
       {/* Story Section */}
-      <section className="bg-white rounded-[48px] py-6 px-4 shadow-sm border border-gray-50">
-         <div className="flex items-center gap-3 mb-4 px-4">
-            <Sparkles className="w-5 h-5 text-pink-500" />
-            <h2 className="text-sm font-black uppercase tracking-widest text-gray-400">Artisan Stories</h2>
+      <section className="bg-white rounded-[32px] md:rounded-[48px] py-3 md:py-6 px-2 md:px-4 shadow-sm border border-gray-50">
+         <div className="flex items-center gap-2 md:gap-3 mb-2 px-2 md:px-4">
+            <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-pink-500" />
+            <h2 className="text-[10px] md:text-sm font-black uppercase tracking-widest text-gray-400">Artisan Stories</h2>
          </div>
          <StoryRail />
       </section>

@@ -8,8 +8,8 @@ export default function BottomNav({ onOpenCart }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Hide BottomNav on product details, checkout, and messages
-  const hideOnPaths = ['/product/', '/messages', '/checkout'];
+  // Hide BottomNav on product details, checkout, messages, and cart
+  const hideOnPaths = ['/product/', '/messages', '/checkout', '/cart'];
   const shouldHide = hideOnPaths.some(p => location.pathname.startsWith(p));
   if (shouldHide) return null;
 

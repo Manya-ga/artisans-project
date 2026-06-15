@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // Core Components
@@ -25,7 +25,7 @@ import TrackOrderPage from './pages/TrackOrderPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import MessagingPage from './pages/MessagingPage.jsx';
 import ExplorePage from './pages/ExplorePage.jsx';
-
+import CartPage from './pages/CartPage.jsx';
 
 // Contexts
 import { AuthProvider, useAuth } from './contexts/AuthContext.jsx';
@@ -52,6 +52,7 @@ function useIsFullScreen() {
 }
 
 function AppInner() {
+  const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   const [query, setQuery] = useState('');
   const [cartOpen, setCartOpen] = useState(false);
@@ -77,12 +78,18 @@ function AppInner() {
   }
 
   return (
-    <div className="main-container bg-[#fafafa] font-sans selection:bg-pink-100 selection:text-pink-900">
+    <div className={`main-container bg-[#fafafa] font-sans selection:bg-pink-100 selection:text-pink-900 ${isFullScreen ? 'flex flex-col h-[100dvh] overflow-hidden' : ''}`}>
       <ScrollToTop />
       <TopNav
         query={query}
         onQueryChange={setQuery}
-        onOpenCart={() => setCartOpen(true)}
+        onOpenCart={() => {
+          if (window.innerWidth < 768) {
+            navigate('/cart');
+          } else {
+            setCartOpen(true);
+          }
+        }}
         location={location}
         onLocationClick={() => setLocationOpen(true)}
         onProfileClick={() => {
@@ -91,10 +98,10 @@ function AppInner() {
         }}
       />
 
-      <main className={`content w-full ${
+      <main className={`content w-full flex-1 ${
         isFullScreen
-          ? 'p-0 overflow-hidden'
-          : 'max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12'
+          ? 'p-0 overflow-hidden flex flex-col h-full'
+          : 'max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-24 md:py-12'
       }`}>
         <Routes>
           <Route path="/" element={<HomePage query={query} />} />
@@ -113,6 +120,7 @@ function AppInner() {
           <Route path="/help" element={<HelpPage />} />
           <Route path="/track" element={<TrackOrderPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/cart" element={<CartPage />} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
@@ -139,7 +147,13 @@ function AppInner() {
         }}
       />
 
-      <BottomNav onOpenCart={() => setCartOpen(true)} />
+      <BottomNav onOpenCart={() => {
+        if (window.innerWidth < 768) {
+          navigate('/cart');
+        } else {
+          setCartOpen(true);
+        }
+      }} />
     </div>
   );
 }

@@ -34,11 +34,11 @@ export default function ExplorePage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#fafafa] pt-32 pb-20 px-6">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <div className="min-h-screen bg-[#fafafa] pt-4 md:pt-8 pb-20 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto space-y-6 md:space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-2">
-            <h1 className="text-5xl font-black text-gray-900 tracking-tight">Explore Artisans</h1>
+            <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight">Explore Artisans</h1>
             <p className="text-gray-500 font-medium text-lg">Discover the masters behind the craft</p>
           </div>
 
@@ -60,7 +60,7 @@ export default function ExplorePage() {
             <p className="text-gray-400 font-black">Loading artisans...</p>
           </div>
         ) : filtered.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {filtered.map((artisan) => (
               <ArtisanCard 
                 key={artisan._id || artisan.id} 

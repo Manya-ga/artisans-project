@@ -131,7 +131,7 @@ export default function StoryRail() {
                 {isMine ? 'Your Story' : story.userName}
               </span>
               {isMine && (
-                <button onClick={(e) => handleDelete(story.id, e)} className="absolute -top-1 -right-1 bg-white p-1.5 rounded-xl shadow-lg text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all border border-gray-100 z-10">
+                <button onClick={(e) => handleDelete(story.id, e)} className="absolute -top-1 -right-1 bg-white p-1.5 rounded-xl shadow-lg text-gray-400 hover:text-red-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all border border-gray-100 z-10">
                   <Trash2 className="w-3 h-3" />
                 </button>
               )}

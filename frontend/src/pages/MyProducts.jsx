@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext.jsx';
 import { getMyProducts } from '../api.js';
 import ProductGrid from '../components/ProductGrid.jsx';
 import AddProductModal from '../components/AddProductModal.jsx';
 
 export default function MyProductsPage({ onBack }) {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -75,7 +77,7 @@ export default function MyProductsPage({ onBack }) {
           </button>
           <button
             type="button"
-            onClick={onBack}
+            onClick={onBack || (() => navigate(-1))}
             className="btn-outline px-4 py-3"
           >
             Back

@@ -17,6 +17,23 @@ html, body, #root {
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling on rotation */
+}
+
+/* Full-height helpers for dvh cross-browser support */
+.h-screen-safe {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* iOS safe-area bottom padding */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+/* Momentum scroll on iOS */
+.overflow-y-scroll, .overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -68,12 +85,21 @@ body {
   @apply bg-pink-500 text-white font-black py-3 px-6 rounded-2xl hover:bg-pink-600 transition-all active:scale-95 shadow-lg shadow-pink-500/20 disabled:opacity-50;
 }
 
+.btn-outline {
+  @apply border-2 border-gray-200 bg-white text-gray-700 font-black py-3 px-6 rounded-2xl hover:border-gray-900 hover:bg-gray-50 transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2;
+}
+
+.input-field {
+  @apply w-full bg-gray-50 border-2 border-transparent rounded-2xl px-5 py-3.5 text-sm font-bold focus:bg-white focus:border-pink-200 focus:ring-4 focus:ring-pink-500/5 outline-none transition-all text-gray-900 placeholder:text-gray-400 disabled:opacity-50;
+}
+
 /* One-Screen Layout Helpers */
 .main-container {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 80px; /* Space for BottomNav on mobile */
+  padding-bottom: 64px; /* Space for BottomNav on mobile */
 }
 
 @media (min-width: 768px) {
@@ -84,10 +110,12 @@ body {
 
 .content {
   flex: 1;
+  /* No overflow here — inner components manage their own scroll */
 }
 
 .one-screen-view {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100dvh - 120px);
+  min-height: calc(100vh - 120px); /* fallback */
 }
 
 @keyframes fade-in {

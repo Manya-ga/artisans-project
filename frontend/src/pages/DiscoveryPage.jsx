@@ -142,23 +142,23 @@ export default function DiscoveryPage({ query = '' }) {
   }, [currentPage, totalPages]);
 
   return (
-    <div className="animate-fade-in space-y-10">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div className="animate-fade-in space-y-6 md:space-y-10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
         <div>
-          <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Explore Creations</h1>
-          <p className="text-gray-500 mt-2 font-medium">Discover unique items handcrafted by master makers.</p>
+          <h1 className="text-2xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Explore Creations</h1>
+          <p className="text-gray-500 mt-1 md:mt-2 font-medium text-sm md:text-base">Discover unique items handcrafted by master makers.</p>
         </div>
         
-        <div className="flex bg-white p-1 rounded-2xl border border-gray-100 shadow-sm">
+        <div className="flex bg-white p-1 rounded-2xl border border-gray-100 shadow-sm shrink-0">
           <button 
             onClick={() => setViewMode('products')}
-            className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${viewMode === 'products' ? 'bg-gray-900 text-white shadow-lg' : 'text-gray-500 hover:text-gray-900'}`}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${viewMode === 'products' ? 'bg-gray-900 text-white shadow-lg' : 'text-gray-500 hover:text-gray-900'}`}
           >
             Products
           </button>
           <button 
             onClick={() => setViewMode('artisans')}
-            className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${viewMode === 'artisans' ? 'bg-gray-900 text-white shadow-lg' : 'text-gray-500 hover:text-gray-900'}`}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${viewMode === 'artisans' ? 'bg-gray-900 text-white shadow-lg' : 'text-gray-500 hover:text-gray-900'}`}
           >
             Artisans
           </button>
@@ -214,7 +214,7 @@ export default function DiscoveryPage({ query = '' }) {
                       key={idx}
                       disabled={p === '...'}
                       onClick={() => p !== '...' && handlePageChange(p)}
-                      className={`w-12 h-12 rounded-2xl font-bold transition-all border flex items-center justify-center ${
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl font-bold transition-all border flex items-center justify-center text-sm ${
                         p === '...' 
                         ? 'border-transparent text-gray-400 cursor-default' 
                         : currentPage === p
@@ -246,7 +246,7 @@ export default function DiscoveryPage({ query = '' }) {
             </div>
           )
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {artisans.map(a => (
               <ArtisanCard key={a.id || a._id} artisan={a} onClick={() => navigate(`/artisan/${a.id || a._id}`)} />
             ))}

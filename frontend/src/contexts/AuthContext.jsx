@@ -27,12 +27,20 @@ export function AuthProvider({ children }) {
         } else {
           setUser(null);
           localStorage.removeItem('artisan_user');
+          localStorage.removeItem('token');
         }
       } catch (err) {
-        console.error('Session sync failed:', err);
-        // If not authenticated, clear user
-        setUser(null);
-        localStorage.removeItem('artisan_user');
+        // Only clear session on auth errors (401/403), not network errors
+        const status = err?.response?.status;
+        if (status === 401 || status === 403) {
+          console.warn('Session expired, clearing auth state.');
+          setUser(null);
+          localStorage.removeItem('artisan_user');
+          localStorage.removeItem('token');
+        } else {
+          // Network error or server down — keep existing user from localStorage
+          console.warn('Session sync failed (network/server), keeping cached auth:', err?.message);
+        }
       } finally {
         setLoading(false);
       }

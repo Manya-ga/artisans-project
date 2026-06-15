@@ -50,9 +50,9 @@ function Avatar({ name, photoURL, size = 128, className = '' }) {
 // ── Stat Pill ─────────────────────────────────────────────────────────────────
 function StatPill({ icon: Icon, value, label, color = 'text-pink-500' }) {
   return (
-    <div className="flex flex-col items-center gap-1">
-      <span className="text-2xl font-black text-gray-900">{value}</span>
-      <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1">
+    <div className="flex flex-col items-center gap-0.5 sm:gap-1">
+      <span className="text-lg sm:text-2xl font-black text-gray-900">{value}</span>
+      <span className="text-[9px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1">
         <Icon className={`w-3 h-3 ${color}`} />{label}
       </span>
     </div>
@@ -311,9 +311,9 @@ export default function Profile({ id: propId }) {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(236,72,153,0.3),_transparent_60%)]" />
           </div>
 
-          <div className="px-8 pb-8">
+          <div className="px-4 sm:px-8 pb-6 sm:pb-8">
             {/* Avatar row */}
-            <div className="flex items-end justify-between -mt-14 mb-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between -mt-14 mb-6 gap-4">
               <div 
                 className={`relative group ${userStory?.media?.length > 0 ? 'cursor-pointer' : ''}`}
                 onClick={() => {
@@ -335,7 +335,7 @@ export default function Profile({ id: propId }) {
                 {isOwnProfile && (
                   <button
                     onClick={() => setShowEdit(true)}
-                    className="absolute -bottom-1 -right-1 w-9 h-9 bg-pink-500 text-white rounded-xl flex items-center justify-center shadow-lg hover:bg-pink-600 transition-all opacity-0 group-hover:opacity-100"
+                    className="absolute -bottom-1 -right-1 w-9 h-9 bg-pink-500 text-white rounded-xl flex items-center justify-center shadow-lg hover:bg-pink-600 transition-all opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
                   >
                     <Camera className="w-4 h-4" />
                   </button>
@@ -343,7 +343,7 @@ export default function Profile({ id: propId }) {
               </div>
 
               {/* Action buttons */}
-              <div className="flex gap-3 pt-16">
+              <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2.5 pt-0 sm:pt-16">
                 {isOwnProfile ? (
                   <>
                     <button
@@ -408,7 +408,7 @@ export default function Profile({ id: propId }) {
             </div>
 
             {/* Stats row */}
-            <div className="flex items-center gap-8 pt-4 border-t border-gray-50">
+            <div className="flex items-center gap-4 sm:gap-8 pt-4 border-t border-gray-50 overflow-x-auto no-scrollbar">
               <StatPill icon={Package} value={products.length} label="Products" color="text-indigo-500" />
               <div className="w-px h-8 bg-gray-100" />
               <StatPill icon={Users} value={followersCount} label="Followers" color="text-pink-500" />
@@ -464,7 +464,7 @@ export default function Profile({ id: propId }) {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
               {products.map(p => (
                 <ProductCard
                   key={p._id || p.id}
@@ -534,7 +534,7 @@ export default function Profile({ id: propId }) {
               )}
               
               {/* OVERLAY CONTROLS */}
-              <div className="absolute top-0 inset-x-0 p-8 space-y-8 bg-gradient-to-b from-black/80 to-transparent z-50">
+              <div className="absolute top-0 inset-x-0 p-4 sm:p-8 space-y-4 sm:space-y-8 bg-gradient-to-b from-black/80 to-transparent z-50">
                 {/* PROGRESS BARS */}
                 <div className="flex gap-2">
                   {userStory.media.map((_, i) => (
@@ -605,7 +605,7 @@ export default function Profile({ id: propId }) {
 
               {/* FOOTER */}
               {userStory.bio && (
-                <div className="absolute bottom-16 inset-x-0 flex flex-col items-center gap-8 px-10 z-50 pointer-events-none">
+                <div className="absolute bottom-8 sm:bottom-16 inset-x-0 flex flex-col items-center gap-8 px-6 sm:px-10 z-50 pointer-events-none">
                    <p className="text-white text-lg font-medium italic drop-shadow-2xl text-center leading-relaxed">"{userStory.bio}"</p>
                 </div>
               )}

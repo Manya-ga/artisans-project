@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function ContactPage() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6 animate-fade-in">
-      <div className="bg-white p-10 md:p-16 rounded-[48px] shadow-soft border border-gray-100 text-center space-y-8">
-        <div className="w-20 h-20 bg-pink-50 text-pink-500 rounded-full flex items-center justify-center text-3xl mx-auto shadow-inner">
+    <div className="max-w-4xl mx-auto py-6 md:py-12 px-4 md:px-6 animate-fade-in">
+      <div className="bg-white p-6 sm:p-10 md:p-16 rounded-[32px] md:rounded-[48px] shadow-soft border border-gray-100 text-center space-y-6 md:space-y-8">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-pink-50 text-pink-500 rounded-full flex items-center justify-center text-2xl sm:text-3xl mx-auto shadow-inner">
           ✉️
         </div>
-        <h1 className="text-4xl font-black text-gray-900">Get in Touch</h1>
+        <h1 className="text-2xl md:text-4xl font-black text-gray-900">Get in Touch</h1>
         <p className="text-gray-500 font-medium max-w-lg mx-auto">
           Whether you have a question about our artisans or need help with an order, our team is here for you.
         </p>

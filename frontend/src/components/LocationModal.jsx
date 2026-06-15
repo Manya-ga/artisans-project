@@ -28,7 +28,7 @@ export default function LocationModal({ open, onClose, onSave, currentLocation }
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-md bg-white rounded-[40px] shadow-2xl p-10 overflow-hidden"
+            className="relative w-full max-w-md bg-white rounded-3xl sm:rounded-[40px] shadow-2xl p-6 sm:p-10 overflow-hidden"
           >
             <button onClick={onClose} className="absolute top-6 right-6 p-2 hover:bg-gray-50 rounded-xl transition-colors">
               <X className="w-6 h-6 text-gray-300" />

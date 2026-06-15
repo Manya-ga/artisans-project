@@ -43,6 +43,14 @@ function ScrollToTop() {
   return null;
 }
 
+// Routes that need zero padding / full-viewport layout
+const FULL_SCREEN_ROUTES = ['/messages'];
+
+function useIsFullScreen() {
+  const { pathname } = useLocation();
+  return FULL_SCREEN_ROUTES.some(r => pathname.startsWith(r));
+}
+
 function AppInner() {
   const { user, loading: authLoading } = useAuth();
   const [query, setQuery] = useState('');
@@ -50,6 +58,7 @@ function AppInner() {
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState('login');
   const [locationOpen, setLocationOpen] = useState(false);
+  const isFullScreen = useIsFullScreen();
   
   const [location, setLocation] = useState(() => {
     const saved = localStorage.getItem('artisan_location');
@@ -82,7 +91,11 @@ function AppInner() {
         }}
       />
 
-      <main className="content max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 sm:py-12">
+      <main className={`content w-full ${
+        isFullScreen
+          ? 'p-0 overflow-hidden'
+          : 'max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12'
+      }`}>
         <Routes>
           <Route path="/" element={<HomePage query={query} />} />
           <Route path="/discovery" element={<DiscoveryPage query={query} />} />
@@ -105,7 +118,7 @@ function AppInner() {
         </Routes>
       </main>
 
-      <Footer />
+      {!isFullScreen && <Footer />}
 
       <CartPanel open={cartOpen} onClose={() => setCartOpen(false)} />
       

@@ -91,7 +91,7 @@ export default function HomePage({ query }) {
   };
 
   return (
-    <div className="space-y-12 pb-20">
+    <div className="space-y-6 md:space-y-12 pb-20">
       {/* Story Section */}
       <section className="bg-white rounded-[48px] py-6 px-4 shadow-sm border border-gray-50">
          <div className="flex items-center gap-3 mb-4 px-4">
@@ -102,38 +102,38 @@ export default function HomePage({ query }) {
       </section>
 
       {/* Hero Design */}
-      <section className="relative h-[500px] rounded-[60px] overflow-hidden bg-gray-900 group">
+      <section className="relative h-[320px] sm:h-[450px] md:h-[500px] rounded-[32px] sm:rounded-[60px] overflow-hidden bg-gray-900 group">
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
         <img 
           src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=2000" 
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
           alt="Artisan Banner" 
         />
-        <div className="relative z-20 h-full flex flex-col justify-center px-10 md:px-20 space-y-8 max-w-4xl">
-           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-4">
+        <div className="relative z-20 h-full flex flex-col justify-center px-6 sm:px-10 md:px-20 space-y-4 sm:space-y-8 max-w-4xl">
+           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-2 sm:space-y-4">
               <span className="bg-pink-500 text-white text-[10px] font-black uppercase px-4 py-2 rounded-full tracking-widest">Premium Collection</span>
-              <h1 className="text-6xl md:text-7xl font-black text-white leading-tight tracking-tighter">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
                 Crafting <span className="text-pink-500 italic">Tradition</span><br />For Your Home.
               </h1>
-              <p className="text-xl text-gray-300 font-medium max-w-lg">Discover unique, handcrafted masterpieces delivered directly from master artisans to your doorstep.</p>
+              <p className="text-xs sm:text-base md:text-xl text-gray-300 font-medium max-w-lg">Discover unique, handcrafted masterpieces delivered directly from master artisans to your doorstep.</p>
            </motion.div>
            <div className="flex gap-4">
-              <button className="bg-white text-gray-900 font-black px-10 py-5 rounded-3xl hover:bg-pink-50 transition-all flex items-center gap-3 text-lg">
-                Explore Market <ChevronRight className="w-6 h-6" />
+              <button className="bg-white text-gray-900 font-black px-6 sm:px-10 py-3.5 sm:py-5 rounded-2xl sm:rounded-3xl hover:bg-pink-50 transition-all flex items-center gap-3 text-sm sm:text-lg">
+                Explore Market <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
            </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <nav className="sticky top-20 z-30 bg-white/80 backdrop-blur-xl py-6 border-b border-gray-50 -mx-6 px-6">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex gap-4 overflow-x-auto no-scrollbar">
+      <nav className="sticky top-[60px] md:top-[80px] z-30 bg-white/80 backdrop-blur-xl py-2 sm:py-6 border-b border-gray-50 -mx-4 sm:-mx-6 px-4 sm:px-6">
+        <div className="flex items-center justify-between max-w-7xl mx-auto gap-2">
+          <div className="flex gap-2 sm:gap-4 overflow-x-auto no-scrollbar">
             {(categories || []).map(cat => (
               <button 
                 key={cat} 
                 onClick={() => setActiveCategory(cat)}
-                className={`whitespace-nowrap px-8 py-3 rounded-2xl text-sm font-black transition-all ${
+                className={`whitespace-nowrap px-4 sm:px-8 py-2 sm:py-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-black transition-all ${
                   activeCategory === cat ? 'bg-gray-900 text-white shadow-xl' : 'text-gray-400 hover:text-gray-900 hover:bg-gray-50'
                 }`}
               >
@@ -141,7 +141,7 @@ export default function HomePage({ query }) {
               </button>
             ))}
           </div>
-          <button className="flex items-center gap-2 text-gray-400 hover:text-gray-900 font-black text-sm px-6 py-3 border-2 border-gray-50 rounded-2xl">
+          <button className="hidden sm:flex items-center gap-2 text-gray-400 hover:text-gray-900 font-black text-sm px-6 py-3 border-2 border-gray-50 rounded-2xl shrink-0">
             <Filter className="w-4 h-4" /> Filters
           </button>
         </div>
@@ -158,14 +158,14 @@ export default function HomePage({ query }) {
         </div>
 
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-10">
             {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="aspect-[3/4] bg-gray-50 rounded-[48px] animate-pulse" />
+              <div key={i} className="aspect-[3/4] bg-gray-50 rounded-[32px] md:rounded-[48px] animate-pulse" />
             ))}
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-10">
               <AnimatePresence mode="popLayout">
                 {(products || []).map(product => (
                   <ProductCard key={product?._id || product?.id || Math.random()} product={product} />

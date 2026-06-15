@@ -28,10 +28,10 @@ export default function OffersPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 animate-fade-in">
-      <div className="mb-16 text-center">
-        <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight">Artisan Deals</h1>
-        <p className="text-gray-500 mt-4 font-medium text-lg">Exclusive discounts directly from our master craftspeople.</p>
+    <div className="max-w-7xl mx-auto py-6 md:py-12 px-4 animate-fade-in">
+      <div className="mb-8 md:mb-16 text-center">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-gray-900 tracking-tight">Artisan Deals</h1>
+        <p className="text-gray-500 mt-2 md:mt-4 font-medium text-sm md:text-lg">Exclusive discounts directly from our master craftspeople.</p>
       </div>
 
       {loading ? (
@@ -47,12 +47,12 @@ export default function OffersPage() {
            <p className="text-gray-400 font-medium mt-2">Check back soon for new artisan drops!</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {offers.map((offer) => (
             <motion.div 
               key={offer._id}
               whileHover={{ y: -5 }}
-              className="bg-white border-2 border-gray-50 p-8 rounded-[40px] shadow-soft hover:border-pink-200 transition-all flex flex-col justify-between group relative overflow-hidden"
+              className="bg-white border-2 border-gray-50 p-5 sm:p-8 rounded-[28px] sm:rounded-[40px] shadow-soft hover:border-pink-200 transition-all flex flex-col justify-between group relative overflow-hidden"
             >
               <div className="absolute -right-8 -top-8 w-24 h-24 bg-pink-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               

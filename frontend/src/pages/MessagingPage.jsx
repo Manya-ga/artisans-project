@@ -367,8 +367,8 @@ export default function MessagingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] pt-8 pb-12 px-4 md:px-8 flex justify-center">
-      <div className="w-full max-w-6xl min-h-[85vh] bg-white rounded-[32px] shadow-2xl shadow-gray-200/50 flex overflow-y-auto border border-gray-100">
+    <div className="flex justify-center bg-[#fafafa] md:pt-8 md:pb-12 md:px-8" style={{ height: '100dvh', minHeight: '-webkit-fill-available' }}>
+      <div className="w-full max-w-6xl bg-white md:rounded-[32px] md:shadow-2xl md:shadow-gray-200/50 flex overflow-hidden md:border md:border-gray-100 md:self-center md:max-h-[85vh]">
         
         {/* Left Panel - Conversations List */}
         <div className={`w-full md:w-[380px] flex flex-col border-r border-gray-100 bg-white ${userId ? 'hidden md:flex' : 'flex'}`}>
@@ -407,7 +407,7 @@ export default function MessagingPage() {
         </div>
 
         {/* Right Panel - Active Chat */}
-        <div className={`flex-1 flex flex-col bg-[#fdfdfd] relative ${!userId ? 'hidden md:flex' : 'flex'}`}>
+        <div className={`flex-1 flex flex-col bg-[#fdfdfd] relative overflow-hidden ${!userId ? 'hidden md:flex' : 'flex'}`}>
           {!userId ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center p-8">
               <div className="w-24 h-24 bg-pink-50 rounded-[40px] flex items-center justify-center mb-6 shadow-sm border border-pink-100">
@@ -419,7 +419,7 @@ export default function MessagingPage() {
           ) : (
             <>
               {/* Chat Header */}
-              <div className="h-[88px] px-6 md:px-8 flex items-center justify-between border-b border-gray-100 bg-white/80 backdrop-blur-xl absolute top-0 left-0 right-0 z-10">
+              <div className="h-[72px] md:h-[88px] px-4 md:px-8 flex items-center justify-between border-b border-gray-100 bg-white/80 backdrop-blur-xl absolute top-0 left-0 right-0 z-10">
                 <div className="flex items-center gap-5">
                   <button onClick={() => navigate('/messages')} className="md:hidden p-3 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all">
                     <ArrowLeft className="w-5 h-5 text-gray-900" />
@@ -453,8 +453,8 @@ export default function MessagingPage() {
               <div 
                 ref={scrollContainerRef}
                 onScroll={handleScroll}
-                className="flex-1 overflow-y-auto px-6 md:px-8 pt-32 pb-8 space-y-6 no-scrollbar relative"
-                style={{ overscrollBehaviorY: 'contain' }}
+                className="flex-1 overflow-y-auto px-4 md:px-8 pt-28 pb-4 space-y-4 md:space-y-6 no-scrollbar relative"
+                style={{ overscrollBehaviorY: 'contain', WebkitOverflowScrolling: 'touch' }}
               >
                 
                 {/* Context Banner */}
@@ -489,7 +489,7 @@ export default function MessagingPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className={`flex ${isMine ? 'justify-end' : 'justify-start'}`}
                       >
-                        <div className={`max-w-[75%] md:max-w-[65%] p-5 rounded-[28px] shadow-sm relative group ${
+                        <div className={`max-w-[82%] md:max-w-[65%] p-3.5 md:p-5 rounded-[20px] md:rounded-[28px] shadow-sm relative group ${
                           isMine 
                             ? 'bg-gray-900 text-white rounded-br-md shadow-gray-900/10' 
                             : 'bg-white border border-gray-100 text-gray-900 rounded-bl-md shadow-gray-200/20'
@@ -533,7 +533,7 @@ export default function MessagingPage() {
               </AnimatePresence>
 
               {/* Chat Input */}
-              <div className="p-4 md:p-6 bg-white border-t border-gray-100 relative z-30">
+              <div className="p-3 md:p-6 bg-white border-t border-gray-100 relative z-30 shrink-0">
                 <form onSubmit={handleSendMessage} className="flex items-center gap-3">
                   <button type="button" className="w-12 h-12 flex items-center justify-center shrink-0 bg-gray-50 rounded-2xl text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-all">
                     <Paperclip className="w-5 h-5" />

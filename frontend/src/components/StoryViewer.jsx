@@ -8,7 +8,7 @@ export default function StoryViewer({ stories = [], activeIndex = -1, onClose, o
   return (
     <AnimatePresence>
       {activeStory && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-6 md:p-10">
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-2 sm:p-6 md:p-10">
           {/* Backdrop with blur */}
           <motion.div 
             initial={{ opacity: 0 }} 
@@ -23,11 +23,11 @@ export default function StoryViewer({ stories = [], activeIndex = -1, onClose, o
             initial={{ opacity: 0, scale: 0.95, y: 10 }} 
             animate={{ opacity: 1, scale: 1, y: 0 }} 
             exit={{ opacity: 0, scale: 0.95, y: 10 }} 
-            className="relative w-full max-w-[450px] bg-white rounded-[40px] shadow-2xl overflow-hidden flex flex-col"
+            className="relative w-full max-w-[450px] bg-white rounded-[28px] sm:rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[95dvh] sm:max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="p-6 flex items-center justify-between border-b border-gray-50 bg-white/80 backdrop-blur-sm z-10">
+            <div className="p-4 sm:p-6 flex items-center justify-between border-b border-gray-50 bg-white/80 backdrop-blur-sm z-10 shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-pink-50 overflow-hidden border border-pink-100">
                   <img src={activeStory.mediaUrl} className="w-full h-full object-cover" alt="" />
@@ -95,7 +95,7 @@ export default function StoryViewer({ stories = [], activeIndex = -1, onClose, o
             </div>
 
             {/* Bottom Info / Action */}
-            <div className="p-8 space-y-6">
+            <div className="p-5 sm:p-8 space-y-4 sm:space-y-6 shrink-0">
               <p className="text-gray-600 text-base font-medium leading-relaxed italic line-clamp-2">
                 "{activeStory.bio}"
               </p>

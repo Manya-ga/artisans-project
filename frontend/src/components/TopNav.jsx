@@ -192,7 +192,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
 
       {/* ── Mobile Drawer ──────────────────────────────────────────────────── */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] md:hidden">
+        <div className="fixed inset-0 z-[80] md:hidden">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"

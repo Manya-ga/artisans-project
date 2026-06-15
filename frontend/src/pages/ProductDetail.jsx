@@ -151,7 +151,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Action Buttons (Sticky on Mobile) */}
-          <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-t border-gray-100 p-4 pb-safe sm:static sm:bg-transparent sm:border-none sm:p-0 sm:pb-0 space-y-3 sm:space-y-6 mt-auto">
+          <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-gray-100 p-4 pb-6 sm:static sm:bg-transparent sm:border-none sm:p-0 sm:pb-0 space-y-3 sm:space-y-6 mt-auto">
             <div className="flex items-center gap-3 sm:gap-6">
               <div className="flex items-center bg-gray-50 rounded-xl sm:rounded-2xl p-1 border border-gray-200">
                 <button 
@@ -173,7 +173,7 @@ export default function ProductDetailPage() {
                 onClick={handleAddToCart}
                 className="flex-1 btn-primary py-3 sm:py-5 rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 sm:gap-3 shadow-elevated text-sm sm:text-base font-black"
               >
-                <ShoppingBag className="w-4 h-4 sm:w-6 sm:h-6 hidden sm:block" />
+                <ShoppingBag className="w-4 h-4 sm:w-6 sm:h-6" />
                 Add to Cart
               </button>
             </div>
@@ -190,14 +190,14 @@ export default function ProductDetailPage() {
                 onClick={() => navigate(`/messages/${product.userId}`, { state: { productName: product.title || product.name, productId: product._id || product.id, productImage: product.image || product.images?.[0] } })}
                 className="w-full bg-white text-gray-900 py-3 sm:py-5 rounded-xl sm:rounded-2xl text-sm sm:text-lg font-black border-2 border-gray-200 hover:border-gray-900 transition-all active:scale-95 flex items-center justify-center gap-2 sm:gap-3 shadow-sm"
               >
-                <MessageSquare className="w-4 h-4 sm:w-6 sm:h-6 hidden sm:block" />
+                <MessageSquare className="w-4 h-4 sm:w-6 sm:h-6" />
                 Message Artisan
               </button>
             )}
           </div>
 
           {/* Quick Features */}
-          <div className="mt-12 grid grid-cols-3 gap-4">
+          <div className="mt-6 sm:mt-12 grid grid-cols-3 gap-2 sm:gap-4">
             <div className="flex flex-col items-center gap-2 p-4 rounded-3xl bg-gray-50 border border-gray-100">
               <Truck className="w-5 h-5 text-gray-400" />
               <span className="text-[10px] font-black text-gray-500 uppercase tracking-tighter">Fast Shipping</span>

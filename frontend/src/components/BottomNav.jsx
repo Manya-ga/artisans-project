@@ -7,6 +7,12 @@ import { useCart } from '../contexts/CartContext';
 export default function BottomNav({ onOpenCart }) {
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Hide BottomNav on product details, checkout, and messages
+  const hideOnPaths = ['/product/', '/messages', '/checkout'];
+  const shouldHide = hideOnPaths.some(p => location.pathname.startsWith(p));
+  if (shouldHide) return null;
+
   const { user } = useAuth();
   const { cartCount } = useCart();
   const [animateCart, setAnimateCart] = useState(false);

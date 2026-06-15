@@ -131,7 +131,7 @@ export default function Checkout() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 10 }}
-                className="card-premium p-8 space-y-8"
+                className="card-premium p-5 sm:p-8 space-y-6 sm:space-y-8"
               >
                 <div className="flex items-center gap-3">
                   <MapPin className="w-6 h-6 text-pink-500" />
@@ -245,7 +245,7 @@ export default function Checkout() {
 
         {/* Right Side: Order Summary */}
         <div className="lg:w-[450px]">
-          <div className="sticky top-32 card-premium p-10 space-y-8">
+          <div className="sticky top-32 card-premium p-6 sm:p-10 space-y-6 sm:space-y-8">
             <h3 className="text-xl font-black text-gray-900 border-b border-gray-50 pb-4">Order Summary</h3>
             <div className="space-y-5">
               <div className="flex justify-between text-sm font-bold text-gray-500">
@@ -302,7 +302,7 @@ const Input = ({ label, ...props }) => (
     <label className="text-[10px] font-black uppercase text-gray-400 tracking-wider ml-1">{label}</label>
     <input 
       {...props} 
-      className="w-full bg-gray-50 border-2 border-transparent rounded-2xl px-6 py-4.5 text-sm font-bold focus:bg-white focus:ring-4 focus:ring-pink-500/5 focus:border-pink-200 transition-all outline-none"
+      className="w-full bg-gray-50 border-2 border-transparent rounded-2xl px-6 py-4 text-sm font-bold focus:bg-white focus:ring-4 focus:ring-pink-500/5 focus:border-pink-200 transition-all outline-none"
     />
   </div>
 );

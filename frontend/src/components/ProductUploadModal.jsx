@@ -95,8 +95,13 @@ export default function ProductUploadModal({ open, onClose, onUploaded }) {
                 <h2 className="text-xl font-bold text-gray-900">Add Product</h2>
                 <p className="text-sm text-gray-500 mt-1">Upload up to 5 product images and list your artisan product.</p>
               </div>
-              <button type="button" className="icon-btn" onClick={() => onClose?.()} aria-label="Close">
-                ?
+              <button 
+                type="button" 
+                className="w-10 h-10 rounded-2xl bg-gray-50 flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-all active:scale-90" 
+                onClick={() => onClose?.()} 
+                aria-label="Close"
+              >
+                ✕
               </button>
             </div>
 

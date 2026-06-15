@@ -125,9 +125,9 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
             </div>
           )}
 
-          {/* Quick Add Overlay */}
+          {/* Quick Add Overlay - Desktop Only */}
           {!isOwner && (
-            <div className="absolute inset-x-4 bottom-4 transition-all duration-300 transform lg:translate-y-4 lg:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 translate-y-0 opacity-100">
+            <div className="hidden lg:block absolute inset-x-4 bottom-4 transition-all duration-300 transform lg:translate-y-4 lg:opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
               <button 
                 onClick={handleAddToCart}
                 className="w-full bg-white text-gray-900 font-black py-3.5 rounded-2xl shadow-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-sm active:scale-95"
@@ -140,39 +140,39 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
         </div>
 
         {/* Info */}
-        <div className="p-4 flex-1 flex flex-col">
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-pink-500 bg-pink-50 px-2 py-0.5 sm:py-1 rounded-md">
+        <div className="p-3 sm:p-4 flex-1 flex flex-col">
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-pink-500 bg-pink-50 px-1.5 sm:px-2 py-0.5 rounded-md truncate max-w-[70%]">
               {product?.category || 'Handcrafted'}
             </span>
-            <div className="flex items-center gap-1 text-[10px] font-bold text-gray-400">
-              <Star className="w-3 h-3 text-yellow-400 fill-current" />
+            <div className="flex items-center gap-0.5 text-[9px] font-bold text-gray-400">
+              <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-400 fill-current" />
               {product?.rating || '4.8'}
             </div>
           </div>
 
-          <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 line-clamp-1 group-hover:text-pink-600 transition-colors">
+          <h3 className="font-bold text-gray-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 line-clamp-2 sm:line-clamp-1 group-hover:text-pink-600 transition-colors leading-tight">
             {product?.title || product?.name}
           </h3>
           
-          <p className="text-[10px] sm:text-xs text-gray-500 font-medium mb-3 line-clamp-1">by {product?.artisanName}</p>
+          <p className="text-[9px] sm:text-[10px] text-gray-500 font-medium mb-2 line-clamp-1">by {product?.artisanName}</p>
 
-          <div className="mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="flex items-baseline gap-2">
-              <span className="text-xl font-black text-gray-900">{formattedPrice}</span>
+          <div className="mt-auto flex flex-col gap-2">
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-sm sm:text-lg md:text-xl font-black text-gray-900">{formattedPrice}</span>
               {product?.oldPrice && (
-                <span className="text-xs text-gray-400 line-through">₹{product.oldPrice}</span>
+                <span className="text-[9px] sm:text-xs text-gray-400 line-through">₹{product.oldPrice}</span>
               )}
             </div>
             
             {!isOwner && (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <button 
                   onClick={handleAddToCart}
-                  className="p-3 bg-pink-50 text-pink-600 rounded-xl hover:bg-pink-100 transition-colors shadow-sm active:scale-95 flex items-center justify-center shrink-0"
+                  className="w-9 h-9 sm:w-11 sm:h-11 bg-pink-50 text-pink-600 rounded-xl hover:bg-pink-100 transition-colors shadow-sm active:scale-95 flex items-center justify-center shrink-0"
                   aria-label="Add to cart"
                 >
-                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <Plus className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </button>
                 <button 
                   onClick={async (e) => {
@@ -183,10 +183,10 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
                     addToast('Product Added to Cart Successfully');
                     navigate('/checkout');
                   }}
-                  className="flex-1 sm:flex-none p-3 bg-gray-900 text-white rounded-xl hover:bg-pink-600 transition-colors shadow-sm active:scale-95 flex items-center justify-center gap-2"
+                  className="flex-1 h-9 sm:h-11 px-2 sm:px-4 bg-gray-900 text-white rounded-xl hover:bg-pink-600 transition-colors shadow-sm active:scale-95 flex items-center justify-center gap-1"
                 >
-                  <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 hidden sm:block" />
-                  <span className="text-xs sm:text-sm font-black uppercase">Buy</span>
+                  <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <span className="text-[10px] sm:text-xs font-black uppercase">Buy</span>
                 </button>
               </div>
             )}

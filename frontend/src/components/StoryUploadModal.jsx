@@ -129,7 +129,7 @@ export default function StoryUploadModal({ open, onClose, onUploaded }) {
                       <button 
                         type="button"
                         onClick={() => setSelectedFiles([])}
-                        className="absolute top-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-xl text-red-500 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="absolute top-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-xl text-red-500 shadow-xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
                       >
                          <span className="text-xs font-black">Change</span>
                       </button>

@@ -28,13 +28,13 @@ export default function UserPage() {
   return (
     <div className="max-w-6xl mx-auto py-8 animate-fade-in space-y-10">
       {/* Profile Header */}
-      <div className="bg-white p-8 md:p-12 rounded-[48px] shadow-soft border border-gray-100 flex flex-col md:flex-row items-center gap-10 relative overflow-hidden">
+      <div className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[48px] shadow-soft border border-gray-100 flex flex-col md:flex-row items-center gap-6 md:gap-10 relative overflow-hidden">
         <div className="absolute right-0 top-0 w-64 h-64 bg-pink-50 rounded-full blur-[100px] opacity-40 -translate-y-1/2 translate-x-1/2" />
         
-        <div className="relative group">
-          <div className="w-32 h-32 rounded-[40px] bg-gradient-to-tr from-pink-500 to-indigo-600 p-1 shrink-0 shadow-xl group-hover:rotate-3 transition-transform duration-500">
-            <div className="w-full h-full rounded-[38px] bg-white flex items-center justify-center text-4xl font-black text-gray-900 overflow-hidden">
-              {user.photoURL ? <img src={user.photoURL} alt="" /> : (user.displayName?.[0] || 'A')}
+        <div className="relative group shrink-0">
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-[32px] md:rounded-[40px] bg-gradient-to-tr from-pink-500 to-indigo-600 p-1 shadow-xl group-hover:rotate-3 transition-transform duration-500">
+            <div className="w-full h-full rounded-[30px] md:rounded-[38px] bg-white flex items-center justify-center text-3xl md:text-4xl font-black text-gray-900 overflow-hidden">
+              {user.photoURL ? <img src={user.photoURL} alt="" className="w-full h-full object-cover" /> : (user.displayName?.[0] || 'A')}
             </div>
           </div>
           <div className="absolute -bottom-2 -right-2 bg-white p-2 rounded-2xl shadow-lg border border-gray-50">
@@ -42,13 +42,13 @@ export default function UserPage() {
           </div>
         </div>
 
-        <div className="flex-1 text-center md:text-left space-y-4">
+        <div className="flex-1 text-center md:text-left space-y-3 md:space-y-4 w-full">
           <div className="space-y-1">
-            <div className="flex items-center justify-center md:justify-start gap-3">
-              <h1 className="text-4xl font-black text-gray-900 tracking-tight">{user.displayName}</h1>
+            <div className="flex items-center justify-center md:justify-start gap-3 flex-wrap">
+              <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">{user.displayName}</h1>
               <span className="bg-green-50 text-green-600 text-[10px] font-black uppercase px-3 py-1 rounded-full border border-green-100">PRO MEMBER</span>
             </div>
-            <p className="text-lg text-gray-500 font-medium">{user.email}</p>
+            <p className="text-sm md:text-lg text-gray-500 font-medium">{user.email}</p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-start gap-3">
              <StatItem label="Orders" value="12" />
@@ -59,29 +59,40 @@ export default function UserPage() {
 
         <button 
           onClick={() => { logout(); navigate('/'); }}
-          className="p-5 bg-gray-50 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-[24px] transition-all group"
+          className="p-4 md:p-5 bg-gray-50 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-[20px] md:rounded-[24px] transition-all group shrink-0"
         >
-          <LogOut className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <LogOut className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
         </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start">
-        {/* Sidebar Nav */}
-        <div className="lg:col-span-1 bg-white p-4 rounded-[32px] border border-gray-100 shadow-sm space-y-2">
-          <SideTab active={activeTab === 'profile'} onClick={() => setActiveTab('profile')} icon={<User />} label="My Profile" />
-          <SideTab active={activeTab === 'orders'} onClick={() => setActiveTab('orders')} icon={<Package />} label="Order History" />
-          <SideTab active={activeTab === 'my-offers'} onClick={() => setActiveTab('my-offers')} icon={<Gift />} label="My Coupons" />
-          <SideTab active={activeTab === 'settings'} onClick={() => setActiveTab('settings')} icon={<Settings />} label="Preferences" />
-          
-          <div className="h-px bg-gray-50 my-4 mx-4" />
-          
-          <button 
-            onClick={() => navigate('/my-products')}
-            className="w-full flex items-center justify-between p-4 text-gray-500 hover:bg-indigo-50 hover:text-indigo-600 rounded-2xl transition-all font-bold text-sm"
-          >
-            <span className="flex items-center gap-3"><ShoppingBag className="w-5 h-5" /> Seller Dashboard</span>
-            <ExternalLink className="w-4 h-4" />
-          </button>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-10 items-start">
+        {/* Mobile: Horizontal Tab Strip | Desktop: Sidebar */}
+        <div className="lg:col-span-1">
+          {/* Mobile horizontal tabs */}
+          <div className="flex lg:hidden overflow-x-auto no-scrollbar gap-2 pb-1">
+            <MobileTab active={activeTab === 'profile'} onClick={() => setActiveTab('profile')} label="Profile" />
+            <MobileTab active={activeTab === 'orders'} onClick={() => setActiveTab('orders')} label="Orders" />
+            <MobileTab active={activeTab === 'my-offers'} onClick={() => setActiveTab('my-offers')} label="Coupons" />
+            <MobileTab active={activeTab === 'settings'} onClick={() => setActiveTab('settings')} label="Settings" />
+            <MobileTab active={false} onClick={() => navigate('/my-products')} label="Seller Dashboard" />
+          </div>
+          {/* Desktop sidebar */}
+          <div className="hidden lg:block bg-white p-4 rounded-[32px] border border-gray-100 shadow-sm space-y-2">
+            <SideTab active={activeTab === 'profile'} onClick={() => setActiveTab('profile')} icon={<User />} label="My Profile" />
+            <SideTab active={activeTab === 'orders'} onClick={() => setActiveTab('orders')} icon={<Package />} label="Order History" />
+            <SideTab active={activeTab === 'my-offers'} onClick={() => setActiveTab('my-offers')} icon={<Gift />} label="My Coupons" />
+            <SideTab active={activeTab === 'settings'} onClick={() => setActiveTab('settings')} icon={<Settings />} label="Preferences" />
+            
+            <div className="h-px bg-gray-50 my-4 mx-4" />
+            
+            <button 
+              onClick={() => navigate('/my-products')}
+              className="w-full flex items-center justify-between p-4 text-gray-500 hover:bg-indigo-50 hover:text-indigo-600 rounded-2xl transition-all font-bold text-sm"
+            >
+              <span className="flex items-center gap-3"><ShoppingBag className="w-5 h-5" /> Seller Dashboard</span>
+              <ExternalLink className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Content Area */}
@@ -111,13 +122,13 @@ export default function UserPage() {
             {activeTab === 'orders' && (
               <motion.div key="orders" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
                 {orders.map((order) => (
-                  <div key={order.id} className="bg-white p-6 rounded-[32px] border border-gray-100 shadow-sm hover:border-pink-200 transition-all flex items-center gap-6 group">
-                     <div className="w-20 h-20 rounded-2xl overflow-hidden bg-gray-50 shrink-0">
+                  <div key={order.id} className="bg-white p-4 md:p-6 rounded-[24px] md:rounded-[32px] border border-gray-100 shadow-sm hover:border-pink-200 transition-all flex items-center gap-4 md:gap-6 group">
+                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl overflow-hidden bg-gray-50 shrink-0">
                         <img src={order.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="" />
                      </div>
-                     <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-1">
-                           <h4 className="text-base font-black text-gray-900">{order.id}</h4>
+                     <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 md:gap-3 mb-1 flex-wrap">
+                           <h4 className="text-sm md:text-base font-black text-gray-900">{order.id}</h4>
                            <span className={`text-[10px] font-black uppercase px-2 py-1 rounded-lg ${
                              order.status === 'Delivered' ? 'bg-green-50 text-green-600' : 'bg-blue-50 text-blue-600'
                            }`}>
@@ -126,9 +137,9 @@ export default function UserPage() {
                         </div>
                         <p className="text-xs text-gray-400 font-bold">{order.date} • {order.items} Items</p>
                      </div>
-                     <div className="text-right">
-                        <p className="text-lg font-black text-gray-900">{order.total}</p>
-                        <button className="text-[10px] font-black text-pink-500 uppercase tracking-widest mt-2 hover:underline">Track Order</button>
+                     <div className="text-right shrink-0">
+                        <p className="text-base md:text-lg font-black text-gray-900">{order.total}</p>
+                        <button className="text-[10px] font-black text-pink-500 uppercase tracking-widest mt-2 hover:underline">Track</button>
                      </div>
                   </div>
                 ))}
@@ -162,6 +173,17 @@ const SideTab = ({ active, onClick, icon, label }) => (
     }`}
   >
     {React.cloneElement(icon, { className: 'w-5 h-5' })}
+    {label}
+  </button>
+);
+
+const MobileTab = ({ active, onClick, label }) => (
+  <button
+    onClick={onClick}
+    className={`shrink-0 px-4 py-2.5 rounded-2xl text-sm font-black transition-all whitespace-nowrap ${
+      active ? 'bg-gray-900 text-white shadow-lg' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-900'
+    }`}
+  >
     {label}
   </button>
 );

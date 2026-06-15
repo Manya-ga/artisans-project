@@ -60,11 +60,11 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       onClick={() => id && navigate(`/product/${id}`)}
-      className={`group relative cursor-pointer ${deleting ? 'opacity-50 grayscale' : ''}`}
+      className={`group relative cursor-pointer h-full ${deleting ? 'opacity-50 grayscale' : ''}`}
     >
       <div className="card-premium h-full flex flex-col overflow-hidden bg-white">
         {/* Image Container */}
-        <div className="relative aspect-square overflow-hidden bg-gray-50">
+        <div className="relative aspect-square overflow-hidden bg-gray-50 shrink-0">
           {product?.image || product?.images?.[0] ? (
             <img
               src={product?.image || product?.images?.[0]}
@@ -118,12 +118,19 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
             )}
           </div>
 
-          {/* Discount Badge */}
-          {product?.discount && (
-            <div className="absolute top-4 left-4 bg-gray-900 text-white text-[10px] font-black px-2.5 py-1.5 rounded-lg shadow-sm uppercase tracking-wider">
-              {product.discount}% OFF
+          {/* Handmade Badge */}
+          <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
+            <div className="bg-white/95 backdrop-blur-md text-gray-900 text-[9px] sm:text-[10px] font-black px-2.5 py-1.5 rounded-lg shadow-sm uppercase tracking-wider border border-gray-100 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              Handmade
             </div>
-          )}
+            {/* Discount Badge */}
+            {product?.discount && (
+              <div className="bg-gray-900 text-white text-[9px] sm:text-[10px] font-black px-2.5 py-1.5 rounded-lg shadow-sm uppercase tracking-wider self-start">
+                {product.discount}% OFF
+              </div>
+            )}
+          </div>
 
           {/* Quick Add Overlay - Desktop Only */}
           {!isOwner && (
@@ -151,11 +158,18 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
             </div>
           </div>
 
-          <h3 className="font-bold text-gray-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 line-clamp-2 sm:line-clamp-1 group-hover:text-pink-600 transition-colors leading-tight">
+          <h3 className="font-bold text-gray-900 text-xs sm:text-sm md:text-base mb-1 line-clamp-2 sm:line-clamp-1 group-hover:text-amber-600 transition-colors leading-tight break-words">
             {product?.title || product?.name}
           </h3>
           
-          <p className="text-[9px] sm:text-[10px] text-gray-500 font-medium mb-2 line-clamp-1">by {product?.artisanName}</p>
+          <div className="flex flex-col mb-3">
+            <p className="text-[10px] sm:text-xs text-gray-600 font-bold line-clamp-1">by {product?.artisanName || product?.artisan_name || 'Artisan'}</p>
+            {(product?.artisanLocation || product?.artisan_location) && (
+              <p className="text-[9px] sm:text-[10px] text-gray-400 font-medium mt-0.5 flex items-center gap-1">
+                <span className="text-[10px]">📍</span> {product.artisanLocation || product.artisan_location}
+              </p>
+            )}
+          </div>
 
           <div className="mt-auto flex flex-col gap-2">
             <div className="flex items-baseline gap-1.5">

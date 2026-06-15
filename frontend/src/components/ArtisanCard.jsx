@@ -67,11 +67,21 @@ export default function ArtisanCard({ artisan, onClick }) {
              </div>
           </div>
           
-          <div className="mt-1 flex items-center gap-2">
-            <span className="text-[10px] font-black uppercase tracking-wider text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded-md">
+          <div className="mt-1 flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-amber-600 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-md">
               {artisan.category || 'Master Maker'}
             </span>
-            {isSelf && <span className="text-[10px] font-black text-pink-500 uppercase tracking-widest bg-pink-50 px-2 py-0.5 rounded-md">You</span>}
+            {(artisan.location || artisan.artisanLocation || artisan.artisan_location) && (
+              <span className="text-[9px] sm:text-[10px] font-bold text-gray-600 bg-gray-50 border border-gray-100 px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+                📍 {artisan.location || artisan.artisanLocation || artisan.artisan_location}
+              </span>
+            )}
+            {artisan.experience && (
+              <span className="text-[9px] sm:text-[10px] font-bold text-gray-600 bg-gray-50 border border-gray-100 px-1.5 py-0.5 rounded-md">
+                ⏳ {artisan.experience}
+              </span>
+            )}
+            {isSelf && <span className="text-[9px] sm:text-[10px] font-black text-pink-500 uppercase tracking-widest bg-pink-50 px-2 py-0.5 rounded-md">You</span>}
           </div>
           
           <p className="text-[11px] sm:text-xs text-gray-500 font-medium mt-1.5 line-clamp-1 italic">

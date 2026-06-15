@@ -367,7 +367,7 @@ export default function MessagingPage() {
   };
 
   return (
-    <div className="flex justify-center bg-[#fafafa] md:pt-8 md:pb-12 md:px-8 h-[100dvh] md:h-full w-full">
+    <div className="flex justify-center bg-[#fafafa] md:pt-8 md:pb-12 md:px-8 h-full w-full">
       <div className="w-full h-full max-w-6xl bg-white md:rounded-[32px] md:shadow-2xl md:shadow-gray-200/50 flex overflow-hidden md:border md:border-gray-100 md:self-center md:max-h-full">
         
         {/* Left Panel - Conversations List */}
@@ -419,32 +419,30 @@ export default function MessagingPage() {
           ) : (
             <>
               {/* Chat Header */}
-              <div className="chat-header sticky top-0 z-[100] h-[72px] md:h-[88px] px-4 md:px-8 flex items-center justify-between border-b border-gray-100 bg-white/95 backdrop-blur-sm shrink-0">
-                <div className="flex items-center gap-5">
-                  <button onClick={() => navigate('/messages')} className="md:hidden p-3 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all">
-                    <ArrowLeft className="w-5 h-5 text-gray-900" />
+              <div className="chat-header sticky top-0 z-[100] h-16 md:h-20 px-3 md:px-6 flex items-center justify-between border-b border-gray-100 bg-white/95 backdrop-blur-md shrink-0 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <button onClick={() => navigate('/messages')} className="md:hidden p-2 -ml-1 text-gray-600 hover:bg-gray-100 rounded-full transition-all">
+                    <ArrowLeft className="w-6 h-6" />
                   </button>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gray-50 overflow-hidden border border-gray-100 flex items-center justify-center">
+                  <div className="flex items-center gap-3 cursor-pointer">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 overflow-hidden shrink-0 border border-gray-200 flex items-center justify-center">
                       {activeUser?.photoURL ? (
                         <img src={activeUser.photoURL} alt="" className="w-full h-full object-cover" />
                       ) : (
-                        <UserIcon className="w-6 h-6 text-gray-300" />
+                        <UserIcon className="w-5 h-5 md:w-6 md:h-6 text-gray-400" />
                       )}
                     </div>
-                    <div className="flex flex-col justify-center">
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Chatting with Artisan</p>
-                      <h2 className="text-lg font-black text-gray-900 leading-none">{activeUser?.displayName || 'Loading...'}</h2>
-                      <div className="flex items-center gap-1.5 mt-1">
-                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                        <p className="text-[10px] font-bold text-green-500 uppercase tracking-widest">Online</p>
-                      </div>
+                    <div className="flex flex-col">
+                      <h2 className="text-base md:text-lg font-bold text-gray-900 leading-tight truncate max-w-[150px] sm:max-w-[200px]">
+                        {activeUser?.displayName || 'Loading...'}
+                      </h2>
+                      <p className="text-xs font-semibold text-green-500">Online</p>
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-2">
-                  <button className="w-12 h-12 flex items-center justify-center bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all text-gray-400">
-                    <MoreVertical className="w-5 h-5" />
+                <div className="flex gap-1">
+                  <button className="p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-all">
+                    <MoreVertical className="w-5 h-5 md:w-6 md:h-6" />
                   </button>
                 </div>
               </div>
@@ -453,19 +451,19 @@ export default function MessagingPage() {
               <div 
                 ref={scrollContainerRef}
                 onScroll={handleScroll}
-                className="messages flex-1 overflow-y-auto px-4 md:px-8 pt-4 md:pt-6 pb-4 space-y-4 md:space-y-6 bg-[#fdfdfd] relative w-full"
+                className="messages flex-1 overflow-y-auto px-3 md:px-6 py-4 space-y-2 md:space-y-4 bg-[#f8fafc] relative w-full"
                 style={{ overscrollBehaviorY: 'contain', WebkitOverflowScrolling: 'touch' }}
               >
                 
                 {/* Context Banner */}
                 {location.state?.productName && (
-                  <div className="bg-pink-50 border border-pink-100 p-4 rounded-2xl flex items-center gap-4 mb-6 shadow-sm">
+                  <div className="bg-white border border-gray-200 p-3 rounded-2xl flex items-center gap-3 mb-4 shadow-sm max-w-sm mx-auto">
                      {location.state.productImage && (
-                       <img src={location.state.productImage} alt="" className="w-12 h-12 rounded-xl object-cover border border-pink-200/50" />
+                       <img src={location.state.productImage} alt="" className="w-10 h-10 rounded-xl object-cover" />
                      )}
-                     <div>
-                       <p className="text-[10px] font-black text-pink-500 uppercase tracking-widest mb-0.5">Custom Order Request</p>
-                       <p className="font-bold text-gray-900 text-sm">Regarding: {location.state.productName}</p>
+                     <div className="flex-1 min-w-0">
+                       <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-0.5">Inquiry About</p>
+                       <p className="font-semibold text-gray-900 text-sm truncate">{location.state.productName}</p>
                      </div>
                   </div>
                 )}
@@ -473,11 +471,11 @@ export default function MessagingPage() {
                 {loadingMsg ? (
                   <div className="flex justify-center h-full items-center"><Loader2 className="w-8 h-8 animate-spin text-pink-500" /></div>
                 ) : messages.length === 0 ? (
-                  <div className="h-full flex flex-col items-center justify-center text-center space-y-4">
-                    <div className="w-20 h-20 bg-gray-50 rounded-[32px] flex items-center justify-center border border-gray-100 text-gray-400">
-                       <Smile className="w-8 h-8" />
+                  <div className="h-full flex flex-col items-center justify-center text-center space-y-3">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 text-gray-300">
+                       <MessageSquare className="w-6 h-6" />
                     </div>
-                    <p className="text-gray-400 font-bold text-sm">Start the conversation</p>
+                    <p className="text-gray-400 font-medium text-sm">Say hello!</p>
                   </div>
                 ) : (
                   messages.map((msg, i) => {
@@ -489,24 +487,24 @@ export default function MessagingPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className={`flex ${isMine ? 'justify-end' : 'justify-start'}`}
                       >
-                        <div className={`max-w-[75%] min-w-[60px] break-words whitespace-normal p-3.5 md:p-5 rounded-[20px] md:rounded-[28px] shadow-sm relative group ${
+                        <div className={`max-w-[80%] md:max-w-[70%] min-w-[80px] break-words whitespace-normal px-4 py-2.5 shadow-sm relative group ${
                           isMine 
-                            ? 'bg-gray-900 text-white rounded-br-md shadow-gray-900/10' 
-                            : 'bg-white border border-gray-100 text-gray-900 rounded-bl-md shadow-gray-200/20'
+                            ? 'bg-pink-500 text-white rounded-2xl rounded-tr-sm' 
+                            : 'bg-white border border-gray-100 text-gray-900 rounded-2xl rounded-tl-sm'
                         }`}>
-                          <p className="font-semibold leading-relaxed text-[15px]">{msg.text}</p>
-                          <div className={`flex items-center justify-end gap-1.5 mt-2 ${isMine ? 'opacity-50' : 'opacity-40 text-gray-500'}`}>
-                            <span className="text-[9px] font-black uppercase tracking-wider">
+                          <p className="text-[15px] font-medium leading-snug">{msg.text}</p>
+                          <div className={`flex items-center justify-end gap-1 mt-1 ${isMine ? 'text-pink-100' : 'text-gray-400'}`}>
+                            <span className="text-[10px] font-medium">
                               {formatTime(msg.createdAt)}
                             </span>
-                            {isMine && <CheckCheck className="w-[14px] h-[14px]" />}
+                            {isMine && <CheckCheck className="w-3.5 h-3.5" />}
                           </div>
                         </div>
                       </motion.div>
                     );
                   })
                 )}
-                <div ref={scrollRef} className="h-1" />
+                <div ref={scrollRef} className="h-2" />
               </div>
 
               {/* New Message Floating Indicator */}
@@ -533,21 +531,38 @@ export default function MessagingPage() {
               </AnimatePresence>
 
               {/* Chat Input */}
-              <div className="input-bar sticky bottom-0 z-[100] p-3 md:p-6 bg-white border-t border-gray-100 shrink-0 pb-safe">
-                <form onSubmit={handleSendMessage} className="flex items-center gap-3">
-                  <input 
-                    type="text" 
+              <div className="input-bar sticky bottom-0 z-[100] px-2 py-2 md:px-6 md:py-4 bg-[#f0f2f5] md:bg-white border-t border-gray-200 shrink-0 pb-safe">
+                <form onSubmit={handleSendMessage} className="flex items-end gap-2 max-w-4xl mx-auto w-full">
+                  <button 
+                    type="button"
+                    className="w-10 h-10 md:w-12 md:h-12 shrink-0 flex items-center justify-center text-gray-500 hover:bg-gray-200 rounded-full transition-all mb-0.5"
+                  >
+                    <Paperclip className="w-6 h-6" />
+                  </button>
+                  <textarea 
                     placeholder="Message..." 
                     value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                    className="flex-1 bg-gray-50 rounded-2xl h-12 px-6 font-semibold text-gray-900 outline-none border-2 border-transparent focus:bg-white focus:border-gray-200 transition-all placeholder:text-gray-400"
+                    onChange={(e) => {
+                      setInputText(e.target.value);
+                      e.target.style.height = 'auto';
+                      e.target.style.height = Math.min(e.target.scrollHeight, 120) + 'px';
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        if (inputText.trim()) handleSendMessage(e);
+                      }
+                    }}
+                    rows={1}
+                    className="flex-1 bg-white rounded-3xl min-h-[40px] md:min-h-[48px] px-4 py-2.5 md:py-3 text-[15px] text-gray-900 border border-gray-300 outline-none resize-none no-scrollbar placeholder:text-gray-500 focus:border-pink-500 shadow-sm transition-colors"
+                    style={{ overflowY: 'auto' }}
                   />
                   <button 
                     type="submit" 
                     disabled={!inputText.trim()}
-                    className="w-12 h-12 flex items-center justify-center shrink-0 bg-pink-500 text-white rounded-2xl shadow-xl shadow-pink-500/20 hover:bg-pink-600 transition-all active:scale-95 disabled:opacity-30 disabled:hover:bg-pink-500 disabled:active:scale-100 disabled:shadow-none"
+                    className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shrink-0 bg-pink-500 text-white rounded-full shadow-md hover:bg-pink-600 transition-all active:scale-95 disabled:opacity-50 disabled:active:scale-100 mb-0.5"
                   >
-                    <Send className="w-5 h-5 ml-1" />
+                    <Send className="w-5 h-5 ml-0.5" />
                   </button>
                 </form>
               </div>

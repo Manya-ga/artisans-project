@@ -105,17 +105,17 @@ export default function HomePage({ query }) {
       <section className="relative h-[320px] sm:h-[450px] md:h-[500px] rounded-[32px] sm:rounded-[60px] overflow-hidden bg-gray-900 group">
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=2000" 
+          src="https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=2000" 
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
           alt="Artisan Banner" 
         />
         <div className="relative z-20 h-full flex flex-col justify-center px-6 sm:px-10 md:px-20 space-y-4 sm:space-y-8 max-w-4xl">
            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-2 sm:space-y-4">
-              <span className="bg-pink-500 text-white text-[10px] font-black uppercase px-4 py-2 rounded-full tracking-widest">Premium Collection</span>
+              <span className="bg-amber-600 text-white text-[10px] font-black uppercase px-4 py-2 rounded-full tracking-widest shadow-lg">Small Batch Production</span>
               <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
-                Crafting <span className="text-pink-500 italic">Tradition</span><br />For Your Home.
+                Authentic <span className="text-amber-500 italic">Indian</span><br />Handcrafts.
               </h1>
-              <p className="text-xs sm:text-base md:text-xl text-gray-300 font-medium max-w-lg">Discover unique, handcrafted masterpieces delivered directly from master artisans to your doorstep.</p>
+              <p className="text-xs sm:text-base md:text-xl text-gray-300 font-medium max-w-lg">Discover unique, handmade masterpieces crafted with care by traditional Indian artisans.</p>
            </motion.div>
            <div className="flex gap-4">
               <button className="bg-white text-gray-900 font-black px-6 sm:px-10 py-3.5 sm:py-5 rounded-2xl sm:rounded-3xl hover:bg-pink-50 transition-all flex items-center gap-3 text-sm sm:text-lg">

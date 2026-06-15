@@ -92,27 +92,27 @@ export default function CartPage() {
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                 </div>
                 
-                <div className="flex-1 flex flex-col justify-between">
+                <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div>
                     <div className="flex justify-between items-start gap-2">
-                      <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-2 pr-4">{item.title}</h3>
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 line-clamp-2 pr-4 break-words">{item.title}</h3>
                       <button 
                         onClick={async () => {
                           await removeFromCart(item.productId);
                           addToast('Item removed', 'success');
                         }}
-                        className="p-2 text-gray-400 hover:text-red-500 transition-colors bg-gray-50 rounded-xl"
+                        className="p-2 text-gray-400 hover:text-red-500 transition-colors bg-gray-50 rounded-xl shrink-0"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1">by {item.artisanName}</p>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium mt-1 truncate">by {item.artisanName}</p>
                   </div>
                   
-                  <div className="flex items-center justify-between mt-4">
-                    <p className="font-black text-lg sm:text-xl text-gray-900">₹{item.price}</p>
+                  <div className="flex items-center justify-between mt-4 gap-2">
+                    <p className="font-black text-lg sm:text-xl text-gray-900 truncate">₹{item.price}</p>
                     
-                    <div className="flex items-center gap-1 bg-gray-50 rounded-xl p-1 border border-gray-100">
+                    <div className="flex items-center gap-1 bg-gray-50 rounded-xl p-1 border border-gray-100 shrink-0">
                       <button 
                         onClick={() => {
                           if (item.qty > 1) updateCartItemQty(item.productId, item.qty - 1);

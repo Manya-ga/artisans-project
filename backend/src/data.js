@@ -1,107 +1,151 @@
 const artisans = [
   {
     id: 1,
-    name: "Maria Rodriguez",
-    category: "Pottery",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-    rating: 4.8,
-    tagline: "Handcrafted ceramics with soul",
-    bio: "With over 15 years of experience, I create unique pottery pieces inspired by traditional techniques and modern design.",
-    location: "Santa Fe, NM",
-    videos: [
-      { id: 1, title: "Throwing on the Wheel", thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300", duration: "2:34" },
-      { id: 2, title: "Glazing Process", thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300", duration: "1:45" }
-    ]
+    name: "Ramesh Kumar",
+    category: "Wood Carving",
+    image: "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400",
+    rating: 4.9,
+    tagline: "Mastering the grain for 25 years",
+    bio: "Hailing from Saharanpur, I carry forward a 300-year-old family legacy of fine woodcraft, carving intricate traditional and modern designs from sustainable local timber.",
+    location: "Saharanpur",
+    experience: "25 years",
+    videos: []
   },
   {
     id: 2,
-    name: "James Chen",
-    category: "Woodworking",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
-    rating: 4.9,
-    tagline: "Fine furniture from sustainable woods",
-    bio: "I specialize in custom furniture using locally sourced, sustainable hardwoods. Each piece tells a story.",
-    location: "Portland, OR",
-    videos: [
-      { id: 3, title: "Joinery Techniques", thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300", duration: "3:12" }
-    ]
+    name: "Lakshmi Devi",
+    category: "Madhubani Painting",
+    image: "https://images.unsplash.com/photo-1595085610896-bc316fb01b8e?w=400",
+    rating: 5.0,
+    tagline: "Colors of Mithila brought to life",
+    bio: "I paint ancient mythologies using natural pigments sourced from soot, turmeric, and indigo. Every brushstroke preserves the rich cultural heritage of Bihar.",
+    location: "Madhubani",
+    experience: "18 years",
+    videos: []
   },
   {
     id: 3,
-    name: "Sarah Johnson",
-    category: "Jewelry",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
-    rating: 4.7,
-    tagline: "Contemporary silver & gemstone designs",
-    bio: "Creating wearable art that combines traditional silversmithing with contemporary aesthetics.",
-    location: "Asheville, NC",
-    videos: [
-      { id: 4, title: "Stone Setting", thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300", duration: "2:18" }
-    ]
+    name: "Anjali Verma",
+    category: "Hand Embroidery",
+    image: "https://images.unsplash.com/photo-1591851221711-50e4179d6756?w=400",
+    rating: 4.8,
+    tagline: "Intricate threads, timeless elegance",
+    bio: "Specializing in Chikankari and Phulkari, my craft involves delicate hand-embroidery that breathes life into fabric, a skill passed down from my grandmother.",
+    location: "Lucknow",
+    experience: "12 years",
+    videos: []
   },
   {
     id: 4,
-    name: "Marcus Thompson",
-    category: "Leatherwork",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
-    rating: 4.6,
-    tagline: "Handcrafted leather goods",
-    bio: "From wallets to belts, I craft durable, beautiful leather items using time-honored techniques.",
-    location: "Austin, TX",
+    name: "Shankar Rao",
+    category: "Terracotta Art",
+    image: "https://images.unsplash.com/photo-1555529902-5261145633bf?w=400",
+    rating: 4.7,
+    tagline: "Molding the earth into art",
+    bio: "Using pure riverbank clay, I hand-shape and kiln-fire traditional terracotta planters, sculptures, and diyas that connect homes back to nature.",
+    location: "Karnataka",
+    experience: "30 years",
     videos: []
   },
   {
     id: 5,
-    name: "Elena Petrov",
-    category: "Textiles",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
-    rating: 4.8,
-    tagline: "Woven stories in fabric",
-    bio: "Weaving traditional patterns with a modern twist, creating unique textile art and home goods.",
-    location: "Providence, RI",
-    videos: [
-      { id: 5, title: "Loom Weaving", thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300", duration: "4:02" }
-    ]
+    name: "Meera Patel",
+    category: "Handwoven Textiles",
+    image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400",
+    rating: 4.9,
+    tagline: "Weaving stories on the loom",
+    bio: "I craft vibrant, authentic handloom textiles. My work involves traditional pit-loom weaving to create ethical and sustainable Indian fashion.",
+    location: "Gujarat",
+    experience: "20 years",
+    videos: []
   },
   {
     id: 6,
-    name: "David Kim",
-    category: "Glasswork",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+    name: "Ravi Choudhary",
+    category: "Blue Pottery",
+    image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400",
     rating: 4.9,
-    tagline: "Blown glass art & functional pieces",
-    bio: "Master glassblower creating both decorative and functional glassware with vibrant colors and unique shapes.",
-    location: "Seattle, WA",
-    videos: [
-      { id: 6, title: "Glass Blowing Demo", thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300", duration: "3:45" }
-    ]
+    tagline: "The royal blue hues of Jaipur",
+    bio: "Unlike standard ceramics, my pottery uses quartz stone powder instead of clay. It's a challenging, painstaking process that yields brilliant, unfading blue art.",
+    location: "Jaipur",
+    experience: "15 years",
+    videos: []
+  },
+  {
+    id: 7,
+    name: "Kavitha Nair",
+    category: "Coconut Shell Craft",
+    image: "https://images.unsplash.com/photo-1506869640319-fea1a2ab8e9c?w=400",
+    rating: 4.6,
+    tagline: "Upcycling nature's strongest shells",
+    bio: "I transform discarded coconut shells into polished, eco-friendly bowls and cutlery, honoring the abundant coconut groves of my home state.",
+    location: "Kerala",
+    experience: "8 years",
+    videos: []
+  },
+  {
+    id: 8,
+    name: "Harish Joshi",
+    category: "Brass Handicrafts",
+    image: "https://images.unsplash.com/photo-1546961342-9957252cb7ec?w=400",
+    rating: 4.8,
+    tagline: "Casting light and legacy",
+    bio: "From traditional oil lamps to ornate idols, I practice sand casting and hand-engraving brass, techniques native to the 'Brass City' of India.",
+    location: "Moradabad",
+    experience: "22 years",
+    videos: []
+  },
+  {
+    id: 9,
+    name: "Sunita Kumari",
+    category: "Jute Craft",
+    image: "https://images.unsplash.com/photo-1571210986790-2c7cc1e9dbdc?w=400",
+    rating: 4.7,
+    tagline: "The golden fiber of Bengal",
+    bio: "I weave natural fibers into durable, beautiful baskets, mats, and bags. My craft supports local women's cooperatives in rural Bengal.",
+    location: "West Bengal",
+    experience: "10 years",
+    videos: []
+  },
+  {
+    id: 10,
+    name: "Abdul Rahman",
+    category: "Leather Craft",
+    image: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=400",
+    rating: 4.9,
+    tagline: "Stitching durability and heritage",
+    bio: "I use cruelty-free, vegetable-tanned leather to hand-stitch journals, bags, and accessories, preserving the iconic Rajasthani leatherworking tradition.",
+    location: "Rajasthan",
+    experience: "18 years",
+    videos: []
   }
 ];
 
 const products = [
-  { id: 1, name: "Ceramic Bowl", price: 85, image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500", artisanId: 1, artisanName: "Maria Rodriguez", artisanImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400", category: "Pottery", artisanLocation: "Santa Fe" },
-  { id: 2, name: "Clay Vase", price: 120, image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500", artisanId: 1, artisanName: "Maria Rodriguez", artisanImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400", category: "Pottery", artisanLocation: "Santa Fe" },
-  { id: 3, name: "Oak Dining Table", price: 2500, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=500", artisanId: 2, artisanName: "James Chen", artisanImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400", category: "Woodworking", artisanLocation: "Portland" },
-  { id: 4, name: "Walnut Bookshelf", price: 1800, image: "https://images.unsplash.com/photo-1594620859311-370eb333858c?w=500", artisanId: 2, artisanName: "James Chen", artisanImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400", category: "Woodworking", artisanLocation: "Portland" },
-  { id: 5, name: "Silver Necklace", price: 195, image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500", artisanId: 3, artisanName: "Sarah Johnson", artisanImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400", category: "Jewelry", artisanLocation: "Asheville" },
-  { id: 6, name: "Turquoise Earrings", price: 145, image: "https://images.unsplash.com/photo-1535633302704-c02fbcac852a?w=500", artisanId: 3, artisanName: "Sarah Johnson", artisanImage: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400", category: "Jewelry", artisanLocation: "Asheville" },
-  { id: 7, name: "Leather Wallet", price: 75, image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500", artisanId: 4, artisanName: "Marcus Thompson", artisanImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400", category: "Handicrafts", artisanLocation: "Austin" },
-  { id: 8, name: "Leather Belt", price: 110, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500", artisanId: 4, artisanName: "Marcus Thompson", artisanImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400", category: "Handicrafts", artisanLocation: "Austin" },
-  { id: 9, name: "Woven Blanket", price: 320, image: "https://images.unsplash.com/photo-1580302200322-224432540afb?w=500", artisanId: 5, artisanName: "Elena Petrov", artisanImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400", category: "Paintings", artisanLocation: "Seattle" },
-  { id: 10, name: "Table Runner", price: 95, image: "https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?w=500", artisanId: 5, artisanName: "Elena Petrov", artisanImage: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400", category: "Paintings", artisanLocation: "Seattle" },
-  { id: 11, name: "Glass Pitcher", price: 165, image: "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=500", artisanId: 6, artisanName: "David Kim", artisanImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400", category: "Paintings", artisanLocation: "Seattle" },
-  { id: 12, name: "Decorative Orb", price: 85, image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500", artisanId: 6, artisanName: "David Kim", artisanImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400", category: "Paintings", artisanLocation: "Seattle" },
-  { id: 13, name: "Ceramic Mug Set", price: 140, image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500", artisanId: 1, artisanName: "Maria Rodriguez", artisanImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400", category: "Pottery", artisanLocation: "Santa Fe" },
-  { id: 14, name: "Wooden Cutting Board", price: 95, image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500", artisanId: 2, artisanName: "James Chen", artisanImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400", category: "Woodworking", artisanLocation: "Portland" }
+  { id: 1, name: "Wooden Temple Decor", price: 3500, image: "https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=500", artisanId: 1, artisanName: "Ramesh Kumar", artisanImage: "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400", category: "Wood Carving", artisanLocation: "Saharanpur" },
+  { id: 2, name: "Madhubani Wall Painting", price: 2100, image: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=500", artisanId: 2, artisanName: "Lakshmi Devi", artisanImage: "https://images.unsplash.com/photo-1595085610896-bc316fb01b8e?w=400", category: "Madhubani Painting", artisanLocation: "Madhubani" },
+  { id: 3, name: "Handwoven Cotton Saree", price: 4200, image: "https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?w=500", artisanId: 5, artisanName: "Meera Patel", artisanImage: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400", category: "Handwoven Textiles", artisanLocation: "Gujarat" },
+  { id: 4, name: "Blue Pottery Vase", price: 1450, image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500", artisanId: 6, artisanName: "Ravi Choudhary", artisanImage: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400", category: "Blue Pottery", artisanLocation: "Jaipur" },
+  { id: 5, name: "Brass Oil Lamp", price: 2800, image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500", artisanId: 8, artisanName: "Harish Joshi", artisanImage: "https://images.unsplash.com/photo-1546961342-9957252cb7ec?w=400", category: "Brass Handicrafts", artisanLocation: "Moradabad" },
+  { id: 6, name: "Terracotta Planter", price: 650, image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500", artisanId: 4, artisanName: "Shankar Rao", artisanImage: "https://images.unsplash.com/photo-1555529902-5261145633bf?w=400", category: "Terracotta Art", artisanLocation: "Karnataka" },
+  { id: 7, name: "Handcrafted Jute Basket", price: 850, image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500", artisanId: 9, artisanName: "Sunita Kumari", artisanImage: "https://images.unsplash.com/photo-1571210986790-2c7cc1e9dbdc?w=400", category: "Jute Craft", artisanLocation: "West Bengal" },
+  { id: 8, name: "Block Printed Cushion Cover", price: 450, image: "https://images.unsplash.com/photo-1584285423851-40e118c7a6e1?w=500", artisanId: 3, artisanName: "Anjali Verma", artisanImage: "https://images.unsplash.com/photo-1591851221711-50e4179d6756?w=400", category: "Hand Embroidery", artisanLocation: "Lucknow" },
+  { id: 9, name: "Wooden Spice Box", price: 1200, image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500", artisanId: 1, artisanName: "Ramesh Kumar", artisanImage: "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400", category: "Wood Carving", artisanLocation: "Saharanpur" },
+  { id: 10, name: "Handmade Leather Journal", price: 950, image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500", artisanId: 10, artisanName: "Abdul Rahman", artisanImage: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=400", category: "Leather Craft", artisanLocation: "Rajasthan" },
+  { id: 11, name: "Coconut Shell Bowl", price: 350, image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500", artisanId: 7, artisanName: "Kavitha Nair", artisanImage: "https://images.unsplash.com/photo-1506869640319-fea1a2ab8e9c?w=400", category: "Coconut Shell Craft", artisanLocation: "Kerala" },
+  { id: 12, name: "Bamboo Storage Basket", price: 750, image: "https://images.unsplash.com/photo-1559981403-1a0e0f805219?w=500", artisanId: 9, artisanName: "Sunita Kumari", artisanImage: "https://images.unsplash.com/photo-1571210986790-2c7cc1e9dbdc?w=400", category: "Jute Craft", artisanLocation: "West Bengal" },
+  { id: 13, name: "Handwoven Table Runner", price: 850, image: "https://images.unsplash.com/photo-1601000844782-b364de064438?w=500", artisanId: 5, artisanName: "Meera Patel", artisanImage: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400", category: "Handwoven Textiles", artisanLocation: "Gujarat" },
+  { id: 14, name: "Traditional Diyas", price: 250, image: "https://images.unsplash.com/photo-1510007886266-9121650b4d45?w=500", artisanId: 4, artisanName: "Shankar Rao", artisanImage: "https://images.unsplash.com/photo-1555529902-5261145633bf?w=400", category: "Terracotta Art", artisanLocation: "Karnataka" },
+  { id: 15, name: "Handmade Ceramic Mug", price: 550, image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500", artisanId: 6, artisanName: "Ravi Choudhary", artisanImage: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400", category: "Blue Pottery", artisanLocation: "Jaipur" }
 ];
 
 const stories = [
-  { id: 1, artisanId: 1, title: "A Day in the Studio", content: "..." },
-  { id: 2, artisanId: 2, title: "Sourcing Sustainable Wood", content: "..." },
-  { id: 3, artisanId: 3, title: "Gemstone Journey", content: "..." },
-  { id: 4, artisanId: 4, title: "Leather Tanning Process", content: "..." },
-  { id: 5, artisanId: 5, title: "Textile Traditions", content: "..." },
-  { id: 6, artisanId: 6, title: "Hot Glass Magic", content: "..." }
+  { id: 1, artisanId: 1, title: "Carving History", content: "..." },
+  { id: 2, artisanId: 2, title: "Colors of Mithila", content: "..." },
+  { id: 3, artisanId: 5, title: "Threads of Gujarat", content: "..." },
+  { id: 4, artisanId: 6, title: "The Blue Quartz", content: "..." },
+  { id: 5, artisanId: 8, title: "Casting Moradabad Brass", content: "..." },
+  { id: 6, artisanId: 10, title: "Leather Tanning Traditions", content: "..." }
 ];
 
 module.exports = { artisans, products, stories };

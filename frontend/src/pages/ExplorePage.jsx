@@ -38,8 +38,8 @@ export default function ExplorePage() {
       <div className="w-full max-w-7xl mx-auto space-y-6 md:space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-2">
-            <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight">Explore Artisans</h1>
-            <p className="text-gray-500 font-medium text-lg">Discover the masters behind the craft</p>
+            <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight">Explore Indian Artisans</h1>
+            <p className="text-gray-500 font-medium text-lg">Discover the traditional masters behind the craft</p>
           </div>
 
           <div className="relative w-full md:w-96 shrink-0">

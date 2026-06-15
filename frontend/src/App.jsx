@@ -76,7 +76,7 @@ function AppInner() {
   }
 
   return (
-    <div className={`main-container bg-[#fafafa] font-sans selection:bg-pink-100 selection:text-pink-900 ${isFullScreen ? 'flex flex-col h-[100dvh] overflow-hidden' : ''}`}>
+    <div className={`bg-[#fafafa] font-sans selection:bg-pink-100 selection:text-pink-900 ${isFullScreen ? 'flex flex-col h-[100dvh] overflow-hidden' : 'main-container'}`}>
       <ScrollToTop />
       <div className={isFullScreen ? 'hidden md:block' : ''}>
         <TopNav

@@ -189,12 +189,12 @@ export default function Checkout() {
                   <div className="divide-y divide-gray-50">
                     {cartItems.map((item) => (
                       <div key={item.productId} className="py-4 flex gap-4 items-center">
-                        <img src={item.image} className="w-16 h-16 rounded-2xl object-cover border border-gray-100 shadow-sm" alt="" />
-                        <div className="flex-1">
-                          <p className="text-sm font-bold text-gray-900">{item.title}</p>
+                        <img src={item.image} className="w-16 h-16 rounded-2xl object-cover border border-gray-100 shadow-sm shrink-0" alt="" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-bold text-gray-900 truncate">{item.title}</p>
                           <p className="text-xs text-gray-400 font-medium">Qty: {item.qty} × ₹{item.price}</p>
                         </div>
-                        <p className="font-black text-gray-900">₹{item.price * item.qty}</p>
+                        <p className="font-black text-gray-900 shrink-0">₹{item.price * item.qty}</p>
                       </div>
                     ))}
                   </div>

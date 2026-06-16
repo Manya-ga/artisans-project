@@ -58,7 +58,7 @@ export default function HomePage({ query }) {
     load();
   }, [activeCategory, currentPage, productsPerPage, query]);
 
-  const categories = ['All', 'Madhubani Painting', 'Handloom Textiles', 'Blue Pottery', 'Terracotta Art', 'Wood Carving', 'Hand Embroidery', 'Bamboo Crafts', 'Metalwork'];
+  const categories = ['All', 'Jewelry', 'Home Decor', 'Textiles', 'Pottery', 'Art'];
 
   const pageNumbers = useMemo(() => {
     if (totalPages <= 5) {
@@ -105,7 +105,7 @@ export default function HomePage({ query }) {
       <section className="relative h-[320px] sm:h-[450px] md:h-[500px] rounded-[32px] sm:rounded-[60px] overflow-hidden bg-gray-900 group">
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?w=2000" 
+          src="https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=2000" 
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
           alt="Artisan Banner" 
         />

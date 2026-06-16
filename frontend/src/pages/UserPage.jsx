@@ -21,8 +21,8 @@ export default function UserPage() {
   if (!user) return null; // Should be handled by protected route
 
   const orders = [
-    { id: '#AC-8821', date: '24 Apr, 2024', status: 'In Transit', total: '₹2,499', items: 1, image: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=200' },
-    { id: '#AC-8790', date: '12 Apr, 2024', status: 'Delivered', total: '₹8,200', items: 3, image: 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=200' },
+    { id: '#AC-8821', date: '24 Apr, 2024', status: 'In Transit', total: '₹2,499', items: 1, image: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=200' },
+    { id: '#AC-8790', date: '12 Apr, 2024', status: 'Delivered', total: '₹8,200', items: 3, image: 'https://images.unsplash.com/photo-1590736961958-51fdc62bad13?auto=format&fit=crop&q=80&w=200' },
   ];
 
   return (

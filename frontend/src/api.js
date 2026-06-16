@@ -191,7 +191,19 @@ export async function getMyOffers() {
 }
 
 export async function sendMessage(body) {
-  return api.post('/api/messages', body);
+  return api.post('/api/messages/send', body);
+}
+
+export async function createConversation(otherUserId) {
+  return api.post('/api/messages/conversations', { otherUserId });
+}
+
+export async function deleteConversation(conversationId) {
+  return api.delete(`/api/messages/conversations/${conversationId}`);
+}
+
+export async function getConversationMessages(userId) {
+  return api.get(`/api/messages/${userId}`);
 }
 
 export async function createOffer(body) {

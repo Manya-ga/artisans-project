@@ -3,21 +3,22 @@ import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { io } from 'socket.io-client';
-import api from '../api'; // Use centralized axios instance
-import { 
-  Send, User as UserIcon, ArrowLeft, MoreVertical, 
-  Smile, Paperclip, CheckCheck, Loader2, MessageSquare, ChevronDown
+import api from '../api';
+import { deleteConversation as apiDeleteConversation } from '../api';
+import {
+  Send, User as UserIcon, ArrowLeft, MoreVertical,
+  Paperclip, CheckCheck, Loader2, MessageSquare, ChevronDown, Trash2, X
 } from 'lucide-react';
 
 const SOCKET_URL = import.meta.env.VITE_API_URL || 'https://artisan-connect-backend-db2z.onrender.com';
 
 export default function MessagingPage() {
-  const { userId } = useParams(); // target user id
+  const { userId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useAuth();
   const currentUserId = user?._id || user?.id;
-  
+
   const [socket, setSocket] = useState(null);
   const [conversations, setConversations] = useState([]);
   const [messages, setMessages] = useState([]);
@@ -25,31 +26,48 @@ export default function MessagingPage() {
   const [loadingConv, setLoadingConv] = useState(true);
   const [loadingMsg, setLoadingMsg] = useState(false);
   const [targetUser, setTargetUser] = useState(null);
-  
+  const [showMenu, setShowMenu] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [deletingConv, setDeletingConv] = useState(false);
+
   const scrollRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const prevMessagesLength = useRef(0);
   const wasNearBottom = useRef(true);
-  
+  const menuRef = useRef(null);
+
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
 
-  // Determine who we are chatting with
-  const activeUser = targetUser || conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId))?.user || null;
+  const activeUser =
+    targetUser ||
+    conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId))?.user ||
+    null;
 
-  // Initialize Socket.io
+  const activeConversationId = conversations.find(
+    c => c && c.user && (c.user._id === userId || c.user.id === userId)
+  )?.conversationId || null;
+
+  // ── Close menu on outside click ──────────────────────────────
+  useEffect(() => {
+    const handler = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  // ── Socket.io setup ──────────────────────────────────────────
   useEffect(() => {
     if (!user) return;
-
-    // Prevent self-messaging
     if (userId && userId === currentUserId) {
       navigate('/messages', { replace: true });
       return;
     }
-    
-    const newSocket = io(SOCKET_URL, {
-      withCredentials: true
-    });
+
+    const newSocket = io(SOCKET_URL, { withCredentials: true });
     setSocket(newSocket);
 
     newSocket.on('connect', () => {
@@ -61,13 +79,9 @@ export default function MessagingPage() {
     });
 
     newSocket.on('receiveMessage', (message) => {
-      console.log("Received message from socket:", message);
-      // If message belongs to active chat, append it
+      console.log('[Socket] Received message:', message);
       setMessages(prev => {
-        // Only append if it's not already in the list (prevent duplicates)
         if (prev.find(m => m._id === message._id)) return prev;
-        
-        // If it's for the current chat
         if (
           (message.senderId === currentUserId && message.receiverId === userId) ||
           (message.senderId === userId && message.receiverId === currentUserId)
@@ -77,114 +91,102 @@ export default function MessagingPage() {
         return prev;
       });
 
-      // Update conversations list with the latest message
       setConversations(prev => {
         const otherId = message.senderId === currentUserId ? message.receiverId : message.senderId;
         const existing = prev.find(c => c && c.user && (c.user._id === otherId || c.user.id === otherId));
-        
         if (existing) {
           const updated = prev.filter(c => c && c.user && (c.user._id !== otherId && c.user.id !== otherId));
           return [{
             ...existing,
             lastMessage: message,
-            unreadCount: (message.senderId !== currentUserId && otherId !== userId) ? existing.unreadCount + 1 : existing.unreadCount
+            unreadCount: (message.senderId !== currentUserId && otherId !== userId)
+              ? existing.unreadCount + 1
+              : existing.unreadCount
           }, ...updated];
         }
-        // If new conversation, we need to refetch to get user details
         fetchConversations();
         return prev;
       });
     });
 
-    return () => {
-      newSocket.disconnect();
-    };
+    return () => newSocket.disconnect();
   }, [user, userId]);
 
-  // Fetch Conversations
+  // ── Fetch Conversations (loads from DB — persists across logout/login) ───────
   const fetchConversations = async () => {
     try {
-      console.log("[fetchConversations] Fetching...");
+      console.log('[fetchConversations] Loading from DB...');
       const res = await api.get('/api/messages/conversations');
-      console.log("[fetchConversations] Received:", res);
       setConversations(res || []);
     } catch (err) {
-      console.error('Error fetching conversations:', err);
+      console.error('[fetchConversations] Error:', err);
     } finally {
       setLoadingConv(false);
     }
   };
 
+  // Re-fetch whenever the authenticated user changes (handles login/logout cycle)
   useEffect(() => {
     if (user) {
+      setLoadingConv(true);
       fetchConversations();
+    } else {
+      setConversations([]);
+      setMessages([]);
+      setLoadingConv(false);
     }
   }, [user]);
 
-  // Fetch target user if not in conversations
+  // ── Fetch target user info if not yet in conversation list ───
   useEffect(() => {
     const fetchTargetUser = async () => {
       if (!userId) return;
       const inList = conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId));
-      if (inList) {
-        setTargetUser(null);
-        return;
-      }
+      if (inList) { setTargetUser(null); return; }
 
-      console.log(`[fetchTargetUser] Fetching details for ${userId}...`);
       try {
         const res = await api.get(`/api/users/${userId}`);
-        console.log("[fetchTargetUser] Received:", res);
         setTargetUser(res);
       } catch (err) {
-        console.error('Error fetching target user:', err);
+        console.error('[fetchTargetUser] Error:', err);
       }
     };
-
     fetchTargetUser();
   }, [userId, conversations]);
 
-  // Fetch Messages for active chat
+  // ── Fetch Messages for the active chat (from DB) ─────────────
   useEffect(() => {
     const fetchMessages = async () => {
       if (!userId) return;
       setLoadingMsg(true);
-      console.log(`[fetchMessages] Loading history for ${userId}...`);
+      prevMessagesLength.current = 0;
       try {
         const res = await api.get(`/api/messages/${userId}`);
-        console.log(`[fetchMessages] Found ${res.length} messages`);
         setMessages(res || []);
-        
-        // Trigger a conversation fetch if we get messages for a new user
+
         const inList = conversations.find(c => c && c.user && (c.user._id === userId || c.user.id === userId));
-        if (!inList && res.length > 0) {
-          console.log("[fetchMessages] New conversation detected, refetching list...");
+        if (!inList && res && res.length > 0) {
           fetchConversations();
         }
       } catch (err) {
-        console.error('Error fetching messages:', err);
+        console.error('[fetchMessages] Error:', err);
       } finally {
         setLoadingMsg(false);
       }
     };
-
     fetchMessages();
   }, [userId]);
 
-  // WhatsApp-like Auto Scroll Logic
+  // ── Auto-scroll logic ─────────────────────────────────────────
   const scrollToBottom = (behavior = 'smooth') => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior });
-    }
+    if (scrollRef.current) scrollRef.current.scrollIntoView({ behavior });
   };
 
   const handleScroll = () => {
     if (!scrollContainerRef.current) return;
     const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
-    // User is near bottom if within 150px
     const nearBottom = scrollHeight - scrollTop - clientHeight < 150;
     wasNearBottom.current = nearBottom;
-    
     if (nearBottom && showScrollButton) {
       setShowScrollButton(false);
       setUnreadCount(0);
@@ -193,102 +195,83 @@ export default function MessagingPage() {
 
   useLayoutEffect(() => {
     if (!scrollContainerRef.current) return;
-    
     const isNewMessage = messages.length > prevMessagesLength.current;
-    
     if (prevMessagesLength.current === 0 && messages.length > 0) {
-      // First load or pagination load
       scrollToBottom('auto');
-    } 
-    else if (isNewMessage) {
+    } else if (isNewMessage) {
       const lastMsg = messages[messages.length - 1];
       const isMine = lastMsg?.senderId === currentUserId;
-      
       if (wasNearBottom.current || isMine) {
-         scrollToBottom('smooth');
+        scrollToBottom('smooth');
       } else {
-         setShowScrollButton(true);
-         setUnreadCount(prev => prev + (messages.length - prevMessagesLength.current));
+        setShowScrollButton(true);
+        setUnreadCount(prev => prev + (messages.length - prevMessagesLength.current));
       }
     }
-    
     prevMessagesLength.current = messages.length;
   }, [messages, currentUserId]);
 
-  // Reset scroll states when changing chat
+  // Reset scroll state when switching chats
   useEffect(() => {
     prevMessagesLength.current = 0;
     wasNearBottom.current = true;
     setShowScrollButton(false);
     setUnreadCount(0);
+    setShowMenu(false);
+    setDeleteConfirm(false);
   }, [userId]);
 
-  // Auto-fill context and handle routing
+  // Auto-fill context message
   useEffect(() => {
     if (userId && location.state) {
       if (location.state.productName) {
         setInputText(prev => prev || `Hi, I want to customize this product: ${location.state.productName}`);
       } else if (location.state.isProfileContext) {
-        setInputText(prev => prev || "Hi, I saw your work and want to discuss customization.");
+        setInputText(prev => prev || 'Hi, I saw your work and want to discuss customization.');
       }
     } else if (userId) {
       setInputText('');
     }
   }, [userId, location.state]);
 
+  // ── Send Message ──────────────────────────────────────────────
   const handleSendMessage = async (e) => {
     e.preventDefault();
     const text = inputText.trim();
     if (!text || !userId) return;
-
-    // Frontend self-message guard
-    if (userId === currentUserId) {
-      console.warn('[MessagingPage] Attempted self-message — blocked');
-      return;
-    }
+    if (userId === currentUserId) return;
 
     const tempId = Date.now().toString();
     const optimisticMessage = {
-      _id: tempId,
-      id: tempId,
-      senderId: currentUserId,
-      receiverId: userId,
-      text: text,
+      _id: tempId, id: tempId,
+      senderId: currentUserId, receiverId: userId,
+      text, content: text,
       createdAt: new Date().toISOString(),
       sending: true
     };
 
-    // Optimistic Update
     setMessages(prev => [...prev, optimisticMessage]);
     setInputText('');
 
     try {
-      console.log("[Frontend] Token:", localStorage.getItem('token'));
-      console.log("[Frontend] Sending message to", userId, ":", text);
-
-      // 1. Save to DB via HTTP (More reliable for persistence confirmation)
       const sentMessage = await api.post('/api/messages/send', {
         receiverId: userId,
-        message: text, // Use 'message' field as requested
-        text: text     // Keep 'text' for backward compatibility
+        message: text,
+        text
       });
 
-      // 2. Remove optimistic and add real message
-      setMessages(prev => prev.map(m => m._id === tempId ? sentMessage : m));
+      // Replace optimistic with real persisted message
+      setMessages(prev => prev.map(m => m._id === tempId ? { ...sentMessage, text: sentMessage.text || sentMessage.content } : m));
 
-      // 3. Emit via socket for real-time delivery to the other user
       if (socket && socket.connected) {
         socket.emit('sendMessage', sentMessage);
       }
 
-      // 4. Update conversations list
       updateConversationsWithNewMessage(sentMessage);
-
     } catch (err) {
-      console.error('[Frontend] Failed to send message:', err);
-      // Remove optimistic message on failure
+      console.error('[handleSendMessage] Error:', err);
       setMessages(prev => prev.filter(m => m._id !== tempId));
-      setInputText(text); // Restore text
+      setInputText(text);
       alert(`Error: ${err.message || 'Failed to send message'}`);
     }
   };
@@ -297,22 +280,45 @@ export default function MessagingPage() {
     setConversations(prev => {
       const otherId = message.senderId === currentUserId ? message.receiverId : message.senderId;
       const existingIdx = prev.findIndex(c => c && c.user && (c.user._id === otherId || c.user.id === otherId));
-      
       if (existingIdx !== -1) {
         const updated = [...prev];
-        const conv = { ...updated[existingIdx] };
-        conv.lastMessage = message;
-        // Move to top
+        const conv = { ...updated[existingIdx], lastMessage: message };
         updated.splice(existingIdx, 1);
         return [conv, ...updated];
-      } else {
-        // If it's a new conversation, we'll need to refetch to get user info properly
-        fetchConversations();
-        return prev;
       }
+      fetchConversations();
+      return prev;
     });
   };
 
+  // ── Delete Conversation ───────────────────────────────────────
+  const handleDeleteConversation = async () => {
+    if (!activeConversationId) {
+      // Conversation hasn't been created in DB yet (no messages sent) — just navigate away
+      navigate('/messages');
+      return;
+    }
+
+    setDeletingConv(true);
+    try {
+      await apiDeleteConversation(activeConversationId);
+      // Remove from local state
+      setConversations(prev =>
+        prev.filter(c => c.conversationId !== activeConversationId)
+      );
+      setMessages([]);
+      setDeleteConfirm(false);
+      setShowMenu(false);
+      navigate('/messages');
+    } catch (err) {
+      console.error('[deleteConversation] Error:', err);
+      alert('Failed to delete conversation. Please try again.');
+    } finally {
+      setDeletingConv(false);
+    }
+  };
+
+  // ── Formatting ────────────────────────────────────────────────
   const formatTime = (dateString) => {
     if (!dateString) return '';
     const d = new Date(dateString);
@@ -330,47 +336,46 @@ export default function MessagingPage() {
     if (!c || !c.user) return null;
     const cid = c.user._id || c.user.id;
     return (
-    <div 
-      key={cid}
-      onClick={() => navigate(`/messages/${cid}`)}
-      className={`flex items-center gap-4 p-4 rounded-2xl cursor-pointer transition-all ${
-        userId === cid ? 'bg-gray-900 text-white shadow-xl shadow-gray-900/10' : 'hover:bg-gray-50 text-gray-900'
-      }`}
-    >
-      <div className="relative">
-        <div className="w-12 h-12 rounded-2xl bg-gray-100 overflow-hidden shrink-0 border border-white/10 flex items-center justify-center">
-          {c.user.photoURL ? (
-            <img src={c.user.photoURL} alt="" className="w-full h-full object-cover" />
-          ) : (
-            <UserIcon className={`w-6 h-6 ${userId === cid ? 'text-white/50' : 'text-gray-400'}`} />
-          )}
+      <div
+        key={cid}
+        onClick={() => navigate(`/messages/${cid}`)}
+        className={`flex items-center gap-4 p-4 rounded-2xl cursor-pointer transition-all ${
+          userId === cid ? 'bg-gray-900 text-white shadow-xl shadow-gray-900/10' : 'hover:bg-gray-50 text-gray-900'
+        }`}
+      >
+        <div className="relative">
+          <div className="w-12 h-12 rounded-2xl bg-gray-100 overflow-hidden shrink-0 border border-white/10 flex items-center justify-center">
+            {c.user.photoURL ? (
+              <img src={c.user.photoURL} alt="" className="w-full h-full object-cover" />
+            ) : (
+              <UserIcon className={`w-6 h-6 ${userId === cid ? 'text-white/50' : 'text-gray-400'}`} />
+            )}
+          </div>
+          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
         </div>
-        {/* Optional Online Badge */}
-        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
-      </div>
-      
-      <div className="flex-1 min-w-0">
-        <div className="flex justify-between items-center mb-1">
-          <h3 className={`font-bold truncate ${userId === cid ? 'text-white' : 'text-gray-900'}`}>
-            {c.user.displayName || 'Unknown Artisan'}
-          </h3>
-          <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === cid ? 'text-white/60' : 'text-gray-400'}`}>
-            {formatTime(c.lastMessage?.createdAt)}
-          </span>
+
+        <div className="flex-1 min-w-0">
+          <div className="flex justify-between items-center mb-1">
+            <h3 className={`font-bold truncate ${userId === cid ? 'text-white' : 'text-gray-900'}`}>
+              {c.user.displayName || 'Unknown Artisan'}
+            </h3>
+            <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === cid ? 'text-white/60' : 'text-gray-400'}`}>
+              {formatTime(c.lastMessage?.createdAt)}
+            </span>
+          </div>
+          <p className={`text-sm truncate pr-2 ${userId === cid ? 'text-white/70' : 'text-gray-500 font-medium'}`}>
+            {c.lastMessage?.text || c.lastMessage?.content || 'Start a conversation'}
+          </p>
         </div>
-        <p className={`text-sm truncate pr-2 ${userId === cid ? 'text-white/70' : 'text-gray-500 font-medium'}`}>
-          {c.lastMessage?.text || 'Start a conversation'}
-        </p>
       </div>
-    </div>
     );
   };
 
   return (
     <div className="flex justify-center bg-[#fafafa] md:pt-8 md:pb-12 md:px-8 h-full w-full">
       <div className="w-full h-full max-w-6xl bg-white md:rounded-[32px] md:shadow-2xl md:shadow-gray-200/50 flex overflow-hidden md:border md:border-gray-100 md:self-center md:max-h-full">
-        
-        {/* Left Panel - Conversations List */}
+
+        {/* ── Left Panel — Conversations ── */}
         <div className={`w-full md:w-[380px] flex flex-col border-r border-gray-100 bg-white ${userId ? 'hidden md:flex' : 'flex'}`}>
           <div className="p-6 border-b border-gray-50 flex items-center justify-between">
             <h1 className="text-2xl font-black tracking-tight text-gray-900">Messages</h1>
@@ -378,26 +383,29 @@ export default function MessagingPage() {
               <MoreVertical className="w-5 h-5 text-gray-400" />
             </div>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto no-scrollbar p-3 space-y-1">
             {loadingConv ? (
-              <div className="flex justify-center p-8"><Loader2 className="w-6 h-6 animate-spin text-pink-500" /></div>
+              <div className="flex justify-center p-8">
+                <Loader2 className="w-6 h-6 animate-spin text-pink-500" />
+              </div>
             ) : (
               <>
-                {/* Active Conversations */}
                 {activeChats.length === 0 ? (
                   <div className="text-center p-8 text-gray-400">
                     <MessageSquare className="w-12 h-12 mx-auto mb-3 opacity-20" />
                     <p className="font-semibold text-sm">No conversations yet</p>
+                    <p className="text-xs mt-1 opacity-70">Start chatting with an artisan below</p>
                   </div>
                 ) : (
                   activeChats.map(renderUserCard)
                 )}
 
-                {/* Other Users */}
                 {otherUsers.length > 0 && (
                   <div className="mt-6">
-                    <div className="px-4 py-2 text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Other Users</div>
+                    <div className="px-4 py-2 text-xs font-black text-gray-400 uppercase tracking-widest mb-2">
+                      Suggested Artisans
+                    </div>
                     {otherUsers.map(renderUserCard)}
                   </div>
                 )}
@@ -406,7 +414,7 @@ export default function MessagingPage() {
           </div>
         </div>
 
-        {/* Right Panel - Active Chat */}
+        {/* ── Right Panel — Active Chat ── */}
         <div className={`chat-page flex-1 flex flex-col bg-[#fdfdfd] relative ${!userId ? 'hidden md:flex' : 'flex'} w-full h-full overflow-hidden`}>
           {!userId ? (
             <div className="flex-1 flex flex-col items-center justify-center text-center p-8">
@@ -414,7 +422,9 @@ export default function MessagingPage() {
                 <MessageSquare className="w-10 h-10 text-pink-500" />
               </div>
               <h2 className="text-2xl font-black text-gray-900 mb-2">Your Messages</h2>
-              <p className="text-gray-500 font-medium max-w-sm">Select a conversation from the left panel or start a new chat with an artisan.</p>
+              <p className="text-gray-500 font-medium max-w-sm">
+                Select a conversation from the left panel or start a new chat with an artisan.
+              </p>
             </div>
           ) : (
             <>
@@ -424,7 +434,7 @@ export default function MessagingPage() {
                   <button onClick={() => navigate('/messages')} className="md:hidden p-2 -ml-1 text-gray-600 hover:bg-gray-100 rounded-full transition-all">
                     <ArrowLeft className="w-6 h-6" />
                   </button>
-                  <div className="flex items-center gap-3 cursor-pointer">
+                  <div className="flex items-center gap-3">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 overflow-hidden shrink-0 border border-gray-200 flex items-center justify-center">
                       {activeUser?.photoURL ? (
                         <img src={activeUser.photoURL} alt="" className="w-full h-full object-cover" />
@@ -440,63 +450,138 @@ export default function MessagingPage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-1">
-                  <button className="p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-all">
+
+                {/* Chat Options Menu */}
+                <div className="relative" ref={menuRef}>
+                  <button
+                    onClick={() => setShowMenu(v => !v)}
+                    className="p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-all"
+                  >
                     <MoreVertical className="w-5 h-5 md:w-6 md:h-6" />
                   </button>
+
+                  <AnimatePresence>
+                    {showMenu && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.92, y: -8 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.92, y: -8 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute right-0 top-12 w-52 bg-white rounded-2xl shadow-2xl shadow-gray-200/60 border border-gray-100 overflow-hidden z-50"
+                      >
+                        <button
+                          onClick={() => { setDeleteConfirm(true); setShowMenu(false); }}
+                          className="w-full flex items-center gap-3 px-4 py-3.5 text-sm font-semibold text-red-500 hover:bg-red-50 transition-colors"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                          Delete Conversation
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
 
-              {/* Chat Messages */}
-              <div 
+              {/* Delete Confirmation Modal */}
+              <AnimatePresence>
+                {deleteConfirm && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 z-[200] flex items-center justify-center bg-black/40 backdrop-blur-sm px-6"
+                  >
+                    <motion.div
+                      initial={{ scale: 0.9, y: 20 }}
+                      animate={{ scale: 1, y: 0 }}
+                      exit={{ scale: 0.9, y: 20 }}
+                      className="bg-white rounded-3xl shadow-2xl p-6 max-w-sm w-full"
+                    >
+                      <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Trash2 className="w-7 h-7 text-red-500" />
+                      </div>
+                      <h3 className="text-xl font-black text-gray-900 text-center mb-2">Delete Conversation?</h3>
+                      <p className="text-sm text-gray-500 text-center mb-6 leading-relaxed">
+                        This will permanently delete all messages in this conversation. This action cannot be undone.
+                      </p>
+                      <div className="flex gap-3">
+                        <button
+                          onClick={() => setDeleteConfirm(false)}
+                          disabled={deletingConv}
+                          className="flex-1 py-3 rounded-2xl border border-gray-200 text-gray-700 font-bold text-sm hover:bg-gray-50 transition-colors disabled:opacity-50"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          onClick={handleDeleteConversation}
+                          disabled={deletingConv}
+                          className="flex-1 py-3 rounded-2xl bg-red-500 text-white font-bold text-sm hover:bg-red-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                        >
+                          {deletingConv ? (
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                          ) : (
+                            <>
+                              <Trash2 className="w-4 h-4" />
+                              Delete
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Messages Area */}
+              <div
                 ref={scrollContainerRef}
                 onScroll={handleScroll}
                 className="messages flex-1 overflow-y-auto px-3 md:px-6 py-4 space-y-2 md:space-y-4 bg-[#f8fafc] relative w-full"
                 style={{ overscrollBehaviorY: 'contain', WebkitOverflowScrolling: 'touch' }}
               >
-                
                 {/* Context Banner */}
                 {location.state?.productName && (
                   <div className="bg-white border border-gray-200 p-3 rounded-2xl flex items-center gap-3 mb-4 shadow-sm max-w-sm mx-auto">
-                     {location.state.productImage && (
-                       <img src={location.state.productImage} alt="" className="w-10 h-10 rounded-xl object-cover" />
-                     )}
-                     <div className="flex-1 min-w-0">
-                       <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-0.5">Inquiry About</p>
-                       <p className="font-semibold text-gray-900 text-sm truncate">{location.state.productName}</p>
-                     </div>
+                    {location.state.productImage && (
+                      <img src={location.state.productImage} alt="" className="w-10 h-10 rounded-xl object-cover" />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-0.5">Inquiry About</p>
+                      <p className="font-semibold text-gray-900 text-sm truncate">{location.state.productName}</p>
+                    </div>
                   </div>
                 )}
 
                 {loadingMsg ? (
-                  <div className="flex justify-center h-full items-center"><Loader2 className="w-8 h-8 animate-spin text-pink-500" /></div>
+                  <div className="flex justify-center h-full items-center">
+                    <Loader2 className="w-8 h-8 animate-spin text-pink-500" />
+                  </div>
                 ) : messages.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center space-y-3">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 text-gray-300">
-                       <MessageSquare className="w-6 h-6" />
+                      <MessageSquare className="w-6 h-6" />
                     </div>
                     <p className="text-gray-400 font-medium text-sm">Say hello!</p>
                   </div>
                 ) : (
                   messages.map((msg, i) => {
                     const isMine = msg.senderId === currentUserId;
+                    const msgText = msg.text || msg.content || '';
                     return (
-                      <motion.div 
+                      <motion.div
                         key={msg._id || i}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className={`flex ${isMine ? 'justify-end' : 'justify-start'}`}
                       >
                         <div className={`max-w-[80%] md:max-w-[70%] min-w-[80px] break-words whitespace-normal px-4 py-2.5 shadow-sm relative group ${
-                          isMine 
-                            ? 'bg-pink-500 text-white rounded-2xl rounded-tr-sm' 
+                          isMine
+                            ? 'bg-pink-500 text-white rounded-2xl rounded-tr-sm'
                             : 'bg-white border border-gray-100 text-gray-900 rounded-2xl rounded-tl-sm'
                         }`}>
-                          <p className="text-[15px] font-medium leading-snug">{msg.text}</p>
+                          <p className="text-[15px] font-medium leading-snug">{msgText}</p>
                           <div className={`flex items-center justify-end gap-1 mt-1 ${isMine ? 'text-pink-100' : 'text-gray-400'}`}>
-                            <span className="text-[10px] font-medium">
-                              {formatTime(msg.createdAt)}
-                            </span>
+                            <span className="text-[10px] font-medium">{formatTime(msg.createdAt)}</span>
                             {isMine && <CheckCheck className="w-3.5 h-3.5" />}
                           </div>
                         </div>
@@ -507,7 +592,7 @@ export default function MessagingPage() {
                 <div ref={scrollRef} className="h-2" />
               </div>
 
-              {/* New Message Floating Indicator */}
+              {/* Scroll-to-bottom button */}
               <AnimatePresence>
                 {showScrollButton && (
                   <motion.button
@@ -533,14 +618,14 @@ export default function MessagingPage() {
               {/* Chat Input */}
               <div className="input-bar sticky bottom-0 z-[100] px-2 py-2 md:px-6 md:py-4 bg-[#f0f2f5] md:bg-white border-t border-gray-200 shrink-0 pb-safe">
                 <form onSubmit={handleSendMessage} className="flex items-end gap-2 max-w-4xl mx-auto w-full">
-                  <button 
+                  <button
                     type="button"
                     className="w-10 h-10 md:w-12 md:h-12 shrink-0 flex items-center justify-center text-gray-500 hover:bg-gray-200 rounded-full transition-all mb-0.5"
                   >
                     <Paperclip className="w-6 h-6" />
                   </button>
-                  <textarea 
-                    placeholder="Message..." 
+                  <textarea
+                    placeholder="Message..."
                     value={inputText}
                     onChange={(e) => {
                       setInputText(e.target.value);
@@ -557,8 +642,8 @@ export default function MessagingPage() {
                     className="flex-1 bg-white rounded-3xl min-h-[40px] md:min-h-[48px] px-4 py-2.5 md:py-3 text-[15px] text-gray-900 border border-gray-300 outline-none resize-none no-scrollbar placeholder:text-gray-500 focus:border-pink-500 shadow-sm transition-colors"
                     style={{ overflowY: 'auto' }}
                   />
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     disabled={!inputText.trim()}
                     className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shrink-0 bg-pink-500 text-white rounded-full shadow-md hover:bg-pink-600 transition-all active:scale-95 disabled:opacity-50 disabled:active:scale-100 mb-0.5"
                   >

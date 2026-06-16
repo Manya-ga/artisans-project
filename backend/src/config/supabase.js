@@ -1,3 +1,25 @@
+// ── Real Supabase Client (used when env vars are configured) ──────────────────
+// When SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY are set (production / staging),
+// we use the official Supabase JS client. The service role key bypasses RLS on
+// the server side — RLS is enforced at the DB level via auth.uid() policies.
+if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  const { createClient } = require('@supabase/supabase-js');
+  const realClient = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  );
+  console.log('[Supabase] Connected to REAL Supabase project:', process.env.SUPABASE_URL);
+  module.exports = realClient;
+} else {
+  // ── Local JSON Mock (fallback for dev without credentials) ──────────────────
+  console.log('[Supabase] No SUPABASE_URL found — using local JSON mock (local_db.json)');
+
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -526,3 +548,4 @@ const supabaseMock = {
 };
 
 module.exports = supabaseMock;
+} // end else (mock fallback)

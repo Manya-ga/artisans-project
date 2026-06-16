@@ -3,110 +3,122 @@
     {
       "id": "3ff1776c-310a-4745-a8ef-4c02d72d6050",
       "email": "demo@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Demo Buyer"
       },
-      "created_at": "2026-06-15T17:10:17.905Z"
+      "created_at": "2026-06-15T17:10:17.905Z",
+      "password_hash": "$2b$10$HdznnLZ.fmatehqJ8nfDI.GxsFqzAVgtmlxiel75Pa.kV2M7SM2hK",
+      "updated_at": "2026-06-16T14:10:39.971Z"
     },
     {
       "id": "59ca3500-e3d4-4f66-b0d4-0b8b12d4120e",
       "email": "artisan1@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Ramesh Kumar"
       },
-      "created_at": "2026-06-15T17:10:17.917Z"
+      "created_at": "2026-06-15T17:10:17.917Z",
+      "password_hash": "$2b$10$nfnFDqk3xa8mRnd1LR8BueAM2uVvYPUgwDI5BsREQfsgbd7efADAS",
+      "updated_at": "2026-06-16T14:10:40.040Z"
     },
     {
       "id": "fbec82f7-382f-40ae-81e9-30095d03ae6c",
       "email": "artisan2@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Lakshmi Devi"
       },
-      "created_at": "2026-06-15T17:10:17.920Z"
+      "created_at": "2026-06-15T17:10:17.920Z",
+      "password_hash": "$2b$10$vc0biGAa0H2pqa5QT8sEyecQXBNl0qI4n2ToHA/JZ4tQ9nomZLQvW",
+      "updated_at": "2026-06-16T14:10:40.097Z"
     },
     {
       "id": "0d0cf62f-d5fa-4c1f-b02d-db30cab881a5",
       "email": "artisan3@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Anjali Verma"
       },
-      "created_at": "2026-06-15T17:10:17.922Z"
+      "created_at": "2026-06-15T17:10:17.922Z",
+      "password_hash": "$2b$10$mMiMdzfeX.NNgC.jwAlg..W.EWZFAN8lFhjqmHZHbkhuR2cyiiSWu",
+      "updated_at": "2026-06-16T14:10:40.162Z"
     },
     {
       "id": "5779eb87-d6c1-4637-b6f5-5114fd0b1e74",
       "email": "artisan4@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Shankar Rao"
       },
-      "created_at": "2026-06-15T17:10:17.925Z"
+      "created_at": "2026-06-15T17:10:17.925Z",
+      "password_hash": "$2b$10$GNVgu3vYyVWAaAG/EBXd9ejERMhzrjXj.oDiBfTk75Wu/VLrIWjQS",
+      "updated_at": "2026-06-16T14:10:40.215Z"
     },
     {
       "id": "acb03b4c-5955-4e1c-b3c1-d45ede4f48ad",
       "email": "artisan5@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Meera Patel"
       },
-      "created_at": "2026-06-15T17:10:17.942Z"
+      "created_at": "2026-06-15T17:10:17.942Z",
+      "password_hash": "$2b$10$dZ4N5iXt9bxyr3M7F6n50ORANVEVyrKyPANiDKAchoXlokajAvPVK",
+      "updated_at": "2026-06-16T14:10:40.277Z"
     },
     {
       "id": "11718c28-b7de-4318-b56f-f3a40e05b52e",
       "email": "artisan6@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Ravi Choudhary"
       },
-      "created_at": "2026-06-15T17:10:17.943Z"
+      "created_at": "2026-06-15T17:10:17.943Z",
+      "password_hash": "$2b$10$mnmQRnVv10Fv6tszlsYeKuuU2BU0X.ubjXRQKJiFt9s4Wxg9hZUZO",
+      "updated_at": "2026-06-16T14:10:40.338Z"
     },
     {
       "id": "6ed82b0f-30dd-4c98-a1f3-6439b99b5450",
       "email": "artisan7@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Kavitha Nair"
       },
-      "created_at": "2026-06-15T17:10:17.945Z"
+      "created_at": "2026-06-15T17:10:17.945Z",
+      "password_hash": "$2b$10$tvvzhmzJ9OJqFfasWWxhT.AdpYETFzg0yzLQjwjv3jGb.P2Sj97cy",
+      "updated_at": "2026-06-16T14:10:40.402Z"
     },
     {
       "id": "694a93db-8824-434f-a753-1f5b32a1b64e",
       "email": "artisan8@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Harish Joshi"
       },
-      "created_at": "2026-06-15T17:10:17.948Z"
+      "created_at": "2026-06-15T17:10:17.948Z",
+      "password_hash": "$2b$10$L5/1Y9yIuPrFBBchEaMz9O0PI3eoa7WFPoT9XSUyoYwSpJCmtNIp.",
+      "updated_at": "2026-06-16T14:10:40.459Z"
     },
     {
       "id": "e1443880-de2f-45b2-b6af-cf511c2e8a78",
       "email": "artisan9@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Sunita Kumari"
       },
-      "created_at": "2026-06-15T17:10:17.951Z"
+      "created_at": "2026-06-15T17:10:17.951Z",
+      "password_hash": "$2b$10$7u.Q3TDec1TM6gnsOTuYA.seobCReRW0dbxsU2WrXvmxSgsqHeqe6",
+      "updated_at": "2026-06-16T14:10:40.514Z"
     },
     {
       "id": "dc8eaad4-1f95-42af-9248-99c411c91400",
       "email": "artisan10@artisan.com",
-      "password": "demo1234",
       "user_metadata": {
         "display_name": "Abdul Rahman"
       },
-      "created_at": "2026-06-15T17:10:17.952Z"
+      "created_at": "2026-06-15T17:10:17.952Z",
+      "password_hash": "$2b$10$bziv3EP3xHvIxjCkbK9KQu2zHdF7Iu5Y7N2tOtJbeJ3s1dpGcn4bi",
+      "updated_at": "2026-06-16T14:10:40.572Z"
     },
     {
       "id": "a8492cc5-2093-46e3-b8cb-881297a44527",
       "email": "test@example.com",
-      "password": "password",
       "user_metadata": {
         "display_name": "Test"
       },
-      "created_at": "2026-06-15T17:27:20.630Z"
+      "created_at": "2026-06-15T17:27:20.630Z",
+      "password_hash": "$2b$10$Ktc0CP7nTaHpuFyN7qxat.k2.r8CZLpak6vI5U5D2jwDpG0oYipXm",
+      "updated_at": "2026-06-16T14:10:40.628Z"
     }
   ],
   "profiles": [

@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 // Core Components
 import TopNav from './components/TopNav.jsx';
@@ -64,6 +64,28 @@ function AppInner() {
     return saved ? JSON.parse(saved) : { pincode: '560001', city: 'Bangalore' };
   });
 
+  // Open the auth modal programmatically (used by ProtectedRoute)
+  const requireAuth = useCallback(() => {
+    setAuthMode('login');
+    setAuthOpen(true);
+  }, []);
+
+  // ProtectedRoute: renders children if authenticated, otherwise opens auth modal and redirects
+  function ProtectedRoute({ children }) {
+    if (!user) {
+      // Use effect-free pattern: open modal via a wrapper component
+      return <ProtectedRouteRedirect onRequireAuth={requireAuth} />;
+    }
+    return children;
+  }
+
+  function ProtectedRouteRedirect({ onRequireAuth }) {
+    useEffect(() => {
+      onRequireAuth();
+    }, [onRequireAuth]);
+    return <Navigate to="/" replace />;
+  }
+
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
@@ -98,23 +120,26 @@ function AppInner() {
           : 'max-w-7xl mx-auto px-4 sm:px-6 pt-6 pb-24 md:py-12'
       }`}>
         <Routes>
+          {/* Public routes */}
           <Route path="/" element={<HomePage query={query} />} />
           <Route path="/discovery" element={<DiscoveryPage query={query} />} />
           <Route path="/artisan/:id" element={<ArtisanProfile />} />
           <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
-          <Route path="/wishlist" element={<WishlistPage />} />
           <Route path="/explore-artisans" element={<ExplorePage />} />
-          <Route path="/messages" element={user ? <MessagingPage /> : <Navigate to="/" />} />
-          <Route path="/messages/:userId" element={user ? <MessagingPage /> : <Navigate to="/" />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/my-products" element={user ? <MyProductsPage /> : <Navigate to="/" />} />
           <Route path="/offers" element={<OffersPage />} />
           <Route path="/help" element={<HelpPage />} />
           <Route path="/track" element={<TrackOrderPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<CartPage />} />
+
+          {/* Protected routes — opens auth modal if not logged in */}
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/messages" element={<ProtectedRoute><MessagingPage /></ProtectedRoute>} />
+          <Route path="/messages/:userId" element={<ProtectedRoute><MessagingPage /></ProtectedRoute>} />
+          <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
+          <Route path="/my-products" element={<ProtectedRoute><MyProductsPage /></ProtectedRoute>} />
+          <Route path="/wishlist" element={<ProtectedRoute><WishlistPage /></ProtectedRoute>} />
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

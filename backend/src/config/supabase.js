@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const bcrypt = require('bcrypt');
+
+const BCRYPT_ROUNDS = 10;
 
 const dbPath = path.resolve(__dirname, '../../local_db.json');
 
@@ -416,16 +419,19 @@ class QueryBuilder {
 const mockAuth = {
   async signUp({ email, password, options }) {
     const db = readDb();
-    const existing = db.users.find(u => u.email === email.toLowerCase().trim());
+    const normalizedEmail = email.toLowerCase().trim();
+    const existing = db.users.find(u => u.email === normalizedEmail);
     if (existing) {
       return { data: { user: null, session: null }, error: new Error('User already exists') };
     }
+    const password_hash = await bcrypt.hash(password, BCRYPT_ROUNDS);
     const user = {
       id: crypto.randomUUID(),
-      email: email.toLowerCase().trim(),
-      password, // store plain text for development simplicity
+      email: normalizedEmail,
+      password_hash,
       user_metadata: options?.data || {},
-      created_at: new Date().toISOString()
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
     };
     db.users.push(user);
     writeDb(db);
@@ -436,10 +442,32 @@ const mockAuth = {
 
   async signInWithPassword({ email, password }) {
     const db = readDb();
-    const user = db.users.find(u => u.email === email.toLowerCase().trim());
-    if (!user || user.password !== password) {
-      return { data: { user: null, session: null }, error: new Error('Invalid credentials') };
+    const normalizedEmail = email.toLowerCase().trim();
+    const user = db.users.find(u => u.email === normalizedEmail);
+    if (!user) {
+      return { data: { user: null, session: null }, error: new Error('Invalid login credentials') };
     }
+
+    // Support both hashed (password_hash) and legacy plain-text (password) fields
+    let isValid = false;
+    if (user.password_hash) {
+      isValid = await bcrypt.compare(password, user.password_hash);
+    } else if (user.password) {
+      // Legacy plain-text comparison — auto-migrate to hashed on success
+      isValid = (user.password === password);
+      if (isValid) {
+        user.password_hash = await bcrypt.hash(password, BCRYPT_ROUNDS);
+        delete user.password;
+        user.updated_at = new Date().toISOString();
+        writeDb(db);
+        console.log(`[Auth] Auto-migrated password to bcrypt hash for user ${user.email}`);
+      }
+    }
+
+    if (!isValid) {
+      return { data: { user: null, session: null }, error: new Error('Invalid login credentials') };
+    }
+
     const token = `mock-jwt-token-for-${user.id}`;
     return { data: { user, session: { access_token: token } }, error: null };
   },
@@ -469,16 +497,19 @@ const mockAuth = {
 
     async createUser({ email, password, email_confirm, user_metadata }) {
       const db = readDb();
-      const existing = db.users.find(u => u.email === email.toLowerCase().trim());
+      const normalizedEmail = email.toLowerCase().trim();
+      const existing = db.users.find(u => u.email === normalizedEmail);
       if (existing) {
         return { data: { user: existing }, error: null };
       }
+      const password_hash = await bcrypt.hash(password, BCRYPT_ROUNDS);
       const user = {
         id: crypto.randomUUID(),
-        email: email.toLowerCase().trim(),
-        password,
+        email: normalizedEmail,
+        password_hash,
         user_metadata: user_metadata || {},
-        created_at: new Date().toISOString()
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
       };
       db.users.push(user);
       writeDb(db);

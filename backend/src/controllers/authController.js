@@ -1,6 +1,11 @@
 const supabase = require('../config/supabase');
 const { getPublicBaseUrl } = require('../utils/publicUrl');
 
+// Email validation regex (RFC 5322 simplified)
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MIN_PASSWORD_LENGTH = 6;
+const MIN_NAME_LENGTH = 2;
+
 function sendTokenCookie(res, token) {
   res.cookie('token', token, {
     httpOnly: true,
@@ -34,6 +39,21 @@ exports.register = async (req, res) => {
     return res.status(400).json({ error: 'Name, email, and password are required.' });
   }
 
+  // Validate email format
+  if (!EMAIL_REGEX.test(email.trim())) {
+    return res.status(400).json({ error: 'Please enter a valid email address.' });
+  }
+
+  // Validate password strength
+  if (password.length < MIN_PASSWORD_LENGTH) {
+    return res.status(400).json({ error: `Password must be at least ${MIN_PASSWORD_LENGTH} characters.` });
+  }
+
+  // Validate name length
+  if (displayName.trim().length < MIN_NAME_LENGTH) {
+    return res.status(400).json({ error: `Name must be at least ${MIN_NAME_LENGTH} characters.` });
+  }
+
   try {
     const { data, error } = await supabase.auth.signUp({
       email: email.toLowerCase().trim(),
@@ -55,7 +75,8 @@ exports.register = async (req, res) => {
         id: data.user.id,
         email: email.toLowerCase().trim(),
         display_name: displayName.trim(),
-        role: 'buyer'
+        role: 'buyer',
+        updated_at: new Date().toISOString()
       });
 
     if (profileError) {
@@ -87,6 +108,11 @@ exports.login = async (req, res) => {
     return res.status(400).json({ error: 'Email and password are required.' });
   }
 
+  // Validate email format
+  if (!EMAIL_REGEX.test(email.trim())) {
+    return res.status(400).json({ error: 'Please enter a valid email address.' });
+  }
+
   try {
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email.toLowerCase().trim(),
@@ -95,7 +121,7 @@ exports.login = async (req, res) => {
 
     if (error) {
       console.error('Login error from Supabase:', error.message);
-      return res.status(401).json({ error: error.message });
+      return res.status(401).json({ error: 'Invalid email or password.' });
     }
 
     // Fetch profile with error handling

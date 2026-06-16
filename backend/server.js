@@ -15,6 +15,26 @@ const app = require('./src/index');
 
 const port = process.env.PORT || 5000;
 
+console.log('--- STARTUP LOGS ---');
+console.log('Supabase URL detected?', !!process.env.SUPABASE_URL);
+console.log('Supabase Service Role Key detected?', !!process.env.SUPABASE_SERVICE_ROLE_KEY);
+
+let dataSource = 'local_db.json';
+if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  dataSource = 'Supabase';
+  // verify connection by making a dummy query
+  supabase.from('products').select('id').limit(1)
+    .then(({ error }) => {
+      console.log('Supabase connection successful?', !error);
+      if (error) console.error('Supabase connection error:', error.message);
+    })
+    .catch(err => {
+      console.log('Supabase connection successful?', false);
+    });
+}
+console.log('Data source currently used:', dataSource);
+console.log('--------------------');
+
 const server = http.createServer(app);
 const allowedOrigins = [
   process.env.FRONTEND_URL,

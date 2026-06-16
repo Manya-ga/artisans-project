@@ -9,9 +9,9 @@ async function syncDatabase() {
     // 1. Sync Artisans
     console.log(`Syncing ${artisans.length} artisans...`);
     for (const item of artisans) {
-      const { error } = await supabase
-        .from('artisans')
-        .update({
+      const { data: existingArtisan } = await supabase.from('artisans').select('id').eq('legacy_id', item.id).single();
+      
+      const payload = {
           name: item.name,
           category: item.category,
           image: item.image,
@@ -19,10 +19,16 @@ async function syncDatabase() {
           tagline: item.tagline,
           bio: item.bio,
           location: item.location
-        })
-        .eq('legacy_id', item.id);
-      
-      if (error) console.error(`Error updating artisan ${item.id}:`, error);
+      };
+
+      if (existingArtisan) {
+        const { error } = await supabase.from('artisans').update(payload).eq('legacy_id', item.id);
+        if (error) console.error(`Error updating artisan ${item.id}:`, error);
+      } else {
+        payload.legacy_id = item.id;
+        const { error } = await supabase.from('artisans').insert(payload);
+        if (error) console.error(`Error inserting artisan ${item.id}:`, error);
+      }
     }
     console.log('Artisans synced.');
 

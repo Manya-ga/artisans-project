@@ -154,7 +154,7 @@ async function runTests() {
     }
 
     // 8. MESSAGING FLOW
-    const sampleArtisanId = '1a518baa-6bd9-4318-b30b-40a7335dd98f'; // Maria Rodriguez
+    const sampleArtisanId = '1a518baa-6bd9-4318-b30b-40a7335dd98f'; // Ramesh Kumar
     console.log(`[Test] Sending message to artisan ${sampleArtisanId}...`);
     const sendMsgRes = await makeRequest(`${BASE_URL}/api/messages/send`, {
       method: 'POST',

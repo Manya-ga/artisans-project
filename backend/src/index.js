@@ -58,7 +58,8 @@ app.get('/api/health/debug', (req, res) => {
   return res.json({ 
     supabaseUrlConfigured: !!process.env.SUPABASE_URL,
     supabaseRoleKeyConfigured: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-    databaseInUse: (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) ? 'Supabase' : 'local_db.json'
+    databaseInUse: (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) ? 'Supabase' : 'local_db.json',
+    supabaseUrlPrefix: process.env.SUPABASE_URL ? process.env.SUPABASE_URL.substring(0, 25) : null
   });
 });
 

@@ -54,6 +54,14 @@ app.get('/api/health', (req, res) => {
   return res.json({ status: 'ok' });
 });
 
+app.get('/api/health/debug', (req, res) => {
+  return res.json({ 
+    supabaseUrlConfigured: !!process.env.SUPABASE_URL,
+    supabaseRoleKeyConfigured: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+    databaseInUse: (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) ? 'Supabase' : 'local_db.json'
+  });
+});
+
 const adController = require('./controllers/adController');
 const couponController = require('./controllers/couponController');
 const messageRoutes = require('./routes/messageRoutes');

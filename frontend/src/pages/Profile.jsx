@@ -14,38 +14,9 @@ import { useToast } from '../contexts/ToastContext.jsx';
 import ProductCard from '../components/ProductCard.jsx';
 import AddProductModal from '../components/AddProductModal.jsx';
 import StoryUploadModal from '../components/StoryUploadModal.jsx';
+import ArtisanAvatar from '../components/ArtisanAvatar.jsx';
 
-// ── Initials Avatar (no fake stock photos) ──────────────────────────────────
-function Avatar({ name, photoURL, size = 128, className = '' }) {
-  const [imgError, setImgError] = useState(false);
-  const initials = (name || '?').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
-  const palettes = [
-    'from-pink-400 to-rose-500',
-    'from-violet-400 to-purple-600',
-    'from-blue-400 to-indigo-600',
-    'from-emerald-400 to-teal-600',
-    'from-amber-400 to-orange-500',
-    'from-cyan-400 to-sky-600',
-  ];
-  const gradient = palettes[(name || '').charCodeAt(0) % palettes.length];
-  const fontSize = Math.max(16, size * 0.34);
 
-  if (photoURL && !imgError) {
-    return (
-      <img
-        src={photoURL}
-        alt={name}
-        className={`w-full h-full object-cover ${className}`}
-        onError={() => setImgError(true)}
-      />
-    );
-  }
-  return (
-    <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center ${className}`}>
-      <span className="text-white font-black select-none" style={{ fontSize }}>{initials}</span>
-    </div>
-  );
-}
 
 // ── Stat Pill ─────────────────────────────────────────────────────────────────
 function StatPill({ icon: Icon, value, label, color = 'text-pink-500' }) {
@@ -67,6 +38,8 @@ function EditProfileModal({ user, onClose, onSaved }) {
   const [preview, setPreview] = useState(user?.photoURL || null);
   const [previewError, setPreviewError] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [deleteAvatar, setDeleteAvatar] = useState(false);
+  const [showImageMenu, setShowImageMenu] = useState(false);
   const fileRef = useRef();
 
   const handleFileChange = (e) => {
@@ -75,6 +48,7 @@ function EditProfileModal({ user, onClose, onSaved }) {
     setAvatarFile(file);
     setPreview(URL.createObjectURL(file));
     setPreviewError(false);
+    setDeleteAvatar(false);
   };
 
   const handleSubmit = async (e) => {
@@ -85,7 +59,8 @@ function EditProfileModal({ user, onClose, onSaved }) {
       const data = await updateProfileApi({
         displayName: displayName.trim(),
         bio: bio.trim(),
-        avatar: avatarFile
+        avatar: avatarFile,
+        deleteAvatar: deleteAvatar
       });
       onSaved(data.user || data);
     } catch (err) {
@@ -122,9 +97,13 @@ function EditProfileModal({ user, onClose, onSaved }) {
 
         <form onSubmit={handleSubmit} className="p-8 space-y-6">
           {/* Avatar Upload */}
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 relative">
             <div className="relative group">
-              <div className="w-24 h-24 rounded-[24px] overflow-hidden border-4 border-white shadow-xl">
+              <button 
+                type="button" 
+                onClick={() => setShowImageMenu(true)}
+                className="w-24 h-24 rounded-[20px] overflow-hidden shrink-0 border border-gray-100 shadow-sm relative group bg-white focus:outline-none focus:ring-4 focus:ring-pink-100"
+              >
                 {preview && !previewError ? (
                   <img
                     src={preview}
@@ -133,16 +112,39 @@ function EditProfileModal({ user, onClose, onSaved }) {
                     onError={() => setPreviewError(true)}
                   />
                 ) : (
-                  <Avatar name={displayName} photoURL={null} size={96} />
+                  <ArtisanAvatar name={displayName} photoURL={null} className="w-full h-full text-3xl" isArtisan={false} />
                 )}
-              </div>
-              <button
-                type="button"
-                onClick={() => fileRef.current?.click()}
-                className="absolute -bottom-2 -right-2 w-9 h-9 bg-pink-500 text-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-pink-600 transition-all"
-              >
-                <Camera className="w-4 h-4" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <Camera className="w-6 h-6 text-white" />
+                </div>
               </button>
+              
+              <AnimatePresence>
+                {showImageMenu && (
+                  <>
+                    <div className="fixed inset-0 z-[800]" onClick={() => setShowImageMenu(false)} />
+                    <motion.div 
+                      initial={{ opacity: 0, y: 5, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 5, scale: 0.95 }}
+                      className="absolute top-28 left-1/2 -translate-x-1/2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-[810] py-2 flex flex-col"
+                    >
+                      <button type="button" className="w-full px-4 py-3 text-left text-sm font-bold text-gray-700 hover:bg-gray-50 flex items-center gap-3 transition-colors" onClick={() => { setShowImageMenu(false); fileRef.current?.click(); }}>
+                        <Upload className="w-4 h-4 text-gray-400" /> Upload New Photo
+                      </button>
+                      {preview && (
+                        <button type="button" className="w-full px-4 py-3 text-left text-sm font-bold text-red-600 hover:bg-red-50 flex items-center gap-3 transition-colors" onClick={() => { setShowImageMenu(false); setPreview(null); setAvatarFile(null); setDeleteAvatar(true); }}>
+                          <X className="w-4 h-4 text-red-400" /> Remove Photo
+                        </button>
+                      )}
+                      <div className="h-px w-full bg-gray-50 my-1" />
+                      <button type="button" className="w-full px-4 py-3 text-left text-sm font-bold text-gray-500 hover:bg-gray-50 flex items-center gap-3 transition-colors" onClick={() => setShowImageMenu(false)}>
+                         Cancel
+                      </button>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
             </div>
             <input
               ref={fileRef}
@@ -307,8 +309,18 @@ export default function Profile({ id: propId }) {
           className="bg-white rounded-[32px] shadow-sm border border-gray-100 overflow-hidden"
         >
           {/* Banner */}
-          <div className="h-28 bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-900 relative">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(236,72,153,0.3),_transparent_60%)]" />
+          <div 
+             className="h-28 md:h-36 bg-gray-900 relative bg-cover bg-center"
+             style={profileData?.coverURL ? { backgroundImage: `url(${profileData.coverURL})` } : {}}
+          >
+            {/* If no cover image, use gradient fallback. If cover exists, use a slight dimming overlay */}
+            {!profileData?.coverURL ? (
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-indigo-900">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(236,72,153,0.3),_transparent_60%)]" />
+              </div>
+            ) : (
+              <div className="absolute inset-0 bg-black/10 backdrop-blur-[2px]" />
+            )}
           </div>
 
           <div className="px-4 sm:px-8 pb-6 sm:pb-8">
@@ -329,7 +341,7 @@ export default function Profile({ id: propId }) {
                     : 'border-4 border-white shadow-xl bg-gray-100'
                 }`}>
                   <div className={userStory?.media?.length > 0 ? 'w-full h-full rounded-[24px] border-2 border-white overflow-hidden bg-white' : 'w-full h-full'}>
-                    <Avatar name={profileData?.displayName} photoURL={profileData?.photoURL} size={112} />
+                    <ArtisanAvatar name={profileData?.displayName} photoURL={profileData?.photoURL} className="w-full h-full text-4xl" isArtisan={isArtisan} />
                   </div>
                 </div>
                 {isOwnProfile && (
@@ -558,8 +570,8 @@ export default function Profile({ id: propId }) {
                 {/* HEADER */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border-2 border-white/20 overflow-hidden bg-gray-900">
-                       <Avatar name={profileData?.displayName} photoURL={profileData?.photoURL} size={48} />
+                    <div className="w-12 h-12 rounded-[14px] bg-white border border-gray-100 p-0.5 shadow-sm overflow-hidden shrink-0">
+                       <ArtisanAvatar name={profileData?.displayName} photoURL={profileData?.photoURL} className="w-full h-full text-lg" isArtisan={isArtisan} />
                     </div>
                     <div>
                       <p className="text-white font-black text-sm">{profileData?.displayName}</p>

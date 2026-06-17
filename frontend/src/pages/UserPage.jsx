@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext.jsx';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import OfferManager from '../components/OfferManager.jsx';
 import { User, Package, Gift, Settings, LogOut, ExternalLink, ChevronRight, ShoppingBag } from 'lucide-react';
+import ArtisanAvatar from '../components/ArtisanAvatar';
 
 export default function UserPage() {
   const navigate = useNavigate();
@@ -34,7 +35,12 @@ export default function UserPage() {
         <div className="relative group shrink-0">
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-[32px] md:rounded-[40px] bg-gradient-to-tr from-pink-500 to-indigo-600 p-1 shadow-xl group-hover:rotate-3 transition-transform duration-500">
             <div className="w-full h-full rounded-[30px] md:rounded-[38px] bg-white flex items-center justify-center text-3xl md:text-4xl font-black text-gray-900 overflow-hidden">
-              {user.photoURL ? <img src={user.photoURL} alt="" className="w-full h-full object-cover" /> : (user.displayName?.[0] || 'A')}
+              <ArtisanAvatar 
+                name={user.displayName} 
+                photoURL={user.photoURL} 
+                isArtisan={user.role !== 'buyer'} 
+                className="w-full h-full"
+              />
             </div>
           </div>
           <div className="absolute -bottom-2 -right-2 bg-white p-2 rounded-2xl shadow-lg border border-gray-50">

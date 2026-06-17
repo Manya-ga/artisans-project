@@ -94,8 +94,8 @@ exports.getProducts = async (req, res) => {
     // Order newest products first so recent uploads are visible on page 1.
     dataQuery = dataQuery.order('created_at', { ascending: false });
 
-    // Apply skip and limit
-    dataQuery = dataQuery.skip(skip).limit(limit);
+    // Apply pagination range
+    dataQuery = dataQuery.range(skip, skip + limit - 1);
 
     // Execute paginated data query
     const { data: products, error: dataError } = await dataQuery;

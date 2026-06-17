@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '../contexts/ToastContext';
+import ArtisanAvatar from './ArtisanAvatar';
 import StoryUploadModal from './StoryUploadModal';
 
 export default function StoryRail() {
@@ -100,16 +101,12 @@ export default function StoryRail() {
         <div className="flex flex-col items-center gap-2 md:gap-4 shrink-0">
           <button 
             onClick={() => user ? setShowUploadModal(true) : addToast('Login to share', 'info')}
-            className="w-14 h-14 md:w-20 md:h-20 rounded-[20px] md:rounded-[28px] border-2 border-dashed border-gray-200 bg-white flex items-center justify-center hover:border-pink-500 transition-all relative group shrink-0"
           >
-            {user?.photoURL ? (
-              <img src={user.photoURL} className="w-full h-full object-cover rounded-[26px] p-1" alt="" />
-            ) : (
-              <UserIcon className="w-8 h-8 text-gray-200 group-hover:text-pink-500" />
-            )}
-            <div className="absolute -bottom-1 -right-1 bg-pink-500 text-white p-1 md:p-1.5 rounded-lg md:rounded-xl border-2 border-white">
-              <Plus className="w-2 h-2 md:w-3 md:h-3" />
+           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[28px] bg-gradient-to-tr from-pink-500 via-rose-500 to-indigo-500 p-0.5 sm:p-1 shadow-md group-hover:scale-105 group-active:scale-95 transition-all mb-1 sm:mb-2 flex-shrink-0 relative overflow-hidden">
+            <div className="w-full h-full bg-white rounded-[26px] p-0.5 relative overflow-hidden">
+               <ArtisanAvatar name={user?.displayName || user?.name} isArtisan={true} className="w-full h-full rounded-[24px] text-xl" />
             </div>
+          </div>
           </button>
           <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Share Story</span>
         </div>

@@ -3,35 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useState } from 'react';
 
-function ArtisanAvatar({ name, photoURL }) {
-  const [imgError, setImgError] = useState(false);
-  const initials = (name || '?').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
-  const colors = [
-    'from-pink-400 to-rose-500',
-    'from-violet-400 to-purple-500',
-    'from-blue-400 to-indigo-500',
-    'from-emerald-400 to-teal-500',
-    'from-amber-400 to-orange-500',
-    'from-cyan-400 to-sky-500',
-  ];
-  const gradient = colors[(name || '').charCodeAt(0) % colors.length];
-
-  if (photoURL && !imgError) {
-    return (
-      <img
-        src={photoURL}
-        alt={name}
-        className="w-20 h-20 rounded-[24px] object-cover border-4 border-gray-50 shadow-sm transition-transform duration-500 group-hover:scale-105"
-        onError={() => setImgError(true)}
-      />
-    );
-  }
-  return (
-    <div className={`w-20 h-20 rounded-[24px] bg-gradient-to-br ${gradient} flex items-center justify-center border-4 border-gray-50 shadow-sm transition-transform duration-500 group-hover:scale-105`}>
-      <span className="text-white font-black text-xl select-none">{initials}</span>
-    </div>
-  );
-}
+import ArtisanAvatar from './ArtisanAvatar';
 
 export default function ArtisanCard({ artisan, onClick }) {
   const navigate = useNavigate();
@@ -49,7 +21,11 @@ export default function ArtisanCard({ artisan, onClick }) {
       <div className="flex items-center gap-3 sm:gap-4 w-full">
         {/* Avatar - Left */}
         <div className="relative shrink-0">
-          <ArtisanAvatar name={artisan.displayName || artisan.name} photoURL={artisan.photoURL || artisan.image} />
+          <ArtisanAvatar 
+            name={artisan.displayName || artisan.name} 
+            isArtisan={true}
+            className="w-20 h-20 rounded-full border-4 border-gray-50 shadow-sm transition-transform duration-500 group-hover:scale-105 text-xl" 
+          />
           <div className="absolute -bottom-1 -right-1 bg-white p-1 rounded-lg shadow-sm border border-gray-50">
             <Award className="w-3.5 h-3.5 text-pink-500" />
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, ChevronLeft, ShoppingBag, Clock } from 'lucide-react';
+import ArtisanAvatar from './ArtisanAvatar';
 
 export default function StoryViewer({ stories = [], activeIndex = -1, onClose, onNext, onPrev, onViewProfile }) {
   const activeStory = activeIndex >= 0 ? stories[activeIndex] : null;
@@ -29,9 +30,7 @@ export default function StoryViewer({ stories = [], activeIndex = -1, onClose, o
             {/* Header */}
             <div className="p-4 sm:p-6 flex items-center justify-between border-b border-gray-50 bg-white/80 backdrop-blur-sm z-10 shrink-0">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-pink-50 overflow-hidden border border-pink-100">
-                  <img src={activeStory.mediaUrl} className="w-full h-full object-cover" alt="" />
-                </div>
+                <ArtisanAvatar name={activeStory.name} className="w-10 h-10 rounded-2xl text-base" />
                 <div>
                   <p className="font-black text-sm text-gray-900 tracking-tight">{activeStory.name}</p>
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useToast } from '../contexts/ToastContext';
+import ArtisanAvatar from '../components/ArtisanAvatar';
 import { motion, AnimatePresence } from 'framer-motion';
 import { io } from 'socket.io-client';
 import api from '../api';
@@ -332,6 +334,13 @@ export default function MessagingPage() {
   const activeChats = conversations.filter(c => c.lastMessage);
   const otherUsers = conversations.filter(c => !c.lastMessage);
 
+  const getInitials = (name) => {
+    if (!name) return 'U';
+    const p = name.split(' ').filter(Boolean);
+    if (p.length >= 2) return (p[0][0] + p[1][0]).toUpperCase();
+    return p[0].substring(0, 2).toUpperCase();
+  };
+
   const renderUserCard = (c) => {
     if (!c || !c.user) return null;
     const cid = c.user._id || c.user.id;
@@ -344,12 +353,13 @@ export default function MessagingPage() {
         }`}
       >
         <div className="relative">
-          <div className="w-12 h-12 rounded-2xl bg-gray-100 overflow-hidden shrink-0 border border-white/10 flex items-center justify-center">
-            {c.user.photoURL ? (
-              <img src={c.user.photoURL} alt="" className="w-full h-full object-cover" />
-            ) : (
-              <UserIcon className={`w-6 h-6 ${userId === cid ? 'text-white/50' : 'text-gray-400'}`} />
-            )}
+          <div className="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border border-white/10 flex items-center justify-center">
+            <ArtisanAvatar 
+              name={c.user.displayName || c.user.name} 
+              photoURL={c.user.photoURL || c.user.image}
+              isArtisan={c.user.role !== 'buyer'}
+              className="w-full h-full text-lg"
+            />
           </div>
           <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
         </div>
@@ -357,7 +367,7 @@ export default function MessagingPage() {
         <div className="flex-1 min-w-0">
           <div className="flex justify-between items-center mb-1">
             <h3 className={`font-bold truncate ${userId === cid ? 'text-white' : 'text-gray-900'}`}>
-              {c.user.displayName || 'Unknown Artisan'}
+              {c.user.displayName || c.user.name || 'Unknown Artisan'}
             </h3>
             <span className={`text-[10px] font-bold uppercase tracking-wider shrink-0 ml-2 ${userId === cid ? 'text-white/60' : 'text-gray-400'}`}>
               {formatTime(c.lastMessage?.createdAt)}
@@ -431,20 +441,22 @@ export default function MessagingPage() {
               {/* Chat Header */}
               <div className="chat-header sticky top-0 z-[100] h-16 md:h-20 px-3 md:px-6 flex items-center justify-between border-b border-gray-100 bg-white/95 backdrop-blur-md shrink-0 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <button onClick={() => navigate('/messages')} className="md:hidden p-2 -ml-1 text-gray-600 hover:bg-gray-100 rounded-full transition-all">
-                    <ArrowLeft className="w-6 h-6" />
+                  <button onClick={() => navigate('/messages')} className="md:hidden flex items-center gap-1 p-2 -ml-2 text-gray-600 hover:bg-gray-100 rounded-xl transition-all font-bold text-sm">
+                    <ArrowLeft className="w-5 h-5" />
+                    Back
                   </button>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 overflow-hidden shrink-0 border border-gray-200 flex items-center justify-center">
-                      {activeUser?.photoURL ? (
-                        <img src={activeUser.photoURL} alt="" className="w-full h-full object-cover" />
-                      ) : (
-                        <UserIcon className="w-5 h-5 md:w-6 md:h-6 text-gray-400" />
-                      )}
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shrink-0 border border-gray-200 flex items-center justify-center">
+                      <ArtisanAvatar 
+                        name={activeUser?.displayName || activeUser?.name} 
+                        photoURL={activeUser?.photoURL || activeUser?.image}
+                        isArtisan={activeUser?.role !== 'buyer'}
+                        className="w-full h-full text-lg md:text-xl"
+                      />
                     </div>
                     <div className="flex flex-col">
                       <h2 className="text-base md:text-lg font-bold text-gray-900 leading-tight truncate max-w-[150px] sm:max-w-[200px]">
-                        {activeUser?.displayName || 'Loading...'}
+                        {activeUser?.displayName || activeUser?.name || 'Loading...'}
                       </h2>
                       <p className="text-xs font-semibold text-green-500">Online</p>
                     </div>

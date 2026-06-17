@@ -236,7 +236,9 @@ exports.updateProfile = async (req, res) => {
     if (req.body.displayName) updates.display_name = String(req.body.displayName).trim();
     if (req.body.bio !== undefined) updates.bio = String(req.body.bio).trim();
 
-    if (req.file) {
+    if (req.body.deleteAvatar === 'true') {
+      updates.photo_url = null;
+    } else if (req.file) {
       let url;
       const uploadMiddleware = require('../middleware/upload');
       if (uploadMiddleware.uploadToSupabase) {

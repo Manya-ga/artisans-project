@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
+import ArtisanAvatar from './ArtisanAvatar';
 
 export default function TopNav({ query, onQueryChange, onOpenCart, location, onLocationClick, onProfileClick }) {
   const navigate = useNavigate();
@@ -139,10 +140,16 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
               className="flex items-center gap-2 p-1.5 pr-4 bg-white border border-gray-100 rounded-2xl hover:shadow-md transition-all group"
             >
               <div className="w-8 h-8 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center text-gray-400 group-hover:bg-pink-50 group-hover:text-pink-500 transition-colors shrink-0">
-                {user?.photoURL
-                  ? <img src={user.photoURL} className="w-full h-full object-cover" alt="" />
-                  : <UserIcon className="w-5 h-5" />
-                }
+                {user ? (
+                  <ArtisanAvatar 
+                    name={user.displayName} 
+                    photoURL={user.photoURL} 
+                    isArtisan={user.role !== 'buyer'} 
+                    className="w-full h-full text-sm"
+                  />
+                ) : (
+                  <UserIcon className="w-5 h-5" />
+                )}
               </div>
               <span className="text-sm font-bold text-gray-700 hidden sm:block truncate max-w-[80px]">
                 {user ? (user.displayName?.split(' ')[0] || 'Account') : 'Login'}
@@ -204,10 +211,16 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
             <div className="p-6 border-b border-gray-50 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gray-50 rounded-2xl overflow-hidden flex items-center justify-center">
-                  {user?.photoURL
-                    ? <img src={user.photoURL} className="w-full h-full object-cover" alt="" />
-                    : <UserIcon className="w-5 h-5 text-gray-400" />
-                  }
+                  {user ? (
+                    <ArtisanAvatar 
+                      name={user.displayName} 
+                      photoURL={user.photoURL} 
+                      isArtisan={user.role !== 'buyer'} 
+                      className="w-full h-full text-base"
+                    />
+                  ) : (
+                    <UserIcon className="w-5 h-5 text-gray-400" />
+                  )}
                 </div>
                 <div>
                   <p className="font-black text-gray-900 text-sm">{user?.displayName || 'Guest'}</p>

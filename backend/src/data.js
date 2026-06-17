@@ -1,151 +1,234 @@
 const artisans = [
   {
-    id: 1,
-    name: "Ramesh Kumar",
-    category: "Wood Carving",
-    image: "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400",
-    rating: 4.9,
-    tagline: "Mastering the grain for 25 years",
-    bio: "Hailing from Saharanpur, I carry forward a 300-year-old family legacy of fine woodcraft, carving intricate traditional and modern designs from sustainable local timber.",
-    location: "Saharanpur",
-    experience: "25 years",
-    videos: []
+    "id": "1e673b92-2ab5-48cb-8146-01353d755dad",
+    "name": "Channapatna Toy Maker",
+    "category": "Wood Craft",
+    "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&auto=format&fit=crop",
+    "coverImage": "https://images.unsplash.com/photo-1616429777191-cc11a3c8bb2a?w=800&auto=format&fit=crop",
+    "location": "Channapatna",
+    "rating": 4.8,
+    "tagline": "Joy in every color",
+    "bio": "Creating eco-friendly wooden toys painted with natural vegetable dyes."
   },
   {
-    id: 2,
-    name: "Lakshmi Devi",
-    category: "Madhubani Painting",
-    image: "https://images.unsplash.com/photo-1595085610896-bc316fb01b8e?w=400",
-    rating: 5.0,
-    tagline: "Colors of Mithila brought to life",
-    bio: "I paint ancient mythologies using natural pigments sourced from soot, turmeric, and indigo. Every brushstroke preserves the rich cultural heritage of Bihar.",
-    location: "Madhubani",
-    experience: "18 years",
-    videos: []
+    "id": "45d73b5d-c9ff-49a4-b5c5-436921087580",
+    "name": "Mysore Silk Weaver",
+    "category": "Textiles",
+    "image": "https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?w=800&auto=format&fit=crop",
+    "coverImage": "https://live.staticflickr.com/4014/4358767421_88c81becc2_b.jpg",
+    "location": "Mysore",
+    "rating": 4.8,
+    "tagline": "The royal weave of Mysore",
+    "bio": "Weaving pure silk sarees with intricate traditional zari borders."
   },
   {
-    id: 3,
-    name: "Anjali Verma",
-    category: "Hand Embroidery",
-    image: "https://images.unsplash.com/photo-1591851221711-50e4179d6756?w=400",
-    rating: 4.8,
-    tagline: "Intricate threads, timeless elegance",
-    bio: "Specializing in Chikankari and Phulkari, my craft involves delicate hand-embroidery that breathes life into fabric, a skill passed down from my grandmother.",
-    location: "Lucknow",
-    experience: "12 years",
-    videos: []
+    "id": "6249319f-0d64-4802-9251-ff1845199154",
+    "name": "Blue Pottery Artist",
+    "category": "Pottery",
+    "image": "https://www.jjclaystudio.com/wp-content/uploads/2025/08/pexels-photo-33329314.jpg",
+    "coverImage": "https://images.unsplash.com/photo-1560609189-f1f4a7310ffa?w=800&auto=format&fit=crop",
+    "location": "Jaipur",
+    "rating": 4.8,
+    "tagline": "The royal blue hues of Jaipur",
+    "bio": "Using quartz stone powder to make brilliant blue, unfading art."
   },
   {
-    id: 4,
-    name: "Shankar Rao",
-    category: "Terracotta Art",
-    image: "https://images.unsplash.com/photo-1555529902-5261145633bf?w=400",
-    rating: 4.7,
-    tagline: "Molding the earth into art",
-    bio: "Using pure riverbank clay, I hand-shape and kiln-fire traditional terracotta planters, sculptures, and diyas that connect homes back to nature.",
-    location: "Karnataka",
-    experience: "30 years",
-    videos: []
+    "id": "f6db53dd-68fc-468a-b451-0ce9a918fbcd",
+    "name": "Kutch Embroidery Artisan",
+    "category": "Embroidery",
+    "image": "https://thumbs.dreamstime.com/b/hand-knitted-garments-20680166.jpg",
+    "coverImage": "https://www.thesprucecrafts.com/thmb/8zul85BRzFFHNVpCAoQMkji8hKs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Modern_BelindaMarshall-5a70f329ff1b780037f0c5db.jpg",
+    "location": "Kutch",
+    "rating": 4.8,
+    "tagline": "Reflecting the desert sun",
+    "bio": "Mirror work and colorful thread embroidery of the Kutch region."
   },
   {
-    id: 5,
-    name: "Meera Patel",
-    category: "Handloom Textiles",
-    image: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400",
-    rating: 4.9,
-    tagline: "Weaving stories on the loom",
-    bio: "I craft vibrant, authentic handloom textiles. My work involves traditional pit-loom weaving to create ethical and sustainable Indian fashion.",
-    location: "Gujarat",
-    experience: "20 years",
-    videos: []
+    "id": "37dd5617-fc6d-4346-988c-a6a806b66a82",
+    "name": "Pattachitra Artist",
+    "category": "Painting",
+    "image": "https://images.unsplash.com/photo-1432639020363-5632f7f04e0b?w=800&auto=format&fit=crop",
+    "coverImage": "https://i0.wp.com/www.craftsodisha.com/wp-content/uploads/2020/02/p00857-141856-narasimha-avatar-canvas-pattachitra-painting.jpg",
+    "location": "Raghurajpur",
+    "rating": 4.8,
+    "tagline": "Tales painted on cloth",
+    "bio": "Painting intricate mythological stories on specially prepared canvas."
   },
   {
-    id: 6,
-    name: "Ravi Choudhary",
-    category: "Blue Pottery",
-    image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400",
-    rating: 4.9,
-    tagline: "The royal blue hues of Jaipur",
-    bio: "Unlike standard ceramics, my pottery uses quartz stone powder instead of clay. It's a challenging, painstaking process that yields brilliant, unfading blue art.",
-    location: "Jaipur",
-    experience: "15 years",
-    videos: []
-  },
-  {
-    id: 7,
-    name: "Kavitha Nair",
-    category: "Bamboo Crafts",
-    image: "https://images.unsplash.com/photo-1506869640319-fea1a2ab8e9c?w=400",
-    rating: 4.8,
-    tagline: "Weaving nature into utility",
-    bio: "I transform locally sourced bamboo into elegant, sustainable furniture, lampshades, and baskets. My craft reflects the harmony of nature and utility.",
-    location: "Assam",
-    experience: "14 years",
-    videos: []
-  },
-  {
-    id: 8,
-    name: "Harish Joshi",
-    category: "Metalwork",
-    image: "https://images.unsplash.com/photo-1546961342-9957252cb7ec?w=400",
-    rating: 4.8,
-    tagline: "Casting light and legacy",
-    bio: "From traditional oil lamps to ornate idols, I practice sand casting and hand-engraving brass and bell metal, techniques native to the 'Brass City' of India.",
-    location: "Moradabad",
-    experience: "22 years",
-    videos: []
-  },
-  {
-    id: 9,
-    name: "Sunita Kumari",
-    category: "Jute Craft",
-    image: "https://images.unsplash.com/photo-1571210986790-2c7cc1e9dbdc?w=400",
-    rating: 4.7,
-    tagline: "The golden fiber of Bengal",
-    bio: "I weave natural fibers into durable, beautiful baskets, mats, and bags. My craft supports local women's cooperatives in rural Bengal.",
-    location: "West Bengal",
-    experience: "10 years",
-    videos: []
-  },
-  {
-    id: 10,
-    name: "Abdul Rahman",
-    category: "Leather Craft",
-    image: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=400",
-    rating: 4.9,
-    tagline: "Stitching durability and heritage",
-    bio: "I use cruelty-free, vegetable-tanned leather to hand-stitch journals, bags, and accessories, preserving the iconic Rajasthani leatherworking tradition.",
-    location: "Rajasthan",
-    experience: "18 years",
-    videos: []
+    "id": "03576f7f-2aaf-46c2-b0aa-dfdbe16159d0",
+    "name": "Banarasi Weaver",
+    "category": "Textiles",
+    "image": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
+    "coverImage": "https://live.staticflickr.com/4158/33701299433_5444c42c24_b.jpg",
+    "location": "Varanasi",
+    "rating": 4.8,
+    "tagline": "The timeless drape of Kashi",
+    "bio": "Handweaving luxurious silk sarees with rich gold embroidery."
   }
 ];
-
 const products = [
-  { id: 1, name: "Wooden Temple Decor", price: 3500, image: "https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=500", artisanId: 1, artisanName: "Ramesh Kumar", artisanImage: "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400", category: "Wood Carving", artisanLocation: "Saharanpur" },
-  { id: 2, name: "Madhubani Wall Painting", price: 2100, image: "https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=500", artisanId: 2, artisanName: "Lakshmi Devi", artisanImage: "https://images.unsplash.com/photo-1595085610896-bc316fb01b8e?w=400", category: "Madhubani Painting", artisanLocation: "Madhubani" },
-  { id: 3, name: "Handwoven Cotton Saree", price: 4200, image: "https://images.unsplash.com/photo-1620733723572-11c53f73a2ad?w=500", artisanId: 5, artisanName: "Meera Patel", artisanImage: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400", category: "Handloom Textiles", artisanLocation: "Gujarat" },
-  { id: 4, name: "Blue Pottery Vase", price: 1450, image: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=500", artisanId: 6, artisanName: "Ravi Choudhary", artisanImage: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400", category: "Blue Pottery", artisanLocation: "Jaipur" },
-  { id: 5, name: "Brass Oil Lamp", price: 2800, image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=500", artisanId: 8, artisanName: "Harish Joshi", artisanImage: "https://images.unsplash.com/photo-1546961342-9957252cb7ec?w=400", category: "Metalwork", artisanLocation: "Moradabad" },
-  { id: 6, name: "Terracotta Planter", price: 650, image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500", artisanId: 4, artisanName: "Shankar Rao", artisanImage: "https://images.unsplash.com/photo-1555529902-5261145633bf?w=400", category: "Terracotta Art", artisanLocation: "Karnataka" },
-  { id: 7, name: "Handcrafted Jute Basket", price: 850, image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500", artisanId: 9, artisanName: "Sunita Kumari", artisanImage: "https://images.unsplash.com/photo-1571210986790-2c7cc1e9dbdc?w=400", category: "Jute Craft", artisanLocation: "West Bengal" },
-  { id: 8, name: "Chikankari Cushion Cover", price: 450, image: "https://images.unsplash.com/photo-1584285423851-40e118c7a6e1?w=500", artisanId: 3, artisanName: "Anjali Verma", artisanImage: "https://images.unsplash.com/photo-1591851221711-50e4179d6756?w=400", category: "Hand Embroidery", artisanLocation: "Lucknow" },
-  { id: 9, name: "Intricate Wooden Box", price: 1200, image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500", artisanId: 1, artisanName: "Ramesh Kumar", artisanImage: "https://images.unsplash.com/photo-1542330952650-efce130ebc18?w=400", category: "Wood Carving", artisanLocation: "Saharanpur" },
-  { id: 10, name: "Handmade Leather Journal", price: 950, image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500", artisanId: 10, artisanName: "Abdul Rahman", artisanImage: "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=400", category: "Leather Craft", artisanLocation: "Rajasthan" },
-  { id: 11, name: "Woven Bamboo Lampshade", price: 1850, image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500", artisanId: 7, artisanName: "Kavitha Nair", artisanImage: "https://images.unsplash.com/photo-1506869640319-fea1a2ab8e9c?w=400", category: "Bamboo Crafts", artisanLocation: "Assam" },
-  { id: 12, name: "Bamboo Storage Basket", price: 750, image: "https://images.unsplash.com/photo-1559981403-1a0e0f805219?w=500", artisanId: 7, artisanName: "Kavitha Nair", artisanImage: "https://images.unsplash.com/photo-1506869640319-fea1a2ab8e9c?w=400", category: "Bamboo Crafts", artisanLocation: "Assam" },
-  { id: 13, name: "Handwoven Table Runner", price: 850, image: "https://images.unsplash.com/photo-1601000844782-b364de064438?w=500", artisanId: 5, artisanName: "Meera Patel", artisanImage: "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=400", category: "Handloom Textiles", artisanLocation: "Gujarat" },
-  { id: 14, name: "Traditional Diyas", price: 250, image: "https://images.unsplash.com/photo-1510007886266-9121650b4d45?w=500", artisanId: 4, artisanName: "Shankar Rao", artisanImage: "https://images.unsplash.com/photo-1555529902-5261145633bf?w=400", category: "Terracotta Art", artisanLocation: "Karnataka" },
-  { id: 15, name: "Handmade Ceramic Mug", price: 550, image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500", artisanId: 6, artisanName: "Ravi Choudhary", artisanImage: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=400", category: "Blue Pottery", artisanLocation: "Jaipur" }
+  {
+    "id": "aa15a29f-662d-4840-bc35-1a97aea3305a",
+    "title": "Wooden Toy Train",
+    "name": "Wooden Toy Train",
+    "price": 2757,
+    "image": "https://images.unsplash.com/photo-1722532466509-24e301463088?w=800&auto=format&fit=crop",
+    "artisanName": "Channapatna Toy Maker",
+    "category": "Wood Craft"
+  },
+  {
+    "id": "63fd8d4d-bcd2-4cf3-8d80-50dfc780c7e5",
+    "title": "Wooden Elephant Toy",
+    "name": "Wooden Elephant Toy",
+    "price": 4876,
+    "image": "https://plus.unsplash.com/premium_photo-1702597750929-b4c357ad22c3?w=800&auto=format&fit=crop",
+    "artisanName": "Channapatna Toy Maker",
+    "category": "Wood Craft"
+  },
+  {
+    "id": "deb2fe76-eb96-4f5e-a145-6a0f470d1f45",
+    "title": "Stacking Rings",
+    "name": "Stacking Rings",
+    "price": 4187,
+    "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop",
+    "artisanName": "Channapatna Toy Maker",
+    "category": "Wood Craft"
+  },
+  {
+    "id": "16a24980-7d98-42b6-a5e3-49c63912c701",
+    "title": "Mysore Silk Saree",
+    "name": "Mysore Silk Saree",
+    "price": 4774,
+    "image": "https://images.unsplash.com/photo-1765881232315-65610dc5b506?w=800&auto=format&fit=crop",
+    "artisanName": "Mysore Silk Weaver",
+    "category": "Textiles"
+  },
+  {
+    "id": "ba8343b3-64d9-4450-bd28-211fde66eca7",
+    "title": "Silk Dupatta",
+    "name": "Silk Dupatta",
+    "price": 4433,
+    "image": "https://images.unsplash.com/photo-1555529902-5261145633bf?w=800&auto=format&fit=crop",
+    "artisanName": "Mysore Silk Weaver",
+    "category": "Textiles"
+  },
+  {
+    "id": "6372938b-dd73-4e81-a659-d9a758c78fdd",
+    "title": "Silk Stole",
+    "name": "Silk Stole",
+    "price": 5045,
+    "image": "https://plus.unsplash.com/premium_photo-1674591172256-ffb48f832f2b?w=800&auto=format&fit=crop",
+    "artisanName": "Mysore Silk Weaver",
+    "category": "Textiles"
+  },
+  {
+    "id": "6862ab1f-897c-43d6-887b-1f93dbeca204",
+    "title": "Decorative Plate",
+    "name": "Decorative Plate",
+    "price": 2076,
+    "image": "https://images.unsplash.com/photo-1723779233298-c17f782c641f?w=800&auto=format&fit=crop",
+    "artisanName": "Blue Pottery Artist",
+    "category": "Pottery"
+  },
+  {
+    "id": "cadfbb67-1cf8-4bb4-a16f-f01dbcde3309",
+    "title": "Flower Vase",
+    "name": "Flower Vase",
+    "price": 3050,
+    "image": "https://plus.unsplash.com/premium_photo-1757161242872-2224cd921697?w=800&auto=format&fit=crop",
+    "artisanName": "Blue Pottery Artist",
+    "category": "Pottery"
+  },
+  {
+    "id": "73a3e2c2-bb46-41d3-97a9-7769cc39155c",
+    "title": "Tea Set",
+    "name": "Tea Set",
+    "price": 3593,
+    "image": "https://images.unsplash.com/photo-1762534729117-3096b82d84d8?w=800&auto=format&fit=crop",
+    "artisanName": "Blue Pottery Artist",
+    "category": "Pottery"
+  },
+  {
+    "id": "97f1afc6-1d06-43fa-8f61-abb2e1063f37",
+    "title": "Embroidered Bag",
+    "name": "Embroidered Bag",
+    "price": 2574,
+    "image": "https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=800&auto=format&fit=crop",
+    "artisanName": "Kutch Embroidery Artisan",
+    "category": "Embroidery"
+  },
+  {
+    "id": "3765b190-1f27-4989-8f63-725f665aa4ff",
+    "title": "Cushion Cover",
+    "name": "Cushion Cover",
+    "price": 5156,
+    "image": "https://images.unsplash.com/photo-1575276510120-92a4f77b9e28?w=800&auto=format&fit=crop",
+    "artisanName": "Kutch Embroidery Artisan",
+    "category": "Embroidery"
+  },
+  {
+    "id": "8fcb64d8-ca54-423d-bc8d-84d39ca9c85a",
+    "title": "Wall Hanging",
+    "name": "Wall Hanging",
+    "price": 1932,
+    "image": "https://images.unsplash.com/photo-1770983076587-d6faac2066b6?w=800&auto=format&fit=crop",
+    "artisanName": "Kutch Embroidery Artisan",
+    "category": "Embroidery"
+  },
+  {
+    "id": "a86aaa63-13fa-468b-b9a1-c9843e86ee16",
+    "title": "Traditional Painting",
+    "name": "Traditional Painting",
+    "price": 3792,
+    "image": "https://images.unsplash.com/photo-1731136508582-a8967aa87e2e?w=800&auto=format&fit=crop",
+    "artisanName": "Pattachitra Artist",
+    "category": "Painting"
+  },
+  {
+    "id": "58962185-746e-475a-831d-303214ae58f8",
+    "title": "Bookmark Set",
+    "name": "Bookmark Set",
+    "price": 3608,
+    "image": "https://images.unsplash.com/photo-1683883187260-52f52317ea73?w=800&auto=format&fit=crop",
+    "artisanName": "Pattachitra Artist",
+    "category": "Painting"
+  },
+  {
+    "id": "01622031-2cb0-4f7f-8d8d-c19e220b710f",
+    "title": "Mini Canvas Art",
+    "name": "Mini Canvas Art",
+    "price": 3544,
+    "image": "https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?w=800&auto=format&fit=crop",
+    "artisanName": "Pattachitra Artist",
+    "category": "Painting"
+  },
+  {
+    "id": "93c8354b-5a6a-40b3-9b37-d186a52131d9",
+    "title": "Banarasi Saree",
+    "name": "Banarasi Saree",
+    "price": 2000,
+    "image": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
+    "artisanName": "Banarasi Weaver",
+    "category": "Textiles"
+  },
+  {
+    "id": "64c5b633-a478-4af9-912f-130e70e61fbd",
+    "title": "Banarasi Shawl",
+    "name": "Banarasi Shawl",
+    "price": 2637,
+    "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+    "artisanName": "Banarasi Weaver",
+    "category": "Textiles"
+  },
+  {
+    "id": "1649eb51-e19a-4492-85d4-44d017ac9f9b",
+    "title": "Banarasi Fabric",
+    "name": "Banarasi Fabric",
+    "price": 1939,
+    "image": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
+    "artisanName": "Banarasi Weaver",
+    "category": "Textiles"
+  }
 ];
-
-const stories = [
-  { id: 1, artisanId: 1, title: "Carving History", content: "..." },
-  { id: 2, artisanId: 2, title: "Colors of Mithila", content: "..." },
-  { id: 3, artisanId: 5, title: "Threads of Gujarat", content: "..." },
-  { id: 4, artisanId: 6, title: "The Blue Quartz", content: "..." },
-  { id: 5, artisanId: 8, title: "Casting Moradabad Metal", content: "..." },
-  { id: 6, artisanId: 7, title: "Weaving Bamboo", content: "..." }
-];
-
+const stories = [];
 module.exports = { artisans, products, stories };

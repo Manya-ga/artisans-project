@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'https://artisan-connect-backend-db2z.onrender.com';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -223,6 +223,7 @@ export async function updateProfile(data) {
   if (data.displayName !== undefined) formData.append('displayName', data.displayName);
   if (data.bio !== undefined) formData.append('bio', data.bio);
   if (data.avatar instanceof File) formData.append('avatar', data.avatar);
+  if (data.deleteAvatar) formData.append('deleteAvatar', 'true');
 
   return api.put('/api/auth/profile', formData);
 }

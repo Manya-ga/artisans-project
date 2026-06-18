@@ -102,8 +102,8 @@ export async function getProductById(id) {
   return api.get(`/api/products/${id}`);
 }
 
-export async function getArtisans() {
-  return api.get('/api/users/artisans');
+export async function getArtisans(params = {}) {
+  return api.get('/api/artisans', { params });
 }
 
 export async function getArtisan(id) {

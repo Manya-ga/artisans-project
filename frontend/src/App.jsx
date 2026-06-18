@@ -8,10 +8,11 @@ import BottomNav from './components/BottomNav.jsx';
 import ErrorBoundary from './components/ErrorBoundary.jsx';
 import AuthModal from './components/AuthModal.jsx';
 import LocationModal from './components/LocationModal.jsx';
+import UniversalBackButton from './components/UniversalBackButton.jsx';
 
 // Pages
 import HomePage from './pages/HomePage.jsx';
-import DiscoveryPage from './pages/DiscoveryPage.jsx';
+import ProductsPage from './pages/ProductsPage.jsx';
 import ArtisanProfile from './pages/ArtisanProfile.jsx';
 import Profile from './pages/Profile.jsx';
 import ProductDetailPage from './pages/ProductDetail.jsx';
@@ -23,7 +24,7 @@ import HelpPage from './pages/HelpPage.jsx';
 import TrackOrderPage from './pages/TrackOrderPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import MessagingPage from './pages/MessagingPage.jsx';
-import ExplorePage from './pages/ExplorePage.jsx';
+import DiscoverMakersPage from './pages/DiscoverMakersPage.jsx';
 import CartPage from './pages/CartPage.jsx';
 
 // Contexts
@@ -114,6 +115,8 @@ function AppInner() {
         />
       </div>
 
+      <UniversalBackButton />
+
       <main className={`content w-full flex-1 ${
         isFullScreen
           ? 'p-0 overflow-hidden flex flex-col h-full'
@@ -122,11 +125,11 @@ function AppInner() {
         <Routes>
           {/* Public routes */}
           <Route path="/" element={<HomePage query={query} />} />
-          <Route path="/discovery" element={<DiscoveryPage query={query} />} />
+          <Route path="/products" element={<ProductsPage query={query} />} />
           <Route path="/artisan/:id" element={<ArtisanProfile />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />
-          <Route path="/explore-artisans" element={<ExplorePage />} />
+          <Route path="/discover-makers" element={<DiscoverMakersPage />} />
           <Route path="/offers" element={<OffersPage />} />
           <Route path="/help" element={<HelpPage />} />
           <Route path="/track" element={<TrackOrderPage />} />

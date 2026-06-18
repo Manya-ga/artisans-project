@@ -1,18 +1,16 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import ArtisanCard from '../components/ArtisanCard.jsx';
 import ProductGrid from '../components/ProductGrid.jsx';
-import { getArtisans, getProducts, getProductCategories } from '../api.js';
+import { getProducts, getProductCategories } from '../api.js';
 import { CategorySkeleton, ProductSkeleton } from '../components/Skeleton.jsx';
-import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, Filter, ArrowUpDown } from 'lucide-react';
 
-export default function DiscoveryPage({ query = '' }) {
+export default function ProductsPage({ query = '' }) {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedCategory = searchParams.get('category') || 'All';
   const pageParam = Number(searchParams.get('page')) || 1;
 
-  const [artisans, setArtisans] = useState([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState(['All']);
   
@@ -22,7 +20,6 @@ export default function DiscoveryPage({ query = '' }) {
   const [totalPages, setTotalPages] = useState(1);
   const [totalProducts, setTotalProducts] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [viewMode, setViewMode] = useState('products'); // 'products' or 'artisans'
 
   const gridRef = useRef(null);
 
@@ -76,39 +73,34 @@ export default function DiscoveryPage({ query = '' }) {
     }
   }, [selectedCategory, query, updateSearchParams]);
 
-  // 3. Load paginated products or artisans
+  // 3. Load paginated products
   useEffect(() => {
     async function loadData() {
       setLoading(true);
       try {
-        if (viewMode === 'products') {
-          const res = await getProducts({
-            page: currentPage,
-            limit: productsPerPage,
-            category: selectedCategory,
-            search: query
-          });
+        const res = await getProducts({
+          page: currentPage,
+          limit: productsPerPage,
+          category: selectedCategory,
+          search: query
+        });
 
-          if (res.currentPage && res.currentPage !== currentPage) {
-            updateSearchParams({ page: res.currentPage });
-            return;
-          }
-
-          setProducts(res.products || []);
-          setTotalPages(res.totalPages || 1);
-          setTotalProducts(res.totalProducts || 0);
-        } else {
-          const artisanRes = await getArtisans();
-          setArtisans(artisanRes || []);
+        if (res.currentPage && res.currentPage !== currentPage) {
+          updateSearchParams({ page: res.currentPage });
+          return;
         }
+
+        setProducts(res.products || []);
+        setTotalPages(res.totalPages || 1);
+        setTotalProducts(res.totalProducts || 0);
       } catch (e) {
-        console.error('Discovery load failed', e);
+        console.error('Products load failed', e);
       } finally {
         setLoading(false);
       }
     }
     loadData();
-  }, [currentPage, selectedCategory, query, viewMode, productsPerPage]);
+  }, [currentPage, selectedCategory, query, productsPerPage]);
 
   const handlePageChange = (pageNumber) => {
     if (pageNumber < 1 || pageNumber > totalPages) return;
@@ -145,23 +137,19 @@ export default function DiscoveryPage({ query = '' }) {
     <div className="animate-fade-in space-y-6 md:space-y-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
         <div>
-          <h1 className="text-2xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Explore Creations</h1>
-          <p className="text-gray-500 mt-1 md:mt-2 font-medium text-sm md:text-base">Discover unique items handcrafted by master makers.</p>
+          <h1 className="text-2xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Products</h1>
+          <p className="text-gray-500 mt-1 md:mt-2 font-medium text-sm md:text-base">Discover authentic items handcrafted by master makers.</p>
         </div>
         
+        {/* Placeholder for Sorting/Filtering Desktop Actions */}
         <div className="flex bg-white p-1 rounded-2xl border border-gray-100 shadow-sm shrink-0">
-          <button 
-            onClick={() => setViewMode('products')}
-            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${viewMode === 'products' ? 'bg-gray-900 text-white shadow-lg' : 'text-gray-500 hover:text-gray-900'}`}
-          >
-            Products
-          </button>
-          <button 
-            onClick={() => setViewMode('artisans')}
-            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${viewMode === 'artisans' ? 'bg-gray-900 text-white shadow-lg' : 'text-gray-500 hover:text-gray-900'}`}
-          >
-            Artisans
-          </button>
+           <button className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-gray-700 hover:text-pink-500 transition-colors">
+              <Filter className="w-4 h-4" /> Filters
+           </button>
+           <div className="w-px bg-gray-100 my-2 mx-1" />
+           <button className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-gray-700 hover:text-pink-500 transition-colors">
+              <ArrowUpDown className="w-4 h-4" /> Sort
+           </button>
         </div>
       </div>
 
@@ -192,7 +180,7 @@ export default function DiscoveryPage({ query = '' }) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {Array.from({ length: 8 }).map((_, i) => <ProductSkeleton key={i} />)}
           </div>
-        ) : viewMode === 'products' ? (
+        ) : (
           products.length > 0 ? (
             <div className="space-y-12">
               <ProductGrid products={products} />
@@ -245,12 +233,6 @@ export default function DiscoveryPage({ query = '' }) {
               <button onClick={() => updateSearchParams({ category: 'All', page: 1 })} className="mt-6 text-pink-500 font-bold hover:underline">Clear Filters</button>
             </div>
           )
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {artisans.map(a => (
-              <ArtisanCard key={a.id || a._id} artisan={a} onClick={() => navigate(`/artisan/${a.id || a._id}`)} />
-            ))}
-          </div>
         )}
       </div>
     </div>

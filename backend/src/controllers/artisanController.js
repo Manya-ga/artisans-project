@@ -16,13 +16,68 @@ function normalizeArtisan(artisan) {
 
 exports.getArtisans = async (req, res) => {
   try {
-    const { data: artisans, error } = await supabase
-      .from('artisans')
-      .select('*')
-      .order('created_at', { ascending: false });
+    const requestedPage = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.max(1, parseInt(req.query.limit) || 12);
+    
+    const search = String(req.query.search || '').trim();
+    const category = req.query.category || 'All';
+    const sort = req.query.sort || 'newest';
+    const locationFilter = req.query.location || 'All';
+
+    // Get count
+    let countQuery = supabase.from('artisans').select('id', { count: 'exact', head: true });
+    
+    if (category && category !== 'All') {
+      countQuery = countQuery.eq('category', category);
+    }
+    if (locationFilter && locationFilter !== 'All') {
+      countQuery = countQuery.eq('location', locationFilter);
+    }
+    if (search) {
+      const cleanSearch = `%${search}%`;
+      countQuery = countQuery.or(`name.ilike.${cleanSearch},location.ilike.${cleanSearch},category.ilike.${cleanSearch}`);
+    }
+
+    const { count: totalArtisans, error: countError } = await countQuery;
+      
+    if (countError) throw countError;
+    
+    const totalCount = Number(totalArtisans || 0);
+    const totalPages = Math.ceil(totalCount / limit);
+    const page = totalPages > 0 ? Math.min(requestedPage, totalPages) : requestedPage;
+    const skip = (page - 1) * limit;
+
+    let dataQuery = supabase.from('artisans').select('*');
+    if (category && category !== 'All') {
+      dataQuery = dataQuery.eq('category', category);
+    }
+    if (locationFilter && locationFilter !== 'All') {
+      dataQuery = dataQuery.eq('location', locationFilter);
+    }
+    if (search) {
+      const cleanSearch = `%${search}%`;
+      dataQuery = dataQuery.or(`name.ilike.${cleanSearch},location.ilike.${cleanSearch},category.ilike.${cleanSearch}`);
+    }
+
+    if (sort === 'rating') {
+      dataQuery = dataQuery.order('rating', { ascending: false });
+    } else {
+      dataQuery = dataQuery.order('created_at', { ascending: false });
+    }
+
+    const { data: artisans, error } = await dataQuery
+      .range(skip, skip + limit - 1);
 
     if (error) throw error;
-    return res.json(artisans.map(normalizeArtisan));
+    
+    return res.json({
+      artisans: artisans.map(normalizeArtisan),
+      currentPage: page,
+      totalPages: totalPages,
+      totalArtisans: totalCount,
+      hasNextPage: page < totalPages,
+      hasPrevPage: page > 1
+    });
   } catch (error) {
     console.error('Failed to get artisans:', error);
     return res.status(500).json({ error: 'Unable to load artisans.' });

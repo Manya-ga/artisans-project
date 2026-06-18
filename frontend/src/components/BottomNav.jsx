@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { Home, LayoutGrid, ShoppingBag, User } from 'lucide-react';
+import { Home, Package, Compass, MessageSquare, User } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
 
@@ -46,28 +46,23 @@ export default function BottomNav({ onOpenCart }) {
           onClick={() => navigate('/')} 
         />
         <NavButton 
-          icon={<LayoutGrid className="w-6 h-6" />} 
-          label="Categories"
-          active={isActive('/explore-artisans')} 
-          onClick={() => navigate('/explore-artisans')} 
+          icon={<Package className="w-6 h-6" />} 
+          label="Products"
+          active={isActive('/products')} 
+          onClick={() => navigate('/products')} 
         />
-        
-        <button 
-          onClick={onOpenCart}
-          data-cart-icon
-          className={`relative flex flex-col items-center justify-center w-16 h-12 gap-1 transition-all ${animateCart ? 'cart-bounce text-pink-500' : 'text-gray-400 hover:text-gray-900'}`}
-        >
-          <div className="relative">
-            <ShoppingBag className="w-6 h-6" />
-            {cartCount > 0 && (
-              <span data-cart-badge className={`absolute -top-1.5 -right-1.5 bg-pink-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center border border-white ${pulseBadge ? 'badge-pulse' : ''}`}>
-                {cartCount}
-              </span>
-            )}
-          </div>
-          <span className="text-[10px] font-bold">Cart</span>
-        </button>
-
+        <NavButton 
+          icon={<Compass className="w-6 h-6" />} 
+          label="Discover Makers"
+          active={isActive('/discover-makers')} 
+          onClick={() => navigate('/discover-makers')} 
+        />
+        <NavButton 
+          icon={<MessageSquare className="w-6 h-6" />} 
+          label="Messages"
+          active={isActive('/messages')} 
+          onClick={() => navigate(user ? '/messages' : '/')} 
+        />
         <NavButton 
           icon={<User className="w-6 h-6" />} 
           label="Profile"

@@ -28,6 +28,7 @@ export default function ArtisanAvatar({ name, className = '', isArtisan = true, 
       <img 
         src={photoURL} 
         alt={safeName} 
+        loading="lazy"
         className={`object-cover ${className}`} 
         onError={() => setImgError(true)}
       />

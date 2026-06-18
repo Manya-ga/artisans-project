@@ -51,11 +51,11 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
 
   const mobileNavItems = [
     { icon: Home, label: 'Home', path: '/' },
-    { icon: Search, label: 'Discover', path: '/discovery' },
-    { icon: Compass, label: 'Explore Artisans', path: '/explore-artisans' },
+    { icon: Package, label: 'Products', path: '/products' },
+    { icon: Compass, label: 'Discover Makers', path: '/discover-makers' },
     { icon: MessageSquare, label: 'Messages', path: '/messages', authRequired: true },
     { icon: Heart, label: 'Wishlist', path: '/wishlist' },
-    { icon: Package, label: 'My Products', path: '/my-products', authRequired: true },
+    { icon: UserIcon, label: 'Profile', path: '/profile', authRequired: true },
   ];
 
   return (
@@ -83,7 +83,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
               placeholder="Search unique handcrafted items..."
               value={query}
               onChange={(e) => onQueryChange(e.target.value)}
-              onFocus={() => navigate('/discovery')}
+              onFocus={() => navigate('/products')}
               className="w-full bg-white border-2 border-transparent rounded-2xl py-3 pl-12 pr-4 text-sm font-medium focus:ring-4 focus:ring-pink-500/5 focus:border-pink-100 outline-none transition-all shadow-sm"
             />
           </div>
@@ -109,7 +109,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
             </button>
 
             <button
-              onClick={() => navigate('/explore-artisans')}
+              onClick={() => navigate('/discover-makers')}
               className="p-2.5 text-gray-500 hover:text-pink-500 hover:bg-pink-50 rounded-xl transition-all"
             >
               <Compass className="w-5 h-5" />
@@ -190,7 +190,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
               placeholder="Search handcrafted items..."
               value={query}
               onChange={(e) => onQueryChange(e.target.value)}
-              onFocus={() => navigate('/discovery')}
+              onFocus={() => navigate('/products')}
               className="w-full bg-white border border-gray-100 rounded-2xl py-2.5 pl-10 pr-4 text-sm font-medium outline-none shadow-sm"
             />
           </div>

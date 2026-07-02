@@ -19,6 +19,7 @@ export default function MessagingPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useAuth();
+  const { addToast } = useToast();
   const currentUserId = user?._id || user?.id;
 
   const [socket, setSocket] = useState(null);
@@ -69,7 +70,11 @@ export default function MessagingPage() {
       return;
     }
 
-    const newSocket = io(SOCKET_URL, { withCredentials: true });
+    const token = localStorage.getItem('token');
+    const newSocket = io(SOCKET_URL, { 
+      withCredentials: true,
+      auth: { token }
+    });
     setSocket(newSocket);
 
     newSocket.on('connect', () => {
@@ -274,7 +279,7 @@ export default function MessagingPage() {
       console.error('[handleSendMessage] Error:', err);
       setMessages(prev => prev.filter(m => m._id !== tempId));
       setInputText(text);
-      alert(`Error: ${err.message || 'Failed to send message'}`);
+      addToast(`Error: ${err.message || 'Failed to send message'}`, 'error');
     }
   };
 
@@ -314,7 +319,7 @@ export default function MessagingPage() {
       navigate('/messages');
     } catch (err) {
       console.error('[deleteConversation] Error:', err);
-      alert('Failed to delete conversation. Please try again.');
+      addToast('Failed to delete conversation. Please try again.', 'error');
     } finally {
       setDeletingConv(false);
     }

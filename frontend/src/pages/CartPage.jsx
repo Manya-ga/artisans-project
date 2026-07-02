@@ -6,6 +6,8 @@ import { useCart } from '../contexts/CartContext';
 import { useToast } from '../contexts/ToastContext';
 import { getProducts } from '../api';
 import ProductCard from '../components/ProductCard';
+import PageHeader from '../components/PageHeader';
+import { getProductImage } from '../config/imageMappings';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -59,18 +61,7 @@ export default function CartPage() {
   return (
     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 pb-24 md:pb-12 pt-4 md:pt-8 animate-fade-in">
       {/* 1. Header */}
-      <div className="flex items-center gap-4 mb-8">
-        <button
-          onClick={() => navigate(-1)}
-          className="p-3 bg-white border border-gray-100 rounded-2xl text-gray-500 hover:text-pink-500 transition-all shadow-sm shrink-0"
-        >
-          <ArrowLeft className="w-5 h-5" />
-        </button>
-        <div>
-          <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">Shopping Cart</h1>
-          <p className="text-sm md:text-base font-medium text-gray-500 mt-1">{cartCount} items selected</p>
-        </div>
-      </div>
+      <PageHeader title="Shopping Cart" showBack />
 
       <div className="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
         
@@ -89,7 +80,7 @@ export default function CartPage() {
                 className={`flex gap-4 group ${idx !== cartItems.length - 1 ? 'pb-6 border-b border-gray-50' : ''}`}
               >
                 <div className="w-24 h-28 sm:w-32 sm:h-32 bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm shrink-0">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  <img src={getProductImage(item.image, item.category)} alt={item.title} className="w-full h-full object-cover" />
                 </div>
                 
                 <div className="flex-1 flex flex-col justify-between min-w-0">

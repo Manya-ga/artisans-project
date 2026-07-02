@@ -1,16 +1,37 @@
 const supabase = require('../config/supabase');
+const userController = require('./userController');
 
-function normalizeArtisan(artisan) {
+function normalizeArtisan(profile, products = []) {
+  // Determine categories from products
+  const categoryCounts = {};
+  products.forEach(p => {
+    const cat = p.category || 'General';
+    categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+  });
+  
+  let mostCommonCategory = 'General';
+  let maxCount = 0;
+  for (const [cat, count] of Object.entries(categoryCounts)) {
+    if (count > maxCount) {
+      mostCommonCategory = cat;
+      maxCount = count;
+    }
+  }
+
   return {
-    id: artisan.id,
-    _id: artisan.id, // compatibility
-    name: artisan.name,
-    category: artisan.category,
-    image: artisan.image,
-    rating: artisan.rating,
-    tagline: artisan.tagline,
-    bio: artisan.bio,
-    location: artisan.location,
+    id: profile.id,
+    _id: profile.id,
+    name: profile.display_name || profile.displayName || 'Unnamed Artisan',
+    displayName: profile.display_name || profile.displayName || 'Unnamed Artisan',
+    category: mostCommonCategory,
+    image: profile.photo_url || profile.photoURL || null,
+    photoURL: profile.photo_url || profile.photoURL || null,
+    rating: 4.8, // Default rating
+    tagline: profile.bio ? profile.bio.substring(0, 50) + '...' : 'Crafting souls into artifacts.',
+    bio: profile.bio || '',
+    location: profile.location || '',
+    productCount: products.length,
+    created_at: profile.created_at
   };
 }
 
@@ -19,64 +40,91 @@ exports.getArtisans = async (req, res) => {
     const requestedPage = Math.max(1, parseInt(req.query.page) || 1);
     const limit = Math.max(1, parseInt(req.query.limit) || 12);
     
-    const search = String(req.query.search || '').trim();
+    const search = String(req.query.search || '').trim().toLowerCase();
     const category = req.query.category || 'All';
     const sort = req.query.sort || 'newest';
     const locationFilter = req.query.location || 'All';
 
-    // Get count
-    let countQuery = supabase.from('artisans').select('id', { count: 'exact', head: true });
+    // 1. Fetch all profiles
+    const { data: profiles, error: profilesError } = await supabase
+      .from('profiles')
+      .select('*');
+      
+    if (profilesError) throw profilesError;
+
+    // 2. Fetch all products to calculate product counts
+    const { data: products, error: productsError } = await supabase
+      .from('products')
+      .select('*');
+      
+    if (productsError) throw productsError;
+
+    // 3. Map and filter
+    let artisansList = [];
     
-    if (category && category !== 'All') {
-      countQuery = countQuery.eq('category', category);
-    }
-    if (locationFilter && locationFilter !== 'All') {
-      countQuery = countQuery.eq('location', locationFilter);
-    }
-    if (search) {
-      const cleanSearch = `%${search}%`;
-      countQuery = countQuery.or(`name.ilike.${cleanSearch},location.ilike.${cleanSearch},category.ilike.${cleanSearch}`);
+    for (const profile of profiles) {
+      // Must have a valid account (exists in profiles) and a name
+      if (!profile || (!profile.display_name && !profile.displayName)) {
+         continue;
+      }
+      
+      const artisanProducts = products.filter(p => p.user_id === profile.id || p.userId === profile.id);
+      
+      // Must have at least one product
+      if (artisanProducts.length === 0) {
+         continue;
+      }
+
+      artisansList.push(normalizeArtisan(profile, artisanProducts));
     }
 
-    const { count: totalArtisans, error: countError } = await countQuery;
-      
-    if (countError) throw countError;
+    // 4. Apply Filters
+    if (category && category !== 'All') {
+      artisansList = artisansList.filter(a => a.category === category);
+    }
     
-    const totalCount = Number(totalArtisans || 0);
+    if (locationFilter && locationFilter !== 'All') {
+      artisansList = artisansList.filter(a => a.location === locationFilter);
+    }
+    
+    if (search) {
+      artisansList = artisansList.filter(a => 
+        a.name.toLowerCase().includes(search) || 
+        a.category.toLowerCase().includes(search) ||
+        a.location.toLowerCase().includes(search)
+      );
+    }
+
+    // 5. Apply Sorting
+    artisansList.sort((a, b) => {
+      if (sort === 'rating') {
+        return b.rating - a.rating;
+      } else if (sort === 'most_products' || sort === 'mostProducts') {
+        return b.productCount - a.productCount;
+      } else if (sort === 'alphabetical') {
+        return a.name.localeCompare(b.name);
+      } else {
+        // default: newest
+        return new Date(b.created_at || 0) - new Date(a.created_at || 0);
+      }
+    });
+
+    // 6. Pagination
+    const totalCount = artisansList.length;
     const totalPages = Math.ceil(totalCount / limit);
     const page = totalPages > 0 ? Math.min(requestedPage, totalPages) : requestedPage;
     const skip = (page - 1) * limit;
-
-    let dataQuery = supabase.from('artisans').select('*');
-    if (category && category !== 'All') {
-      dataQuery = dataQuery.eq('category', category);
-    }
-    if (locationFilter && locationFilter !== 'All') {
-      dataQuery = dataQuery.eq('location', locationFilter);
-    }
-    if (search) {
-      const cleanSearch = `%${search}%`;
-      dataQuery = dataQuery.or(`name.ilike.${cleanSearch},location.ilike.${cleanSearch},category.ilike.${cleanSearch}`);
-    }
-
-    if (sort === 'rating') {
-      dataQuery = dataQuery.order('rating', { ascending: false });
-    } else {
-      dataQuery = dataQuery.order('created_at', { ascending: false });
-    }
-
-    const { data: artisans, error } = await dataQuery
-      .range(skip, skip + limit - 1);
-
-    if (error) throw error;
     
+    const paginatedArtisans = artisansList.slice(skip, skip + limit);
+
     return res.json({
-      artisans: artisans.map(normalizeArtisan),
-      currentPage: page,
+      artisans: paginatedArtisans,
+      page: page,
+      limit: limit,
       totalPages: totalPages,
-      totalArtisans: totalCount,
-      hasNextPage: page < totalPages,
-      hasPrevPage: page > 1
+      totalItems: totalCount,
+      hasNext: page < totalPages,
+      hasPrevious: page > 1
     });
   } catch (error) {
     console.error('Failed to get artisans:', error);
@@ -85,41 +133,6 @@ exports.getArtisans = async (req, res) => {
 };
 
 exports.getArtisanById = async (req, res) => {
-  try {
-    const value = req.params.id;
-    
-    const { data: artisan, error: artisanError } = await supabase
-      .from('artisans')
-      .select('*')
-      .eq('id', value)
-      .maybeSingle();
-
-    if (artisanError || !artisan) {
-      return res.status(404).json({ error: 'Artisan not found.' });
-    }
-
-    const { data: products, error: productsError } = await supabase
-      .from('products')
-      .select('*')
-      .eq('artisan_name', artisan.name); // Using name matching for now as per legacy logic
-
-    if (productsError) throw productsError;
-
-    return res.json({
-      ...normalizeArtisan(artisan),
-      products: products.map((product) => ({
-        id: product.id,
-        _id: product.id,
-        title: product.title,
-        price: product.price,
-        image: product.image || (product.images && product.images[0]) || '',
-        images: product.images || (product.image ? [product.image] : []),
-        artisanName: product.artisan_name || product.artisanName,
-        category: product.category,
-      })),
-    });
-  } catch (error) {
-    console.error('Failed to get artisan by id:', error);
-    return res.status(500).json({ error: 'Unable to load artisan.' });
-  }
+  // Compatibility layer: redirect to userController to ensure single source of truth
+  return userController.getUserById(req, res);
 };

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchAds } from '../api';
 import { ChevronRight } from 'lucide-react';
+import { HERO_BANNER } from '../config/imageMappings.js';
 
 export default function AdCarousel() {
   const [ads, setAds] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     async function loadAds() {
@@ -21,6 +23,10 @@ export default function AdCarousel() {
     }
     loadAds();
   }, []);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [currentIndex]);
 
   useEffect(() => {
     if (ads.length <= 1) return;
@@ -44,8 +50,9 @@ export default function AdCarousel() {
           className="absolute inset-0"
         >
           <img 
-            src={ads[currentIndex].imageUrl} 
+            src={imgError ? HERO_BANNER : ads[currentIndex].imageUrl} 
             alt={ads[currentIndex].title}
+            onError={() => setImgError(true)}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex flex-col justify-center px-6 md:px-16">

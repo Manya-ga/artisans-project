@@ -1,995 +1,2254 @@
 {
-  "users": [],
-  "profiles": [],
+  "users": [
+    {
+      "id": "51ef27a8-5553-4a8b-b5b6-ebd6e9a9d28c",
+      "email": "khurjapotterymasters@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Khurja Pottery Masters"
+      },
+      "created_at": "2026-06-18T16:47:13.131Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "a881bced-2a0d-4eb3-9562-6d54683dd075",
+      "email": "jaipurblueart@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Jaipur Blue Art"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "e891f739-af74-4391-b2f0-ad68c1c8a708",
+      "email": "balaramapuramweaves@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Balaramapuram Weaves"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "b9e43565-1fcb-4c8d-b894-ecaae3b4a162",
+      "email": "bhujodiheritageweavers@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Bhujodi Heritage Weavers"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "3e48676d-7d55-407c-88ed-1968c66ed59a",
+      "email": "channapatnajoymakers@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Channapatna Joy Makers"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "23da8051-e941-42d7-9a26-6a7d56b2677a",
+      "email": "saharanpurwoodworks@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Saharanpur Woodworks"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "36f44527-4fa2-4566-82f9-adc6ae63c500",
+      "email": "sankhedafurniturecrafts@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Sankheda Furniture Crafts"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "d83bfcca-7f91-4152-af94-ccdfbf66a994",
+      "email": "jaipursilvercrafts@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Jaipur Silver Crafts"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "21c70c12-fa51-4b77-8f71-4c0457b774b3",
+      "email": "dokrabrassjewelry@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Dokra Brass Jewelry"
+      },
+      "created_at": "2026-06-18T16:47:13.132Z",
+      "updated_at": "2026-06-18T16:47:13.132Z"
+    },
+    {
+      "id": "706fcc13-d31d-47be-b3d9-026a8b68369c",
+      "email": "hyderabadpearlmasters@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Hyderabad Pearl Masters"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "c7d9a3af-0b73-4a0e-b2f5-8fe57f2ccfd7",
+      "email": "madhubaniartcollective@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Madhubani Art Collective"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "bc34a1c2-3552-44df-a1a5-481682ddb2ed",
+      "email": "pattachitracanvas@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Pattachitra Canvas"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "3040605b-e153-4191-a396-f8de2189a56e",
+      "email": "banarasisilkweavers@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Banarasi Silk Weavers"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "c55bdf7a-e220-4da3-9f7e-d75495256d97",
+      "email": "kalamkariblockprints@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Kalamkari Block Prints"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "6c022b74-9e45-41c3-9828-73da0a5e22f0",
+      "email": "kanjivaramsilklooms@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Kanjivaram Silk Looms"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "54590e2a-251b-4d5c-b659-2dc693334bbf",
+      "email": "assambambooartisans@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Assam Bamboo Artisans"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "727298cc-1b04-42dd-a092-160abe402dde",
+      "email": "tripuracaneworks@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Tripura Cane Works"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "382513bb-8c95-4584-ab80-ecaa53b02d9c",
+      "email": "nagalandbamboobaskets@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Nagaland Bamboo Baskets"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "36a4e719-9c65-481c-bd26-9b921f99c484",
+      "email": "kolkataleathercrafts@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Kolkata Leather Crafts"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "5edf7c49-f829-4a71-8d00-84d588863955",
+      "email": "dharavileathergoods@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Dharavi Leather Goods"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "02ae7ae7-59c8-4e0d-a15e-7129051d96d9",
+      "email": "moradabadbrassworks@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Moradabad Brass Works"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "a0653a66-7048-4bf8-8a85-ff331abbe487",
+      "email": "firozabadglassarts@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Firozabad Glass Arts"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "21be4629-92d2-49e8-8634-e848099c9aa8",
+      "email": "agramarbleinlay@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Agra Marble Inlay"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "de84d9fb-0790-4f3a-8a31-8b02119ec8d6",
+      "email": "warliartcollective@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Warli Art Collective"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    },
+    {
+      "id": "12764d85-48e1-4c31-af03-e2a316c36239",
+      "email": "tanjorepaintingstudio@example.com",
+      "password_hash": "$2b$10$ep/0tW2M/9L9.r3zS.ZJtu5.Xp.jLw3y1a5l7g.uR0s5V7A3u8.e6",
+      "user_metadata": {
+        "display_name": "Tanjore Painting Studio"
+      },
+      "created_at": "2026-06-18T16:47:13.133Z",
+      "updated_at": "2026-06-18T16:47:13.133Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "abc69b50-62b7-453d-8b5c-068ded313d70",
+      "display_name": "Khurja Pottery Masters",
+      "email": "artisan51ef27a8-5553-4a8b-b5b6-ebd6e9a9d28c@artisan.com",
+      "bio": "Renowned for our vibrant, hand-painted blue pottery ceramics.",
+      "photo_url": "https://images.unsplash.com/photo-1560609189-f1f4a7310ffa?w=800&auto=format&fit=crop",
+      "location": "Khurja",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "3a10389b-9b31-426a-8a33-53e497acfe26",
+      "display_name": "Jaipur Blue Art",
+      "email": "artisana881bced-2a0d-4eb3-9562-6d54683dd075@artisan.com",
+      "bio": "Creating traditional Jaipur blue pottery using quartz stone.",
+      "photo_url": "https://images.unsplash.com/photo-1531688636-f00e96030c6a?w=800&auto=format&fit=crop",
+      "location": "Jaipur",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "9b916f14-67d9-4a42-97fd-cf5f156ac871",
+      "display_name": "Balaramapuram Weaves",
+      "email": "artisane891f739-af74-4391-b2f0-ad68c1c8a708@artisan.com",
+      "bio": "Authentic Kerala Kasavu handlooms woven with fine cotton and golden zari.",
+      "photo_url": "https://images.unsplash.com/photo-1605001088481-9b1da79b764f?w=800&auto=format&fit=crop",
+      "location": "Trivandrum",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "11ae67a4-a9b2-45b8-9b67-40c6e0e6107c",
+      "display_name": "Bhujodi Heritage Weavers",
+      "email": "artisanb9e43565-1fcb-4c8d-b894-ecaae3b4a162@artisan.com",
+      "bio": "Specializing in traditional extra-weft Bhujodi weaving techniques.",
+      "photo_url": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+      "location": "Bhujodi",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "281d5eba-ca45-4a34-956a-0b0934cfa3e5",
+      "display_name": "Channapatna Joy Makers",
+      "email": "artisan3e48676d-7d55-407c-88ed-1968c66ed59a@artisan.com",
+      "bio": "Safe, non-toxic wooden toys colored with vegetable dyes.",
+      "photo_url": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&auto=format&fit=crop",
+      "location": "Channapatna",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "12f17092-561f-4c2a-bb18-efe1ec71e20e",
+      "display_name": "Saharanpur Woodworks",
+      "email": "artisan23da8051-e941-42d7-9a26-6a7d56b2677a@artisan.com",
+      "bio": "Intricately carved wooden furniture and home decors.",
+      "photo_url": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
+      "location": "Saharanpur",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "4675d6fa-b68a-4b19-8684-d58dae28dc51",
+      "display_name": "Sankheda Furniture Crafts",
+      "email": "artisan36f44527-4fa2-4566-82f9-adc6ae63c500@artisan.com",
+      "bio": "Traditional teak wood furniture treated with lacquer colors.",
+      "photo_url": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
+      "location": "Sankheda",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "3fdfb321-2d5e-464c-ad51-b38929a26441",
+      "display_name": "Jaipur Silver Crafts",
+      "email": "artisand83bfcca-7f91-4152-af94-ccdfbf66a994@artisan.com",
+      "bio": "Handcrafted oxidized silver and semi-precious stone jewelry.",
+      "photo_url": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
+      "location": "Jaipur",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "0d94d0db-ea16-429c-ac3f-f8fc1b621e71",
+      "display_name": "Dokra Brass Jewelry",
+      "email": "artisan21c70c12-fa51-4b77-8f71-4c0457b774b3@artisan.com",
+      "bio": "Ancient lost-wax metal casting jewelry designs.",
+      "photo_url": "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop",
+      "location": "Bastar",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "15aecb3a-2334-4c35-8ce8-71f19cda095d",
+      "display_name": "Hyderabad Pearl Masters",
+      "email": "artisan706fcc13-d31d-47be-b3d9-026a8b68369c@artisan.com",
+      "bio": "Authentic fresh water pearls set in gold and silver.",
+      "photo_url": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
+      "location": "Hyderabad",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "03049b25-b826-4dd7-9230-23d9c7ddf322",
+      "display_name": "Madhubani Art Collective",
+      "email": "artisanc7d9a3af-0b73-4a0e-b2f5-8fe57f2ccfd7@artisan.com",
+      "bio": "Intricate folk art paintings depicting nature and mythology.",
+      "photo_url": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
+      "location": "Madhubani",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "0f3ce489-7dd1-48e8-a5fd-87c4897bfcde",
+      "display_name": "Pattachitra Canvas",
+      "email": "artisanbc34a1c2-3552-44df-a1a5-481682ddb2ed@artisan.com",
+      "bio": "Scroll painting on cloth, an ancient tradition of Odisha.",
+      "photo_url": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
+      "location": "Raghurajpur",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "a33a0987-f1bf-4405-9476-086f944abf50",
+      "display_name": "Banarasi Silk Weavers",
+      "email": "artisan3040605b-e153-4191-a396-f8de2189a56e@artisan.com",
+      "bio": "Weaving luxurious silk sarees with rich gold and silver brocade.",
+      "photo_url": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
+      "location": "Varanasi",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "d9ad0af6-b99d-4e19-ba6a-fcf7b7bfe816",
+      "display_name": "Kalamkari Block Prints",
+      "email": "artisanc55bdf7a-e220-4da3-9f7e-d75495256d97@artisan.com",
+      "bio": "Vegetable-dyed hand block prints with intricate floral patterns.",
+      "photo_url": "https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?w=800&auto=format&fit=crop",
+      "location": "Machilipatnam",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "9955879d-fa11-4524-b391-3ab3f8537f6d",
+      "display_name": "Kanjivaram Silk Looms",
+      "email": "artisan6c022b74-9e45-41c3-9828-73da0a5e22f0@artisan.com",
+      "bio": "Authentic heavy silk sarees renowned for durability and shine.",
+      "photo_url": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
+      "location": "Kanchipuram",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "be2834f0-9762-418b-a3a9-1df1f51f2f27",
+      "display_name": "Assam Bamboo Artisans",
+      "email": "artisan54590e2a-251b-4d5c-b659-2dc693334bbf@artisan.com",
+      "bio": "Eco-friendly bamboo furniture and utility items.",
+      "photo_url": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
+      "location": "Guwahati",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "2183b908-3a39-45eb-a7d3-025f4b57a905",
+      "display_name": "Tripura Cane Works",
+      "email": "artisan727298cc-1b04-42dd-a092-160abe402dde@artisan.com",
+      "bio": "Fine cane weaving and handcrafted accessories.",
+      "photo_url": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
+      "location": "Agartala",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "72a2dc69-ca8e-49e6-b551-055873c10cb8",
+      "display_name": "Nagaland Bamboo Baskets",
+      "email": "artisan382513bb-8c95-4584-ab80-ecaa53b02d9c@artisan.com",
+      "bio": "Traditional utility baskets and containers used by Naga tribes.",
+      "photo_url": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
+      "location": "Dimapur",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "9bb365e3-5f0b-4ad5-8c77-9b2a6007830e",
+      "display_name": "Kolkata Leather Crafts",
+      "email": "artisan36a4e719-9c65-481c-bd26-9b921f99c484@artisan.com",
+      "bio": "Hand-tooled and embossed leather bags and accessories.",
+      "photo_url": "https://images.unsplash.com/photo-1590874103328-eaac2cb9e562?w=800&auto=format&fit=crop",
+      "location": "Kolkata",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "591c2bbe-568e-42a5-ae35-1c4897f0873d",
+      "display_name": "Dharavi Leather Goods",
+      "email": "artisan5edf7c49-f829-4a71-8d00-84d588863955@artisan.com",
+      "bio": "Durable, high-quality leather jackets and accessories.",
+      "photo_url": "https://images.unsplash.com/photo-1548624316-23f46f497746?w=800&auto=format&fit=crop",
+      "location": "Mumbai",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "f8cf884e-aea1-4d53-9088-8170865a5ee0",
+      "display_name": "Moradabad Brass Works",
+      "email": "artisan02ae7ae7-59c8-4e0d-a15e-7129051d96d9@artisan.com",
+      "bio": "Exquisite brass artifacts, lamps, and decorative pieces.",
+      "photo_url": "https://images.unsplash.com/photo-1582216131435-0219c6e3b508?w=800&auto=format&fit=crop",
+      "location": "Moradabad",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "5787410d-3ae8-4301-b3a7-4b65f5ec91b4",
+      "display_name": "Firozabad Glass Arts",
+      "email": "artisana0653a66-7048-4bf8-8a85-ff331abbe487@artisan.com",
+      "bio": "Handblown glass chandeliers and decorative vases.",
+      "photo_url": "https://images.unsplash.com/photo-1591127027503-455c192bd8ec?w=800&auto=format&fit=crop",
+      "location": "Firozabad",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "e0c7bf06-2269-4eaf-a1aa-e76e1a198a8f",
+      "display_name": "Agra Marble Inlay",
+      "email": "artisan21be4629-92d2-49e8-8634-e848099c9aa8@artisan.com",
+      "bio": "Pietra Dura marble inlay work inspired by the Taj Mahal.",
+      "photo_url": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
+      "location": "Agra",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "2b720458-8f15-4aca-bce7-b7cf9d89e254",
+      "display_name": "Warli Art Collective",
+      "email": "artisande84d9fb-0790-4f3a-8a31-8b02119ec8d6@artisan.com",
+      "bio": "Tribal Warli art reflecting the rhythm of life and nature.",
+      "photo_url": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
+      "location": "Palghar",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "62ff2a76-57ee-40e2-a7b3-751d3293f87d",
+      "display_name": "Tanjore Painting Studio",
+      "email": "artisan12764d85-48e1-4c31-af03-e2a316c36239@artisan.com",
+      "bio": "Classical South Indian paintings with real gold foil and semi-precious stones.",
+      "photo_url": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
+      "location": "Thanjavur",
+      "followers": [],
+      "following": [],
+      "wishlist": [],
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    }
+  ],
   "wishlists": [],
   "products": [
     {
-      "id": "4aa356a7-b6be-481b-a050-4e8860d76820",
+      "id": "11ba0c4c-61dc-4c1e-b6b2-347524ea83bf",
+      "legacy_id": "4aa356a7-b6be-481b-a050-4e8860d76820",
+      "user_id": "47aca020-7123-469a-a048-9831ea474cf2",
       "title": "Blue Floral Vase",
-      "name": "Blue Floral Vase",
       "price": 1808,
-      "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&auto=format&fit=crop",
-      "artisanName": "Khurja Pottery Masters",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Khurja Pottery Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "8d305bc8-68c7-4bc2-8ad5-184d56d3e0e9",
+      "id": "1eb1e296-d8d1-41ec-b72d-2f74e8cceb2c",
+      "legacy_id": "8d305bc8-68c7-4bc2-8ad5-184d56d3e0e9",
+      "user_id": "4a0e7a5c-dd69-447c-b90b-8521155e1d4d",
       "title": "Ceramic Tea Set",
-      "name": "Ceramic Tea Set",
       "price": 4599,
-      "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop",
-      "artisanName": "Khurja Pottery Masters",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Khurja Pottery Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "d7b11854-fce2-44f6-8fcc-43e0f937f1f3",
+      "id": "15bd5ec5-24fb-4c41-a5a1-88baf841da0b",
+      "legacy_id": "d7b11854-fce2-44f6-8fcc-43e0f937f1f3",
+      "user_id": "1da190db-3f69-46b8-bdd9-c0699ec3d730",
       "title": "Hand-painted Planter",
-      "name": "Hand-painted Planter",
       "price": 3285,
-      "image": "https://images.unsplash.com/photo-1485955900006-d0f28d392b8e?w=800&auto=format&fit=crop",
-      "artisanName": "Khurja Pottery Masters",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1486300216153-98b1beede3c2?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1486300216153-98b1beede3c2?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Khurja Pottery Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "eee5e9ce-8553-49c6-ac02-c68ddd6fbc71",
+      "id": "bd7a4e4f-1b74-44d9-88f9-7f32ee28dc14",
+      "legacy_id": "eee5e9ce-8553-49c6-ac02-c68ddd6fbc71",
+      "user_id": "656b7d75-96df-465c-abb1-2d8db80587c5",
       "title": "Decorative Plate",
-      "name": "Decorative Plate",
       "price": 2407,
-      "image": "https://images.unsplash.com/photo-1594916843477-947385da41cd?w=800&auto=format&fit=crop",
-      "artisanName": "Khurja Pottery Masters",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1509946664994-efa0a0e4f1db?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1509946664994-efa0a0e4f1db?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Khurja Pottery Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "8daa48f5-1ed4-4324-8599-0e7c0516c7fc",
+      "id": "55be8cb1-79f8-4a4f-934c-1af2f060b0f7",
+      "legacy_id": "8daa48f5-1ed4-4324-8599-0e7c0516c7fc",
+      "user_id": "c0b719d5-e8ed-48c8-ba42-c17738b0da9c",
       "title": "Blue Pottery Lamp",
-      "name": "Blue Pottery Lamp",
       "price": 3847,
-      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop",
-      "artisanName": "Jaipur Blue Art",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Jaipur Blue Art",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "cb146b84-5865-41b5-9344-8554f68f6ef2",
+      "id": "d3cede22-5707-40a6-85b9-845bb586b65a",
+      "legacy_id": "cb146b84-5865-41b5-9344-8554f68f6ef2",
+      "user_id": "7122e1c1-7b14-4961-91cd-b4f569cec5ba",
       "title": "Ceramic Coasters Set",
-      "name": "Ceramic Coasters Set",
       "price": 3440,
-      "image": "https://images.unsplash.com/photo-1605335197825-9c88be24db77?w=800&auto=format&fit=crop",
-      "artisanName": "Jaipur Blue Art",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1529651737248-dad5e287768e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1529651737248-dad5e287768e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Jaipur Blue Art",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "8b79d7ca-9ae5-4579-992e-35cfc6bad7d3",
+      "id": "059d85d6-d36c-4ff8-aa98-16db3cff3611",
+      "legacy_id": "8b79d7ca-9ae5-4579-992e-35cfc6bad7d3",
+      "user_id": "3b11a7f4-a031-4462-a73d-ba75dcd61b3f",
       "title": "Serving Bowl",
-      "name": "Serving Bowl",
       "price": 4149,
-      "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop",
-      "artisanName": "Jaipur Blue Art",
-      "category": "Pottery"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop"
+      ],
+      "category": "Pottery",
+      "artisan_name": "Jaipur Blue Art",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "4460b18d-34a1-4493-aa56-62e68cce8fdd",
+      "id": "89157008-f528-4395-be70-66a7a792ce0b",
+      "legacy_id": "4460b18d-34a1-4493-aa56-62e68cce8fdd",
+      "user_id": "c2a11454-fd10-441d-b388-bc90fd1c3dff",
       "title": "Kasavu Saree",
-      "name": "Kasavu Saree",
       "price": 4684,
-      "image": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
-      "artisanName": "Balaramapuram Weaves",
-      "category": "Handloom"
-    },
-    {
-      "id": "7f4e6e6e-3ddd-4e3b-a190-ba3ea2d20c83",
-      "title": "Mundu & Neriyathu",
-      "name": "Mundu & Neriyathu",
-      "price": 2939,
-      "image": "https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?w=800&auto=format&fit=crop",
-      "artisanName": "Balaramapuram Weaves",
-      "category": "Handloom"
-    },
-    {
-      "id": "d3194ff6-6ee0-424d-b1f6-e82390d7ef41",
-      "title": "Handloom Set Saree",
-      "name": "Handloom Set Saree",
-      "price": 4421,
-      "image": "https://images.unsplash.com/photo-1605001088481-9b1da79b764f?w=800&auto=format&fit=crop",
-      "artisanName": "Balaramapuram Weaves",
-      "category": "Handloom"
-    },
-    {
-      "id": "a697ee24-fec2-4499-b013-6b446709864d",
-      "title": "Woolen Shawl",
-      "name": "Woolen Shawl",
-      "price": 4655,
+      "description": null,
       "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
-      "artisanName": "Bhujodi Heritage Weavers",
-      "category": "Handloom"
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop"
+      ],
+      "category": "Handloom",
+      "artisan_name": "Balaramapuram Weaves",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "5bcf3c9d-652c-4e89-a7bd-ddb1ce3438b9",
-      "title": "Cotton Stole",
-      "name": "Cotton Stole",
-      "price": 4841,
-      "image": "https://images.unsplash.com/photo-1555529902-5261145633bf?w=800&auto=format&fit=crop",
-      "artisanName": "Bhujodi Heritage Weavers",
-      "category": "Handloom"
-    },
-    {
-      "id": "1e581f53-7d2b-4051-bc2d-dd768de3f58b",
-      "title": "Handwoven Throw",
-      "name": "Handwoven Throw",
-      "price": 3574,
-      "image": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
-      "artisanName": "Bhujodi Heritage Weavers",
-      "category": "Handloom"
-    },
-    {
-      "id": "bba93356-9172-4557-9e9f-5b0a0a034861",
-      "title": "Wooden Toy Train",
-      "name": "Wooden Toy Train",
-      "price": 4476,
+      "id": "95c6c90a-9bba-48d5-be56-179bbd422eb2",
+      "legacy_id": "7f4e6e6e-3ddd-4e3b-a190-ba3ea2d20c83",
+      "user_id": "7cdebb70-5dc1-430e-926a-a9471031534c",
+      "title": "Mundu & Neriyathu",
+      "price": 2939,
+      "description": null,
       "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop",
-      "artisanName": "Channapatna Joy Makers",
-      "category": "Wooden Crafts"
+      "images": [
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop"
+      ],
+      "category": "Handloom",
+      "artisan_name": "Balaramapuram Weaves",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "1a061a2c-a31f-4530-b61c-f479dc898b24",
+      "id": "80de8b0c-7972-43a8-be22-3b79e3bd2d5e",
+      "legacy_id": "d3194ff6-6ee0-424d-b1f6-e82390d7ef41",
+      "user_id": "1c119028-f664-45d7-a329-f87822657f20",
+      "title": "Handloom Set Saree",
+      "price": 4421,
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop"
+      ],
+      "category": "Handloom",
+      "artisan_name": "Balaramapuram Weaves",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "a5c431be-0075-4a92-a227-6f2cf93e498d",
+      "legacy_id": "a697ee24-fec2-4499-b013-6b446709864d",
+      "user_id": "272347d9-8a77-4e67-a8d2-1c2d01456f1e",
+      "title": "Woolen Shawl",
+      "price": 4655,
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Handloom",
+      "artisan_name": "Bhujodi Heritage Weavers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "f16a9cda-897e-4777-88d9-af22ceff7d90",
+      "legacy_id": "5bcf3c9d-652c-4e89-a7bd-ddb1ce3438b9",
+      "user_id": "52fc1a71-35d9-47d0-aa4a-8c3875681432",
+      "title": "Cotton Stole",
+      "price": 4841,
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Handloom",
+      "artisan_name": "Bhujodi Heritage Weavers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "04040170-8fb0-4b89-874a-ced49e9887ea",
+      "legacy_id": "1e581f53-7d2b-4051-bc2d-dd768de3f58b",
+      "user_id": "d221c209-37d1-42dc-96d9-e302d6ad2ca4",
+      "title": "Handwoven Throw",
+      "price": 3574,
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=900&auto=format&fit=crop"
+      ],
+      "category": "Handloom",
+      "artisan_name": "Bhujodi Heritage Weavers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
+    },
+    {
+      "id": "dbd9f446-97e5-48d8-8296-8ee0b3f6cb86",
+      "legacy_id": "bba93356-9172-4557-9e9f-5b0a0a034861",
+      "user_id": "f6fbc1da-c78a-49a9-b819-f7ccda584b94",
+      "title": "Wooden Toy Train",
+      "price": 4476,
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Channapatna Joy Makers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
+    },
+    {
+      "id": "65118998-6458-48cf-8272-24c9efee9168",
+      "legacy_id": "1a061a2c-a31f-4530-b61c-f479dc898b24",
+      "user_id": "7d58209f-cc4c-4ead-8c80-9caad4bdf3db",
       "title": "Stacking Rings",
-      "name": "Stacking Rings",
       "price": 2186,
-      "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&auto=format&fit=crop",
-      "artisanName": "Channapatna Joy Makers",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=900&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Channapatna Joy Makers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "8147bc15-fbf9-42ed-8136-6d11dd2112f6",
+      "id": "54014e43-33d6-41e4-812d-a4c415c492a5",
+      "legacy_id": "8147bc15-fbf9-42ed-8136-6d11dd2112f6",
+      "user_id": "0d6d22ef-6b2d-428c-8d38-d49cbc9e6393",
       "title": "Spinning Tops",
-      "name": "Spinning Tops",
       "price": 4629,
-      "image": "https://images.unsplash.com/photo-1616429777191-cc11a3c8bb2a?w=800&auto=format&fit=crop",
-      "artisanName": "Channapatna Joy Makers",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Channapatna Joy Makers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "f3c0e643-491f-4342-8066-3d629162acc6",
+      "id": "815254ed-cfec-4fa1-b30c-7feed690a61c",
+      "legacy_id": "f3c0e643-491f-4342-8066-3d629162acc6",
+      "user_id": "c6cfb4ea-ef56-486b-9d20-bc4efd0b6840",
       "title": "Carved Coffee Table",
-      "name": "Carved Coffee Table",
       "price": 1810,
-      "image": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "artisanName": "Saharanpur Woodworks",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Saharanpur Woodworks",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "ed6b3d3a-8359-4250-8d9e-74e2c2c4d67d",
+      "id": "e30bfa12-24d0-47b4-9f12-c5edacde502a",
+      "legacy_id": "ed6b3d3a-8359-4250-8d9e-74e2c2c4d67d",
+      "user_id": "182c7f9a-3b6d-4f43-bbd6-588badca600d",
       "title": "Wooden Wall Panel",
-      "name": "Wooden Wall Panel",
       "price": 4552,
-      "image": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
-      "artisanName": "Saharanpur Woodworks",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Saharanpur Woodworks",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "69dea612-d6b1-4e8c-bfff-5a1f230f088c",
+      "id": "18840c9e-009d-4a13-a557-8f996d99a2d1",
+      "legacy_id": "69dea612-d6b1-4e8c-bfff-5a1f230f088c",
+      "user_id": "7c4c4f8e-6725-4041-8a67-8695b8115fba",
       "title": "Jewelry Box",
-      "name": "Jewelry Box",
       "price": 2872,
-      "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&auto=format&fit=crop",
-      "artisanName": "Saharanpur Woodworks",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=900&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Saharanpur Woodworks",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "af95cb4d-a886-4ab4-b7a6-2dfe5704b750",
+      "id": "c8424af2-8a2b-43a6-a903-c8f61eebfa5b",
+      "legacy_id": "af95cb4d-a886-4ab4-b7a6-2dfe5704b750",
+      "user_id": "54d06170-b954-47b5-aa98-79af5c2d57c3",
       "title": "Sankheda Swing",
-      "name": "Sankheda Swing",
       "price": 2353,
-      "image": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "artisanName": "Sankheda Furniture Crafts",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Sankheda Furniture Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "bca8d1a3-7873-4bed-886e-1439d0d7eb09",
+      "id": "aa75543b-7a58-484b-882a-7cf27dae2050",
+      "legacy_id": "bca8d1a3-7873-4bed-886e-1439d0d7eb09",
+      "user_id": "f39c7979-ae54-44ac-9304-2a67a11d3967",
       "title": "Decorative Chair",
-      "name": "Decorative Chair",
       "price": 5418,
-      "image": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
-      "artisanName": "Sankheda Furniture Crafts",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Sankheda Furniture Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "cefe41fe-0bdb-4998-af7d-a1bed63bd41d",
+      "id": "d588387c-fa69-4a7d-8460-9f8ec7f5c2ff",
+      "legacy_id": "cefe41fe-0bdb-4998-af7d-a1bed63bd41d",
+      "user_id": "4e31a08e-4bf9-4bc4-be02-5356650a57cc",
       "title": "Lacquer Table",
-      "name": "Lacquer Table",
       "price": 3783,
-      "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&auto=format&fit=crop",
-      "artisanName": "Sankheda Furniture Crafts",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Sankheda Furniture Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "164bc1b8-c6c9-4f05-b263-85d09ca43c51",
+      "id": "f36a5313-6c4b-4bc3-9157-3eecd6566c17",
+      "legacy_id": "164bc1b8-c6c9-4f05-b263-85d09ca43c51",
+      "user_id": "cd37d436-d6b5-4b19-8b81-e03d9e247355",
       "title": "Traditional Stool",
-      "name": "Traditional Stool",
       "price": 4746,
-      "image": "https://images.unsplash.com/photo-1616429777191-cc11a3c8bb2a?w=800&auto=format&fit=crop",
-      "artisanName": "Sankheda Furniture Crafts",
-      "category": "Wooden Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=900&auto=format&fit=crop"
+      ],
+      "category": "Wooden Crafts",
+      "artisan_name": "Sankheda Furniture Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "cd727a7c-165b-4007-86be-7067e603d679",
+      "id": "34db7ca8-0d11-43be-b49a-ebb42ec7e6d8",
+      "legacy_id": "cd727a7c-165b-4007-86be-7067e603d679",
+      "user_id": "aec9e7ea-8e8b-4bbf-8bac-5e8680eeb5de",
       "title": "Oxidized Silver Necklace",
-      "name": "Oxidized Silver Necklace",
       "price": 2503,
-      "image": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
-      "artisanName": "Jaipur Silver Crafts",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Jaipur Silver Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "e7a01720-2310-4400-a22a-c583ff30a366",
+      "id": "e22f2a76-a859-46b4-a150-055d531b198f",
+      "legacy_id": "e7a01720-2310-4400-a22a-c583ff30a366",
+      "user_id": "c8e2480f-c121-4e34-a488-42177c0e1a80",
       "title": "Amethyst Earrings",
-      "name": "Amethyst Earrings",
       "price": 4237,
-      "image": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
-      "artisanName": "Jaipur Silver Crafts",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Jaipur Silver Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "02b6e175-7a06-4750-8182-721e9a3ee5d2",
+      "id": "de40fac5-2a1b-4601-8b74-dc1ad55b857c",
+      "legacy_id": "02b6e175-7a06-4750-8182-721e9a3ee5d2",
+      "user_id": "71bd1388-2c81-4f64-b51a-97b2ec78196d",
       "title": "Silver Bangle Set",
-      "name": "Silver Bangle Set",
       "price": 1669,
+      "description": null,
       "image": "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop",
-      "artisanName": "Jaipur Silver Crafts",
-      "category": "Jewelry"
+      "images": [
+        "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Jaipur Silver Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "a292066a-2f4b-475a-a820-46d762b193c7",
+      "id": "47e63ead-a590-4b13-9534-9a962630b877",
+      "legacy_id": "a292066a-2f4b-475a-a820-46d762b193c7",
+      "user_id": "98ec80b5-17f3-4512-b2cb-5d426164ed0a",
       "title": "Dokra Tribal Necklace",
-      "name": "Dokra Tribal Necklace",
       "price": 1855,
-      "image": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
-      "artisanName": "Dokra Brass Jewelry",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1601121141418-5b7c699e3764?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1601121141418-5b7c699e3764?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Dokra Brass Jewelry",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "7eaaea88-daf0-41af-b034-789af076b2b1",
+      "id": "ddaba715-6e78-4fd2-b34d-4d177c59cf23",
+      "legacy_id": "7eaaea88-daf0-41af-b034-789af076b2b1",
+      "user_id": "7834217c-972e-41f0-a4cb-f0428ada8cd3",
       "title": "Brass Elephant Pendant",
-      "name": "Brass Elephant Pendant",
       "price": 1603,
-      "image": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
-      "artisanName": "Dokra Brass Jewelry",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Dokra Brass Jewelry",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "85514a17-4cf4-4d75-a280-c0f38f85441b",
+      "id": "9b25d066-b348-44e9-857b-7101e4b44ea4",
+      "legacy_id": "85514a17-4cf4-4d75-a280-c0f38f85441b",
+      "user_id": "d4024d90-5c7e-4388-8485-1e41f0e92593",
       "title": "Tribal Armlet",
-      "name": "Tribal Armlet",
       "price": 2555,
-      "image": "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop",
-      "artisanName": "Dokra Brass Jewelry",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1631982690223-8aa2d30dc0c6?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1631982690223-8aa2d30dc0c6?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Dokra Brass Jewelry",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "f98e7f26-cba0-44c8-b68b-5fe40e1541a5",
+      "id": "490eb291-59cf-47f8-bc59-d7a8ab342d9b",
+      "legacy_id": "f98e7f26-cba0-44c8-b68b-5fe40e1541a5",
+      "user_id": "51735899-3cf1-45f8-9eb7-24b4240bc0cb",
       "title": "Brass Anklet",
-      "name": "Brass Anklet",
       "price": 3808,
-      "image": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
-      "artisanName": "Dokra Brass Jewelry",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1598560917807-1bae44bd2be8?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Dokra Brass Jewelry",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "c826110f-f634-4005-b6b5-022088cca009",
+      "id": "62fba7c2-b1d9-495e-b9b2-d21bcf397152",
+      "legacy_id": "c826110f-f634-4005-b6b5-022088cca009",
+      "user_id": "7304ddd3-db2e-4834-980e-3ff1246bc671",
       "title": "Pearl Choker Set",
-      "name": "Pearl Choker Set",
       "price": 3497,
-      "image": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
-      "artisanName": "Hyderabad Pearl Masters",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Hyderabad Pearl Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "4613bb30-d191-4efd-be8b-a7940dcbf823",
+      "id": "c0bdb029-c294-4a78-8aa7-f7f928f15156",
+      "legacy_id": "4613bb30-d191-4efd-be8b-a7940dcbf823",
+      "user_id": "9aba36e3-d04c-4d9c-bcb7-0569c0d8d076",
       "title": "Stud Pearl Earrings",
-      "name": "Stud Pearl Earrings",
       "price": 3057,
-      "image": "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop",
-      "artisanName": "Hyderabad Pearl Masters",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1576047000578-b0b10a3b4edd?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1576047000578-b0b10a3b4edd?w=800&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Hyderabad Pearl Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "bb6a8207-40cc-43bc-8dec-2579741e52f2",
+      "id": "cf65a071-5705-4fc0-9cd7-d4862f70cf74",
+      "legacy_id": "bb6a8207-40cc-43bc-8dec-2579741e52f2",
+      "user_id": "9eb30ed1-26b3-4e10-82b2-5aa7d7018d8e",
       "title": "Classic Pearl Strand",
-      "name": "Classic Pearl Strand",
       "price": 4863,
-      "image": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
-      "artisanName": "Hyderabad Pearl Masters",
-      "category": "Jewelry"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1631982690223-8aa2d30dc0c6?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1631982690223-8aa2d30dc0c6?w=900&auto=format&fit=crop"
+      ],
+      "category": "Jewelry",
+      "artisan_name": "Hyderabad Pearl Masters",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "9f3bbe8e-8f36-4aa9-9af8-e3c822ba835f",
+      "id": "84431ca7-b671-472e-9221-62e8c0a830d1",
+      "legacy_id": "9f3bbe8e-8f36-4aa9-9af8-e3c822ba835f",
+      "user_id": "412d23ce-ae74-424b-bc35-f2bbb2d83f62",
       "title": "Tree of Life Canvas",
-      "name": "Tree of Life Canvas",
       "price": 2846,
+      "description": null,
       "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "artisanName": "Madhubani Art Collective",
-      "category": "Paintings"
+      "images": [
+        "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop"
+      ],
+      "category": "Paintings",
+      "artisan_name": "Madhubani Art Collective",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "452d2d10-e378-443e-83bb-280d0cc25aa1",
+      "id": "19634daf-9e73-4b09-8ad9-435f470d0765",
+      "legacy_id": "452d2d10-e378-443e-83bb-280d0cc25aa1",
+      "user_id": "83dfb97d-0220-41a9-931b-3b68353ee938",
       "title": "Krishna Radha Painting",
-      "name": "Krishna Radha Painting",
       "price": 2701,
+      "description": null,
       "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "artisanName": "Madhubani Art Collective",
-      "category": "Paintings"
+      "images": [
+        "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop"
+      ],
+      "category": "Paintings",
+      "artisan_name": "Madhubani Art Collective",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "4bfcfc81-31cb-46fe-92de-5a2a4ebf7016",
+      "id": "0b8c7ba6-f5c7-4562-9efe-19e47322b101",
+      "legacy_id": "4bfcfc81-31cb-46fe-92de-5a2a4ebf7016",
+      "user_id": "0be1a75c-99d7-4961-a9d2-c618b3fbb13c",
       "title": "Peacock Motif Art",
-      "name": "Peacock Motif Art",
       "price": 4708,
-      "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "artisanName": "Madhubani Art Collective",
-      "category": "Paintings"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1570555046680-4de0f9e7a77b?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1570555046680-4de0f9e7a77b?w=800&auto=format&fit=crop"
+      ],
+      "category": "Paintings",
+      "artisan_name": "Madhubani Art Collective",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "40bcd551-65f5-452a-b6bd-a3f24300db9f",
+      "id": "abce2707-4530-4ecf-bb6e-7f47feda3d25",
+      "legacy_id": "40bcd551-65f5-452a-b6bd-a3f24300db9f",
+      "user_id": "4f4e6d53-ba4c-4fa2-805b-405277af308c",
       "title": "Dashavatar Scroll",
-      "name": "Dashavatar Scroll",
       "price": 4118,
-      "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "artisanName": "Pattachitra Canvas",
-      "category": "Paintings"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop"
+      ],
+      "category": "Paintings",
+      "artisan_name": "Pattachitra Canvas",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "8ef484df-3455-46ba-a778-49d40c5d52f9",
+      "id": "c778ba16-e0d2-4cbb-bf4b-f8b170ae4ed2",
+      "legacy_id": "8ef484df-3455-46ba-a778-49d40c5d52f9",
+      "user_id": "c31f2ac3-90c3-44b0-a665-f83b19bd7c8a",
       "title": "Jagannath Painting",
-      "name": "Jagannath Painting",
       "price": 4556,
-      "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "artisanName": "Pattachitra Canvas",
-      "category": "Paintings"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&auto=format&fit=crop"
+      ],
+      "category": "Paintings",
+      "artisan_name": "Pattachitra Canvas",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "f7ae9946-5d6d-441c-8df5-ecd85679688e",
+      "id": "95cc2d9e-41b0-4a2b-8b3e-14676b29f90a",
+      "legacy_id": "f7ae9946-5d6d-441c-8df5-ecd85679688e",
+      "user_id": "f251d676-73df-46b7-91ba-49012c34f77d",
       "title": "Floral Border Painting",
-      "name": "Floral Border Painting",
       "price": 4165,
-      "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "artisanName": "Pattachitra Canvas",
-      "category": "Paintings"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1572372928536-f38b8c61b5c9?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1572372928536-f38b8c61b5c9?w=800&auto=format&fit=crop"
+      ],
+      "category": "Paintings",
+      "artisan_name": "Pattachitra Canvas",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "7d6b5f81-cec0-4e27-8015-447d995b2bbe",
+      "id": "c33a09ce-c47b-46da-a5c5-cc38977b501a",
+      "legacy_id": "7d6b5f81-cec0-4e27-8015-447d995b2bbe",
+      "user_id": "013c6a6a-6a86-4b1a-87ba-10699d6c4f81",
       "title": "Bridal Banarasi Saree",
-      "name": "Bridal Banarasi Saree",
       "price": 3235,
-      "image": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
-      "artisanName": "Banarasi Silk Weavers",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Banarasi Silk Weavers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "f133b990-99e4-4bcb-8124-81ab650593ca",
+      "id": "799f8c1f-ecde-45a5-bed9-251db7f93245",
+      "legacy_id": "f133b990-99e4-4bcb-8124-81ab650593ca",
+      "user_id": "e34335c1-5644-4cfb-9757-5f018e81a8d9",
       "title": "Silk Brocade Dupatta",
-      "name": "Silk Brocade Dupatta",
       "price": 4265,
-      "image": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
-      "artisanName": "Banarasi Silk Weavers",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1605814597473-b3c9735d4ba2?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Banarasi Silk Weavers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "8de25bd0-fc55-44b4-b760-6d5e74737a4b",
+      "id": "fce19e96-da05-4ba3-8665-0d55ecaea2ba",
+      "legacy_id": "8de25bd0-fc55-44b4-b760-6d5e74737a4b",
+      "user_id": "bef1565b-8cad-4b8c-8344-3ed89dc6b9b3",
       "title": "Banarasi Fabric",
-      "name": "Banarasi Fabric",
       "price": 2894,
-      "image": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
-      "artisanName": "Banarasi Silk Weavers",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Banarasi Silk Weavers",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "c3d5a162-1f96-4b89-92fc-c20fd1e5297a",
+      "id": "7d45f1b0-a1eb-4cfa-b2f9-69c143fa5845",
+      "legacy_id": "c3d5a162-1f96-4b89-92fc-c20fd1e5297a",
+      "user_id": "20986377-3186-47e0-8208-473d32ac3ddc",
       "title": "Kalamkari Kurti Fabric",
-      "name": "Kalamkari Kurti Fabric",
       "price": 3362,
-      "image": "https://images.unsplash.com/photo-1605001088481-9b1da79b764f?w=800&auto=format&fit=crop",
-      "artisanName": "Kalamkari Block Prints",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kalamkari Block Prints",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "da903162-bc41-4588-b86a-397245e4e86d",
+      "id": "e834a519-3915-48aa-91ad-aee5c24c9655",
+      "legacy_id": "da903162-bc41-4588-b86a-397245e4e86d",
+      "user_id": "4fb2128b-e36f-4694-aa89-c4babdf3c7f5",
       "title": "Block Print Saree",
-      "name": "Block Print Saree",
       "price": 5416,
-      "image": "https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?w=800&auto=format&fit=crop",
-      "artisanName": "Kalamkari Block Prints",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kalamkari Block Prints",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "91ee743d-4d61-4e6b-b427-a04fc0143fcf",
+      "id": "3a446da0-05bd-4b2c-b667-be178d077644",
+      "legacy_id": "91ee743d-4d61-4e6b-b427-a04fc0143fcf",
+      "user_id": "3939739f-57ec-46d7-a400-0372fa653801",
       "title": "Cotton Dupatta",
-      "name": "Cotton Dupatta",
       "price": 3098,
-      "image": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
-      "artisanName": "Kalamkari Block Prints",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kalamkari Block Prints",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "208d1b46-3a05-4bd1-aeb2-509ea94c78c9",
+      "id": "2158d3a5-914d-46b3-9e7d-5b65ae37584d",
+      "legacy_id": "208d1b46-3a05-4bd1-aeb2-509ea94c78c9",
+      "user_id": "3f2228df-df26-4bde-a1d8-c6c03fc0e66e",
       "title": "Kanjivaram Silk Saree",
-      "name": "Kanjivaram Silk Saree",
       "price": 5240,
-      "image": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
-      "artisanName": "Kanjivaram Silk Looms",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kanjivaram Silk Looms",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "ba0f470c-b4fb-4b8d-9ab3-c47fbb94f9fb",
+      "id": "66d1723d-5132-4c10-ab06-edc354fa3998",
+      "legacy_id": "ba0f470c-b4fb-4b8d-9ab3-c47fbb94f9fb",
+      "user_id": "415c1049-13e1-465c-b4da-1323bed2c939",
       "title": "Half Saree Set",
-      "name": "Half Saree Set",
       "price": 2347,
-      "image": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
-      "artisanName": "Kanjivaram Silk Looms",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kanjivaram Silk Looms",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "3e2ab558-4be4-4295-ab47-6d99b5d4463d",
+      "id": "30f95e66-089c-4738-8984-18326b8a9ba8",
+      "legacy_id": "3e2ab558-4be4-4295-ab47-6d99b5d4463d",
+      "user_id": "8d075d93-da75-4e86-84b4-f23fa43dae45",
       "title": "Silk Border Fabric",
-      "name": "Silk Border Fabric",
       "price": 4179,
-      "image": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
-      "artisanName": "Kanjivaram Silk Looms",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1544441893-675973e31985?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1544441893-675973e31985?w=800&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kanjivaram Silk Looms",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "5e1288bf-f879-40de-8345-19943fcea408",
+      "id": "66aa098a-e2e9-4ea1-b83e-4aaa18db22f6",
+      "legacy_id": "5e1288bf-f879-40de-8345-19943fcea408",
+      "user_id": "2a0beb97-c918-48c9-98e3-61d759427e60",
       "title": "Silk Stole",
-      "name": "Silk Stole",
       "price": 4359,
-      "image": "https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?w=800&auto=format&fit=crop",
-      "artisanName": "Kanjivaram Silk Looms",
-      "category": "Textiles"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=900&auto=format&fit=crop"
+      ],
+      "category": "Textiles",
+      "artisan_name": "Kanjivaram Silk Looms",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "41bc80c7-4f2f-463d-8256-dd5a6ed49ce2",
+      "id": "9dba6496-46b6-4982-959b-1e5ef9bec8d5",
+      "legacy_id": "41bc80c7-4f2f-463d-8256-dd5a6ed49ce2",
+      "user_id": "fe941d56-6a48-46b3-bced-e5926de70456",
       "title": "Bamboo Easy Chair",
-      "name": "Bamboo Easy Chair",
       "price": 2602,
-      "image": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "artisanName": "Assam Bamboo Artisans",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Assam Bamboo Artisans",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "c679e07b-e44e-480a-8961-026610c09d51",
+      "id": "b2d2a685-6706-4c4c-ad35-83749bc49855",
+      "legacy_id": "c679e07b-e44e-480a-8961-026610c09d51",
+      "user_id": "1b452cbd-c123-47b5-9708-ccbfe15e759d",
       "title": "Bamboo Planter Set",
-      "name": "Bamboo Planter Set",
       "price": 3839,
-      "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "artisanName": "Assam Bamboo Artisans",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Assam Bamboo Artisans",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "90cc9b03-fe87-4805-9413-2fb90c9851a3",
+      "id": "651ae791-9a36-491b-a468-a60b91c0bcef",
+      "legacy_id": "90cc9b03-fe87-4805-9413-2fb90c9851a3",
+      "user_id": "5db57b28-6582-4522-a7c3-2897a45ba6c3",
       "title": "Bamboo Lampshade",
-      "name": "Bamboo Lampshade",
       "price": 4821,
-      "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "artisanName": "Assam Bamboo Artisans",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1585515320310-259814833e62?w=900&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Assam Bamboo Artisans",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "359e8c28-5a05-48a5-b24f-0bf37dca1be8",
+      "id": "14d405e2-33d6-4636-bfbd-67b4bd9eefd7",
+      "legacy_id": "359e8c28-5a05-48a5-b24f-0bf37dca1be8",
+      "user_id": "a252af8e-25d0-4188-a28f-cb850e97e4f5",
       "title": "Cane Basket",
-      "name": "Cane Basket",
       "price": 3199,
-      "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "artisanName": "Tripura Cane Works",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=900&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Tripura Cane Works",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "e40681ae-7b58-416b-8146-80fcf3ef4e09",
+      "id": "95002f77-7a84-4074-b952-e50489f34197",
+      "legacy_id": "e40681ae-7b58-416b-8146-80fcf3ef4e09",
+      "user_id": "21bc7b47-d1c8-4696-9675-3cb560d5208d",
       "title": "Cane Tray Set",
-      "name": "Cane Tray Set",
       "price": 2714,
-      "image": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "artisanName": "Tripura Cane Works",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Tripura Cane Works",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "903323d9-608a-4d20-ae5e-574776770ad5",
+      "id": "1fac3eb3-585c-4f42-9416-799304a2df9a",
+      "legacy_id": "903323d9-608a-4d20-ae5e-574776770ad5",
+      "user_id": "1cad7ee6-804b-4efd-9e5c-8c782dc525b0",
       "title": "Handwoven Cane Mat",
-      "name": "Handwoven Cane Mat",
       "price": 2288,
-      "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "artisanName": "Tripura Cane Works",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1585515320310-259814833e62?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Tripura Cane Works",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "326ce7b1-80a5-4860-bc7d-b651259424e9",
+      "id": "f07f1703-b69e-49eb-bc70-db7653acdaf7",
+      "legacy_id": "326ce7b1-80a5-4860-bc7d-b651259424e9",
+      "user_id": "1ed4b9af-e8e9-45d0-b01d-c379af0bea44",
       "title": "Harvest Basket",
-      "name": "Harvest Basket",
       "price": 5422,
-      "image": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "artisanName": "Nagaland Bamboo Baskets",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Nagaland Bamboo Baskets",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "f34bd165-3d46-4bed-9913-37d04b8c96bd",
+      "id": "2e84292a-53a3-45de-957d-70b64dc96525",
+      "legacy_id": "f34bd165-3d46-4bed-9913-37d04b8c96bd",
+      "user_id": "e7bd8add-a3af-47d5-9db6-b778b9617e93",
       "title": "Bamboo Container",
-      "name": "Bamboo Container",
       "price": 2553,
-      "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "artisanName": "Nagaland Bamboo Baskets",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Nagaland Bamboo Baskets",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "4b092341-bfa9-4f35-97f6-186af3ef01df",
+      "id": "e887dd41-27ef-4f19-b464-dd55f59fb20a",
+      "legacy_id": "4b092341-bfa9-4f35-97f6-186af3ef01df",
+      "user_id": "11de2360-5705-48d7-bdc5-7782ce0dee52",
       "title": "Decorative Bamboo Vase",
-      "name": "Decorative Bamboo Vase",
       "price": 5359,
-      "image": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "artisanName": "Nagaland Bamboo Baskets",
-      "category": "Bamboo Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop"
+      ],
+      "category": "Bamboo Crafts",
+      "artisan_name": "Nagaland Bamboo Baskets",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.078Z",
+      "updated_at": "2026-06-18T17:35:47.078Z"
     },
     {
-      "id": "c7ffcaca-86cb-4eca-891c-1cf8e5ab26a7",
+      "id": "64faf60e-936f-4e00-86e8-c71b665f678a",
+      "legacy_id": "c7ffcaca-86cb-4eca-891c-1cf8e5ab26a7",
+      "user_id": "695f9401-108a-44f5-877c-209d470df926",
       "title": "Embossed Leather Tote",
-      "name": "Embossed Leather Tote",
       "price": 2219,
-      "image": "https://images.unsplash.com/photo-1590874103328-eaac2cb9e562?w=800&auto=format&fit=crop",
-      "artisanName": "Kolkata Leather Crafts",
-      "category": "Leather Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop"
+      ],
+      "category": "Leather Crafts",
+      "artisan_name": "Kolkata Leather Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "d1dd8fe5-4cee-44ca-82f8-aa45160d0c4e",
+      "id": "f2dc92c6-bd54-4ecf-bbff-822644bbdcd8",
+      "legacy_id": "d1dd8fe5-4cee-44ca-82f8-aa45160d0c4e",
+      "user_id": "4f77ac74-ecd5-4ae0-9d8f-fe9903c933ee",
       "title": "Leather Wallet",
-      "name": "Leather Wallet",
       "price": 3254,
-      "image": "https://images.unsplash.com/photo-1548624316-23f46f497746?w=800&auto=format&fit=crop",
-      "artisanName": "Kolkata Leather Crafts",
-      "category": "Leather Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop"
+      ],
+      "category": "Leather Crafts",
+      "artisan_name": "Kolkata Leather Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "e1c84822-756e-40db-be17-8be7087efb92",
+      "id": "e2c149e0-82bf-4f75-8d73-50f2cb63cab1",
+      "legacy_id": "e1c84822-756e-40db-be17-8be7087efb92",
+      "user_id": "dc724b3e-5c70-4071-bae6-dc6b33449c2c",
       "title": "Messenger Bag",
-      "name": "Messenger Bag",
       "price": 5322,
-      "image": "https://images.unsplash.com/photo-1590874103328-eaac2cb9e562?w=800&auto=format&fit=crop",
-      "artisanName": "Kolkata Leather Crafts",
-      "category": "Leather Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop"
+      ],
+      "category": "Leather Crafts",
+      "artisan_name": "Kolkata Leather Crafts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "b817d550-9bc8-46f2-8b43-10a3b6559796",
+      "id": "3d28d708-3c02-4fca-aa5a-6f49284854f6",
+      "legacy_id": "b817d550-9bc8-46f2-8b43-10a3b6559796",
+      "user_id": "0fafbe5d-6af6-4ac5-8f98-781ef1113d26",
       "title": "Classic Leather Jacket",
-      "name": "Classic Leather Jacket",
       "price": 2076,
-      "image": "https://images.unsplash.com/photo-1548624316-23f46f497746?w=800&auto=format&fit=crop",
-      "artisanName": "Dharavi Leather Goods",
-      "category": "Leather Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1516257984-081d8cc43b23?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1516257984-081d8cc43b23?w=800&auto=format&fit=crop"
+      ],
+      "category": "Leather Crafts",
+      "artisan_name": "Dharavi Leather Goods",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "99afc019-a161-4852-8591-861c593c38e0",
+      "id": "d6e88061-7097-4e4a-95ac-eadadda436bd",
+      "legacy_id": "99afc019-a161-4852-8591-861c593c38e0",
+      "user_id": "d090e476-f897-4379-b61d-9deeaf514fb5",
       "title": "Leather Belt",
-      "name": "Leather Belt",
       "price": 4100,
-      "image": "https://images.unsplash.com/photo-1590874103328-eaac2cb9e562?w=800&auto=format&fit=crop",
-      "artisanName": "Dharavi Leather Goods",
-      "category": "Leather Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1516257984-081d8cc43b23?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1516257984-081d8cc43b23?w=900&auto=format&fit=crop"
+      ],
+      "category": "Leather Crafts",
+      "artisan_name": "Dharavi Leather Goods",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "99715ab8-9eaa-49c6-b05e-8b58ee72b144",
+      "id": "6c5ab7f8-4e5e-406c-89d0-b81ee07b1951",
+      "legacy_id": "99715ab8-9eaa-49c6-b05e-8b58ee72b144",
+      "user_id": "88e037f3-9f3a-4b84-a744-28fbee9bb61b",
       "title": "Travel Duffel",
-      "name": "Travel Duffel",
       "price": 4214,
-      "image": "https://images.unsplash.com/photo-1548624316-23f46f497746?w=800&auto=format&fit=crop",
-      "artisanName": "Dharavi Leather Goods",
-      "category": "Leather Crafts"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=900&auto=format&fit=crop"
+      ],
+      "category": "Leather Crafts",
+      "artisan_name": "Dharavi Leather Goods",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "3c012adf-0229-4a2d-8722-1d4c8ffe556b",
+      "id": "f9599050-da85-431e-957d-c9fd29ba141d",
+      "legacy_id": "3c012adf-0229-4a2d-8722-1d4c8ffe556b",
+      "user_id": "48c6930b-e928-48cb-9d6b-382427cdc2df",
       "title": "Brass Elephant Showpiece",
-      "name": "Brass Elephant Showpiece",
       "price": 2657,
-      "image": "https://images.unsplash.com/photo-1582216131435-0219c6e3b508?w=800&auto=format&fit=crop",
-      "artisanName": "Moradabad Brass Works",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Moradabad Brass Works",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "2d23beb2-2047-4f33-bb1b-7f4dcc3d49d9",
+      "id": "6a315dff-8a54-45a8-a30c-f2ff908c8128",
+      "legacy_id": "2d23beb2-2047-4f33-bb1b-7f4dcc3d49d9",
+      "user_id": "ce9b510e-4f86-4615-96b8-c0bb05667396",
       "title": "Vintage Brass Lamp",
-      "name": "Vintage Brass Lamp",
       "price": 1774,
-      "image": "https://images.unsplash.com/photo-1591127027503-455c192bd8ec?w=800&auto=format&fit=crop",
-      "artisanName": "Moradabad Brass Works",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Moradabad Brass Works",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "d8957f1d-48a4-46fd-ab12-1e94ab8f39ba",
+      "id": "fb4fbeb2-2909-4d74-989e-72ae29c15b29",
+      "legacy_id": "d8957f1d-48a4-46fd-ab12-1e94ab8f39ba",
+      "user_id": "6e3ab655-a4b0-43af-abd4-4e661fa9f5eb",
       "title": "Brass Wall Sconce",
-      "name": "Brass Wall Sconce",
       "price": 4459,
-      "image": "https://images.unsplash.com/photo-1582216131435-0219c6e3b508?w=800&auto=format&fit=crop",
-      "artisanName": "Moradabad Brass Works",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Moradabad Brass Works",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "dad2cdb4-76fb-4941-878d-f6cccaacf4ab",
+      "id": "b815b1a7-0c04-450a-8826-df2e82d54d9c",
+      "legacy_id": "dad2cdb4-76fb-4941-878d-f6cccaacf4ab",
+      "user_id": "508a4b6f-3dbe-4581-b2f2-f4b8873d7d6b",
       "title": "Glass Chandelier",
-      "name": "Glass Chandelier",
       "price": 3377,
-      "image": "https://images.unsplash.com/photo-1591127027503-455c192bd8ec?w=800&auto=format&fit=crop",
-      "artisanName": "Firozabad Glass Arts",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1000&auto=format&fit=crop&q=85",
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1000&auto=format&fit=crop&q=85"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Firozabad Glass Arts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "a51d3237-a89b-4752-9997-cb99ccd94319",
+      "id": "f09281a2-3148-41c3-be2e-8151c7f3dfdf",
+      "legacy_id": "a51d3237-a89b-4752-9997-cb99ccd94319",
+      "user_id": "3b76f95b-95fe-4afa-811b-e9bce8d1b2d7",
       "title": "Colorful Glass Vase",
-      "name": "Colorful Glass Vase",
       "price": 4479,
-      "image": "https://images.unsplash.com/photo-1582216131435-0219c6e3b508?w=800&auto=format&fit=crop",
-      "artisanName": "Firozabad Glass Arts",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Firozabad Glass Arts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "950e7cf7-b7b6-4d05-8c66-008326ac4c8d",
+      "id": "a3626f03-673a-43ea-b1a6-71dd613b5c2e",
+      "legacy_id": "950e7cf7-b7b6-4d05-8c66-008326ac4c8d",
+      "user_id": "f6a03ac6-bd7e-413f-88ff-47aa789d6f47",
       "title": "Glass Paperweight",
-      "name": "Glass Paperweight",
       "price": 5414,
-      "image": "https://images.unsplash.com/photo-1591127027503-455c192bd8ec?w=800&auto=format&fit=crop",
-      "artisanName": "Firozabad Glass Arts",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Firozabad Glass Arts",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "e03362fb-d549-4305-858c-bd25dccd6719",
+      "id": "b5714eca-e90f-408d-947b-af9bdb2c94aa",
+      "legacy_id": "e03362fb-d549-4305-858c-bd25dccd6719",
+      "user_id": "ff388e3b-5ac6-41d7-ae1a-030f43827f55",
       "title": "Marble Inlay Table Top",
-      "name": "Marble Inlay Table Top",
       "price": 5282,
-      "image": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "artisanName": "Agra Marble Inlay",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Agra Marble Inlay",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "5c47bd63-475a-4bbf-8414-5d32291e183d",
+      "id": "009ce546-a904-4460-af8e-dc254557bae9",
+      "legacy_id": "5c47bd63-475a-4bbf-8414-5d32291e183d",
+      "user_id": "0f52f630-a303-4d56-b105-6e9f88d26e7b",
       "title": "Taj Mahal Replica",
-      "name": "Taj Mahal Replica",
       "price": 1608,
-      "image": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
-      "artisanName": "Agra Marble Inlay",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Agra Marble Inlay",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "41ce7300-7a10-400d-85c9-d7ec56be908c",
+      "id": "e50b5888-5f60-44bd-896c-28608d4a2cd4",
+      "legacy_id": "41ce7300-7a10-400d-85c9-d7ec56be908c",
+      "user_id": "296939d7-3bcb-402f-b8c1-e84ce02194da",
       "title": "Marble Coaster Set",
-      "name": "Marble Coaster Set",
       "price": 4003,
-      "image": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "artisanName": "Agra Marble Inlay",
-      "category": "Home Decor"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Home Decor",
+      "artisan_name": "Agra Marble Inlay",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "306aa4eb-9b34-448d-989b-d7049652d9ec",
+      "id": "2a2c3aab-2082-4b5b-929e-71d643f2042e",
+      "legacy_id": "306aa4eb-9b34-448d-989b-d7049652d9ec",
+      "user_id": "30b7ba3f-e42f-4ca1-b37d-9d9d7cbceb15",
       "title": "Warli Village Painting",
-      "name": "Warli Village Painting",
       "price": 4851,
-      "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "artisanName": "Warli Art Collective",
-      "category": "Traditional Art"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop"
+      ],
+      "category": "Traditional Art",
+      "artisan_name": "Warli Art Collective",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "2ac15424-c8e8-4ea9-b4b8-5f159323ba51",
+      "id": "cc2853fa-4c60-4c16-bafa-7e8c6a39e593",
+      "legacy_id": "2ac15424-c8e8-4ea9-b4b8-5f159323ba51",
+      "user_id": "daef36eb-44d8-4253-b67b-21ebd7e26493",
       "title": "Warli Painted Terracotta Pot",
-      "name": "Warli Painted Terracotta Pot",
       "price": 4037,
-      "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "artisanName": "Warli Art Collective",
-      "category": "Traditional Art"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop"
+      ],
+      "category": "Traditional Art",
+      "artisan_name": "Warli Art Collective",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "da087a75-9f72-44d6-941e-7457cdaece02",
+      "id": "f9f5cf1f-03ec-4790-b318-0538c3ce1513",
+      "legacy_id": "da087a75-9f72-44d6-941e-7457cdaece02",
+      "user_id": "37943b26-ffbb-46cf-af10-1ea22afc828b",
       "title": "Warli Canvas Tote",
-      "name": "Warli Canvas Tote",
       "price": 3576,
-      "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "artisanName": "Warli Art Collective",
-      "category": "Traditional Art"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop"
+      ],
+      "category": "Traditional Art",
+      "artisan_name": "Warli Art Collective",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "66f415f2-26c0-4f1b-a5a4-110263deedf5",
+      "id": "6315e46f-bd68-4a65-8ee7-81a854121e47",
+      "legacy_id": "66f415f2-26c0-4f1b-a5a4-110263deedf5",
+      "user_id": "a9503290-233f-42a9-a043-2e0e95d18748",
       "title": "Ganesha Tanjore Painting",
-      "name": "Ganesha Tanjore Painting",
       "price": 3286,
-      "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "artisanName": "Tanjore Painting Studio",
-      "category": "Traditional Art"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1550989460-026-5b432a51fa1e?w=800&auto=format&fit=crop"
+      ],
+      "category": "Traditional Art",
+      "artisan_name": "Tanjore Painting Studio",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "ecfcf463-9ea8-45b1-8de6-e84d42e84532",
+      "id": "90e6e9a6-f4e4-4a47-9a69-f34d54572023",
+      "legacy_id": "ecfcf463-9ea8-45b1-8de6-e84d42e84532",
+      "user_id": "3f1f3b97-5620-4c19-8bf8-c879f75c50e6",
       "title": "Balaji Tanjore Art",
-      "name": "Balaji Tanjore Art",
       "price": 5273,
-      "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "artisanName": "Tanjore Painting Studio",
-      "category": "Traditional Art"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop"
+      ],
+      "category": "Traditional Art",
+      "artisan_name": "Tanjore Painting Studio",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     },
     {
-      "id": "c06e15c2-a1d9-4b0a-9882-9c4883271dd0",
+      "id": "c7321e86-4f69-4c62-8b8f-f4f581b872f3",
+      "legacy_id": "c06e15c2-a1d9-4b0a-9882-9c4883271dd0",
+      "user_id": "60b1191f-9337-453a-b912-a96f30d315bb",
       "title": "Saraswati Gold Foil Frame",
-      "name": "Saraswati Gold Foil Frame",
       "price": 5249,
-      "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "artisanName": "Tanjore Painting Studio",
-      "category": "Traditional Art"
+      "description": null,
+      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop",
+      "images": [
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop"
+      ],
+      "category": "Traditional Art",
+      "artisan_name": "Tanjore Painting Studio",
+      "stock": 0,
+      "created_at": "2026-06-18T17:35:47.079Z",
+      "updated_at": "2026-06-18T17:35:47.079Z"
     }
   ],
   "artisans": [
     {
-      "id": "51ef27a8-5553-4a8b-b5b6-ebd6e9a9d28c",
+      "id": "761b9114-ecf1-4e67-a7cb-f0c7977224cb",
+      "legacy_id": "51ef27a8-5553-4a8b-b5b6-ebd6e9a9d28c",
       "name": "Khurja Pottery Masters",
       "category": "Pottery",
       "image": "https://images.unsplash.com/photo-1560609189-f1f4a7310ffa?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800&auto=format&fit=crop",
-      "location": "Khurja",
       "rating": 4.8,
       "tagline": "Timeless ceramics from Khurja",
-      "bio": "Renowned for our vibrant, hand-painted blue pottery ceramics."
+      "bio": "Renowned for our vibrant, hand-painted blue pottery ceramics.",
+      "location": "Khurja",
+      "created_at": "2026-06-18T17:35:47.075Z",
+      "updated_at": "2026-06-18T17:35:47.076Z"
     },
     {
-      "id": "a881bced-2a0d-4eb3-9562-6d54683dd075",
+      "id": "1600dd7b-1668-4886-bb1a-06c746ba87ec",
+      "legacy_id": "a881bced-2a0d-4eb3-9562-6d54683dd075",
       "name": "Jaipur Blue Art",
       "category": "Pottery",
       "image": "https://images.unsplash.com/photo-1531688636-f00e96030c6a?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&auto=format&fit=crop",
-      "location": "Jaipur",
       "rating": 4.9,
       "tagline": "The royal blue of Jaipur",
-      "bio": "Creating traditional Jaipur blue pottery using quartz stone."
+      "bio": "Creating traditional Jaipur blue pottery using quartz stone.",
+      "location": "Jaipur",
+      "created_at": "2026-06-18T17:35:47.076Z",
+      "updated_at": "2026-06-18T17:35:47.076Z"
     },
     {
-      "id": "e891f739-af74-4391-b2f0-ad68c1c8a708",
+      "id": "1a871fc4-f67e-4dc5-9caa-82d16218bd35",
+      "legacy_id": "e891f739-af74-4391-b2f0-ad68c1c8a708",
       "name": "Balaramapuram Weaves",
       "category": "Handloom",
       "image": "https://images.unsplash.com/photo-1605001088481-9b1da79b764f?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
-      "location": "Trivandrum",
       "rating": 4.7,
       "tagline": "The elegance of Kasavu",
-      "bio": "Authentic Kerala Kasavu handlooms woven with fine cotton and golden zari."
+      "bio": "Authentic Kerala Kasavu handlooms woven with fine cotton and golden zari.",
+      "location": "Trivandrum",
+      "created_at": "2026-06-18T17:35:47.076Z",
+      "updated_at": "2026-06-18T17:35:47.076Z"
     },
     {
-      "id": "b9e43565-1fcb-4c8d-b894-ecaae3b4a162",
+      "id": "acbf6a8f-ae35-4fb8-8ac4-959e6f4bdafd",
+      "legacy_id": "b9e43565-1fcb-4c8d-b894-ecaae3b4a162",
       "name": "Bhujodi Heritage Weavers",
       "category": "Handloom",
       "image": "https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
-      "location": "Bhujodi",
       "rating": 4.9,
       "tagline": "Threads of the desert",
-      "bio": "Specializing in traditional extra-weft Bhujodi weaving techniques."
+      "bio": "Specializing in traditional extra-weft Bhujodi weaving techniques.",
+      "location": "Bhujodi",
+      "created_at": "2026-06-18T17:35:47.076Z",
+      "updated_at": "2026-06-18T17:35:47.076Z"
     },
     {
-      "id": "3e48676d-7d55-407c-88ed-1968c66ed59a",
+      "id": "50050cc3-37fb-4669-b152-c771149b5352",
+      "legacy_id": "3e48676d-7d55-407c-88ed-1968c66ed59a",
       "name": "Channapatna Joy Makers",
       "category": "Wooden Crafts",
       "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1616429777191-cc11a3c8bb2a?w=800&auto=format&fit=crop",
-      "location": "Channapatna",
       "rating": 4.8,
       "tagline": "Play safe, play natural",
-      "bio": "Safe, non-toxic wooden toys colored with vegetable dyes."
+      "bio": "Safe, non-toxic wooden toys colored with vegetable dyes.",
+      "location": "Channapatna",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "23da8051-e941-42d7-9a26-6a7d56b2677a",
+      "id": "bb19f473-9d29-4d97-88f0-b489c0f5c9ee",
+      "legacy_id": "23da8051-e941-42d7-9a26-6a7d56b2677a",
       "name": "Saharanpur Woodworks",
       "category": "Wooden Crafts",
       "image": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "location": "Saharanpur",
       "rating": 4.9,
       "tagline": "Masterpieces in wood",
-      "bio": "Intricately carved wooden furniture and home decors."
+      "bio": "Intricately carved wooden furniture and home decors.",
+      "location": "Saharanpur",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "36f44527-4fa2-4566-82f9-adc6ae63c500",
+      "id": "1840c953-6b87-41ea-aa68-3f0d3e85a751",
+      "legacy_id": "36f44527-4fa2-4566-82f9-adc6ae63c500",
       "name": "Sankheda Furniture Crafts",
       "category": "Wooden Crafts",
       "image": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
-      "location": "Sankheda",
       "rating": 4.7,
       "tagline": "Colorful traditions in wood",
-      "bio": "Traditional teak wood furniture treated with lacquer colors."
+      "bio": "Traditional teak wood furniture treated with lacquer colors.",
+      "location": "Sankheda",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "d83bfcca-7f91-4152-af94-ccdfbf66a994",
+      "id": "8f29134f-b957-466b-a679-c8ad79ae4c4d",
+      "legacy_id": "d83bfcca-7f91-4152-af94-ccdfbf66a994",
       "name": "Jaipur Silver Crafts",
       "category": "Jewelry",
       "image": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
-      "location": "Jaipur",
       "rating": 4.9,
       "tagline": "Adorn yourself in silver",
-      "bio": "Handcrafted oxidized silver and semi-precious stone jewelry."
+      "bio": "Handcrafted oxidized silver and semi-precious stone jewelry.",
+      "location": "Jaipur",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "21c70c12-fa51-4b77-8f71-4c0457b774b3",
+      "id": "a31bea18-3a85-4dd6-ac8e-707cba55763e",
+      "legacy_id": "21c70c12-fa51-4b77-8f71-4c0457b774b3",
       "name": "Dokra Brass Jewelry",
       "category": "Jewelry",
       "image": "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1515562141207-8ea4f3c7e7b3?w=800&auto=format&fit=crop",
-      "location": "Bastar",
       "rating": 4.8,
       "tagline": "Rustic metal art",
-      "bio": "Ancient lost-wax metal casting jewelry designs."
+      "bio": "Ancient lost-wax metal casting jewelry designs.",
+      "location": "Bastar",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "706fcc13-d31d-47be-b3d9-026a8b68369c",
+      "id": "ba57ccca-e531-4329-93e0-4f50e6e5e498",
+      "legacy_id": "706fcc13-d31d-47be-b3d9-026a8b68369c",
       "name": "Hyderabad Pearl Masters",
       "category": "Jewelry",
       "image": "https://images.unsplash.com/photo-1535632066939-bb19c1be3db4?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1611085583163-fdf6fcb5b8ec?w=800&auto=format&fit=crop",
-      "location": "Hyderabad",
       "rating": 4.9,
       "tagline": "The city of pearls",
-      "bio": "Authentic fresh water pearls set in gold and silver."
+      "bio": "Authentic fresh water pearls set in gold and silver.",
+      "location": "Hyderabad",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "c7d9a3af-0b73-4a0e-b2f5-8fe57f2ccfd7",
+      "id": "b2a62152-86a6-43bc-bc6c-9a9f3089065a",
+      "legacy_id": "c7d9a3af-0b73-4a0e-b2f5-8fe57f2ccfd7",
       "name": "Madhubani Art Collective",
       "category": "Paintings",
       "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "location": "Madhubani",
       "rating": 4.9,
       "tagline": "The colors of Mithila",
-      "bio": "Intricate folk art paintings depicting nature and mythology."
+      "bio": "Intricate folk art paintings depicting nature and mythology.",
+      "location": "Madhubani",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "bc34a1c2-3552-44df-a1a5-481682ddb2ed",
+      "id": "82e7d53f-19e4-4bd0-9015-0399abdd0830",
+      "legacy_id": "bc34a1c2-3552-44df-a1a5-481682ddb2ed",
       "name": "Pattachitra Canvas",
       "category": "Paintings",
       "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "location": "Raghurajpur",
       "rating": 4.8,
       "tagline": "Stories on scroll",
-      "bio": "Scroll painting on cloth, an ancient tradition of Odisha."
+      "bio": "Scroll painting on cloth, an ancient tradition of Odisha.",
+      "location": "Raghurajpur",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "3040605b-e153-4191-a396-f8de2189a56e",
+      "id": "0f0fb2e6-fb3d-4c0a-83cf-f6a2400a6d0c",
+      "legacy_id": "3040605b-e153-4191-a396-f8de2189a56e",
       "name": "Banarasi Silk Weavers",
       "category": "Textiles",
       "image": "https://images.unsplash.com/photo-1611095973763-414019e72400?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
-      "location": "Varanasi",
       "rating": 5,
       "tagline": "The timeless drape of Kashi",
-      "bio": "Weaving luxurious silk sarees with rich gold and silver brocade."
+      "bio": "Weaving luxurious silk sarees with rich gold and silver brocade.",
+      "location": "Varanasi",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "c55bdf7a-e220-4da3-9f7e-d75495256d97",
+      "id": "1b37bf3a-2ffe-413c-8d02-02d02e4687f3",
+      "legacy_id": "c55bdf7a-e220-4da3-9f7e-d75495256d97",
       "name": "Kalamkari Block Prints",
       "category": "Textiles",
       "image": "https://images.unsplash.com/photo-1584447128309-b66b7a4d1b63?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1605001088481-9b1da79b764f?w=800&auto=format&fit=crop",
-      "location": "Machilipatnam",
       "rating": 4.8,
       "tagline": "Art on fabric",
-      "bio": "Vegetable-dyed hand block prints with intricate floral patterns."
+      "bio": "Vegetable-dyed hand block prints with intricate floral patterns.",
+      "location": "Machilipatnam",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "6c022b74-9e45-41c3-9828-73da0a5e22f0",
+      "id": "37ad0c0e-5957-4d4d-b087-cdb5af0fbebe",
+      "legacy_id": "6c022b74-9e45-41c3-9828-73da0a5e22f0",
       "name": "Kanjivaram Silk Looms",
       "category": "Textiles",
       "image": "https://images.unsplash.com/photo-1612241530263-710c1b0ca131?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&auto=format&fit=crop",
-      "location": "Kanchipuram",
       "rating": 4.9,
       "tagline": "Woven for generations",
-      "bio": "Authentic heavy silk sarees renowned for durability and shine."
+      "bio": "Authentic heavy silk sarees renowned for durability and shine.",
+      "location": "Kanchipuram",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "54590e2a-251b-4d5c-b659-2dc693334bbf",
+      "id": "7c807c70-4b23-4e7f-b354-36e0106704fd",
+      "legacy_id": "54590e2a-251b-4d5c-b659-2dc693334bbf",
       "name": "Assam Bamboo Artisans",
       "category": "Bamboo Crafts",
       "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "location": "Guwahati",
       "rating": 4.8,
       "tagline": "Sustainable nature crafts",
-      "bio": "Eco-friendly bamboo furniture and utility items."
+      "bio": "Eco-friendly bamboo furniture and utility items.",
+      "location": "Guwahati",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "727298cc-1b04-42dd-a092-160abe402dde",
+      "id": "4e364216-8b28-4ba0-b9b6-dd32af8b9693",
+      "legacy_id": "727298cc-1b04-42dd-a092-160abe402dde",
       "name": "Tripura Cane Works",
       "category": "Bamboo Crafts",
       "image": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "location": "Agartala",
       "rating": 4.7,
       "tagline": "Woven cane elegance",
-      "bio": "Fine cane weaving and handcrafted accessories."
+      "bio": "Fine cane weaving and handcrafted accessories.",
+      "location": "Agartala",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "382513bb-8c95-4584-ab80-ecaa53b02d9c",
+      "id": "d8ce1c61-ffa2-4fd4-b714-98622ca9ea66",
+      "legacy_id": "382513bb-8c95-4584-ab80-ecaa53b02d9c",
       "name": "Nagaland Bamboo Baskets",
       "category": "Bamboo Crafts",
       "image": "https://images.unsplash.com/photo-1583090600102-1c2dfc8c7dce?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1550989460026-5b432a51fa1e?w=800&auto=format&fit=crop",
-      "location": "Dimapur",
       "rating": 4.8,
       "tagline": "Tribal utility crafts",
-      "bio": "Traditional utility baskets and containers used by Naga tribes."
+      "bio": "Traditional utility baskets and containers used by Naga tribes.",
+      "location": "Dimapur",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "36a4e719-9c65-481c-bd26-9b921f99c484",
+      "id": "db1099c3-32c3-4948-bdd2-df45aae8ad8f",
+      "legacy_id": "36a4e719-9c65-481c-bd26-9b921f99c484",
       "name": "Kolkata Leather Crafts",
       "category": "Leather Crafts",
       "image": "https://images.unsplash.com/photo-1590874103328-eaac2cb9e562?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1548624316-23f46f497746?w=800&auto=format&fit=crop",
-      "location": "Kolkata",
       "rating": 4.9,
       "tagline": "Premium leather art",
-      "bio": "Hand-tooled and embossed leather bags and accessories."
+      "bio": "Hand-tooled and embossed leather bags and accessories.",
+      "location": "Kolkata",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "5edf7c49-f829-4a71-8d00-84d588863955",
+      "id": "c95d680d-ba50-483c-af21-82263be3c7bc",
+      "legacy_id": "5edf7c49-f829-4a71-8d00-84d588863955",
       "name": "Dharavi Leather Goods",
       "category": "Leather Crafts",
       "image": "https://images.unsplash.com/photo-1548624316-23f46f497746?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1590874103328-eaac2cb9e562?w=800&auto=format&fit=crop",
-      "location": "Mumbai",
       "rating": 4.8,
       "tagline": "Urban leather flair",
-      "bio": "Durable, high-quality leather jackets and accessories."
+      "bio": "Durable, high-quality leather jackets and accessories.",
+      "location": "Mumbai",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "02ae7ae7-59c8-4e0d-a15e-7129051d96d9",
+      "id": "54735f10-52bd-497f-ba8b-5c98fddcc856",
+      "legacy_id": "02ae7ae7-59c8-4e0d-a15e-7129051d96d9",
       "name": "Moradabad Brass Works",
       "category": "Home Decor",
       "image": "https://images.unsplash.com/photo-1582216131435-0219c6e3b508?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1591127027503-455c192bd8ec?w=800&auto=format&fit=crop",
-      "location": "Moradabad",
       "rating": 4.9,
       "tagline": "The brass city of India",
-      "bio": "Exquisite brass artifacts, lamps, and decorative pieces."
+      "bio": "Exquisite brass artifacts, lamps, and decorative pieces.",
+      "location": "Moradabad",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "a0653a66-7048-4bf8-8a85-ff331abbe487",
+      "id": "71c71eec-da41-4f81-aa7b-d94c73c73e57",
+      "legacy_id": "a0653a66-7048-4bf8-8a85-ff331abbe487",
       "name": "Firozabad Glass Arts",
       "category": "Home Decor",
       "image": "https://images.unsplash.com/photo-1591127027503-455c192bd8ec?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1582216131435-0219c6e3b508?w=800&auto=format&fit=crop",
-      "location": "Firozabad",
       "rating": 4.7,
       "tagline": "The glass city",
-      "bio": "Handblown glass chandeliers and decorative vases."
+      "bio": "Handblown glass chandeliers and decorative vases.",
+      "location": "Firozabad",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "21be4629-92d2-49e8-8634-e848099c9aa8",
+      "id": "12e07e99-7e62-4c6c-86a5-826d1516992b",
+      "legacy_id": "21be4629-92d2-49e8-8634-e848099c9aa8",
       "name": "Agra Marble Inlay",
       "category": "Home Decor",
       "image": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1505691938895-1758d7bef511?w=800&auto=format&fit=crop",
-      "location": "Agra",
       "rating": 5,
       "tagline": "Stone inlay masterpieces",
-      "bio": "Pietra Dura marble inlay work inspired by the Taj Mahal."
+      "bio": "Pietra Dura marble inlay work inspired by the Taj Mahal.",
+      "location": "Agra",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "de84d9fb-0790-4f3a-8a31-8b02119ec8d6",
+      "id": "40bb2de7-7d20-4180-ba9d-236e21283ff5",
+      "legacy_id": "de84d9fb-0790-4f3a-8a31-8b02119ec8d6",
       "name": "Warli Art Collective",
       "category": "Traditional Art",
       "image": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "location": "Palghar",
       "rating": 4.8,
       "tagline": "Tribal geometric art",
-      "bio": "Tribal Warli art reflecting the rhythm of life and nature."
+      "bio": "Tribal Warli art reflecting the rhythm of life and nature.",
+      "location": "Palghar",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     },
     {
-      "id": "12764d85-48e1-4c31-af03-e2a316c36239",
+      "id": "62d05f45-7479-4204-a04a-38f0b2bfd81d",
+      "legacy_id": "12764d85-48e1-4c31-af03-e2a316c36239",
       "name": "Tanjore Painting Studio",
       "category": "Traditional Art",
       "image": "https://images.unsplash.com/photo-1580136608269-1c91da65eeb1?w=800&auto=format&fit=crop",
-      "coverImage": "https://images.unsplash.com/photo-1578301978693-851568c0953a?w=800&auto=format&fit=crop",
-      "location": "Thanjavur",
       "rating": 5,
       "tagline": "Divine gold foil art",
-      "bio": "Classical South Indian paintings with real gold foil and semi-precious stones."
+      "bio": "Classical South Indian paintings with real gold foil and semi-precious stones.",
+      "location": "Thanjavur",
+      "created_at": "2026-06-18T17:35:47.077Z",
+      "updated_at": "2026-06-18T17:35:47.077Z"
     }
   ]
 }

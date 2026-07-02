@@ -19,6 +19,8 @@ export default function ProductsPage({ query = '' }) {
   const [productsPerPage, setProductsPerPage] = useState(12);
   const [totalPages, setTotalPages] = useState(1);
   const [totalProducts, setTotalProducts] = useState(0);
+  const [hasNext, setHasNext] = useState(false);
+  const [hasPrevious, setHasPrevious] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const gridRef = useRef(null);
@@ -71,7 +73,8 @@ export default function ProductsPage({ query = '' }) {
     if (currentPage !== 1) {
       updateSearchParams({ page: 1 });
     }
-  }, [selectedCategory, query, updateSearchParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategory, query]);
 
   // 3. Load paginated products
   useEffect(() => {
@@ -85,14 +88,16 @@ export default function ProductsPage({ query = '' }) {
           search: query
         });
 
-        if (res.currentPage && res.currentPage !== currentPage) {
-          updateSearchParams({ page: res.currentPage });
+        if (res.page && Number(res.page) !== currentPage) {
+          updateSearchParams({ page: res.page });
           return;
         }
 
         setProducts(res.products || []);
         setTotalPages(res.totalPages || 1);
-        setTotalProducts(res.totalProducts || 0);
+        setTotalProducts(res.totalItems || 0);
+        setHasNext(res.hasNext || false);
+        setHasPrevious(res.hasPrevious || false);
       } catch (e) {
         console.error('Products load failed', e);
       } finally {
@@ -189,7 +194,7 @@ export default function ProductsPage({ query = '' }) {
               {totalPages > 1 && (
                 <div className="flex justify-center items-center gap-2 pt-6">
                   <button
-                    disabled={currentPage === 1}
+                    disabled={!hasPrevious}
                     onClick={() => handlePageChange(currentPage - 1)}
                     className="px-4 py-3 rounded-2xl border border-gray-100 bg-white text-gray-600 hover:border-pink-200 hover:text-pink-500 transition-all disabled:opacity-30 disabled:hover:border-gray-100 disabled:hover:text-gray-600 disabled:cursor-not-allowed"
                   >
@@ -215,7 +220,7 @@ export default function ProductsPage({ query = '' }) {
                   ))}
 
                   <button
-                    disabled={currentPage === totalPages}
+                    disabled={!hasNext}
                     onClick={() => handlePageChange(currentPage + 1)}
                     className="px-4 py-3 rounded-2xl border border-gray-100 bg-white text-gray-600 hover:border-pink-200 hover:text-pink-500 transition-all disabled:opacity-30 disabled:hover:border-gray-100 disabled:hover:text-gray-600 disabled:cursor-not-allowed"
                   >

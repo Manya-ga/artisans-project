@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import OfferManager from '../components/OfferManager.jsx';
 import { User, Package, Gift, Settings, LogOut, ExternalLink, ChevronRight, ShoppingBag } from 'lucide-react';
 import ArtisanAvatar from '../components/ArtisanAvatar';
+import PageHeader from '../components/PageHeader';
+import { getFallbackProductImage } from '../config/imageMappings';
 
 export default function UserPage() {
   const navigate = useNavigate();
@@ -22,12 +24,13 @@ export default function UserPage() {
   if (!user) return null; // Should be handled by protected route
 
   const orders = [
-    { id: '#AC-8821', date: '24 Apr, 2024', status: 'In Transit', total: '₹2,499', items: 1, image: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=200' },
-    { id: '#AC-8790', date: '12 Apr, 2024', status: 'Delivered', total: '₹8,200', items: 3, image: 'https://images.unsplash.com/photo-1590736961958-51fdc62bad13?auto=format&fit=crop&q=80&w=200' },
+    { id: '#AC-8821', date: '24 Apr, 2024', status: 'In Transit', total: '₹2,499', items: 1, image: getFallbackProductImage('Pottery') },
+    { id: '#AC-8790', date: '12 Apr, 2024', status: 'Delivered', total: '₹8,200', items: 3, image: getFallbackProductImage('Textiles') },
   ];
 
   return (
-    <div className="max-w-6xl mx-auto py-8 animate-fade-in space-y-10">
+    <div className="max-w-6xl mx-auto py-4 sm:py-8 animate-fade-in space-y-10">
+      <PageHeader title="My Account" showBack />
       {/* Profile Header */}
       <div className="bg-white p-6 md:p-12 rounded-[32px] md:rounded-[48px] shadow-soft border border-gray-100 flex flex-col md:flex-row items-center gap-6 md:gap-10 relative overflow-hidden">
         <div className="absolute right-0 top-0 w-64 h-64 bg-pink-50 rounded-full blur-[100px] opacity-40 -translate-y-1/2 translate-x-1/2" />

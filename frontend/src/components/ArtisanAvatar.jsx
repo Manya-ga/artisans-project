@@ -1,44 +1,51 @@
 import React, { useState } from 'react';
 
-const colors = [
-  'bg-orange-100 text-orange-700',
-  'bg-purple-100 text-purple-700',
-  'bg-blue-100 text-blue-700',
-  'bg-green-100 text-green-700',
-  'bg-red-100 text-red-700',
-  'bg-indigo-100 text-indigo-700'
-];
+const getInitials = (name) => {
+  if (!name) return '??';
+  return name.split(' ').filter(Boolean).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+};
 
-export default function ArtisanAvatar({ name, className = '', isArtisan = true, photoURL = null }) {
+const sizeClasses = {
+  sm: 'w-8 h-8 text-xs',
+  md: 'w-10 h-10 text-sm',
+  lg: 'w-12 h-12 text-base'
+};
+
+export default function ArtisanAvatar({ name, photoURL, isArtisan, size = 'md', className = '' }) {
   const [imgError, setImgError] = useState(false);
-  const safeName = name || 'Unknown';
-  const initials = safeName.split(' ').filter(Boolean).map(w => w[0]).slice(0, 2).join('').toUpperCase();
-  
-  // Deterministic color assignment based on name
-  let hash = 0;
-  for (let i = 0; i < safeName.length; i++) {
-    hash = safeName.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const colorIndex = Math.abs(hash) % colors.length;
+  const initials = getInitials(name);
+
+  const colors = [
+    'bg-pink-100 text-pink-600',
+    'bg-blue-100 text-blue-600',
+    'bg-amber-100 text-amber-600',
+    'bg-emerald-100 text-emerald-600',
+    'bg-purple-100 text-purple-600'
+  ];
+  // Simple hash to pick a consistent color for the same name
+  const colorIndex = name ? name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length : 0;
   const colorClass = colors[colorIndex];
 
-  // If not an artisan and has a photo, show the photo
-  if (!isArtisan && photoURL && !imgError) {
+  // Force using initials for artisans as requested (ignoring photoURL to prevent broken images)
+  if (isArtisan || !photoURL || imgError) {
     return (
-      <img 
-        src={photoURL} 
-        alt={safeName} 
-        loading="lazy"
-        className={`object-cover ${className}`} 
-        onError={() => setImgError(true)}
-      />
+      <div 
+        className={`flex items-center justify-center font-bold tracking-wider rounded-full shadow-sm border border-white/50 ${sizeClasses[size]} ${colorClass} ${className}`}
+        title={name}
+      >
+        {initials}
+      </div>
     );
   }
 
-  // Artisan or failed image -> show Initials Avatar
   return (
-    <div className={`flex items-center justify-center font-bold ${colorClass} ${className} shrink-0`}>
-      {initials}
+    <div className={`relative rounded-full overflow-hidden border border-gray-100 shadow-sm ${sizeClasses[size]} ${className}`}>
+      <img
+        src={photoURL}
+        alt={name}
+        className="w-full h-full object-cover"
+        onError={() => setImgError(true)}
+      />
     </div>
   );
 }

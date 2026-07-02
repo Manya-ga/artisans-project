@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
 import { getStories, deleteStory as apiDeleteStory } from '../api';
@@ -11,23 +11,39 @@ import { useNavigate } from 'react-router-dom';
 import { useToast } from '../contexts/ToastContext';
 import ArtisanAvatar from './ArtisanAvatar';
 import StoryUploadModal from './StoryUploadModal';
+import { CATEGORY_IMAGES } from '../config/imageMappings';
+
+const PLACEHOLDER_ARTISANS = [
+  { id: 'p1', userName: 'Meera', location: 'Jaipur', userProfileImage: CATEGORY_IMAGES['Pottery'], media: [{ url: CATEGORY_IMAGES['Pottery'], type: 'image' }] },
+  { id: 'p2', userName: 'Ravi', location: 'Sanganer', userProfileImage: CATEGORY_IMAGES['Handloom'], media: [{ url: CATEGORY_IMAGES['Handloom'], type: 'image' }] },
+  { id: 'p3', userName: 'Asha', location: 'Kutch', userProfileImage: CATEGORY_IMAGES['Jewelry'], media: [{ url: CATEGORY_IMAGES['Jewelry'], type: 'image' }] },
+  { id: 'p4', userName: 'Kavya', location: 'Mysore', userProfileImage: CATEGORY_IMAGES['Woodwork'], media: [{ url: CATEGORY_IMAGES['Woodwork'], type: 'image' }] },
+  { id: 'p5', userName: 'Suresh', location: 'Saharanpur', userProfileImage: CATEGORY_IMAGES['Woodwork'], media: [{ url: CATEGORY_IMAGES['Woodwork'], type: 'image' }] },
+  { id: 'p6', userName: 'Fatima', location: 'Lucknow', userProfileImage: CATEGORY_IMAGES['Textiles'], media: [{ url: CATEGORY_IMAGES['Textiles'], type: 'image' }] },
+  { id: 'p7', userName: 'Ramesh', location: 'Channapatna', userProfileImage: CATEGORY_IMAGES['Woodwork'], media: [{ url: CATEGORY_IMAGES['Woodwork'], type: 'image' }] },
+  { id: 'p8', userName: 'Anjali', location: 'Pushkar', userProfileImage: CATEGORY_IMAGES['Paintings'], media: [{ url: CATEGORY_IMAGES['Paintings'], type: 'image' }] },
+  { id: 'p9', userName: 'Vikram', location: 'Madhubani', userProfileImage: CATEGORY_IMAGES['Paintings'], media: [{ url: CATEGORY_IMAGES['Paintings'], type: 'image' }] },
+];
 
 export default function StoryRail() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { addToast } = useToast();
+  const scrollRef = useRef(null);
   
   const [stories, setStories] = useState([]);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
+  const [viewedIds, setViewedIds] = useState(new Set());
+  const [loading, setLoading] = useState(true);
 
   const fetchStories = useCallback(async () => {
+    setLoading(true);
     try {
       const data = await getStories();
       const currentUserId = user?._id || user?.id;
 
-      // Group stories by userId to prevent duplicates (though backend should handle it)
       const userMap = new Map();
       (data || []).forEach(s => {
         if (!s.userId) return;
@@ -38,7 +54,6 @@ export default function StoryRail() {
 
       const uniqueStories = Array.from(userMap.values());
 
-      // Sort: Current user first, then by date
       const sorted = uniqueStories.sort((a, b) => {
         const isA = currentUserId && a.userId === currentUserId.toString();
         const isB = currentUserId && b.userId === currentUserId.toString();
@@ -47,9 +62,21 @@ export default function StoryRail() {
         return new Date(b.createdAt) - new Date(a.createdAt);
       });
       
-      setStories(sorted);
+      if (sorted.length < 8) {
+        const needed = 8 - sorted.length;
+        const placeholders = PLACEHOLDER_ARTISANS.slice(0, needed).map(p => ({
+          ...p,
+          isPlaceholder: true,
+          createdAt: new Date().toISOString()
+        }));
+        setStories([...sorted, ...placeholders]);
+      } else {
+        setStories(sorted);
+      }
     } catch (e) {
-      setStories([]);
+      setStories(PLACEHOLDER_ARTISANS.slice(0, 8));
+    } finally {
+      setLoading(false);
     }
   }, [user]);
 
@@ -94,42 +121,73 @@ export default function StoryRail() {
     }
   }, [activeIndex, activeMediaIndex, activeStory, stories]);
 
+  const handleStoryClick = (index) => {
+    setActiveIndex(index);
+    setActiveMediaIndex(0);
+    setViewedIds(prev => new Set([...prev, stories[index]?.id]));
+  };
+
+  // How many placeholder circles to show to fill the rail
+  const placeholderCount = Math.max(0, 9 - stories.length);
+
   return (
-    <div className="relative">
-      <div className="flex gap-4 md:gap-8 overflow-x-auto no-scrollbar py-2 md:py-6 px-2 md:px-6 items-start">
+    <div className="relative w-full overflow-hidden">
+      <div 
+        ref={scrollRef}
+        className={`flex gap-4 overflow-x-auto no-scrollbar py-1 px-1 items-start scroll-smooth w-full ${stories.length <= 3 ? 'justify-center' : 'justify-start'}`} 
+        style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         {/* ADD STORY */}
-        <div className="flex flex-col items-center gap-2 md:gap-4 shrink-0">
+        <div className="flex flex-col items-center gap-1.5 shrink-0">
           <button 
             onClick={() => user ? setShowUploadModal(true) : addToast('Login to share', 'info')}
+            className="group outline-none"
           >
-           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[28px] bg-gradient-to-tr from-pink-500 via-rose-500 to-indigo-500 p-0.5 sm:p-1 shadow-md group-hover:scale-105 group-active:scale-95 transition-all mb-1 sm:mb-2 flex-shrink-0 relative overflow-hidden">
-            <div className="w-full h-full bg-white rounded-[26px] p-0.5 relative overflow-hidden">
-               <ArtisanAvatar name={user?.displayName || user?.name} isArtisan={true} className="w-full h-full rounded-[24px] text-xl" />
+            <div className="w-[62px] h-[62px] md:w-[68px] md:h-[68px] rounded-full bg-gradient-to-tr from-gray-200 to-gray-300 p-[2px] shadow-sm group-hover:scale-110 group-active:scale-95 transition-transform flex-shrink-0 relative overflow-hidden">
+              <div className="w-full h-full bg-white rounded-full p-0.5 relative overflow-hidden border-2 border-white">
+                <ArtisanAvatar name={user?.displayName || user?.name} isArtisan={true} className="w-full h-full rounded-full text-lg" />
+              </div>
+              <div className="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full w-5 h-5 border-2 border-white flex items-center justify-center">
+                <Plus className="w-3 h-3" strokeWidth={3} />
+              </div>
             </div>
-          </div>
           </button>
-          <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Share Story</span>
+          <span className="text-[11px] font-semibold text-gray-500 tracking-tight">Your Story</span>
         </div>
 
-        {/* LIST STORIES */}
+        {/* LOADING SKELETONS */}
+        {loading && stories.length === 0 && Array.from({ length: 8 }).map((_, i) => (
+          <div key={`skel-${i}`} className="flex flex-col items-center gap-1.5 shrink-0">
+            <div className="w-[62px] h-[62px] md:w-[68px] md:h-[68px] rounded-full bg-gradient-to-tr from-gray-100 to-gray-200 animate-pulse" />
+            <div className="h-3 w-10 bg-gray-100 rounded-full animate-pulse" />
+          </div>
+        ))}
+
+        {/* REAL STORIES */}
         {stories.map((story, index) => {
           const isMine = user && story.userId?.toString() === (user._id || user.id)?.toString();
+          const isViewed = viewedIds.has(story.id);
+          
           return (
-            <div key={story.id} className="flex flex-col items-center gap-2 md:gap-4 shrink-0 group relative">
-              <button 
-                onClick={() => { setActiveIndex(index); setActiveMediaIndex(0); }}
-                className={`w-14 h-14 md:w-20 md:h-20 rounded-[20px] md:rounded-[28px] p-0.5 md:p-1 ${isMine ? 'bg-gray-200' : 'bg-gradient-to-tr from-pink-500 to-indigo-500'} hover:scale-105 transition-transform shrink-0`}
+            <div key={story.id} className="flex flex-col items-center gap-1.5 shrink-0 group relative cursor-pointer" onClick={() => handleStoryClick(index)}>
+              <div 
+                className={`w-[62px] h-[62px] md:w-[68px] md:h-[68px] rounded-full p-[2px] ${isViewed ? 'bg-gray-300' : 'bg-gradient-to-tr from-pink-500 via-rose-500 to-amber-500'} group-hover:scale-110 transition-transform duration-200 shrink-0`}
               >
-                <div className="w-full h-full rounded-[16px] md:rounded-[24px] border-2 border-white overflow-hidden bg-gray-50">
-                  <img src={story.media[0]?.url} className="w-full h-full object-cover" alt="" />
+                <div className="w-full h-full rounded-full border-2 border-white overflow-hidden bg-gray-50">
+                  <img src={story.userProfileImage || story.media?.[0]?.url} className="w-full h-full object-cover" alt="" loading="lazy" />
                 </div>
-              </button>
-              <span className={`text-[10px] font-black uppercase tracking-widest truncate max-w-[80px] ${isMine ? 'text-pink-600' : 'text-gray-900'}`}>
-                {isMine ? 'Your Story' : story.userName}
-              </span>
-              {isMine && (
-                <button onClick={(e) => handleDelete(story.id, e)} className="absolute -top-1 -right-1 bg-white p-1.5 rounded-xl shadow-lg text-gray-400 hover:text-red-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all border border-gray-100 z-10">
-                  <Trash2 className="w-3 h-3" />
+              </div>
+              <div className="flex flex-col items-center mt-0.5">
+                <span className="text-[11px] font-semibold tracking-tight truncate max-w-[68px] text-gray-800">
+                  {isMine ? 'Your Story' : (story.userName?.split(' ')[0] || 'Artisan')}
+                </span>
+                <span className="text-[9px] text-gray-400 font-medium truncate max-w-[68px] leading-none mt-0.5 flex items-center gap-0.5">
+                  <span className="w-1 h-1 rounded-full bg-pink-500 inline-block"></span> {story.location || 'India'}
+                </span>
+              </div>
+              {isMine && !story.isPlaceholder && (
+                <button onClick={(e) => handleDelete(story.id, e)} className="absolute -top-1 -right-1 bg-white p-1 rounded-full shadow-md text-gray-400 hover:text-red-500 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all border border-gray-100 z-10">
+                  <Trash2 className="w-2.5 h-2.5" />
                 </button>
               )}
             </div>
@@ -150,8 +208,8 @@ export default function StoryRail() {
               )}
               
               {/* OVERLAY */}
-              <div className="absolute top-0 inset-x-0 p-8 space-y-8 bg-gradient-to-b from-black/80 to-transparent z-50">
-                <div className="flex gap-2">
+              <div className="absolute top-0 inset-x-0 p-6 sm:p-8 space-y-6 sm:space-y-8 bg-gradient-to-b from-black/80 to-transparent z-50">
+                <div className="flex gap-1.5">
                   {activeStory.media.map((_, i) => (
                     <div key={i} className="flex-1 h-[2px] bg-white/30 rounded-full overflow-hidden">
                       {i === activeMediaIndex ? (
@@ -162,8 +220,8 @@ export default function StoryRail() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <div onClick={() => { setActiveIndex(-1); navigate(`/profile/${activeStory.userId}`); }} className="flex items-center gap-4 cursor-pointer">
-                    <div className="w-12 h-12 rounded-full border-2 border-white/20 overflow-hidden bg-gray-900">
+                  <div onClick={() => { setActiveIndex(-1); navigate(`/profile/${activeStory.userId}`); }} className="flex items-center gap-3 cursor-pointer">
+                    <div className="w-10 h-10 rounded-full border-2 border-white/20 overflow-hidden bg-gray-900">
                        <img src={activeStory.userProfileImage} className="w-full h-full object-cover" alt="" />
                     </div>
                     <div>
@@ -174,8 +232,8 @@ export default function StoryRail() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button onClick={() => { setActiveIndex(-1); navigate(`/messages/${activeStory.userId}`); }} className="text-white bg-white/10 rounded-full p-2"><MessageCircle className="w-5 h-5" /></button>
-                    <button onClick={() => setActiveIndex(-1)} className="text-white bg-white/10 rounded-full p-2"><X className="w-5 h-5" /></button>
+                    <button onClick={() => { setActiveIndex(-1); navigate(`/messages/${activeStory.userId}`); }} className="text-white bg-white/10 hover:bg-white/20 rounded-full p-2.5 transition-colors"><MessageCircle className="w-5 h-5" /></button>
+                    <button onClick={() => setActiveIndex(-1)} className="text-white bg-white/10 hover:bg-white/20 rounded-full p-2.5 transition-colors"><X className="w-5 h-5" /></button>
                   </div>
                 </div>
               </div>

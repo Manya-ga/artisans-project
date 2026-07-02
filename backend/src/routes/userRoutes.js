@@ -1,5 +1,5 @@
 const express = require('express');
-const { getArtisans, getUserById, toggleFollow } = require('../controllers/userController');
+const { getUserById, toggleFollow } = require('../controllers/userController');
 const authenticate = require('../middleware/authMiddleware');
 
 const router = express.Router();
@@ -15,7 +15,6 @@ const optionalAuth = (req, res, next) => {
   next();
 };
 
-router.get('/artisans', optionalAuth, getArtisans);
 router.get('/:id', optionalAuth, getUserById);
 router.post('/:id/follow', authenticate, toggleFollow);
 

@@ -10,6 +10,7 @@ export default function BottomNav({ onOpenCart }) {
 
   const { user } = useAuth();
   const { cartCount } = useCart();
+  const [authOpen, setAuthOpen] = useState(false);
   const [animateCart, setAnimateCart] = useState(false);
   const [pulseBadge, setPulseBadge] = useState(false);
   const previousCartCount = useRef(cartCount);
@@ -53,7 +54,7 @@ export default function BottomNav({ onOpenCart }) {
         />
         <NavButton 
           icon={<Compass className="w-6 h-6" />} 
-          label="Discover Makers"
+          label="Meet the Artisans"
           active={isActive('/discover-makers')} 
           onClick={() => navigate('/discover-makers')} 
         />
@@ -61,15 +62,31 @@ export default function BottomNav({ onOpenCart }) {
           icon={<MessageSquare className="w-6 h-6" />} 
           label="Messages"
           active={isActive('/messages')} 
-          onClick={() => navigate(user ? '/messages' : '/')} 
+          onClick={() => {
+            if (user) navigate('/messages');
+            else setAuthOpen(true);
+          }} 
         />
         <NavButton 
           icon={<User className="w-6 h-6" />} 
           label="Profile"
           active={isActive('/profile')} 
-          onClick={() => navigate(user ? '/profile' : '/')} 
+          onClick={() => {
+            if (user) navigate('/profile');
+            else setAuthOpen(true);
+          }} 
         />
       </div>
+      {/* Basic auth modal trigger for bottom nav */}
+      {authOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm">
+           <div className="bg-white p-8 rounded-3xl text-center max-w-sm w-full mx-4 space-y-4 shadow-2xl">
+              <h3 className="text-2xl font-black text-gray-900">Sign In Required</h3>
+              <p className="text-gray-500 font-medium">Please sign in from the top right corner to access this feature.</p>
+              <button onClick={() => setAuthOpen(false)} className="bg-gray-900 text-white w-full py-3 rounded-xl font-bold">Close</button>
+           </div>
+        </div>
+      )}
     </div>
   );
 }

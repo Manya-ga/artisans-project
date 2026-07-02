@@ -16,9 +16,12 @@ async function authMiddleware(req, res, next) {
     }
   }
 
-  console.log('[Backend] Extracted Token:', token ? `${token.substring(0, 10)}...` : 'NONE');
+  if (token === 'null' || token === 'undefined') {
+    token = null;
+  }
 
   if (!token) {
+    console.error(`[Backend] Missing authorization token for ${req.method} ${req.originalUrl}`);
     return res.status(401).json({ error: 'Missing authorization token.' });
   }
 

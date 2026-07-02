@@ -15,6 +15,7 @@ import ProductCard from '../components/ProductCard.jsx';
 import AddProductModal from '../components/AddProductModal.jsx';
 import StoryUploadModal from '../components/StoryUploadModal.jsx';
 import ArtisanAvatar from '../components/ArtisanAvatar.jsx';
+import PageHeader from '../components/PageHeader.jsx';
 
 
 
@@ -296,12 +297,28 @@ export default function Profile({ id: propId }) {
     );
   }
 
+  if (!profileData && !isOwnProfile) {
+    return (
+      <div className="max-w-5xl mx-auto py-20 px-4 text-center animate-fade-in">
+        <PageHeader title="Artisan Profile" showBack />
+        <div className="w-24 h-24 bg-gray-50 rounded-[32px] flex items-center justify-center mx-auto mb-6 mt-10">
+          <Users className="w-10 h-10 text-gray-300" />
+        </div>
+        <h2 className="text-2xl font-black text-gray-900 mb-2">Artisan Unavailable</h2>
+        <p className="text-gray-500 font-medium max-w-md mx-auto">This artisan profile may have been removed or does not exist.</p>
+        <button onClick={() => navigate('/discover-makers')} className="mt-8 px-8 py-3 bg-gray-900 text-white text-sm font-black rounded-2xl hover:bg-pink-600 transition-all shadow-xl">
+          Discover Other Makers
+        </button>
+      </div>
+    );
+  }
+
   const isArtisan = profileData?.role === 'artisan' || products.length > 0;
 
   return (
     <>
-      <div className="max-w-5xl mx-auto py-10 px-4 space-y-8">
-
+      <div className="max-w-5xl mx-auto py-4 sm:py-10 px-4 space-y-8">
+        <PageHeader title={isOwnProfile ? 'My Profile' : 'Artisan Profile'} showBack />
         {/* ── SECTION 1: PROFILE HEADER ───────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}

@@ -52,7 +52,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
   const mobileNavItems = [
     { icon: Home, label: 'Home', path: '/' },
     { icon: Package, label: 'Products', path: '/products' },
-    { icon: Compass, label: 'Discover Makers', path: '/discover-makers' },
+    { icon: Compass, label: 'Meet the Artisans', path: '/discover-makers' },
     { icon: MessageSquare, label: 'Messages', path: '/messages', authRequired: true },
     { icon: Heart, label: 'Wishlist', path: '/wishlist' },
     { icon: UserIcon, label: 'Profile', path: '/profile', authRequired: true },
@@ -84,7 +84,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
               value={query}
               onChange={(e) => onQueryChange(e.target.value)}
               onFocus={() => navigate('/products')}
-              className="w-full bg-white border-2 border-transparent rounded-2xl py-3 pl-12 pr-4 text-sm font-medium focus:ring-4 focus:ring-pink-500/5 focus:border-pink-100 outline-none transition-all shadow-sm"
+              className="w-full bg-gray-50/50 hover:bg-white focus:bg-white border-2 border-transparent rounded-full py-3 pl-12 pr-4 text-sm font-medium focus:ring-4 focus:ring-pink-500/10 focus:border-pink-100 outline-none transition-all shadow-sm"
             />
           </div>
 
@@ -191,7 +191,7 @@ export default function TopNav({ query, onQueryChange, onOpenCart, location, onL
               value={query}
               onChange={(e) => onQueryChange(e.target.value)}
               onFocus={() => navigate('/products')}
-              className="w-full bg-white border border-gray-100 rounded-2xl py-2.5 pl-10 pr-4 text-sm font-medium outline-none shadow-sm"
+              className="w-full bg-gray-50/50 focus:bg-white border border-gray-100 rounded-full py-2.5 pl-10 pr-4 text-sm font-medium outline-none shadow-sm transition-all"
             />
           </div>
         </div>

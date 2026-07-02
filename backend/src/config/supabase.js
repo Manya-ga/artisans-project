@@ -240,6 +240,12 @@ class QueryBuilder {
     return this;
   }
 
+  range(from, to) {
+    this.skipVal = from;
+    this.limitVal = to - from + 1;
+    return this;
+  }
+
   skip(num) {
     this.skipVal = num;
     return this;

@@ -1,37 +1,5 @@
 const supabase = require('../config/supabase');
 
-exports.getArtisans = async (req, res) => {
-  try {
-    const currentUserId = req.user ? req.user.id : null;
-    
-    // Find all artisans
-    const { data: artisans, error } = await supabase
-      .from('profiles')
-      .select('id, display_name, photo_url, bio, location, email')
-      .eq('role', 'artisan');
-
-    if (error) throw error;
-
-    // Normalize and add isSelf flag
-    const data = artisans.map(artisan => ({
-      _id: artisan.id,
-      id: artisan.id,
-      displayName: artisan.display_name,
-      name: artisan.display_name,
-      photoURL: artisan.photo_url,
-      image: artisan.photo_url,
-      bio: artisan.bio,
-      location: artisan.location,
-      email: artisan.email,
-      isSelf: currentUserId ? artisan.id === currentUserId : false
-    }));
-
-    res.json(data);
-  } catch (error) {
-    console.error('Failed to fetch artisans:', error);
-    res.status(500).json({ error: 'Failed to fetch artisans' });
-  }
-};
 
 exports.getUserById = async (req, res) => {
   try {

@@ -59,6 +59,23 @@ const io = new Server(server, {
   }
 });
 
+io.use(async (socket, next) => {
+  try {
+    const token = socket.handshake.auth?.token;
+    if (!token) {
+      return next(new Error('Authentication error: Missing token'));
+    }
+    const { data: user, error } = await supabase.auth.getUser(token);
+    if (error || !user) {
+      return next(new Error('Authentication error: Invalid token'));
+    }
+    socket.user = user.user;
+    next();
+  } catch (err) {
+    next(new Error('Authentication error'));
+  }
+});
+
 io.on('connection', (socket) => {
   // eslint-disable-next-line no-console
   console.log('A user connected via socket:', socket.id);

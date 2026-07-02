@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { deleteProduct } from '../api';
 import { useToast } from '../contexts/ToastContext';
 import { animateAddToCart } from '../utils/cartAnimation';
+import { getFallbackProductImage, getProductImage } from '../config/imageMappings';
 
 const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, ref) => {
   const navigate = useNavigate();
@@ -14,6 +15,8 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
   const { addToast } = useToast();
   const { addToCart, toggleWishlist, isInWishlist } = useCart();
   const [deleting, setDeleting] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
   
   const id = product?._id || product?.id;
   const inWishlist = isInWishlist(id);
@@ -53,6 +56,8 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
   const price = product?.price || 0;
   const formattedPrice = `₹${Number(price).toLocaleString()}`;
 
+  const resolvedImage = getProductImage(product?.image || product?.images?.[0], product?.category);
+
   return (
     <motion.div
       ref={ref}
@@ -62,31 +67,24 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
       onClick={() => id && navigate(`/product/${id}`)}
       className={`group relative cursor-pointer h-full ${deleting ? 'opacity-50 grayscale' : ''}`}
     >
-      <div className="card-premium h-full flex flex-col overflow-hidden bg-white">
+      <div className="card-premium h-full flex flex-col overflow-hidden bg-white rounded-3xl border border-gray-100 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] transition-all duration-500">
         {/* Image Container */}
         <div className="relative aspect-square overflow-hidden bg-gray-50 shrink-0">
-          {product?.image || product?.images?.[0] ? (
-            <img
-              src={product?.image || product?.images?.[0]}
-              alt={product?.title || 'Product'}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
-            />
-          ) : null}
-          {/* Clean fallback — no fake photos */}
-          <div
-            className="w-full h-full items-center justify-center flex-col gap-2 bg-gradient-to-br from-gray-50 to-gray-100"
-            style={{ display: (product?.image || product?.images?.[0]) ? 'none' : 'flex' }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span className="text-xs font-bold text-gray-300 uppercase tracking-widest">No Image</span>
-          </div>
+          {/* Skeleton loader shown while image is fetching */}
+          {!imgLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse" />
+          )}
+          
+          {/* Main image with intelligent category fallback */}
+          <img
+            src={imgError ? getFallbackProductImage(product?.category) : resolvedImage}
+            alt={product?.title || 'Handcrafted product'}
+            loading="lazy"
+            decoding="async"
+            onLoad={() => setImgLoaded(true)}
+            onError={() => { setImgError(true); setImgLoaded(true); }}
+            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+          />
           
           {/* Action Buttons */}
           <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
@@ -163,7 +161,20 @@ const ProductCard = React.forwardRef(({ product, isOwner, onProductDeleted }, re
           </h3>
           
           <div className="flex flex-col mb-3">
-            <p className="text-[10px] sm:text-xs text-gray-600 font-bold line-clamp-1">by {product?.artisanName || product?.artisan_name || 'Artisan'}</p>
+            <p className="text-[10px] sm:text-xs text-gray-600 font-bold line-clamp-1">
+              by{' '}
+              <span 
+                className="hover:text-pink-600 hover:underline cursor-pointer"
+                onClick={(e) => {
+                  if (product?.userId) {
+                    e.stopPropagation();
+                    navigate(`/profile/${product.userId}`);
+                  }
+                }}
+              >
+                {product?.artisanName || product?.artisan_name || 'Artisan'}
+              </span>
+            </p>
             {(product?.artisanLocation || product?.artisan_location) && (
               <p className="text-[9px] sm:text-[10px] text-gray-400 font-medium mt-0.5 flex items-center gap-1">
                 <span className="text-[10px]">📍</span> {product.artisanLocation || product.artisan_location}

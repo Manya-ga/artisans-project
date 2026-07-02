@@ -21,6 +21,8 @@ export default function DiscoverMakersPage() {
   
   const [currentPage, setCurrentPage] = useState(pageParam);
   const [totalPages, setTotalPages] = useState(1);
+  const [hasNext, setHasNext] = useState(false);
+  const [hasPrevious, setHasPrevious] = useState(false);
   const gridRef = useRef(null);
 
   const updateSearchParams = useCallback((updates) => {
@@ -40,7 +42,8 @@ export default function DiscoverMakersPage() {
       updateSearchParams({ page: 1 });
       setCurrentPage(1);
     }
-  }, [query, filterCraft, filterLocation, sortOption, updateSearchParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, filterCraft, filterLocation, sortOption]);
 
   useEffect(() => {
     const loadArtisans = async () => {
@@ -54,13 +57,15 @@ export default function DiscoverMakersPage() {
           location: filterLocation,
           sort: sortOption
         });
-        if (res.currentPage && res.currentPage !== currentPage) {
-          updateSearchParams({ page: res.currentPage });
-          setCurrentPage(res.currentPage);
+        if (res.page && Number(res.page) !== currentPage) {
+          updateSearchParams({ page: res.page });
+          setCurrentPage(Number(res.page));
           return;
         }
         setArtisans(res.artisans || []);
         setTotalPages(res.totalPages || 1);
+        setHasNext(res.hasNext || false);
+        setHasPrevious(res.hasPrevious || false);
       } catch (e) {
         console.error('[DiscoverMakersPage] Failed to load makers:', e);
         setArtisans([]);
@@ -91,7 +96,7 @@ export default function DiscoverMakersPage() {
     <div className="animate-fade-in space-y-6 md:space-y-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div className="space-y-2">
-          <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight">Discover Makers</h1>
+          <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight">Meet the Artisans</h1>
           <p className="text-gray-500 font-medium text-lg">Meet the traditional masters behind the craft</p>
         </div>
 
@@ -169,7 +174,7 @@ export default function DiscoverMakersPage() {
             {totalPages > 1 && (
               <div className="flex justify-center items-center gap-2 pt-6">
                 <button
-                  disabled={currentPage === 1}
+                  disabled={!hasPrevious}
                   onClick={() => handlePageChange(currentPage - 1)}
                   className="px-4 py-3 rounded-2xl border border-gray-100 bg-white text-gray-600 hover:border-pink-200 hover:text-pink-500 transition-all disabled:opacity-30 disabled:hover:border-gray-100 disabled:hover:text-gray-600 disabled:cursor-not-allowed"
                 >
@@ -203,7 +208,7 @@ export default function DiscoverMakersPage() {
                 </div>
 
                 <button
-                  disabled={currentPage === totalPages}
+                  disabled={!hasNext}
                   onClick={() => handlePageChange(currentPage + 1)}
                   className="px-4 py-3 rounded-2xl border border-gray-100 bg-white text-gray-600 hover:border-pink-200 hover:text-pink-500 transition-all disabled:opacity-30 disabled:hover:border-gray-100 disabled:hover:text-gray-600 disabled:cursor-not-allowed"
                 >
@@ -214,20 +219,40 @@ export default function DiscoverMakersPage() {
             )}
           </div>
         ) : (
-          <div className="py-20 text-center">
-            <p className="text-gray-400 font-black uppercase tracking-widest">
-              {query ? `No makers match "${query}"` : 'No makers yet'}
+          <div className="py-24 text-center bg-white rounded-[3rem] shadow-sm border border-gray-50 flex flex-col items-center justify-center space-y-6">
+            <div className="w-24 h-24 bg-pink-50 text-pink-500 rounded-full flex items-center justify-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
+              {query || filterCraft !== 'All' || filterLocation !== 'All' ? 'No Makers Found' : 'No artisans found yet.'}
+            </h3>
+            <p className="text-gray-500 font-medium max-w-md mx-auto">
+              {query || filterCraft !== 'All' || filterLocation !== 'All' 
+                ? 'We couldn\'t find any artisans matching your current filters. Try adjusting your search criteria.' 
+                : 'Our marketplace is growing, but we don\'t have any artisans registered yet. Start your journey today!'}
             </p>
-            <button 
-              onClick={() => { 
-                setSearch(''); 
-                setSearchParams({}); 
-                setCurrentPage(1); 
-              }} 
-              className="mt-6 text-pink-500 font-bold hover:underline"
-            >
-              Clear Filters
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              {(query || filterCraft !== 'All' || filterLocation !== 'All') && (
+                <button 
+                  onClick={() => { 
+                    setSearch(''); 
+                    setSearchParams({}); 
+                    setCurrentPage(1); 
+                  }} 
+                  className="bg-gray-100 text-gray-900 font-bold px-8 py-4 rounded-2xl hover:bg-gray-200 transition-colors"
+                >
+                  Clear All Filters
+                </button>
+              )}
+              <button 
+                onClick={() => navigate('/discover')} 
+                className="bg-pink-500 text-white font-black px-8 py-4 rounded-2xl shadow-xl shadow-pink-500/20 hover:bg-pink-600 transition-colors"
+              >
+                Browse Products
+              </button>
+            </div>
           </div>
         )}
       </div>

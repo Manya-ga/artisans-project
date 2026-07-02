@@ -105,11 +105,12 @@ exports.getProducts = async (req, res) => {
 
     return res.json({
       products: normalizedProducts,
-      currentPage: page,
+      page: page,
+      limit: limit,
       totalPages: totalPages,
-      totalProducts: totalProducts,
-      hasNextPage: page < totalPages,
-      hasPrevPage: page > 1
+      totalItems: totalCount,
+      hasNext: page < totalPages,
+      hasPrevious: page > 1
     });
   } catch (error) {
     console.error('Failed to get products:', error);
@@ -188,6 +189,17 @@ exports.createProduct = async (req, res) => {
 
     if (!title || price == null || !fallbackImage) {
       return res.status(400).json({ error: 'Product title, price, and at least one image are required.' });
+    }
+
+    // Validation: Prevent products from existing without a valid artisan profile
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('id, display_name, photo_url, location')
+      .eq('id', req.user.id)
+      .single();
+
+    if (profileError || !profile) {
+      return res.status(403).json({ error: 'You must have a valid profile to create products. Artisan directory validation failed.' });
     }
 
     const { data: product, error } = await supabase

@@ -5,6 +5,17 @@ import { useAuth } from '../contexts/AuthContext';
 import { getArtisans } from '../api';
 import ArtisanCard from '../components/ArtisanCard';
 
+const PLACEHOLDER_ARTISANS = [
+  { _id: 'p1', displayName: 'Aarav Sharma', rating: '4.9', category: 'Pottery', location: 'Rajasthan', bio: 'Master potter with 20 years of experience crafting traditional blue pottery.', productCount: 42 },
+  { _id: 'p2', displayName: 'Diya Patel', rating: '4.8', category: 'Textiles', location: 'Gujarat', bio: 'Specializing in intricate embroidery and sustainable handloom textiles.', productCount: 128 },
+  { _id: 'p3', displayName: 'Vikram Singh', rating: '4.9', category: 'Woodwork', location: 'Karnataka', bio: 'Carving stories into sustainably sourced sandalwood and teak.', productCount: 15 },
+  { _id: 'p4', displayName: 'Ananya Desai', rating: '5.0', category: 'Jewelry', location: 'Rajasthan', bio: 'Handcrafted silver jewelry inspired by royal Rajputana heritage.', productCount: 86 },
+  { _id: 'p5', displayName: 'Rohan Gupta', rating: '4.7', category: 'Metal Crafts', location: 'Uttar Pradesh', bio: 'Brass and copper artisan bringing ancient techniques to modern designs.', productCount: 54 },
+  { _id: 'p6', displayName: 'Kavita Reddy', rating: '4.9', category: 'Paintings', location: 'Karnataka', bio: 'Authentic Madhubani and Warli paintings capturing folk tales.', productCount: 31 },
+  { _id: 'p7', displayName: 'Arjun Das', rating: '4.8', category: 'Woodwork', location: 'Gujarat', bio: 'Creating timeless wooden toys using natural vegetable dyes.', productCount: 112 },
+  { _id: 'p8', displayName: 'Meera Iyer', rating: '5.0', category: 'Textiles', location: 'Tamil Nadu', bio: 'Weaving silk wonders using traditional Kanchivaram techniques.', productCount: 24 }
+];
+
 export default function DiscoverMakersPage() {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -62,7 +73,13 @@ export default function DiscoverMakersPage() {
           setCurrentPage(Number(res.page));
           return;
         }
-        setArtisans(res.artisans || []);
+        
+        let fetchedArtisans = res.artisans || [];
+        if (fetchedArtisans.length === 0 && !query && filterCraft === 'All' && filterLocation === 'All') {
+          fetchedArtisans = PLACEHOLDER_ARTISANS;
+        }
+
+        setArtisans(fetchedArtisans);
         setTotalPages(res.totalPages || 1);
         setHasNext(res.hasNext || false);
         setHasPrevious(res.hasPrevious || false);
